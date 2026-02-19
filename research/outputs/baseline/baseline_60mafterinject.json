@@ -1,0 +1,201 @@
+{
+  "capturedAt": "2026-02-10T08:23:43.019Z",
+  "minutes": 60,
+  "behaviorSummary": {
+    "window": {
+      "minutes": 60,
+      "start": "2026-02-10T07:23:25.559Z",
+      "end": "2026-02-10T08:23:25.559Z",
+      "sampleLimit": 5000,
+      "totalEvents": 5000
+    },
+    "distributions": {
+      "protocols": [
+        {
+          "key": "UDP",
+          "count": 3932
+        },
+        {
+          "key": "TCP",
+          "count": 1065
+        },
+        {
+          "key": "ICMP",
+          "count": 3
+        }
+      ],
+      "ports": [
+        {
+          "key": "137",
+          "count": 3093,
+          "service": "WELL_KNOWN"
+        },
+        {
+          "key": "5353",
+          "count": 775,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "443",
+          "count": 400,
+          "service": "HTTPS"
+        },
+        {
+          "key": "4743",
+          "count": 258,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "3889",
+          "count": 87,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "4143",
+          "count": 87,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "67",
+          "count": 22,
+          "service": "WELL_KNOWN"
+        },
+        {
+          "key": "138",
+          "count": 17,
+          "service": "WELL_KNOWN"
+        },
+        {
+          "key": "8080",
+          "count": 11,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "3389",
+          "count": 10,
+          "service": "RDP"
+        }
+      ],
+      "services": [
+        {
+          "key": "WELL_KNOWN",
+          "count": 3158
+        },
+        {
+          "key": "HIGH_PORT",
+          "count": 1419
+        },
+        {
+          "key": "HTTPS",
+          "count": 400
+        },
+        {
+          "key": "RDP",
+          "count": 10
+        },
+        {
+          "key": "TELNET",
+          "count": 5
+        },
+        {
+          "key": "HTTP",
+          "count": 4
+        },
+        {
+          "key": "SSH",
+          "count": 1
+        },
+        {
+          "key": "MYSQL",
+          "count": 1
+        },
+        {
+          "key": "POSTGRES",
+          "count": 1
+        },
+        {
+          "key": "APP/ALT",
+          "count": 1
+        }
+      ],
+      "severities": [
+        {
+          "key": "unknown",
+          "count": 5000
+        }
+      ],
+      "attackCategories": [
+        {
+          "key": "Unknown",
+          "count": 5000
+        }
+      ],
+      "countries": [],
+      "asns": [],
+      "topSourceIps": [
+        {
+          "key": "192.168.1.117",
+          "count": 3068
+        },
+        {
+          "key": "192.168.1.122",
+          "count": 827
+        },
+        {
+          "key": "192.168.1.108",
+          "count": 279
+        },
+        {
+          "key": "192.168.1.190",
+          "count": 207
+        },
+        {
+          "key": "192.168.1.242",
+          "count": 157
+        },
+        {
+          "key": "192.168.1.155",
+          "count": 97
+        },
+        {
+          "key": "192.168.1.149",
+          "count": 41
+        },
+        {
+          "key": "192.168.1.2",
+          "count": 28
+        },
+        {
+          "key": "0.0.0.0",
+          "count": 22
+        },
+        {
+          "key": "192.168.1.129",
+          "count": 11
+        }
+      ]
+    },
+    "signals": {
+      "latestMinuteCount": 7,
+      "medianMinuteCount": 433,
+      "burstRatio": 0.02,
+      "portEntropy": 2.22,
+      "sourceEntropy": 2.32,
+      "topSourceIpConcentration": 0.614,
+      "topPortConcentration": 0.619,
+      "scanCandidates": [
+        {
+          "ip": "216.180.246.208",
+          "totalEvents": 10,
+          "distinctPorts": 10,
+          "spanSec": 677,
+          "scanScore": 1.06
+        }
+      ],
+      "highSeverityCount": 0
+    },
+    "scores": {
+      "riskScore0to100": 10
+    }
+  }
+}

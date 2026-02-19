@@ -1,0 +1,208 @@
+{
+  "capturedAt": "2026-02-10T10:52:17.814Z",
+  "minutes": 60,
+  "behaviorSummary": {
+    "window": {
+      "minutes": 60,
+      "start": "2026-02-10T09:52:01.369Z",
+      "end": "2026-02-10T10:52:01.369Z",
+      "sampleLimit": 100000,
+      "totalEvents": 836
+    },
+    "distributions": {
+      "protocols": [
+        {
+          "key": "TCP",
+          "count": 799
+        },
+        {
+          "key": "UDP",
+          "count": 23
+        },
+        {
+          "key": "ICMP",
+          "count": 14
+        }
+      ],
+      "ports": [
+        {
+          "key": "3001",
+          "count": 97,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "2222",
+          "count": 24,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "22",
+          "count": 15,
+          "service": "SSH"
+        },
+        {
+          "key": "23",
+          "count": 14,
+          "service": "TELNET"
+        },
+        {
+          "key": "null",
+          "count": 14,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "2323",
+          "count": 13,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "80",
+          "count": 12,
+          "service": "HTTP"
+        },
+        {
+          "key": "443",
+          "count": 10,
+          "service": "HTTPS"
+        },
+        {
+          "key": "3128",
+          "count": 7,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "3389",
+          "count": 6,
+          "service": "RDP"
+        }
+      ],
+      "services": [
+        {
+          "key": "HIGH_PORT",
+          "count": 703
+        },
+        {
+          "key": "WELL_KNOWN",
+          "count": 67
+        },
+        {
+          "key": "SSH",
+          "count": 15
+        },
+        {
+          "key": "TELNET",
+          "count": 14
+        },
+        {
+          "key": "HTTP",
+          "count": 12
+        },
+        {
+          "key": "HTTPS",
+          "count": 10
+        },
+        {
+          "key": "RDP",
+          "count": 6
+        },
+        {
+          "key": "POSTGRES",
+          "count": 3
+        },
+        {
+          "key": "REDIS",
+          "count": 2
+        },
+        {
+          "key": "MONGODB",
+          "count": 2
+        }
+      ],
+      "severities": [
+        {
+          "key": "unknown",
+          "count": 836
+        }
+      ],
+      "attackCategories": [
+        {
+          "key": "Unknown",
+          "count": 836
+        }
+      ],
+      "countries": [],
+      "asns": [],
+      "topSourceIps": [
+        {
+          "key": "216.180.246.123",
+          "count": 20
+        },
+        {
+          "key": "15.221.161.119",
+          "count": 20
+        },
+        {
+          "key": "204.76.203.219",
+          "count": 9
+        },
+        {
+          "key": "15.221.160.1",
+          "count": 8
+        },
+        {
+          "key": "15.221.161.100",
+          "count": 8
+        },
+        {
+          "key": "15.221.161.128",
+          "count": 8
+        },
+        {
+          "key": "15.221.161.44",
+          "count": 8
+        },
+        {
+          "key": "3.129.187.38",
+          "count": 6
+        },
+        {
+          "key": "79.124.40.106",
+          "count": 5
+        },
+        {
+          "key": "146.19.24.133",
+          "count": 5
+        }
+      ]
+    },
+    "signals": {
+      "latestMinuteCount": 8,
+      "medianMinuteCount": 13,
+      "burstRatio": 0.62,
+      "portEntropy": 8.23,
+      "sourceEntropy": 9.01,
+      "topSourceIpConcentration": 0.024,
+      "topPortConcentration": 0.116,
+      "scanCandidates": [
+        {
+          "ip": "216.180.246.123",
+          "totalEvents": 20,
+          "distinctPorts": 20,
+          "spanSec": 1543,
+          "scanScore": 1.89
+        },
+        {
+          "ip": "204.76.203.219",
+          "totalEvents": 9,
+          "distinctPorts": 7,
+          "spanSec": 2886,
+          "scanScore": 0.61
+        }
+      ],
+      "highSeverityCount": 0
+    },
+    "scores": {
+      "riskScore0to100": 6
+    }
+  }
+}

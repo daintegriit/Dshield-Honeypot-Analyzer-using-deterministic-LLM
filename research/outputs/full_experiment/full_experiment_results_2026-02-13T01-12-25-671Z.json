@@ -1,0 +1,153 @@
+{
+  "runId": "2026-02-13T01-12-25-671Z",
+  "capturedAt": "2026-02-13T02:39:57.910Z",
+  "injectionStart": "2026-02-13T01:17:25.687Z",
+  "injectionEnd": "2026-02-13T02:34:39.879Z",
+  "baselineSeconds": 300,
+  "cooldownSeconds": 300,
+  "pollIntervalMs": 30000,
+  "windowsEvaluated": [
+    2,
+    5,
+    15,
+    30,
+    60
+  ],
+  "totalEvaluations": 0,
+  "results": [],
+  "metrics_global_all_windows": {
+    "TP": 0,
+    "FP": 0,
+    "TN": 0,
+    "FN": 0,
+    "total_samples": 0,
+    "precision": 0,
+    "recall": 0,
+    "specificity": 0,
+    "fpr": 0,
+    "fnr": 0,
+    "accuracy": 0,
+    "balanced_accuracy": 0,
+    "f1": 0
+  },
+  "metrics_per_window": {
+    "2": {
+      "TP": 0,
+      "FP": 0,
+      "TN": 0,
+      "FN": 0,
+      "total_samples": 0,
+      "precision": 0,
+      "recall": 0,
+      "specificity": 0,
+      "fpr": 0,
+      "fnr": 0,
+      "accuracy": 0,
+      "balanced_accuracy": 0,
+      "f1": 0
+    },
+    "5": {
+      "TP": 0,
+      "FP": 0,
+      "TN": 0,
+      "FN": 0,
+      "total_samples": 0,
+      "precision": 0,
+      "recall": 0,
+      "specificity": 0,
+      "fpr": 0,
+      "fnr": 0,
+      "accuracy": 0,
+      "balanced_accuracy": 0,
+      "f1": 0
+    },
+    "15": {
+      "TP": 0,
+      "FP": 0,
+      "TN": 0,
+      "FN": 0,
+      "total_samples": 0,
+      "precision": 0,
+      "recall": 0,
+      "specificity": 0,
+      "fpr": 0,
+      "fnr": 0,
+      "accuracy": 0,
+      "balanced_accuracy": 0,
+      "f1": 0
+    },
+    "30": {
+      "TP": 0,
+      "FP": 0,
+      "TN": 0,
+      "FN": 0,
+      "total_samples": 0,
+      "precision": 0,
+      "recall": 0,
+      "specificity": 0,
+      "fpr": 0,
+      "fnr": 0,
+      "accuracy": 0,
+      "balanced_accuracy": 0,
+      "f1": 0
+    },
+    "60": {
+      "TP": 0,
+      "FP": 0,
+      "TN": 0,
+      "FN": 0,
+      "total_samples": 0,
+      "precision": 0,
+      "recall": 0,
+      "specificity": 0,
+      "fpr": 0,
+      "fnr": 0,
+      "accuracy": 0,
+      "balanced_accuracy": 0,
+      "f1": 0
+    }
+  },
+  "latency_seconds": {
+    "global": null,
+    "perWindow": {}
+  },
+  "stability": {
+    "2": {
+      "samples": 0,
+      "flips": 0,
+      "flip_rate": 0
+    },
+    "5": {
+      "samples": 0,
+      "flips": 0,
+      "flip_rate": 0
+    },
+    "15": {
+      "samples": 0,
+      "flips": 0,
+      "flip_rate": 0
+    },
+    "30": {
+      "samples": 0,
+      "flips": 0,
+      "flip_rate": 0
+    },
+    "60": {
+      "samples": 0,
+      "flips": 0,
+      "flip_rate": 0
+    }
+  },
+  "risk_separation": {
+    "normal_n": 0,
+    "attack_n": 0,
+    "normal_mean": null,
+    "attack_mean": null,
+    "separation_margin": null
+  },
+  "replay": {
+    "python": "python3",
+    "script": "replay_pcap_events.py",
+    "exitCode": 0
+  }
+}

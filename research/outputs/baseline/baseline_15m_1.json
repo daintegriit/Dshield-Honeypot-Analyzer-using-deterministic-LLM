@@ -1,0 +1,185 @@
+{
+  "capturedAt": "2026-02-05T10:47:41.452Z",
+  "minutes": 15,
+  "behaviorSummary": {
+    "window": {
+      "minutes": 15,
+      "start": "2026-02-05T10:32:21.882Z",
+      "end": "2026-02-05T10:47:21.882Z",
+      "sampleLimit": 5000,
+      "totalEvents": 190
+    },
+    "distributions": {
+      "protocols": [
+        {
+          "key": "TCP",
+          "count": 180
+        },
+        {
+          "key": "UDP",
+          "count": 8
+        },
+        {
+          "key": "ICMP",
+          "count": 2
+        }
+      ],
+      "ports": [
+        {
+          "key": "2222",
+          "count": 6,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "5003",
+          "count": 6,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "23",
+          "count": 5,
+          "service": "TELNET"
+        },
+        {
+          "key": "53",
+          "count": 5,
+          "service": "WELL_KNOWN"
+        },
+        {
+          "key": "61423",
+          "count": 5,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "80",
+          "count": 4,
+          "service": "HTTP"
+        },
+        {
+          "key": "10318",
+          "count": 4,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "26",
+          "count": 2,
+          "service": "WELL_KNOWN"
+        },
+        {
+          "key": "1333",
+          "count": 2,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "1800",
+          "count": 2,
+          "service": "HIGH_PORT"
+        }
+      ],
+      "services": [
+        {
+          "key": "HIGH_PORT",
+          "count": 152
+        },
+        {
+          "key": "WELL_KNOWN",
+          "count": 25
+        },
+        {
+          "key": "TELNET",
+          "count": 5
+        },
+        {
+          "key": "HTTP",
+          "count": 4
+        },
+        {
+          "key": "HTTPS",
+          "count": 1
+        },
+        {
+          "key": "POSTGRES",
+          "count": 1
+        },
+        {
+          "key": "SSH",
+          "count": 1
+        },
+        {
+          "key": "MYSQL",
+          "count": 1
+        }
+      ],
+      "severities": [
+        {
+          "key": "unknown",
+          "count": 190
+        }
+      ],
+      "attackCategories": [
+        {
+          "key": "Unknown",
+          "count": 190
+        }
+      ],
+      "countries": [],
+      "asns": [],
+      "topSourceIps": [
+        {
+          "key": "167.94.138.36",
+          "count": 6
+        },
+        {
+          "key": "162.142.125.119",
+          "count": 5
+        },
+        {
+          "key": "79.124.56.238",
+          "count": 4
+        },
+        {
+          "key": "194.180.49.115",
+          "count": 2
+        },
+        {
+          "key": "36.32.202.197",
+          "count": 2
+        },
+        {
+          "key": "85.217.149.12",
+          "count": 2
+        },
+        {
+          "key": "109.205.211.69",
+          "count": 2
+        },
+        {
+          "key": "85.217.149.17",
+          "count": 2
+        },
+        {
+          "key": "166.88.224.115",
+          "count": 2
+        },
+        {
+          "key": "204.76.203.219",
+          "count": 2
+        }
+      ]
+    },
+    "signals": {
+      "latestMinuteCount": 7,
+      "medianMinuteCount": 12,
+      "burstRatio": 0.58,
+      "portEntropy": 7.07,
+      "sourceEntropy": 7.29,
+      "topSourceIpConcentration": 0.032,
+      "topPortConcentration": 0.032,
+      "scanCandidates": [],
+      "highSeverityCount": 0
+    },
+    "scores": {
+      "riskScore0to100": 3
+    }
+  }
+}

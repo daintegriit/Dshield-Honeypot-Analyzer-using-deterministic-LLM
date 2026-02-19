@@ -1,0 +1,44 @@
+\clearpage
+\begin{figure}[t]
+  \vspace{-4.0cm}
+  \centering
+  \includegraphics[width=0.95\textwidth]{Diagrams/BehaviorWindowBaseline1AttackIntent.pdf}
+  \caption{Temporal behavior analysis — attack intent assessment under a 2-minute aggregation window.}
+  \label{fig:attack-intent}
+\end{figure}
+
+\clearpage
+\begin{figure*}[t]
+\vspace{-4.0cm}
+\centering
+\includegraphics[width=0.95\textwidth]{Diagrams/BehaviorWindowBaseline1BehaviorChange.pdf}
+\caption{Observed behavioral differences when the aggregation window is modified while input telemetry remains constant.}
+\label{fig:behavior-change}
+\end{figure*}
+
+\clearpage
+\begin{figure*}[t]
+\vspace{-4.0cm}
+\centering
+\includegraphics[width=0.95\textwidth]{Diagrams/BehaviorWindowBaseline1RiskExplanation.pdf}
+\caption{Observed behavioral differences when the aggregation window is modified while input telemetry remains constant.}
+\label{fig:behavior-change}
+\end{figure*}
+
+\clearpage
+\begin{figure*}[t]
+\vspace{-4.0cm}
+\centering
+\includegraphics[width=0.95\textwidth]{Diagrams/BehaviorWindowBaseline1WhatChangedRecently.pdf}
+\caption{Observed behavioral differences when the aggregation window is modified while input telemetry remains constant.}
+\label{fig:behavior-change}
+\end{figure*}
+
+\clearpage
+\subsection{Test3}
+Test 3: Phase Boundary Detection (risk reasoning)
+“At what minute did behavior change?”
+
+\subsection{Test4}
+
+

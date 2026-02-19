@@ -1,0 +1,68 @@
+{
+  "name": "integriit-honeypot-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^7.1.0",
+    "@nivo/bar": "^0.88.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.7",
+    "cesium": "^1.123.1",
+    "chart.js": "^4.4.7",
+    "chartjs-plugin-zoom": "^2.2.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "d3": "^7.9.0",
+    "echarts": "^5.5.1",
+    "echarts-for-react": "^3.0.2",
+    "flag-icons": "^7.2.3",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.1",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.2.0",
+    "react-country-flag": "^3.1.0",
+    "react-dom": "^18.3.1",
+    "react-heatmap-grid": "^0.9.1",
+    "react-router-dom": "^6.28.0",
+    "react-scripts": "^5.0.1",
+    "react-sparklines": "^1.7.0",
+    "react-world-flags": "^1.6.0",
+    "three": "^0.170.0",
+    "topojson-client": "^3.1.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "tailwindcss": "^3.4.15",
+    "webpack-dev-server": "^3.11.3"
+  },
+  "proxy": "http://localhost:5002"
+}

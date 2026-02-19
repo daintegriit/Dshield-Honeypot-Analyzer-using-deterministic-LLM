@@ -1,0 +1,222 @@
+{
+  "capturedAt": "2026-02-10T04:49:57.111Z",
+  "minutes": 60,
+  "behaviorSummary": {
+    "window": {
+      "minutes": 60,
+      "start": "2026-02-10T03:49:38.626Z",
+      "end": "2026-02-10T04:49:38.626Z",
+      "sampleLimit": 5000,
+      "totalEvents": 1131
+    },
+    "distributions": {
+      "protocols": [
+        {
+          "key": "TCP",
+          "count": 1021
+        },
+        {
+          "key": "UDP",
+          "count": 96
+        },
+        {
+          "key": "ICMP",
+          "count": 14
+        }
+      ],
+      "ports": [
+        {
+          "key": "22",
+          "count": 141,
+          "service": "SSH"
+        },
+        {
+          "key": "3001",
+          "count": 98,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "5353",
+          "count": 52,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "80",
+          "count": 24,
+          "service": "HTTP"
+        },
+        {
+          "key": "2222",
+          "count": 23,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "23",
+          "count": 20,
+          "service": "TELNET"
+        },
+        {
+          "key": "443",
+          "count": 16,
+          "service": "HTTPS"
+        },
+        {
+          "key": "null",
+          "count": 14,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "8728",
+          "count": 11,
+          "service": "HIGH_PORT"
+        },
+        {
+          "key": "3389",
+          "count": 9,
+          "service": "RDP"
+        }
+      ],
+      "services": [
+        {
+          "key": "HIGH_PORT",
+          "count": 836
+        },
+        {
+          "key": "SSH",
+          "count": 141
+        },
+        {
+          "key": "WELL_KNOWN",
+          "count": 77
+        },
+        {
+          "key": "HTTP",
+          "count": 24
+        },
+        {
+          "key": "TELNET",
+          "count": 20
+        },
+        {
+          "key": "HTTPS",
+          "count": 16
+        },
+        {
+          "key": "RDP",
+          "count": 9
+        },
+        {
+          "key": "REDIS",
+          "count": 5
+        },
+        {
+          "key": "MYSQL",
+          "count": 1
+        },
+        {
+          "key": "APP/ALT",
+          "count": 1
+        }
+      ],
+      "severities": [
+        {
+          "key": "unknown",
+          "count": 1131
+        }
+      ],
+      "attackCategories": [
+        {
+          "key": "Unknown",
+          "count": 1131
+        }
+      ],
+      "countries": [],
+      "asns": [],
+      "topSourceIps": [
+        {
+          "key": "192.168.1.103",
+          "count": 43
+        },
+        {
+          "key": "138.68.145.146",
+          "count": 33
+        },
+        {
+          "key": "199.195.251.10",
+          "count": 33
+        },
+        {
+          "key": "172.190.89.127",
+          "count": 31
+        },
+        {
+          "key": "15.221.161.167",
+          "count": 28
+        },
+        {
+          "key": "192.168.1.122",
+          "count": 23
+        },
+        {
+          "key": "64.225.69.40",
+          "count": 22
+        },
+        {
+          "key": "192.168.1.190",
+          "count": 21
+        },
+        {
+          "key": "216.180.246.85",
+          "count": 20
+        },
+        {
+          "key": "15.221.161.46",
+          "count": 20
+        }
+      ]
+    },
+    "signals": {
+      "latestMinuteCount": 10,
+      "medianMinuteCount": 16,
+      "burstRatio": 0.63,
+      "portEntropy": 7.76,
+      "sourceEntropy": 8.55,
+      "topSourceIpConcentration": 0.038,
+      "topPortConcentration": 0.125,
+      "scanCandidates": [
+        {
+          "ip": "216.180.246.85",
+          "totalEvents": 20,
+          "distinctPorts": 20,
+          "spanSec": 1463,
+          "scanScore": 1.9
+        },
+        {
+          "ip": "178.17.170.146",
+          "totalEvents": 12,
+          "distinctPorts": 6,
+          "spanSec": 11,
+          "scanScore": 1.63
+        },
+        {
+          "ip": "204.76.203.219",
+          "totalEvents": 9,
+          "distinctPorts": 7,
+          "spanSec": 3075,
+          "scanScore": 0.6
+        },
+        {
+          "ip": "192.109.200.205",
+          "totalEvents": 6,
+          "distinctPorts": 6,
+          "spanSec": 3278,
+          "scanScore": 0.51
+        }
+      ],
+      "highSeverityCount": 0
+    },
+    "scores": {
+      "riskScore0to100": 6
+    }
+  }
+}
