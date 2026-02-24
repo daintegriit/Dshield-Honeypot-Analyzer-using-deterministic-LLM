@@ -26,3 +26,20 @@ backend/node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# === Honeypot / Research Data ===
+research/outputs/
+research/pcaps/
+research/replays/
+
+# Large experiment artifacts
+*.pcap
+*.jsonl
+full_experiment_*.json
+full_terminal_output.log
+
+# Archives
+archives/
+data/
+outputs/
