@@ -1,0 +1,82 @@
+[
+  {
+    "timestamp": "2026-04-22T00:20:00.267Z",
+    "windowIndex": 0,
+    "observationMinute": 0.0,
+    "from": "stable",
+    "to": "stable",
+    "phase": "baseline",
+    "riskScore0to100": 0.0,
+    "durationInPreviousStateSec": 0
+  },
+  {
+    "timestamp": "2026-04-22T01:21:00.501Z",
+    "windowIndex": 61,
+    "observationMinute": 61.0,
+    "from": "stable",
+    "to": "high",
+    "phase": "injection",
+    "riskScore0to100": 71.0,
+    "durationInPreviousStateSec": 3660.23
+  },
+  {
+    "timestamp": "2026-04-22T01:22:00.340Z",
+    "windowIndex": 62,
+    "observationMinute": 62.0,
+    "from": "high",
+    "to": "critical",
+    "phase": "injection",
+    "riskScore0to100": 89.0,
+    "durationInPreviousStateSec": 59.84
+  },
+  {
+    "timestamp": "2026-04-22T02:14:02.986Z",
+    "windowIndex": 114,
+    "observationMinute": 114.0,
+    "from": "critical",
+    "to": "high",
+    "phase": "injection",
+    "riskScore0to100": 78.0,
+    "durationInPreviousStateSec": 3122.65
+  },
+  {
+    "timestamp": "2026-04-22T02:30:01.223Z",
+    "windowIndex": 130,
+    "observationMinute": 130.0,
+    "from": "high",
+    "to": "critical",
+    "phase": "injection",
+    "riskScore0to100": 85.0,
+    "durationInPreviousStateSec": 958.24
+  },
+  {
+    "timestamp": "2026-04-22T02:31:01.070Z",
+    "windowIndex": 131,
+    "observationMinute": 131.0,
+    "from": "critical",
+    "to": "high",
+    "phase": "injection",
+    "riskScore0to100": 84.0,
+    "durationInPreviousStateSec": 59.85
+  },
+  {
+    "timestamp": "2026-04-22T02:52:00.662Z",
+    "windowIndex": 152,
+    "observationMinute": 152.0,
+    "from": "high",
+    "to": "elevated",
+    "phase": "cooldown",
+    "riskScore0to100": 55.0,
+    "durationInPreviousStateSec": 1259.59
+  },
+  {
+    "timestamp": "2026-04-22T02:54:01.220Z",
+    "windowIndex": 154,
+    "observationMinute": 154.0,
+    "from": "elevated",
+    "to": "stable",
+    "phase": "cooldown",
+    "riskScore0to100": 36.0,
+    "durationInPreviousStateSec": 120.56
+  }
+]

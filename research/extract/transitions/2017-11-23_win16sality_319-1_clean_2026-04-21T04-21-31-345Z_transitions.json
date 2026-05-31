@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-04-21T04:21:31.388Z",
+    "windowIndex": 0,
+    "observationMinute": 0.0,
+    "from": "stable",
+    "to": "stable",
+    "phase": "baseline",
+    "riskScore0to100": 0.0,
+    "durationInPreviousStateSec": 0
+  },
+  {
+    "timestamp": "2026-04-21T05:24:33.560Z",
+    "windowIndex": 63,
+    "observationMinute": 63.0,
+    "from": "stable",
+    "to": "critical",
+    "phase": "injection",
+    "riskScore0to100": 86.0,
+    "durationInPreviousStateSec": 3782.17
+  }
+]

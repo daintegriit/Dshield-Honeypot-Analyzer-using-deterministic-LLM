@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": "2026-04-21T13:45:45.018Z",
+    "windowIndex": 0,
+    "observationMinute": 0.0,
+    "from": "stable",
+    "to": "stable",
+    "phase": "baseline",
+    "riskScore0to100": 0.0,
+    "durationInPreviousStateSec": 0
+  },
+  {
+    "timestamp": "2026-04-21T14:46:45.016Z",
+    "windowIndex": 61,
+    "observationMinute": 61.0,
+    "from": "stable",
+    "to": "high",
+    "phase": "injection",
+    "riskScore0to100": 80.0,
+    "durationInPreviousStateSec": 3660.0
+  },
+  {
+    "timestamp": "2026-04-21T14:48:44.928Z",
+    "windowIndex": 63,
+    "observationMinute": 63.0,
+    "from": "high",
+    "to": "critical",
+    "phase": "injection",
+    "riskScore0to100": 88.0,
+    "durationInPreviousStateSec": 119.91
+  },
+  {
+    "timestamp": "2026-04-21T16:20:51.080Z",
+    "windowIndex": 155,
+    "observationMinute": 155.0,
+    "from": "critical",
+    "to": "high",
+    "phase": "cooldown",
+    "riskScore0to100": 61.0,
+    "durationInPreviousStateSec": 5526.15
+  },
+  {
+    "timestamp": "2026-04-21T16:21:57.805Z",
+    "windowIndex": 156,
+    "observationMinute": 156.0,
+    "from": "high",
+    "to": "stable",
+    "phase": "cooldown",
+    "riskScore0to100": 10.0,
+    "durationInPreviousStateSec": 66.72
+  }
+]

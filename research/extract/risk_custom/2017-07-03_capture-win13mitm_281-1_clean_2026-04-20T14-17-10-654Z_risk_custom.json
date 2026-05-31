@@ -1,0 +1,2133 @@
+{
+  "metadata": {
+    "source_file": "2017-07-03_capture-win13mitm_281-1_clean_2026-04-20T14-17-10-654Z.json",
+    "runId": "2026-04-20T14-17-10-654Z",
+    "attackStartEffective": "2026-04-20T15:17:14.793Z",
+    "injectionStart": "2026-04-20T15:17:14.793Z",
+    "injectionEnd": "2026-04-20T16:47:15.417Z",
+    "truthMode": "replay_start",
+    "baselineSeconds": 3600,
+    "preCooldownSeconds": 0,
+    "cooldownSeconds": 3600,
+    "pollIntervalMs": 60000,
+    "window_minutes": 1.0,
+    "x_axis": "minute_index",
+    "x_axis_description": "Integer minute buckets aligned to attack start",
+    "attack_start_min": 0,
+    "injection_start_min": 0.0,
+    "injection_end_min": 90.01,
+    "total_points": 211
+  },
+  "timeline": [
+    {
+      "minute_index": -60,
+      "t_attack_min": -60.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:17:10.825Z"
+    },
+    {
+      "minute_index": -59,
+      "t_attack_min": -59.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:18:10.819Z"
+    },
+    {
+      "minute_index": -58,
+      "t_attack_min": -58.069,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:19:10.674Z"
+    },
+    {
+      "minute_index": -57,
+      "t_attack_min": -57.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:20:10.745Z"
+    },
+    {
+      "minute_index": -56,
+      "t_attack_min": -56.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:21:10.745Z"
+    },
+    {
+      "minute_index": -55,
+      "t_attack_min": -55.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:22:10.824Z"
+    },
+    {
+      "minute_index": -54,
+      "t_attack_min": -54.065,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:23:10.902Z"
+    },
+    {
+      "minute_index": -53,
+      "t_attack_min": -53.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:24:10.831Z"
+    },
+    {
+      "minute_index": -52,
+      "t_attack_min": -52.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:25:10.739Z"
+    },
+    {
+      "minute_index": -51,
+      "t_attack_min": -51.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:26:10.742Z"
+    },
+    {
+      "minute_index": -50,
+      "t_attack_min": -50.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:27:10.741Z"
+    },
+    {
+      "minute_index": -49,
+      "t_attack_min": -49.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:28:10.747Z"
+    },
+    {
+      "minute_index": -48,
+      "t_attack_min": -48.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:29:10.828Z"
+    },
+    {
+      "minute_index": -47,
+      "t_attack_min": -47.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:30:10.821Z"
+    },
+    {
+      "minute_index": -46,
+      "t_attack_min": -46.054,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:31:11.547Z"
+    },
+    {
+      "minute_index": -45,
+      "t_attack_min": -45.063,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:32:10.987Z"
+    },
+    {
+      "minute_index": -44,
+      "t_attack_min": -44.061,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:33:11.148Z"
+    },
+    {
+      "minute_index": -43,
+      "t_attack_min": -43.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:34:10.746Z"
+    },
+    {
+      "minute_index": -42,
+      "t_attack_min": -42.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:35:10.741Z"
+    },
+    {
+      "minute_index": -41,
+      "t_attack_min": -41.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:36:10.819Z"
+    },
+    {
+      "minute_index": -40,
+      "t_attack_min": -40.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:37:10.822Z"
+    },
+    {
+      "minute_index": -39,
+      "t_attack_min": -39.065,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:38:10.907Z"
+    },
+    {
+      "minute_index": -38,
+      "t_attack_min": -38.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:39:10.818Z"
+    },
+    {
+      "minute_index": -37,
+      "t_attack_min": -37.069,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:40:10.670Z"
+    },
+    {
+      "minute_index": -36,
+      "t_attack_min": -36.069,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:41:10.673Z"
+    },
+    {
+      "minute_index": -35,
+      "t_attack_min": -35.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:42:10.746Z"
+    },
+    {
+      "minute_index": -34,
+      "t_attack_min": -34.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:43:10.738Z"
+    },
+    {
+      "minute_index": -33,
+      "t_attack_min": -33.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:44:10.829Z"
+    },
+    {
+      "minute_index": -32,
+      "t_attack_min": -32.042,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:45:12.263Z"
+    },
+    {
+      "minute_index": -31,
+      "t_attack_min": -31.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:46:10.742Z"
+    },
+    {
+      "minute_index": -30,
+      "t_attack_min": -30.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:47:10.753Z"
+    },
+    {
+      "minute_index": -29,
+      "t_attack_min": -29.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:48:10.742Z"
+    },
+    {
+      "minute_index": -28,
+      "t_attack_min": -28.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:49:10.742Z"
+    },
+    {
+      "minute_index": -27,
+      "t_attack_min": -27.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:50:10.748Z"
+    },
+    {
+      "minute_index": -26,
+      "t_attack_min": -26.055,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:51:11.463Z"
+    },
+    {
+      "minute_index": -25,
+      "t_attack_min": -25.065,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:52:10.900Z"
+    },
+    {
+      "minute_index": -24,
+      "t_attack_min": -24.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:53:10.822Z"
+    },
+    {
+      "minute_index": -23,
+      "t_attack_min": -23.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:54:10.823Z"
+    },
+    {
+      "minute_index": -22,
+      "t_attack_min": -22.069,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:55:10.674Z"
+    },
+    {
+      "minute_index": -21,
+      "t_attack_min": -21.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:56:10.739Z"
+    },
+    {
+      "minute_index": -20,
+      "t_attack_min": -20.045,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:57:12.111Z"
+    },
+    {
+      "minute_index": -19,
+      "t_attack_min": -19.069,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:58:10.673Z"
+    },
+    {
+      "minute_index": -18,
+      "t_attack_min": -18.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T14:59:10.818Z"
+    },
+    {
+      "minute_index": -17,
+      "t_attack_min": -17.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:00:10.818Z"
+    },
+    {
+      "minute_index": -16,
+      "t_attack_min": -16.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:01:10.739Z"
+    },
+    {
+      "minute_index": -15,
+      "t_attack_min": -15.069,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:02:10.675Z"
+    },
+    {
+      "minute_index": -14,
+      "t_attack_min": -14.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:03:10.830Z"
+    },
+    {
+      "minute_index": -13,
+      "t_attack_min": -13.061,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:04:11.139Z"
+    },
+    {
+      "minute_index": -12,
+      "t_attack_min": -12.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:05:10.741Z"
+    },
+    {
+      "minute_index": -11,
+      "t_attack_min": -11.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:06:10.740Z"
+    },
+    {
+      "minute_index": -10,
+      "t_attack_min": -10.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:07:10.743Z"
+    },
+    {
+      "minute_index": -9,
+      "t_attack_min": -9.065,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:08:10.900Z"
+    },
+    {
+      "minute_index": -8,
+      "t_attack_min": -8.065,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:09:10.902Z"
+    },
+    {
+      "minute_index": -7,
+      "t_attack_min": -7.066,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:10:10.826Z"
+    },
+    {
+      "minute_index": -6,
+      "t_attack_min": -6.069,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:11:10.670Z"
+    },
+    {
+      "minute_index": -5,
+      "t_attack_min": -5.069,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:12:10.672Z"
+    },
+    {
+      "minute_index": -4,
+      "t_attack_min": -4.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:13:10.745Z"
+    },
+    {
+      "minute_index": -3,
+      "t_attack_min": -3.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:14:10.756Z"
+    },
+    {
+      "minute_index": -2,
+      "t_attack_min": -2.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:15:10.746Z"
+    },
+    {
+      "minute_index": -1,
+      "t_attack_min": -1.068,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:16:10.741Z"
+    },
+    {
+      "minute_index": 0,
+      "t_attack_min": -0.067,
+      "riskScore": 0,
+      "phase": "baseline",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:17:10.744Z"
+    },
+    {
+      "minute_index": 1,
+      "t_attack_min": 0.938,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:18:11.070Z"
+    },
+    {
+      "minute_index": 2,
+      "t_attack_min": 1.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:19:10.821Z"
+    },
+    {
+      "minute_index": 3,
+      "t_attack_min": 2.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:20:10.827Z"
+    },
+    {
+      "minute_index": 4,
+      "t_attack_min": 3.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:21:10.823Z"
+    },
+    {
+      "minute_index": 5,
+      "t_attack_min": 4.937,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:22:10.985Z"
+    },
+    {
+      "minute_index": 6,
+      "t_attack_min": 5.935,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:23:10.905Z"
+    },
+    {
+      "minute_index": 7,
+      "t_attack_min": 6.935,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:24:10.903Z"
+    },
+    {
+      "minute_index": 8,
+      "t_attack_min": 7.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:25:10.824Z"
+    },
+    {
+      "minute_index": 9,
+      "t_attack_min": 8.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:26:10.819Z"
+    },
+    {
+      "minute_index": 10,
+      "t_attack_min": 9.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:27:10.821Z"
+    },
+    {
+      "minute_index": 11,
+      "t_attack_min": 10.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:28:10.755Z"
+    },
+    {
+      "minute_index": 12,
+      "t_attack_min": 11.935,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:29:10.909Z"
+    },
+    {
+      "minute_index": 13,
+      "t_attack_min": 12.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:30:10.817Z"
+    },
+    {
+      "minute_index": 14,
+      "t_attack_min": 13.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:31:10.747Z"
+    },
+    {
+      "minute_index": 15,
+      "t_attack_min": 14.942,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:32:11.313Z"
+    },
+    {
+      "minute_index": 16,
+      "t_attack_min": 15.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:33:10.752Z"
+    },
+    {
+      "minute_index": 17,
+      "t_attack_min": 16.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:34:10.752Z"
+    },
+    {
+      "minute_index": 18,
+      "t_attack_min": 17.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:35:10.752Z"
+    },
+    {
+      "minute_index": 19,
+      "t_attack_min": 18.935,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:36:10.901Z"
+    },
+    {
+      "minute_index": 20,
+      "t_attack_min": 19.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:37:10.828Z"
+    },
+    {
+      "minute_index": 21,
+      "t_attack_min": 20.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:38:10.826Z"
+    },
+    {
+      "minute_index": 22,
+      "t_attack_min": 21.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:39:10.827Z"
+    },
+    {
+      "minute_index": 23,
+      "t_attack_min": 22.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:40:10.819Z"
+    },
+    {
+      "minute_index": 24,
+      "t_attack_min": 23.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:41:10.751Z"
+    },
+    {
+      "minute_index": 25,
+      "t_attack_min": 24.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:42:10.824Z"
+    },
+    {
+      "minute_index": 26,
+      "t_attack_min": 25.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:43:10.822Z"
+    },
+    {
+      "minute_index": 27,
+      "t_attack_min": 26.939,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:44:11.148Z"
+    },
+    {
+      "minute_index": 28,
+      "t_attack_min": 27.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:45:10.826Z"
+    },
+    {
+      "minute_index": 29,
+      "t_attack_min": 28.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:46:10.821Z"
+    },
+    {
+      "minute_index": 30,
+      "t_attack_min": 29.947,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:47:11.622Z"
+    },
+    {
+      "minute_index": 31,
+      "t_attack_min": 30.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:48:10.826Z"
+    },
+    {
+      "minute_index": 32,
+      "t_attack_min": 31.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:49:10.755Z"
+    },
+    {
+      "minute_index": 33,
+      "t_attack_min": 32.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:50:10.821Z"
+    },
+    {
+      "minute_index": 34,
+      "t_attack_min": 33.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:51:10.826Z"
+    },
+    {
+      "minute_index": 35,
+      "t_attack_min": 34.942,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:52:11.316Z"
+    },
+    {
+      "minute_index": 36,
+      "t_attack_min": 35.938,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:53:11.061Z"
+    },
+    {
+      "minute_index": 37,
+      "t_attack_min": 36.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:54:10.826Z"
+    },
+    {
+      "minute_index": 38,
+      "t_attack_min": 37.939,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:55:11.140Z"
+    },
+    {
+      "minute_index": 39,
+      "t_attack_min": 38.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:56:10.822Z"
+    },
+    {
+      "minute_index": 40,
+      "t_attack_min": 39.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:57:10.821Z"
+    },
+    {
+      "minute_index": 41,
+      "t_attack_min": 40.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:58:10.750Z"
+    },
+    {
+      "minute_index": 42,
+      "t_attack_min": 41.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T15:59:10.830Z"
+    },
+    {
+      "minute_index": 43,
+      "t_attack_min": 42.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:00:10.818Z"
+    },
+    {
+      "minute_index": 44,
+      "t_attack_min": 43.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:01:10.756Z"
+    },
+    {
+      "minute_index": 45,
+      "t_attack_min": 44.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:02:10.750Z"
+    },
+    {
+      "minute_index": 46,
+      "t_attack_min": 45.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:03:10.824Z"
+    },
+    {
+      "minute_index": 47,
+      "t_attack_min": 46.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:04:10.822Z"
+    },
+    {
+      "minute_index": 48,
+      "t_attack_min": 47.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:05:10.818Z"
+    },
+    {
+      "minute_index": 49,
+      "t_attack_min": 48.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:06:10.826Z"
+    },
+    {
+      "minute_index": 50,
+      "t_attack_min": 49.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:07:10.827Z"
+    },
+    {
+      "minute_index": 51,
+      "t_attack_min": 50.947,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:08:11.628Z"
+    },
+    {
+      "minute_index": 52,
+      "t_attack_min": 51.935,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:09:10.905Z"
+    },
+    {
+      "minute_index": 53,
+      "t_attack_min": 52.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:10:10.828Z"
+    },
+    {
+      "minute_index": 54,
+      "t_attack_min": 53.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:11:10.822Z"
+    },
+    {
+      "minute_index": 55,
+      "t_attack_min": 54.937,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:12:10.990Z"
+    },
+    {
+      "minute_index": 56,
+      "t_attack_min": 55.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:13:10.750Z"
+    },
+    {
+      "minute_index": 57,
+      "t_attack_min": 56.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:14:10.753Z"
+    },
+    {
+      "minute_index": 58,
+      "t_attack_min": 57.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:15:10.822Z"
+    },
+    {
+      "minute_index": 59,
+      "t_attack_min": 58.938,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:16:11.072Z"
+    },
+    {
+      "minute_index": 60,
+      "t_attack_min": 59.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:17:10.818Z"
+    },
+    {
+      "minute_index": 61,
+      "t_attack_min": 60.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:18:10.818Z"
+    },
+    {
+      "minute_index": 62,
+      "t_attack_min": 61.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:19:10.821Z"
+    },
+    {
+      "minute_index": 63,
+      "t_attack_min": 62.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:20:10.825Z"
+    },
+    {
+      "minute_index": 64,
+      "t_attack_min": 63.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:21:10.750Z"
+    },
+    {
+      "minute_index": 65,
+      "t_attack_min": 64.935,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:22:10.904Z"
+    },
+    {
+      "minute_index": 66,
+      "t_attack_min": 65.939,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:23:11.150Z"
+    },
+    {
+      "minute_index": 67,
+      "t_attack_min": 66.935,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:24:10.904Z"
+    },
+    {
+      "minute_index": 68,
+      "t_attack_min": 67.945,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:25:11.470Z"
+    },
+    {
+      "minute_index": 69,
+      "t_attack_min": 68.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:26:10.818Z"
+    },
+    {
+      "minute_index": 70,
+      "t_attack_min": 69.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:27:10.822Z"
+    },
+    {
+      "minute_index": 71,
+      "t_attack_min": 70.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:28:10.747Z"
+    },
+    {
+      "minute_index": 72,
+      "t_attack_min": 71.95,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:29:11.783Z"
+    },
+    {
+      "minute_index": 73,
+      "t_attack_min": 72.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:30:10.751Z"
+    },
+    {
+      "minute_index": 74,
+      "t_attack_min": 73.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:31:10.751Z"
+    },
+    {
+      "minute_index": 75,
+      "t_attack_min": 74.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:32:10.756Z"
+    },
+    {
+      "minute_index": 76,
+      "t_attack_min": 75.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:33:10.830Z"
+    },
+    {
+      "minute_index": 77,
+      "t_attack_min": 76.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:34:10.819Z"
+    },
+    {
+      "minute_index": 78,
+      "t_attack_min": 77.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:35:10.825Z"
+    },
+    {
+      "minute_index": 79,
+      "t_attack_min": 78.942,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:36:11.307Z"
+    },
+    {
+      "minute_index": 80,
+      "t_attack_min": 79.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:37:10.833Z"
+    },
+    {
+      "minute_index": 81,
+      "t_attack_min": 80.935,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:38:10.903Z"
+    },
+    {
+      "minute_index": 82,
+      "t_attack_min": 81.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:39:10.835Z"
+    },
+    {
+      "minute_index": 83,
+      "t_attack_min": 82.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:40:10.821Z"
+    },
+    {
+      "minute_index": 84,
+      "t_attack_min": 83.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:41:10.819Z"
+    },
+    {
+      "minute_index": 85,
+      "t_attack_min": 84.943,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:42:11.391Z"
+    },
+    {
+      "minute_index": 86,
+      "t_attack_min": 85.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:43:10.750Z"
+    },
+    {
+      "minute_index": 87,
+      "t_attack_min": 86.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:44:10.820Z"
+    },
+    {
+      "minute_index": 88,
+      "t_attack_min": 87.934,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:45:10.821Z"
+    },
+    {
+      "minute_index": 89,
+      "t_attack_min": 88.933,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:46:10.749Z"
+    },
+    {
+      "minute_index": 90,
+      "t_attack_min": 89.938,
+      "riskScore": 0,
+      "phase": "injection",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:47:11.063Z"
+    },
+    {
+      "minute_index": 91,
+      "t_attack_min": 90.933,
+      "riskScore": 63,
+      "phase": "cooldown",
+      "truth": "Residual",
+      "experimentPredicted": "Residual",
+      "rawPredicted": "Attack",
+      "timestamp": "2026-04-20T16:48:10.757Z"
+    },
+    {
+      "minute_index": 92,
+      "t_attack_min": 91.934,
+      "riskScore": 63,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Residual",
+      "rawPredicted": "Attack",
+      "timestamp": "2026-04-20T16:49:10.826Z"
+    },
+    {
+      "minute_index": 93,
+      "t_attack_min": 92.933,
+      "riskScore": 63,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Residual",
+      "rawPredicted": "Attack",
+      "timestamp": "2026-04-20T16:50:10.746Z"
+    },
+    {
+      "minute_index": 94,
+      "t_attack_min": 93.931,
+      "riskScore": 63,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Residual",
+      "rawPredicted": "Attack",
+      "timestamp": "2026-04-20T16:51:10.674Z"
+    },
+    {
+      "minute_index": 95,
+      "t_attack_min": 94.934,
+      "riskScore": 63,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Residual",
+      "rawPredicted": "Attack",
+      "timestamp": "2026-04-20T16:52:10.818Z"
+    },
+    {
+      "minute_index": 96,
+      "t_attack_min": 95.934,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:53:10.823Z"
+    },
+    {
+      "minute_index": 97,
+      "t_attack_min": 96.934,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:54:10.827Z"
+    },
+    {
+      "minute_index": 98,
+      "t_attack_min": 97.932,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:55:10.742Z"
+    },
+    {
+      "minute_index": 99,
+      "t_attack_min": 98.931,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:56:10.674Z"
+    },
+    {
+      "minute_index": 100,
+      "t_attack_min": 99.942,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:57:11.299Z"
+    },
+    {
+      "minute_index": 101,
+      "t_attack_min": 100.934,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:58:10.827Z"
+    },
+    {
+      "minute_index": 102,
+      "t_attack_min": 101.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T16:59:10.748Z"
+    },
+    {
+      "minute_index": 103,
+      "t_attack_min": 102.934,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:00:10.825Z"
+    },
+    {
+      "minute_index": 104,
+      "t_attack_min": 103.931,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:01:10.670Z"
+    },
+    {
+      "minute_index": 105,
+      "t_attack_min": 104.938,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:02:11.071Z"
+    },
+    {
+      "minute_index": 106,
+      "t_attack_min": 105.932,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:03:10.742Z"
+    },
+    {
+      "minute_index": 107,
+      "t_attack_min": 106.932,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:04:10.742Z"
+    },
+    {
+      "minute_index": 108,
+      "t_attack_min": 107.932,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:05:10.743Z"
+    },
+    {
+      "minute_index": 109,
+      "t_attack_min": 108.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:06:10.747Z"
+    },
+    {
+      "minute_index": 110,
+      "t_attack_min": 109.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:07:10.747Z"
+    },
+    {
+      "minute_index": 111,
+      "t_attack_min": 110.936,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:08:10.979Z"
+    },
+    {
+      "minute_index": 112,
+      "t_attack_min": 111.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:09:10.752Z"
+    },
+    {
+      "minute_index": 113,
+      "t_attack_min": 112.935,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:10:10.899Z"
+    },
+    {
+      "minute_index": 114,
+      "t_attack_min": 113.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:11:10.748Z"
+    },
+    {
+      "minute_index": 115,
+      "t_attack_min": 114.934,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:12:10.830Z"
+    },
+    {
+      "minute_index": 116,
+      "t_attack_min": 115.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:13:10.747Z"
+    },
+    {
+      "minute_index": 117,
+      "t_attack_min": 116.934,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:14:10.821Z"
+    },
+    {
+      "minute_index": 118,
+      "t_attack_min": 117.931,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:15:10.674Z"
+    },
+    {
+      "minute_index": 119,
+      "t_attack_min": 118.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:16:10.748Z"
+    },
+    {
+      "minute_index": 120,
+      "t_attack_min": 119.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:17:10.744Z"
+    },
+    {
+      "minute_index": 121,
+      "t_attack_min": 120.931,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:18:10.671Z"
+    },
+    {
+      "minute_index": 122,
+      "t_attack_min": 121.931,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:19:10.671Z"
+    },
+    {
+      "minute_index": 123,
+      "t_attack_min": 122.932,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:20:10.740Z"
+    },
+    {
+      "minute_index": 124,
+      "t_attack_min": 123.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:21:10.753Z"
+    },
+    {
+      "minute_index": 125,
+      "t_attack_min": 124.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:22:10.744Z"
+    },
+    {
+      "minute_index": 126,
+      "t_attack_min": 125.939,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:23:11.147Z"
+    },
+    {
+      "minute_index": 127,
+      "t_attack_min": 126.932,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:24:10.742Z"
+    },
+    {
+      "minute_index": 128,
+      "t_attack_min": 127.932,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:25:10.738Z"
+    },
+    {
+      "minute_index": 129,
+      "t_attack_min": 128.932,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:26:10.740Z"
+    },
+    {
+      "minute_index": 130,
+      "t_attack_min": 129.931,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:27:10.674Z"
+    },
+    {
+      "minute_index": 131,
+      "t_attack_min": 130.935,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:28:10.904Z"
+    },
+    {
+      "minute_index": 132,
+      "t_attack_min": 131.931,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:29:10.672Z"
+    },
+    {
+      "minute_index": 133,
+      "t_attack_min": 132.932,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:30:10.740Z"
+    },
+    {
+      "minute_index": 134,
+      "t_attack_min": 133.932,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:31:10.742Z"
+    },
+    {
+      "minute_index": 135,
+      "t_attack_min": 134.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:32:10.748Z"
+    },
+    {
+      "minute_index": 136,
+      "t_attack_min": 135.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:33:10.744Z"
+    },
+    {
+      "minute_index": 137,
+      "t_attack_min": 136.951,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:34:11.866Z"
+    },
+    {
+      "minute_index": 138,
+      "t_attack_min": 137.934,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:35:10.822Z"
+    },
+    {
+      "minute_index": 139,
+      "t_attack_min": 138.935,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:36:10.900Z"
+    },
+    {
+      "minute_index": 140,
+      "t_attack_min": 139.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:37:10.748Z"
+    },
+    {
+      "minute_index": 141,
+      "t_attack_min": 140.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:38:10.748Z"
+    },
+    {
+      "minute_index": 142,
+      "t_attack_min": 141.934,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:39:10.827Z"
+    },
+    {
+      "minute_index": 143,
+      "t_attack_min": 142.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:40:10.750Z"
+    },
+    {
+      "minute_index": 144,
+      "t_attack_min": 143.931,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:41:10.675Z"
+    },
+    {
+      "minute_index": 145,
+      "t_attack_min": 144.934,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:42:10.824Z"
+    },
+    {
+      "minute_index": 146,
+      "t_attack_min": 145.931,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:43:10.675Z"
+    },
+    {
+      "minute_index": 147,
+      "t_attack_min": 146.937,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:44:10.987Z"
+    },
+    {
+      "minute_index": 148,
+      "t_attack_min": 147.933,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:45:10.746Z"
+    },
+    {
+      "minute_index": 149,
+      "t_attack_min": 148.935,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:46:10.900Z"
+    },
+    {
+      "minute_index": 150,
+      "t_attack_min": 149.934,
+      "riskScore": 0,
+      "phase": "cooldown",
+      "truth": "Normal",
+      "experimentPredicted": "Normal",
+      "rawPredicted": "Normal",
+      "timestamp": "2026-04-20T17:47:10.819Z"
+    }
+  ]
+}

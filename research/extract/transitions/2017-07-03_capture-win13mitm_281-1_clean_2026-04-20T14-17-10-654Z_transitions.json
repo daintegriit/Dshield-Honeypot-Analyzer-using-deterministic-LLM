@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2026-04-20T14:17:10.825Z",
+    "windowIndex": 0,
+    "observationMinute": 0.0,
+    "from": "stable",
+    "to": "stable",
+    "phase": "baseline",
+    "riskScore0to100": 0.0,
+    "durationInPreviousStateSec": 0
+  },
+  {
+    "timestamp": "2026-04-20T16:48:10.757Z",
+    "windowIndex": 151,
+    "observationMinute": 151.0,
+    "from": "stable",
+    "to": "high",
+    "phase": "cooldown",
+    "riskScore0to100": 63.0,
+    "durationInPreviousStateSec": 9059.93
+  },
+  {
+    "timestamp": "2026-04-20T16:53:10.823Z",
+    "windowIndex": 156,
+    "observationMinute": 156.0,
+    "from": "high",
+    "to": "stable",
+    "phase": "cooldown",
+    "riskScore0to100": 0.0,
+    "durationInPreviousStateSec": 300.07
+  }
+]

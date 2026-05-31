@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2026-04-20T21:19:30.112Z",
+    "windowIndex": 0,
+    "observationMinute": 0.0,
+    "from": "stable",
+    "to": "stable",
+    "phase": "baseline",
+    "riskScore0to100": 0.0,
+    "durationInPreviousStateSec": 0
+  },
+  {
+    "timestamp": "2026-04-20T22:59:21.139Z",
+    "windowIndex": 100,
+    "observationMinute": 100.0,
+    "from": "stable",
+    "to": "high",
+    "phase": "injection",
+    "riskScore0to100": 76.0,
+    "durationInPreviousStateSec": 5991.03
+  },
+  {
+    "timestamp": "2026-04-20T23:00:21.144Z",
+    "windowIndex": 101,
+    "observationMinute": 101.0,
+    "from": "high",
+    "to": "critical",
+    "phase": "injection",
+    "riskScore0to100": 100.0,
+    "durationInPreviousStateSec": 60.01
+  },
+  {
+    "timestamp": "2026-04-20T23:54:27.753Z",
+    "windowIndex": 155,
+    "observationMinute": 155.0,
+    "from": "critical",
+    "to": "high",
+    "phase": "cooldown",
+    "riskScore0to100": 62.0,
+    "durationInPreviousStateSec": 3246.61
+  },
+  {
+    "timestamp": "2026-04-20T23:55:34.701Z",
+    "windowIndex": 156,
+    "observationMinute": 156.0,
+    "from": "high",
+    "to": "elevated",
+    "phase": "cooldown",
+    "riskScore0to100": 49.0,
+    "durationInPreviousStateSec": 66.95
+  },
+  {
+    "timestamp": "2026-04-21T00:46:21.251Z",
+    "windowIndex": 207,
+    "observationMinute": 207.0,
+    "from": "elevated",
+    "to": "stable",
+    "phase": "cooldown",
+    "riskScore0to100": 38.0,
+    "durationInPreviousStateSec": 3046.55
+  }
+]

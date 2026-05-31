@@ -1,0 +1,1268 @@
+[
+  {
+    "t_min": 0.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 1.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 2.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 3.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 4.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 5.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 6.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 7.005,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 8.002,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 9.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 10.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 11.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 12.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 13.002,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 14.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 15.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 16.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 17.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 18.002,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 19.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 20.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 21.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 22.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 23.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 24.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 25.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 26.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 27.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 28.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 29.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 30.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 31.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 32.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 33.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 34.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 35.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 36.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 37.002,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 38.002,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 39.004,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 40.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 41.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 42.004,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 43.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 44.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 45.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 46.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 47.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 48.002,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 49.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 50.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 51.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 52.005,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 53.004,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 54.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 55.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 56.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 57.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 58.001,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 59.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 60.0,
+    "riskScore": 0,
+    "state": "stable",
+    "phase": "baseline"
+  },
+  {
+    "t_min": 61.019,
+    "riskScore": 97,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 62.003,
+    "riskScore": 97,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 63.014,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 64.022,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 65.033,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 66.023,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 67.073,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 68.022,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 69.048,
+    "riskScore": 81,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 70.044,
+    "riskScore": 98,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 71.043,
+    "riskScore": 100,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 72.152,
+    "riskScore": 100,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 73.131,
+    "riskScore": 98,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 74.103,
+    "riskScore": 98,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 75.119,
+    "riskScore": 98,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 76.103,
+    "riskScore": 98,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 77.12,
+    "riskScore": 98,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 78.11,
+    "riskScore": 100,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 79.094,
+    "riskScore": 92,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 80.133,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 81.201,
+    "riskScore": 91,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 82.203,
+    "riskScore": 91,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 83.195,
+    "riskScore": 90,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 84.126,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 85.1,
+    "riskScore": 92,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 86.139,
+    "riskScore": 90,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 87.159,
+    "riskScore": 91,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 88.159,
+    "riskScore": 90,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 89.124,
+    "riskScore": 84,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 90.129,
+    "riskScore": 84,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 91.126,
+    "riskScore": 83,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 92.143,
+    "riskScore": 82,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 93.15,
+    "riskScore": 82,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 94.13,
+    "riskScore": 83,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 95.122,
+    "riskScore": 83,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 96.225,
+    "riskScore": 83,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 97.405,
+    "riskScore": 89,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 98.225,
+    "riskScore": 93,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 99.34,
+    "riskScore": 91,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 100.23,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 101.232,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 102.137,
+    "riskScore": 92,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 103.133,
+    "riskScore": 89,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 104.169,
+    "riskScore": 91,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 105.173,
+    "riskScore": 88,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 106.204,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 107.18,
+    "riskScore": 88,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 108.133,
+    "riskScore": 91,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 109.149,
+    "riskScore": 89,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 110.178,
+    "riskScore": 89,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 111.227,
+    "riskScore": 92,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 112.31,
+    "riskScore": 90,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 113.31,
+    "riskScore": 86,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 114.113,
+    "riskScore": 86,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 115.181,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 116.137,
+    "riskScore": 82,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 117.214,
+    "riskScore": 82,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 118.197,
+    "riskScore": 82,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 119.128,
+    "riskScore": 82,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 120.23,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 121.128,
+    "riskScore": 87,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 122.194,
+    "riskScore": 87,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 123.209,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 124.211,
+    "riskScore": 87,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 125.173,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 126.257,
+    "riskScore": 81,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 127.308,
+    "riskScore": 82,
+    "state": "high",
+    "phase": "injection"
+  },
+  {
+    "t_min": 128.296,
+    "riskScore": 89,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 129.133,
+    "riskScore": 89,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 130.213,
+    "riskScore": 89,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 131.236,
+    "riskScore": 90,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 132.26,
+    "riskScore": 93,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 133.314,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 134.282,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 135.393,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 136.26,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 137.32,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 138.337,
+    "riskScore": 85,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 139.363,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 140.32,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 141.335,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 142.298,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 143.739,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 145.291,
+    "riskScore": 95,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 146.281,
+    "riskScore": 94,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 147.489,
+    "riskScore": 94,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 148.243,
+    "riskScore": 93,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 149.227,
+    "riskScore": 94,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 150.333,
+    "riskScore": 94,
+    "state": "critical",
+    "phase": "injection"
+  },
+  {
+    "t_min": 151.397,
+    "riskScore": 93,
+    "state": "critical",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 152.221,
+    "riskScore": 92,
+    "state": "critical",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 153.197,
+    "riskScore": 91,
+    "state": "critical",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 154.21,
+    "riskScore": 88,
+    "state": "critical",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 155.201,
+    "riskScore": 86,
+    "state": "critical",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 156.221,
+    "riskScore": 83,
+    "state": "high",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 157.297,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 158.353,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 159.248,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 160.266,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 161.196,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 162.396,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 163.24,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 164.17,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 165.249,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 166.238,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 167.247,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 168.171,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 169.194,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 170.21,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 171.255,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 172.345,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 173.354,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 174.253,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 175.193,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 176.19,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 177.286,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 178.23,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 179.19,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 180.212,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 181.217,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 182.194,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 183.257,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 184.226,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 185.037,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 186.043,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 187.031,
+    "riskScore": 10,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 188.033,
+    "riskScore": 14,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 189.033,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 190.035,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 191.035,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 192.031,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 193.029,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 194.035,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 195.033,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 196.036,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 197.036,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 198.042,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 199.032,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 200.028,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 201.035,
+    "riskScore": 14,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 202.036,
+    "riskScore": 14,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 203.027,
+    "riskScore": 14,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 204.024,
+    "riskScore": 14,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 205.029,
+    "riskScore": 14,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 206.03,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 207.029,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 208.033,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 209.019,
+    "riskScore": 14,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 210.01,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  },
+  {
+    "t_min": 211.003,
+    "riskScore": 27,
+    "state": "stable",
+    "phase": "cooldown"
+  }
+]
