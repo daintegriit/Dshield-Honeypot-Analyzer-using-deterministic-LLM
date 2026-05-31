@@ -36,7 +36,6 @@ REPLAY_MODE = os.environ.get("REPLAY_MODE", "scaled_ts").strip().lower()
 # If true, cap events to what the measured network floor appears able to sustain
 TRUNCATE = os.environ.get("TRUNCATE", "0") == "1"
 
-# IPv4-only by default to match your current pipeline behavior
 IPV4_ONLY = os.environ.get("IPV4_ONLY", "1") == "1"
 
 # Latency probe controls

@@ -542,7 +542,6 @@ async function evaluationLoop(startedAtMs) {
 
         const truth = labelGroundTruth(now, minutes, sourceBreakdown);
 
-        // ✅ Pull signals from your actual core schema
         const derived = deriveSignalsFromCore(core);
 
         const tacticFallback = classifyTactic(core, behavior);

@@ -1,7 +1,6 @@
 import ipaddress
 import csv
 
-# Path to your CSV file
 csv_file_path = "country_asn.csv"
 
 def ip_in_range(ip, start_ip, end_ip):

@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Your custom styles */
+/* custom styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,7 +18,7 @@ code {
     monospace;
 }
 /* ========================= */
-/* 🔥 Copilot Panel Animations */
+/* Copilot Panel Animations */
 /* ========================= */
 
 @keyframes flashRed {

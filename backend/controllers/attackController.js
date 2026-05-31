@@ -703,7 +703,7 @@ exports.getComparativeTrafficAnalysis = async (req, res) => {
 exports.getGlobalThreats = async (req, res) => {
   try {
     if (USE_MONGO) {
-      // ONLY USE ATTACK MODEL — your system uses this
+      // ONLY USE ATTACK MODEL
       const attacks = await Attack.find({})
         .sort({ timestamp: -1 })
         .limit(100)
