@@ -1,0 +1,4695 @@
+
+🚀 STARTING FULL EXPERIMENT (PHASE-CORRECT)
+
+BASE_URL=http://34.232.64.91:5002
+WINDOWS=1 (largest=1m)
+Baseline=3600s | PreCooldown=0s | Cooldown=3600s | Poll=60000ms
+Replay=python3 /home/ubuntu/research/scripts/replay_pcap_events.py
+Max runtime cap=28800s
+🔄 Evaluation loop started
+
+🧊 BASELINE PHASE: 3600s (evaluating now)
+Baseline remaining: 60m 0s
+
+[2026-04-21T20:48:55.096Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 59m 30s
+
+[2026-04-21T20:49:55.088Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 59m 0s
+Baseline remaining: 58m 30s
+
+[2026-04-21T20:50:55.107Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 58m 0s
+Baseline remaining: 57m 30s
+
+[2026-04-21T20:51:55.077Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 57m 0s
+Baseline remaining: 56m 30s
+
+[2026-04-21T20:52:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 56m 0s
+Baseline remaining: 55m 30s
+
+[2026-04-21T20:53:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 55m 0s
+Baseline remaining: 54m 30s
+
+[2026-04-21T20:54:55.081Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 54m 0s
+Baseline remaining: 53m 30s
+
+[2026-04-21T20:55:55.109Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 53m 0s
+Baseline remaining: 52m 30s
+
+[2026-04-21T20:56:55.075Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 52m 0s
+Baseline remaining: 51m 30s
+
+[2026-04-21T20:57:55.082Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 51m 0s
+Baseline remaining: 50m 30s
+
+[2026-04-21T20:58:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 50m 0s
+Baseline remaining: 49m 30s
+
+[2026-04-21T20:59:55.081Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 49m 0s
+Baseline remaining: 48m 30s
+
+[2026-04-21T21:00:55.077Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 48m 0s
+Baseline remaining: 47m 30s
+
+[2026-04-21T21:01:55.077Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 47m 0s
+Baseline remaining: 46m 30s
+
+[2026-04-21T21:02:55.080Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 46m 0s
+Baseline remaining: 45m 30s
+
+[2026-04-21T21:03:55.075Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 45m 0s
+Baseline remaining: 44m 30s
+
+[2026-04-21T21:04:55.123Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 44m 0s
+Baseline remaining: 43m 30s
+
+[2026-04-21T21:05:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 43m 0s
+Baseline remaining: 42m 30s
+
+[2026-04-21T21:06:55.080Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 42m 0s
+Baseline remaining: 41m 30s
+
+[2026-04-21T21:07:55.077Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 41m 0s
+Baseline remaining: 40m 30s
+
+[2026-04-21T21:08:55.075Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 40m 0s
+Baseline remaining: 39m 30s
+
+[2026-04-21T21:09:55.077Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 39m 0s
+Baseline remaining: 38m 30s
+
+[2026-04-21T21:10:55.077Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 38m 0s
+Baseline remaining: 37m 30s
+
+[2026-04-21T21:11:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 37m 0s
+Baseline remaining: 36m 30s
+
+[2026-04-21T21:12:55.074Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 36m 0s
+Baseline remaining: 35m 30s
+
+[2026-04-21T21:13:55.073Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 35m 0s
+Baseline remaining: 34m 30s
+
+[2026-04-21T21:14:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 34m 0s
+Baseline remaining: 33m 30s
+
+[2026-04-21T21:15:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 33m 0s
+Baseline remaining: 32m 30s
+
+[2026-04-21T21:16:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 32m 0s
+Baseline remaining: 31m 30s
+
+[2026-04-21T21:17:55.074Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 31m 0s
+Baseline remaining: 30m 30s
+
+[2026-04-21T21:18:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 30m 0s
+Baseline remaining: 29m 30s
+
+[2026-04-21T21:19:55.074Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 29m 0s
+Baseline remaining: 28m 30s
+
+[2026-04-21T21:20:55.115Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 28m 0s
+Baseline remaining: 27m 30s
+
+[2026-04-21T21:21:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 27m 0s
+Baseline remaining: 26m 30s
+
+[2026-04-21T21:22:55.078Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 26m 0s
+Baseline remaining: 25m 30s
+
+[2026-04-21T21:23:55.077Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 25m 0s
+Baseline remaining: 24m 30s
+
+[2026-04-21T21:24:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 24m 0s
+Baseline remaining: 23m 30s
+
+[2026-04-21T21:25:55.079Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 23m 0s
+Baseline remaining: 22m 30s
+
+[2026-04-21T21:26:55.078Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 22m 0s
+Baseline remaining: 21m 30s
+
+[2026-04-21T21:27:55.074Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 21m 0s
+Baseline remaining: 20m 30s
+
+[2026-04-21T21:28:55.079Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 20m 0s
+Baseline remaining: 19m 30s
+
+[2026-04-21T21:29:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 19m 0s
+Baseline remaining: 18m 30s
+
+[2026-04-21T21:30:55.075Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 18m 0s
+Baseline remaining: 17m 30s
+
+[2026-04-21T21:31:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 17m 0s
+Baseline remaining: 16m 30s
+
+[2026-04-21T21:32:55.075Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 16m 0s
+Baseline remaining: 15m 30s
+
+[2026-04-21T21:33:55.075Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 15m 0s
+Baseline remaining: 14m 30s
+
+[2026-04-21T21:34:55.077Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 14m 0s
+Baseline remaining: 13m 30s
+
+[2026-04-21T21:35:55.091Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 13m 0s
+Baseline remaining: 12m 30s
+
+[2026-04-21T21:36:55.080Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 12m 0s
+Baseline remaining: 11m 30s
+
+[2026-04-21T21:37:55.077Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 11m 0s
+Baseline remaining: 10m 30s
+
+[2026-04-21T21:38:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 10m 0s
+Baseline remaining: 9m 30s
+
+[2026-04-21T21:39:55.088Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 9m 0s
+Baseline remaining: 8m 30s
+
+[2026-04-21T21:40:55.077Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 8m 0s
+Baseline remaining: 7m 30s
+
+[2026-04-21T21:41:55.074Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 7m 0s
+Baseline remaining: 6m 30s
+
+[2026-04-21T21:42:55.078Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 6m 0s
+Baseline remaining: 5m 30s
+
+[2026-04-21T21:43:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 5m 0s
+Baseline remaining: 4m 30s
+
+[2026-04-21T21:44:55.078Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 4m 0s
+Baseline remaining: 3m 30s
+
+[2026-04-21T21:45:55.079Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 3m 0s
+Baseline remaining: 2m 30s
+
+[2026-04-21T21:46:55.077Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 2m 0s
+Baseline remaining: 1m 30s
+
+[2026-04-21T21:47:55.080Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 1m 0s
+Baseline remaining: 0m 30s
+Baseline remaining: 0m 10s
+Baseline remaining: 0m 9s
+Baseline remaining: 0m 8s
+Baseline remaining: 0m 7s
+Baseline remaining: 0m 6s
+Baseline remaining: 0m 5s
+Baseline remaining: 0m 4s
+
+[2026-04-21T21:48:55.076Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 0 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=0 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0 | c2=0 | impact=0
+Dominant: dos (0)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=n/a | webPortPressure=n/a | sourceEntropy=0 | portEntropy=0
+
+Baseline remaining: 0m 3s
+Baseline remaining: 0m 2s
+Baseline remaining: 0m 1s
+
+💉 Starting PCAP injection...
+DEBUG injectionStart = 2026-04-21T21:48:59.093Z
+
+[2026-04-21T21:49:55.143Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 80 | State: high
+
+--- Attack Volume ---
+1m=318 | 5m=318 | 15m=318 | 1h=318 | burstRatio5mOverHour=1
+
+--- Source Breakdown ---
+pcapCount=318 | dshieldCount=0 | total=318 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=90.07581366114363 | scan=78.79441252355491 | brute_force=0 | web_probe=1.5 | c2=25 | impact=0
+Dominant: dos (90.07581366114363)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=19.81235714105235 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=120 | sourceEntropy=2.787 | portEntropy=2.349
+
+
+[2026-04-21T21:50:55.401Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 83 | State: high
+
+--- Attack Volume ---
+1m=387 | 5m=705 | 15m=705 | 1h=705 | burstRatio5mOverHour=1
+
+--- Source Breakdown ---
+pcapCount=705 | dshieldCount=0 | total=705 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=96.97609402103608 | scan=78.6831226065914 | brute_force=0 | web_probe=3.375 | c2=25 | impact=0
+Dominant: dos (96.97609402103608)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=23.419321874632494 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=270 | sourceEntropy=2.777 | portEntropy=2.335
+
+
+[2026-04-21T21:51:55.335Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=1473 | 5m=2178 | 15m=2178 | 1h=2178 | burstRatio5mOverHour=1
+
+--- Source Breakdown ---
+pcapCount=2178 | dshieldCount=0 | total=2178 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.13276264195687 | brute_force=0 | web_probe=5.225 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=418 | sourceEntropy=2.468 | portEntropy=2.517
+
+
+[2026-04-21T21:52:55.352Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=1307 | 5m=3485 | 15m=3485 | 1h=3485 | burstRatio5mOverHour=1
+
+--- Source Breakdown ---
+pcapCount=3487 | dshieldCount=0 | total=3487 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=79.54873797429903 | brute_force=0 | web_probe=7.025 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=562 | sourceEntropy=2.181 | portEntropy=2.444
+
+
+[2026-04-21T21:53:55.504Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=327 | 5m=3812 | 15m=3812 | 1h=3812 | burstRatio5mOverHour=1
+
+--- Source Breakdown ---
+pcapCount=3817 | dshieldCount=0 | total=3817 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=79.8801836976796 | brute_force=0 | web_probe=8.8125 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=705 | sourceEntropy=2.304 | portEntropy=2.485
+
+
+[2026-04-21T21:54:55.407Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=330 | 5m=3824 | 15m=4142 | 1h=4142 | burstRatio5mOverHour=0.9232254949299855
+
+--- Source Breakdown ---
+pcapCount=3819 | dshieldCount=0 | total=3819 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.05908330409346 | brute_force=0 | web_probe=10.5625 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=845 | sourceEntropy=2.397 | portEntropy=2.507
+
+
+[2026-04-21T21:55:55.374Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=321 | 5m=3758 | 15m=4463 | 1h=4463 | burstRatio5mOverHour=0.84203450593771
+
+--- Source Breakdown ---
+pcapCount=3758 | dshieldCount=0 | total=3758 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.10403605189413 | brute_force=0 | web_probe=12.3375 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=987 | sourceEntropy=2.465 | portEntropy=2.513
+
+
+[2026-04-21T21:56:55.470Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=320 | 5m=2605 | 15m=4783 | 1h=4783 | burstRatio5mOverHour=0.544637256951704
+
+--- Source Breakdown ---
+pcapCount=2591 | dshieldCount=0 | total=2591 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.08861469213095 | brute_force=0 | web_probe=14.15 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1132 | sourceEntropy=2.518 | portEntropy=2.511
+
+
+[2026-04-21T21:57:55.582Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=347 | 5m=1645 | 15m=5130 | 1h=5130 | burstRatio5mOverHour=0.3206627680311891
+
+--- Source Breakdown ---
+pcapCount=1646 | dshieldCount=0 | total=1646 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.07132965994396 | brute_force=0 | web_probe=16.0375 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1283 | sourceEntropy=2.564 | portEntropy=2.509
+
+
+[2026-04-21T21:58:55.524Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=1082 | 5m=2400 | 15m=6212 | 1h=6212 | burstRatio5mOverHour=0.386349001931745
+
+--- Source Breakdown ---
+pcapCount=2395 | dshieldCount=0 | total=2395 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.24924682489518 | brute_force=0 | web_probe=17.825 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1426 | sourceEntropy=2.45 | portEntropy=2.531
+
+
+[2026-04-21T21:59:55.502Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=759 | 5m=2829 | 15m=6971 | 1h=6971 | burstRatio5mOverHour=0.4058241285324918
+
+--- Source Breakdown ---
+pcapCount=2827 | dshieldCount=0 | total=2827 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.17975930999287 | brute_force=0 | web_probe=19.6 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1568 | sourceEntropy=2.412 | portEntropy=2.522
+
+
+[2026-04-21T22:00:56.134Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=327 | 5m=2835 | 15m=7298 | 1h=7298 | burstRatio5mOverHour=0.38846259249109344
+
+--- Source Breakdown ---
+pcapCount=2836 | dshieldCount=0 | total=2836 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.13832593720468 | brute_force=0 | web_probe=21.45 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1716 | sourceEntropy=2.448 | portEntropy=2.517
+
+
+[2026-04-21T22:01:56.630Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=5040 | 5m=7557 | 15m=12340 | 1h=12340 | burstRatio5mOverHour=0.6123987034035656
+
+--- Source Breakdown ---
+pcapCount=7841 | dshieldCount=0 | total=7841 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.17826174527617 | brute_force=0 | web_probe=23.2375 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1859 | sourceEntropy=1.981 | portEntropy=2.522
+
+
+[2026-04-21T22:02:56.278Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=2385 | 5m=9595 | 15m=14725 | 1h=14725 | burstRatio5mOverHour=0.6516129032258065
+
+--- Source Breakdown ---
+pcapCount=9594 | dshieldCount=0 | total=9594 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.74410071282713 | brute_force=0 | web_probe=25.025 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2002 | sourceEntropy=2.027 | portEntropy=2.593
+
+
+[2026-04-21T22:03:56.505Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=334 | 5m=8847 | 15m=15059 | 1h=15059 | burstRatio5mOverHour=0.5874892091108307
+
+--- Source Breakdown ---
+pcapCount=8819 | dshieldCount=0 | total=8819 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.7565861475691 | brute_force=0 | web_probe=26.875 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2150 | sourceEntropy=2.069 | portEntropy=2.595
+
+
+[2026-04-21T22:04:56.242Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=392 | 5m=8480 | 15m=15133 | 1h=15451 | burstRatio5mOverHour=0.5488317908226005
+
+--- Source Breakdown ---
+pcapCount=8482 | dshieldCount=0 | total=8482 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.7391318091518 | brute_force=0 | web_probe=28.6875 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2295 | sourceEntropy=2.101 | portEntropy=2.592
+
+
+[2026-04-21T22:05:56.348Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=486 | 5m=8639 | 15m=15232 | 1h=15937 | burstRatio5mOverHour=0.5420719081382945
+
+--- Source Breakdown ---
+pcapCount=8692 | dshieldCount=0 | total=8692 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.7392929477482 | brute_force=0 | web_probe=30.5125 | c2=25 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=0 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2441 | sourceEntropy=2.123 | portEntropy=2.592
+
+
+[2026-04-21T22:06:56.762Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=938 | 5m=4535 | 15m=14697 | 1h=16875 | burstRatio5mOverHour=0.2687407407407407
+
+--- Source Breakdown ---
+pcapCount=4201 | dshieldCount=0 | total=4201 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.57628807313304 | brute_force=0 | web_probe=32.375 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2590 | sourceEntropy=2.109 | portEntropy=2.572
+
+
+[2026-04-21T22:07:56.897Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 89 | State: critical
+
+--- Attack Volume ---
+1m=327 | 5m=2477 | 15m=13717 | 1h=17202 | burstRatio5mOverHour=0.14399488431577723
+
+--- Source Breakdown ---
+pcapCount=2479 | dshieldCount=0 | total=2479 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=89.39948843157772 | scan=80.56985052429609 | brute_force=0 | web_probe=34.075 | c2=40 | impact=0
+Dominant: dos (89.39948843157772)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=19.45882349832472 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2726 | sourceEntropy=2.139 | portEntropy=2.571
+
+
+[2026-04-21T22:08:57.074Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 91 | State: critical
+
+--- Attack Volume ---
+1m=1089 | 5m=3232 | 15m=14479 | 1h=18291 | burstRatio5mOverHour=0.1766989229675797
+
+--- Source Breakdown ---
+pcapCount=3260 | dshieldCount=0 | total=3260 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=92.66989229675796 | scan=80.84703727942201 | brute_force=0 | web_probe=35.8375 | c2=40 | impact=0
+Dominant: dos (92.66989229675796)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=21.168352791487116 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2867 | sourceEntropy=2.176 | portEntropy=2.606
+
+
+[2026-04-21T22:09:56.835Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 93 | State: critical
+
+--- Attack Volume ---
+1m=1111 | 5m=3951 | 15m=15260 | 1h=19402 | burstRatio5mOverHour=0.2036388001236986
+
+--- Source Breakdown ---
+pcapCount=3954 | dshieldCount=0 | total=3954 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=95.36388001236986 | scan=80.7568214747258 | brute_force=0 | web_probe=37.6125 | c2=40 | impact=0
+Dominant: dos (95.36388001236986)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=22.5765736428297 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3009 | sourceEntropy=2.146 | portEntropy=2.595
+
+
+[2026-04-21T22:10:56.862Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 92 | State: critical
+
+--- Attack Volume ---
+1m=336 | 5m=3801 | 15m=15275 | 1h=19738 | burstRatio5mOverHour=0.19257270240145913
+
+--- Source Breakdown ---
+pcapCount=3755 | dshieldCount=0 | total=3755 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=94.25727024014591 | scan=80.74337440884281 | brute_force=0 | web_probe=39.325 | c2=40 | impact=0
+Dominant: dos (94.25727024014591)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=21.998118534621728 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3146 | sourceEntropy=2.172 | portEntropy=2.593
+
+
+[2026-04-21T22:11:56.756Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 91 | State: critical
+
+--- Attack Volume ---
+1m=864 | 5m=3727 | 15m=15819 | 1h=20602 | burstRatio5mOverHour=0.1809047665275216
+
+--- Source Breakdown ---
+pcapCount=3725 | dshieldCount=0 | total=3725 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=93.09047665275216 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (93.09047665275216)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=21.38820370484772 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:12:56.750Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 94 | State: critical
+
+--- Attack Volume ---
+1m=1994 | 5m=5396 | 15m=17468 | 1h=22598 | burstRatio5mOverHour=0.2387821931144349
+
+--- Source Breakdown ---
+pcapCount=5389 | dshieldCount=0 | total=5389 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=98.87821931144349 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (98.87821931144349)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=24.41361464007273 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:13:56.795Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 92 | State: critical
+
+--- Attack Volume ---
+1m=318 | 5m=4625 | 15m=16704 | 1h=22916 | burstRatio5mOverHour=0.20182405306336185
+
+--- Source Breakdown ---
+pcapCount=4633 | dshieldCount=0 | total=4633 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=95.1824053063362 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (95.1824053063362)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=22.481711864675738 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:14:56.501Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 91 | State: critical
+
+--- Attack Volume ---
+1m=462 | 5m=3976 | 15m=16407 | 1h=23378 | burstRatio5mOverHour=0.17007442895029515
+
+--- Source Breakdown ---
+pcapCount=3986 | dshieldCount=0 | total=3986 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=92.00744289502951 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (92.00744289502951)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=20.822072422401792 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:15:56.310Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 92 | State: critical
+
+--- Attack Volume ---
+1m=896 | 5m=4536 | 15m=16976 | 1h=24274 | burstRatio5mOverHour=0.1868666062453654
+
+--- Source Breakdown ---
+pcapCount=4537 | dshieldCount=0 | total=4537 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=93.68666062453654 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (93.68666062453654)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=21.699845326462285 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:16:56.697Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 90 | State: critical
+
+--- Attack Volume ---
+1m=341 | 5m=4013 | 15m=12275 | 1h=24615 | burstRatio5mOverHour=0.16303067235425553
+
+--- Source Breakdown ---
+pcapCount=4012 | dshieldCount=0 | total=4012 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=91.30306723542554 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (91.30306723542554)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=20.453876054881533 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:17:56.728Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 87 | State: critical
+
+--- Attack Volume ---
+1m=322 | 5m=2339 | 15m=10212 | 1h=24937 | burstRatio5mOverHour=0.093796366844448
+
+--- Source Breakdown ---
+pcapCount=2341 | dshieldCount=0 | total=2341 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=84.3796366844448 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (84.3796366844448)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.83481008505069 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:18:56.591Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 87 | State: critical
+
+--- Attack Volume ---
+1m=330 | 5m=2351 | 15m=10208 | 1h=25274 | burstRatio5mOverHour=0.09302049537073673
+
+--- Source Breakdown ---
+pcapCount=2340 | dshieldCount=0 | total=2340 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=84.30204953707367 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (84.30204953707367)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.794253167106692 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:19:56.607Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=340 | 5m=2229 | 15m=10156 | 1h=25607 | burstRatio5mOverHour=0.08704651071972508
+
+--- Source Breakdown ---
+pcapCount=2214 | dshieldCount=0 | total=2214 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=83.7046510719725 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (83.7046510719725)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.4819766967129 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:20:56.842Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=323 | 5m=1656 | 15m=9993 | 1h=25930 | burstRatio5mOverHour=0.06386424990358658
+
+--- Source Breakdown ---
+pcapCount=1656 | dshieldCount=0 | total=1656 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=81.38642499035866 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (81.38642499035866)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=15.270176699505665 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:21:57.278Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=335 | 5m=1650 | 15m=9390 | 1h=26268 | burstRatio5mOverHour=0.06281407035175879
+
+--- Source Breakdown ---
+pcapCount=1649 | dshieldCount=0 | total=1649 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=81.28140703517587 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (81.28140703517587)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=15.215280950205571 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:22:56.929Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=946 | 5m=2274 | 15m=10009 | 1h=27211 | burstRatio5mOverHour=0.08356914483113446
+
+--- Source Breakdown ---
+pcapCount=2276 | dshieldCount=0 | total=2276 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=83.35691448311344 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (83.35691448311344)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.30020529799112 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:23:57.410Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=333 | 5m=2277 | 15m=9253 | 1h=27544 | burstRatio5mOverHour=0.08266773162939298
+
+--- Source Breakdown ---
+pcapCount=2272 | dshieldCount=0 | total=2272 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=83.2667731629393 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (83.2667731629393)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.253085971536454 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:24:57.020Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=319 | 5m=2256 | 15m=8461 | 1h=27863 | burstRatio5mOverHour=0.0809675914294943
+
+--- Source Breakdown ---
+pcapCount=2254 | dshieldCount=0 | total=2254 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=83.09675914294942 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (83.09675914294942)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.164215006541745 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:25:57.113Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 90 | State: critical
+
+--- Attack Volume ---
+1m=2591 | 5m=4524 | 15m=10716 | 1h=30454 | burstRatio5mOverHour=0.1485519143626453
+
+--- Source Breakdown ---
+pcapCount=4707 | dshieldCount=0 | total=4707 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=89.85519143626453 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (89.85519143626453)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=19.69703188713828 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:26:56.631Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 92 | State: critical
+
+--- Attack Volume ---
+1m=1884 | 5m=6073 | 15m=11734 | 1h=32338 | burstRatio5mOverHour=0.18779763745438802
+
+--- Source Breakdown ---
+pcapCount=6066 | dshieldCount=0 | total=6066 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=93.7797637454388 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (93.7797637454388)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=21.748512866933915 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:27:56.745Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 91 | State: critical
+
+--- Attack Volume ---
+1m=338 | 5m=5465 | 15m=10078 | 1h=32676 | burstRatio5mOverHour=0.16724813318643653
+
+--- Source Breakdown ---
+pcapCount=5463 | dshieldCount=0 | total=5463 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=91.72481331864365 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (91.72481331864365)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=20.674334234745544 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:28:56.736Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 93 | State: critical
+
+--- Attack Volume ---
+1m=2178 | 5m=7310 | 15m=11938 | 1h=34854 | burstRatio5mOverHour=0.2097320250186492
+
+--- Source Breakdown ---
+pcapCount=7361 | dshieldCount=0 | total=7361 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=95.97320250186492 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (95.97320250186492)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=22.895083125974843 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:29:57.022Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 94 | State: critical
+
+--- Attack Volume ---
+1m=1432 | 5m=8423 | 15m=12908 | 1h=36286 | burstRatio5mOverHour=0.2321280934795789
+
+--- Source Breakdown ---
+pcapCount=8426 | dshieldCount=0 | total=8426 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=98.21280934795789 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (98.21280934795789)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=24.06578670461435 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:30:56.851Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 91 | State: critical
+
+--- Attack Volume ---
+1m=328 | 5m=6160 | 15m=12340 | 1h=36616 | burstRatio5mOverHour=0.16823246668123223
+
+--- Source Breakdown ---
+pcapCount=6000 | dshieldCount=0 | total=6000 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=91.82324666812322 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (91.82324666812322)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=20.72578803106441 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:31:56.795Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 89 | State: critical
+
+--- Attack Volume ---
+1m=465 | 5m=4741 | 15m=12464 | 1h=37095 | burstRatio5mOverHour=0.12780698207305566
+
+--- Source Breakdown ---
+pcapCount=4764 | dshieldCount=0 | total=4764 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=87.78069820730556 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (87.78069820730556)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=18.612637699273364 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:32:56.789Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 90 | State: critical
+
+--- Attack Volume ---
+1m=1806 | 5m=6209 | 15m=13948 | 1h=38885 | burstRatio5mOverHour=0.15967596759675967
+
+--- Source Breakdown ---
+pcapCount=6214 | dshieldCount=0 | total=6214 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=90.96759675967597 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (90.96759675967597)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=20.27851648801244 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:33:56.886Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 88 | State: critical
+
+--- Attack Volume ---
+1m=383 | 5m=4414 | 15m=13998 | 1h=39271 | burstRatio5mOverHour=0.11239846196939217
+
+--- Source Breakdown ---
+pcapCount=4364 | dshieldCount=0 | total=4364 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=86.23984619693921 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (86.23984619693921)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=17.807192330218225 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:34:56.872Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=395 | 5m=3377 | 15m=14056 | 1h=39663 | burstRatio5mOverHour=0.08514232408037718
+
+--- Source Breakdown ---
+pcapCount=3437 | dshieldCount=0 | total=3437 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=83.51423240803771 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (83.51423240803771)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.382439667837893 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:35:57.121Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 88 | State: critical
+
+--- Attack Volume ---
+1m=1575 | 5m=4624 | 15m=15308 | 1h=41249 | burstRatio5mOverHour=0.11209968726514583
+
+--- Source Breakdown ---
+pcapCount=4819 | dshieldCount=0 | total=4819 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=86.20996872651457 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (86.20996872651457)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=17.791574561587165 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:36:57.245Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 90 | State: critical
+
+--- Attack Volume ---
+1m=2631 | 5m=6779 | 15m=17603 | 1h=43871 | burstRatio5mOverHour=0.15452120991087506
+
+--- Source Breakdown ---
+pcapCount=6750 | dshieldCount=0 | total=6750 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=90.45212099108751 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (90.45212099108751)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=20.0090632453412 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:37:56.957Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 88 | State: critical
+
+--- Attack Volume ---
+1m=368 | 5m=5354 | 15m=17028 | 1h=44239 | burstRatio5mOverHour=0.12102443545288094
+
+--- Source Breakdown ---
+pcapCount=5338 | dshieldCount=0 | total=5338 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=87.1024435452881 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (87.1024435452881)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=18.258095489582413 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:38:57.211Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 89 | State: critical
+
+--- Attack Volume ---
+1m=724 | 5m=5695 | 15m=17419 | 1h=44963 | burstRatio5mOverHour=0.12665969797388965
+
+--- Source Breakdown ---
+pcapCount=5694 | dshieldCount=0 | total=5694 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=87.66596979738897 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (87.66596979738897)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=18.552666030453324 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:39:56.714Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 90 | State: critical
+
+--- Attack Volume ---
+1m=2181 | 5m=7481 | 15m=19281 | 1h=47144 | burstRatio5mOverHour=0.1586840319022569
+
+--- Source Breakdown ---
+pcapCount=7416 | dshieldCount=0 | total=7416 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=90.86840319022569 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (90.86840319022569)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=20.226665303981612 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:40:57.025Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 89 | State: critical
+
+--- Attack Volume ---
+1m=320 | 5m=6226 | 15m=17010 | 1h=47464 | burstRatio5mOverHour=0.13117309961233778
+
+--- Source Breakdown ---
+pcapCount=6060 | dshieldCount=0 | total=6060 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=88.11730996123377 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (88.11730996123377)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=18.788593843372198 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:41:57.032Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=325 | 5m=3918 | 15m=15451 | 1h=47789 | burstRatio5mOverHour=0.0819853941283559
+
+--- Source Breakdown ---
+pcapCount=3917 | dshieldCount=0 | total=3917 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=83.19853941283559 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (83.19853941283559)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.217418329436782 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:42:56.679Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=327 | 5m=3877 | 15m=15440 | 1h=48116 | burstRatio5mOverHour=0.08057610773962923
+
+--- Source Breakdown ---
+pcapCount=3873 | dshieldCount=0 | total=3873 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=83.05761077396292 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (83.05761077396292)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.143751086389706 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:43:56.939Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=325 | 5m=3478 | 15m=13587 | 1h=48441 | burstRatio5mOverHour=0.07179868293387832
+
+--- Source Breakdown ---
+pcapCount=3476 | dshieldCount=0 | total=3476 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=82.17986829338783 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (82.17986829338783)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=15.684931153361818 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:44:56.892Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=322 | 5m=1619 | 15m=12477 | 1h=48763 | burstRatio5mOverHour=0.033201402702868976
+
+--- Source Breakdown ---
+pcapCount=1619 | dshieldCount=0 | total=1619 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=78.3201402702869 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: scan (80.7183023274049)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=14.920930762052562 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:45:56.674Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=373 | 5m=1672 | 15m=12522 | 1h=49136 | burstRatio5mOverHour=0.03402800390752198
+
+--- Source Breakdown ---
+pcapCount=1673 | dshieldCount=0 | total=1673 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=78.40280039075219 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: scan (80.7183023274049)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=14.920930762052562 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:46:56.550Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=915 | 5m=2262 | 15m=12972 | 1h=50051 | burstRatio5mOverHour=0.04519390221973587
+
+--- Source Breakdown ---
+pcapCount=2263 | dshieldCount=0 | total=2263 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=79.51939022197358 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: scan (80.7183023274049)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=14.920930762052562 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:47:56.775Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=321 | 5m=2256 | 15m=11487 | 1h=50376 | burstRatio5mOverHour=0.04478323010957599
+
+--- Source Breakdown ---
+pcapCount=2257 | dshieldCount=0 | total=2257 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=79.4783230109576 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: scan (80.7183023274049)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=14.920930762052562 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:48:56.919Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=1280 | 5m=3211 | 15m=12384 | 1h=51652 | burstRatio5mOverHour=0.06216603422907148
+
+--- Source Breakdown ---
+pcapCount=3265 | dshieldCount=0 | total=3265 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=81.21660342290714 | scan=80.7183023274049 | brute_force=0 | web_probe=40.4125 | c2=40 | impact=0
+Dominant: dos (81.21660342290714)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=15.18140633470146 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3233 | sourceEntropy=2.181 | portEntropy=2.59
+
+
+[2026-04-21T22:49:56.851Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=1705 | 5m=4594 | 15m=13694 | 1h=53039 | burstRatio5mOverHour=0.08661550934218216
+
+--- Source Breakdown ---
+pcapCount=4599 | dshieldCount=0 | total=4599 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=83.66155093421821 | scan=80.72767872173874 | brute_force=0 | web_probe=39.2375 | c2=40 | impact=0
+Dominant: dos (83.66155093421821)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.459447079250427 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3139 | sourceEntropy=2.154 | portEntropy=2.591
+
+
+[2026-04-21T22:51:10.023Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=356 | 5m=4577 | 15m=12475 | 1h=53008 | burstRatio5mOverHour=0.08634545728946574
+
+--- Source Breakdown ---
+pcapCount=4585 | dshieldCount=0 | total=4585 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=83.63454572894658 | scan=80.63911324501294 | brute_force=0 | web_probe=37.9375 | c2=40 | impact=0
+Dominant: dos (83.63454572894658)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.445330721949347 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3035 | sourceEntropy=2.109 | portEntropy=2.58
+
+
+[2026-04-21T22:52:16.012Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=405 | 5m=4061 | 15m=10241 | 1h=51949 | burstRatio5mOverHour=0.07817282334597393
+
+--- Source Breakdown ---
+pcapCount=4290 | dshieldCount=0 | total=4290 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=82.8172823345974 | scan=81.00399865299835 | brute_force=0 | web_probe=36.8 | c2=40 | impact=0
+Dominant: dos (82.8172823345974)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.018124856721364 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2944 | sourceEntropy=2.049 | portEntropy=2.625
+
+
+[2026-04-21T22:53:19.207Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 87 | State: critical
+
+--- Attack Volume ---
+1m=916 | 5m=4647 | 15m=10784 | 1h=51547 | burstRatio5mOverHour=0.09015073622131259
+
+--- Source Breakdown ---
+pcapCount=4803 | dshieldCount=0 | total=4803 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=84.01507362213125 | scan=81.26785079283881 | brute_force=0 | web_probe=39.7625 | c2=40 | impact=0
+Dominant: dos (84.01507362213125)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=16.644243029750427 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3181 | sourceEntropy=2.139 | portEntropy=2.658
+
+
+[2026-04-21T22:54:10.884Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 86 | State: critical
+
+--- Attack Volume ---
+1m=511 | 5m=3884 | 15m=10573 | 1h=51730 | burstRatio5mOverHour=0.07508215735549971
+
+--- Source Breakdown ---
+pcapCount=2903 | dshieldCount=0 | total=2903 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=82.50821573554997 | scan=81.28798400646568 | brute_force=0 | web_probe=38.6625 | c2=40 | impact=0
+Dominant: dos (82.50821573554997)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=15.856567316310212 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3093 | sourceEntropy=2.109 | portEntropy=2.661
+
+
+[2026-04-21T22:55:12.015Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=350 | 5m=2529 | 15m=8742 | 1h=51748 | burstRatio5mOverHour=0.04887145396923553
+
+--- Source Breakdown ---
+pcapCount=2599 | dshieldCount=0 | total=2599 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=78.40187060369483 | scan=81.31733227633185 | brute_force=0 | web_probe=37.5125 | c2=40 | impact=0
+Dominant: scan (81.31733227633185)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=15.234060053537107 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3001 | sourceEntropy=2.079 | portEntropy=2.665
+
+
+[2026-04-21T22:56:10.576Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=800 | 5m=2973 | 15m=9222 | 1h=52267 | burstRatio5mOverHour=0.056881014789446495
+
+--- Source Breakdown ---
+pcapCount=3558 | dshieldCount=0 | total=3558 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=79.80331758088278 | scan=81.36238169008595 | brute_force=0 | web_probe=36.8625 | c2=40 | impact=0
+Dominant: scan (81.36238169008595)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=15.257608610726749 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2949 | sourceEntropy=2.07 | portEntropy=2.67
+
+
+[2026-04-21T22:57:12.646Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 88 | State: critical
+
+--- Attack Volume ---
+1m=4509 | 5m=7093 | 15m=13454 | 1h=56472 | burstRatio5mOverHour=0.1256020682816263
+
+--- Source Breakdown ---
+pcapCount=6874 | dshieldCount=0 | total=6874 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=87.56020682816263 | scan=81.36650429489184 | brute_force=0 | web_probe=36.8125 | c2=40 | impact=0
+Dominant: dos (87.56020682816263)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=18.497380841994104 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2945 | sourceEntropy=2.07 | portEntropy=2.671
+
+
+[2026-04-21T22:58:06.567Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 88 | State: critical
+
+--- Attack Volume ---
+1m=313 | 5m=6508 | 15m=13415 | 1h=56405 | burstRatio5mOverHour=0.1153798422125698
+
+--- Source Breakdown ---
+pcapCount=6416 | dshieldCount=0 | total=6416 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=86.53798422125698 | scan=81.37051990929297 | brute_force=0 | web_probe=36.7875 | c2=40 | impact=0
+Dominant: dos (86.53798422125698)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=17.96303720656615 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2943 | sourceEntropy=2.071 | portEntropy=2.671
+
+
+[2026-04-21T22:59:15.958Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 88 | State: critical
+
+--- Attack Volume ---
+1m=289 | 5m=6282 | 15m=13380 | 1h=55545 | burstRatio5mOverHour=0.11309748852281934
+
+--- Source Breakdown ---
+pcapCount=6302 | dshieldCount=0 | total=6302 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=86.30974885228193 | scan=81.21945812514636 | brute_force=0 | web_probe=41.475 | c2=40 | impact=0
+Dominant: dos (86.30974885228193)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=17.84373235460192 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3318 | sourceEntropy=2.196 | portEntropy=2.652
+
+
+[2026-04-21T23:00:08.487Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 89 | State: critical
+
+--- Attack Volume ---
+1m=1292 | 5m=7253 | 15m=14376 | 1h=56306 | burstRatio5mOverHour=0.12881398074805528
+
+--- Source Breakdown ---
+pcapCount=7777 | dshieldCount=0 | total=7777 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=87.88139807480553 | scan=81.22636937721136 | brute_force=0 | web_probe=40.5125 | c2=40 | impact=0
+Dominant: dos (87.88139807480553)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=18.66527626637562 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3241 | sourceEntropy=2.174 | portEntropy=2.653
+
+
+[2026-04-21T23:01:12.511Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 91 | State: critical
+
+--- Attack Volume ---
+1m=4230 | 5m=10827 | 15m=18414 | 1h=60453 | burstRatio5mOverHour=0.17909781152300133
+
+--- Source Breakdown ---
+pcapCount=11238 | dshieldCount=0 | total=11238 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=92.90978115230013 | scan=81.22337456185704 | brute_force=0 | web_probe=39.775 | c2=40 | impact=0
+Dominant: dos (92.90978115230013)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=21.29374923870234 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3182 | sourceEntropy=2.154 | portEntropy=2.653
+
+
+[2026-04-21T23:02:15.357Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 92 | State: critical
+
+--- Attack Volume ---
+1m=5246 | 5m=11928 | 15m=22839 | 1h=60218 | burstRatio5mOverHour=0.19808030821349099
+
+--- Source Breakdown ---
+pcapCount=13235 | dshieldCount=0 | total=13235 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=94.80803082134909 | scan=80.81391650256076 | brute_force=0 | web_probe=46.5 | c2=40 | impact=0
+Dominant: dos (94.80803082134909)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=22.286016111159753 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3720 | sourceEntropy=2.254 | portEntropy=2.602
+
+
+[2026-04-21T23:03:09.213Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=6002 | 5m=17388 | 15m=28499 | 1h=64196 | burstRatio5mOverHour=0.2708579973830145
+
+--- Source Breakdown ---
+pcapCount=18624 | dshieldCount=0 | total=18624 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.28685950265535 | brute_force=0 | web_probe=46.3625 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3709 | sourceEntropy=2.137 | portEntropy=2.536
+
+
+[2026-04-21T23:04:22.655Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=5219 | 5m=22844 | 15m=32280 | 1h=69895 | burstRatio5mOverHour=0.3268331068030617
+
+--- Source Breakdown ---
+pcapCount=25111 | dshieldCount=0 | total=25111 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.27322963542517 | brute_force=0 | web_probe=44.575 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3566 | sourceEntropy=2.094 | portEntropy=2.534
+
+
+[2026-04-21T23:05:12.484Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=6267 | 5m=27390 | 15m=37350 | 1h=75361 | burstRatio5mOverHour=0.36345059115457595
+
+--- Source Breakdown ---
+pcapCount=28440 | dshieldCount=0 | total=28440 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.23587373324358 | brute_force=0 | web_probe=43.375 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3470 | sourceEntropy=2.063 | portEntropy=2.529
+
+
+[2026-04-21T23:06:13.451Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=6680 | 5m=29688 | 15m=43675 | 1h=81499 | burstRatio5mOverHour=0.36427440827494817
+
+--- Source Breakdown ---
+pcapCount=29977 | dshieldCount=0 | total=29977 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.14278672326486 | brute_force=0 | web_probe=42.0125 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3361 | sourceEntropy=2.024 | portEntropy=2.518
+
+
+[2026-04-21T23:07:21.042Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=4725 | 5m=29168 | 15m=48020 | 1h=85627 | burstRatio5mOverHour=0.3406402186226307
+
+--- Source Breakdown ---
+pcapCount=28960 | dshieldCount=0 | total=28960 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.19195107694557 | brute_force=0 | web_probe=44.05 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3524 | sourceEntropy=2.076 | portEntropy=2.524
+
+
+[2026-04-21T23:08:31.849Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=4291 | 5m=27234 | 15m=51468 | 1h=89740 | burstRatio5mOverHour=0.3034767104969913
+
+--- Source Breakdown ---
+pcapCount=27091 | dshieldCount=0 | total=27091 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=80.21359893418119 | brute_force=0 | web_probe=43.0875 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3447 | sourceEntropy=2.052 | portEntropy=2.527
+
+
+[2026-04-21T23:10:18.956Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=6583 | 5m=25619 | 15m=60580 | 1h=97213 | burstRatio5mOverHour=0.2635347124355796
+
+--- Source Breakdown ---
+pcapCount=24611 | dshieldCount=0 | total=24611 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=79.8358855440372 | brute_force=0 | web_probe=43.625 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3490 | sourceEntropy=1.994 | portEntropy=2.479
+
+
+[2026-04-21T23:11:15.050Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=5935 | 5m=25144 | 15m=65626 | 1h=102922 | burstRatio5mOverHour=0.2443015098812693
+
+--- Source Breakdown ---
+pcapCount=25354 | dshieldCount=0 | total=25354 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=99.43015098812694 | scan=79.84726145446224 | brute_force=0 | web_probe=42.9625 | c2=40 | impact=0
+Dominant: dos (99.43015098812694)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=24.702124380157265 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3437 | sourceEntropy=1.974 | portEntropy=2.481
+
+
+[2026-04-21T23:12:25.286Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=5989 | 5m=26338 | 15m=67430 | 1h=108548 | burstRatio5mOverHour=0.2426392010907617
+
+--- Source Breakdown ---
+pcapCount=28330 | dshieldCount=0 | total=28330 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=99.26392010907617 | scan=79.72882240639045 | brute_force=0 | web_probe=41.9625 | c2=40 | impact=0
+Dominant: dos (99.26392010907617)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=24.615230966107998 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3357 | sourceEntropy=1.932 | portEntropy=2.466
+
+
+[2026-04-21T23:13:17.997Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=7527 | 5m=30126 | 15m=74841 | 1h=113977 | burstRatio5mOverHour=0.2643164849048492
+
+--- Source Breakdown ---
+pcapCount=31170 | dshieldCount=0 | total=31170 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=79.02528390558723 | brute_force=0 | web_probe=41.5375 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3323 | sourceEntropy=1.865 | portEntropy=2.378
+
+
+[2026-04-21T23:14:18.328Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=7083 | 5m=33667 | 15m=81726 | 1h=120775 | burstRatio5mOverHour=0.27875802111364106
+
+--- Source Breakdown ---
+pcapCount=33216 | dshieldCount=0 | total=33216 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=78.97429782604074 | brute_force=0 | web_probe=39.85 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3188 | sourceEntropy=1.819 | portEntropy=2.372
+
+
+[2026-04-21T23:15:15.042Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=5935 | 5m=32917 | 15m=86127 | 1h=126203 | burstRatio5mOverHour=0.2608258123816391
+
+--- Source Breakdown ---
+pcapCount=33120 | dshieldCount=0 | total=33120 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=78.88459602864408 | brute_force=0 | web_probe=38.25 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3060 | sourceEntropy=1.774 | portEntropy=2.361
+
+
+[2026-04-21T23:16:16.163Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=7036 | 5m=33868 | 15m=88885 | 1h=132630 | burstRatio5mOverHour=0.25535700821835183
+
+--- Source Breakdown ---
+pcapCount=33871 | dshieldCount=0 | total=33871 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=100 | scan=79.20567277482823 | brute_force=0 | web_probe=39.4875 | c2=40 | impact=0
+Dominant: dos (100)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=25 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3159 | sourceEntropy=1.809 | portEntropy=2.401
+
+
+[2026-04-21T23:17:15.111Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 95 | State: critical
+
+--- Attack Volume ---
+1m=6339 | 5m=34120 | 15m=89475 | 1h=138458 | burstRatio5mOverHour=0.24642851983995145
+
+--- Source Breakdown ---
+pcapCount=34326 | dshieldCount=0 | total=34326 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=99.64285198399514 | scan=79.2907608086789 | brute_force=0 | web_probe=38.575 | c2=40 | impact=0
+Dominant: dos (99.64285198399514)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=24.813308991633825 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3086 | sourceEntropy=1.787 | portEntropy=2.411
+
+
+[2026-04-21T23:18:16.175Z] phase=injection | window=1m
+Prediction(raw): Attack | Prediction(exp): Attack | Truth: Attack
+Risk: 94 | State: critical
+
+--- Attack Volume ---
+1m=6335 | 5m=33026 | 15m=89986 | 1h=144371 | burstRatio5mOverHour=0.22875785303142598
+
+--- Source Breakdown ---
+pcapCount=33829 | dshieldCount=0 | total=33829 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=97.8757853031426 | scan=79.34830665313525 | brute_force=0 | web_probe=37.425 | c2=40 | impact=0
+Dominant: dos (97.8757853031426)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=23.889615044824545 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2994 | sourceEntropy=1.765 | portEntropy=2.419
+
+DEBUG injectionEnd   = 2026-04-21T23:19:22.965Z
+
+💉 Injection complete (exit=0) duration=5423.9s
+
+❄️ COOLDOWN PHASE: 3600s (evaluating now) (note: must exceed largest window 1m to accumulate TN)
+Cooldown remaining: 60m 0s
+
+[2026-04-21T23:19:18.482Z] phase=cooldown | window=1m
+Prediction(raw): Attack | Prediction(exp): Residual | Truth: Residual
+Risk: 93 | State: critical
+
+--- Attack Volume ---
+1m=7189 | 5m=32935 | 15m=92252 | 1h=151623 | burstRatio5mOverHour=0.21721638537688873
+
+--- Source Breakdown ---
+pcapCount=33727 | dshieldCount=0 | total=33727 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=96.72163853768888 | scan=79.6128087713307 | brute_force=0 | web_probe=36.0125 | c2=40 | impact=0
+Dominant: dos (96.72163853768888)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=23.286311053791913 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2881 | sourceEntropy=1.737 | portEntropy=2.452
+
+Cooldown remaining: 59m 30s
+Cooldown remaining: 59m 0s
+
+[2026-04-21T23:20:09.283Z] phase=cooldown | window=1m
+Prediction(raw): Attack | Prediction(exp): Residual | Truth: Residual
+Risk: 92 | State: critical
+
+--- Attack Volume ---
+1m=2856 | 5m=30003 | 15m=88487 | 1h=153198 | burstRatio5mOverHour=0.19584459327145262
+
+--- Source Breakdown ---
+pcapCount=28295 | dshieldCount=0 | total=28295 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=94.58445932714525 | scan=79.57321284803349 | brute_force=0 | web_probe=34.4375 | c2=40 | impact=0
+Dominant: dos (94.58445932714525)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=22.16914919373502 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2755 | sourceEntropy=1.689 | portEntropy=2.447
+
+Cooldown remaining: 58m 30s
+Cooldown remaining: 58m 0s
+
+[2026-04-21T23:21:14.419Z] phase=cooldown | window=1m
+Prediction(raw): Attack | Prediction(exp): Residual | Truth: Normal
+Risk: 90 | State: critical
+
+--- Attack Volume ---
+1m=0 | 5m=22919 | 15m=81758 | 1h=152875 | burstRatio5mOverHour=0.1499198691741619
+
+--- Source Breakdown ---
+pcapCount=20756 | dshieldCount=0 | total=20756 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=89.99198691741618 | scan=79.52351158782857 | brute_force=0 | web_probe=32.75 | c2=40 | impact=0
+Dominant: dos (89.99198691741618)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=19.768538615922097 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2620 | sourceEntropy=1.637 | portEntropy=2.44
+
+Cooldown remaining: 57m 30s
+Cooldown remaining: 57m 0s
+
+[2026-04-21T23:22:15.700Z] phase=cooldown | window=1m
+Prediction(raw): Attack | Prediction(exp): Residual | Truth: Normal
+Risk: 88 | State: critical
+
+--- Attack Volume ---
+1m=0 | 5m=16529 | 15m=76684 | 1h=152540 | burstRatio5mOverHour=0.10835846335387439
+
+--- Source Breakdown ---
+pcapCount=14165 | dshieldCount=0 | total=14165 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=85.83584633538744 | scan=79.43915357328002 | brute_force=0 | web_probe=31.025 | c2=40 | impact=0
+Dominant: dos (85.83584633538744)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=17.596010584407075 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2482 | sourceEntropy=1.584 | portEntropy=2.43
+
+Cooldown remaining: 56m 30s
+Cooldown remaining: 56m 0s
+Cooldown remaining: 55m 30s
+
+[2026-04-21T23:23:30.337Z] phase=cooldown | window=1m
+Prediction(raw): Attack | Prediction(exp): Residual | Truth: Normal
+Risk: 85 | State: critical
+
+--- Attack Volume ---
+1m=0 | 5m=10293 | 15m=72697 | 1h=151594 | burstRatio5mOverHour=0.06789846563848173
+
+--- Source Breakdown ---
+pcapCount=5571 | dshieldCount=0 | total=5571 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=81.78984656384817 | scan=79.66372003932383 | brute_force=0 | web_probe=30.875 | c2=40 | impact=0
+Dominant: dos (81.78984656384817)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=15.481056158375182 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2470 | sourceEntropy=1.58 | portEntropy=2.458
+
+Cooldown remaining: 55m 0s
+
+[2026-04-21T23:24:10.887Z] phase=cooldown | window=1m
+Prediction(raw): Attack | Prediction(exp): Residual | Truth: Normal
+Risk: 84 | State: high
+
+--- Attack Volume ---
+1m=0 | 5m=2856 | 15m=69105 | 1h=151261 | burstRatio5mOverHour=0.018881271444721376
+
+--- Source Breakdown ---
+pcapCount=1045 | dshieldCount=0 | total=1045 | pcapRatio=1.000
+
+--- Attack Type Scores (0..100) ---
+dos=76.88812714447214 | scan=79.65180955740131 | brute_force=0 | web_probe=30.95 | c2=40 | impact=0
+Dominant: scan (79.65180955740131)
+
+--- Risk Components ---
+volume=60 | severity=0 | behavior=0 | signalAmplifier=14.363445905005229 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2476 | sourceEntropy=1.579 | portEntropy=2.456
+
+Cooldown remaining: 54m 30s
+
+[2026-04-21T23:25:08.010Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=62572 | 1h=150942 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=15 | scan=0 | brute_force=0 | web_probe=30.875 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2470 | sourceEntropy=1.578 | portEntropy=0
+
+Cooldown remaining: 54m 0s
+Cooldown remaining: 53m 30s
+
+[2026-04-21T23:26:09.685Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=56787 | 1h=148351 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=15 | scan=0 | brute_force=0 | web_probe=39.6625 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3173 | sourceEntropy=1.865 | portEntropy=0
+
+Cooldown remaining: 53m 0s
+Cooldown remaining: 52m 30s
+
+[2026-04-21T23:27:08.719Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=50598 | 1h=146467 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=15 | scan=0 | brute_force=0 | web_probe=39.6375 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3171 | sourceEntropy=1.91 | portEntropy=0
+
+Cooldown remaining: 52m 0s
+Cooldown remaining: 51m 30s
+Cooldown remaining: 51m 0s
+
+[2026-04-21T23:28:11.435Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=43320 | 1h=146129 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=15 | scan=0 | brute_force=0 | web_probe=37.975 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3038 | sourceEntropy=1.861 | portEntropy=0
+
+Cooldown remaining: 50m 30s
+Cooldown remaining: 50m 0s
+
+[2026-04-21T23:29:08.964Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=36138 | 1h=143951 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=15 | scan=0 | brute_force=0 | web_probe=42.5 | c2=40 | impact=0
+Dominant: web_probe (42.5)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3400 | sourceEntropy=2.009 | portEntropy=0
+
+Cooldown remaining: 49m 30s
+
+[2026-04-21T23:30:05.527Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=30053 | 1h=142519 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=15 | scan=0 | brute_force=0 | web_probe=45.55 | c2=40 | impact=0
+Dominant: web_probe (45.55)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0.14999999999999922 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3644 | sourceEntropy=2.098 | portEntropy=0
+
+Cooldown remaining: 49m 0s
+Cooldown remaining: 48m 30s
+
+[2026-04-21T23:31:09.060Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=22919 | 1h=142191 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=12.89476830460437 | scan=0 | brute_force=0 | web_probe=44.55 | c2=40 | impact=0
+Dominant: web_probe (44.55)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3564 | sourceEntropy=2.074 | portEntropy=0
+
+Cooldown remaining: 48m 0s
+Cooldown remaining: 47m 30s
+
+[2026-04-21T23:32:09.859Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=16529 | 1h=141726 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=9.330115857358566 | scan=0 | brute_force=0 | web_probe=43.2 | c2=40 | impact=0
+Dominant: web_probe (43.2)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3456 | sourceEntropy=2.044 | portEntropy=0
+
+Cooldown remaining: 47m 0s
+Cooldown remaining: 46m 30s
+
+[2026-04-21T23:33:07.230Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=10293 | 1h=139920 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=5.885077186963979 | scan=0 | brute_force=0 | web_probe=41.8875 | c2=40 | impact=0
+Dominant: web_probe (41.8875)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3351 | sourceEntropy=1.998 | portEntropy=0
+
+Cooldown remaining: 46m 0s
+Cooldown remaining: 45m 30s
+
+[2026-04-21T23:34:11.213Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=2856 | 1h=139537 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=1.6374151658699843 | scan=0 | brute_force=0 | web_probe=40.175 | c2=40 | impact=0
+Dominant: web_probe (40.175)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3214 | sourceEntropy=1.952 | portEntropy=0
+
+Cooldown remaining: 45m 0s
+Cooldown remaining: 44m 30s
+
+[2026-04-21T23:35:08.881Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=139142 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=38.4375 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3075 | sourceEntropy=1.904 | portEntropy=0
+
+Cooldown remaining: 44m 0s
+Cooldown remaining: 43m 30s
+
+[2026-04-21T23:36:07.625Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=137567 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=37.75 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3020 | sourceEntropy=1.879 | portEntropy=0
+
+Cooldown remaining: 43m 0s
+Cooldown remaining: 42m 30s
+Cooldown remaining: 42m 0s
+
+[2026-04-21T23:37:17.616Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=134934 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=41.9625 | c2=40 | impact=0
+Dominant: web_probe (41.9625)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3357 | sourceEntropy=1.975 | portEntropy=0
+
+Cooldown remaining: 41m 30s
+Cooldown remaining: 41m 0s
+
+[2026-04-21T23:38:20.344Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=134566 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=40.325 | c2=40 | impact=0
+Dominant: web_probe (40.325)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3226 | sourceEntropy=1.948 | portEntropy=0
+
+Cooldown remaining: 40m 30s
+Cooldown remaining: 40m 0s
+
+[2026-04-21T23:39:16.255Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=133842 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=38.7875 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3103 | sourceEntropy=1.931 | portEntropy=0
+
+Cooldown remaining: 39m 30s
+Cooldown remaining: 39m 0s
+
+[2026-04-21T23:40:14.561Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=131661 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=37.625 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3010 | sourceEntropy=2.019 | portEntropy=0
+
+Cooldown remaining: 38m 30s
+
+[2026-04-21T23:41:08.162Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=131341 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=35.9 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2872 | sourceEntropy=1.99 | portEntropy=0
+
+Cooldown remaining: 38m 0s
+Cooldown remaining: 37m 30s
+
+[2026-04-21T23:42:06.966Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=131016 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=34.1375 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2731 | sourceEntropy=1.96 | portEntropy=0
+
+Cooldown remaining: 37m 0s
+Cooldown remaining: 36m 30s
+
+[2026-04-21T23:43:09.361Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=130689 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=32.5 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2600 | sourceEntropy=1.927 | portEntropy=0
+
+Cooldown remaining: 36m 0s
+Cooldown remaining: 35m 30s
+
+[2026-04-21T23:44:09.217Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=130364 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=30.775 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2462 | sourceEntropy=1.893 | portEntropy=0
+
+Cooldown remaining: 35m 0s
+Cooldown remaining: 34m 30s
+
+[2026-04-21T23:45:07.840Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=130042 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=29.075 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2326 | sourceEntropy=1.855 | portEntropy=0
+
+Cooldown remaining: 34m 0s
+Cooldown remaining: 33m 30s
+
+[2026-04-21T23:46:07.611Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=129669 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=27.5 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2200 | sourceEntropy=1.806 | portEntropy=0
+
+Cooldown remaining: 33m 0s
+Cooldown remaining: 32m 30s
+
+[2026-04-21T23:47:09.592Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=128754 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=26.05 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=2084 | sourceEntropy=1.804 | portEntropy=0
+
+Cooldown remaining: 32m 0s
+Cooldown remaining: 31m 30s
+
+[2026-04-21T23:48:09.851Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=128433 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=24.3375 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1947 | sourceEntropy=1.759 | portEntropy=0
+
+Cooldown remaining: 31m 0s
+Cooldown remaining: 30m 30s
+Cooldown remaining: 30m 0s
+
+[2026-04-21T23:49:11.280Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=127153 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=22.8875 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1831 | sourceEntropy=1.736 | portEntropy=0
+
+Cooldown remaining: 29m 30s
+
+[2026-04-21T23:50:06.788Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=125448 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=21.575 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1726 | sourceEntropy=1.82 | portEntropy=0
+
+Cooldown remaining: 29m 0s
+Cooldown remaining: 28m 30s
+
+[2026-04-21T23:51:05.033Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=125092 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=19.95 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1596 | sourceEntropy=1.758 | portEntropy=0
+
+Cooldown remaining: 28m 0s
+Cooldown remaining: 27m 30s
+Cooldown remaining: 27m 0s
+
+[2026-04-21T23:52:15.676Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=124687 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=18.2875 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1463 | sourceEntropy=1.689 | portEntropy=0
+
+Cooldown remaining: 26m 30s
+Cooldown remaining: 26m 0s
+
+[2026-04-21T23:53:19.911Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=123782 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=16.65 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1332 | sourceEntropy=1.619 | portEntropy=0
+
+Cooldown remaining: 25m 30s
+
+[2026-04-21T23:54:08.071Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=123269 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=14.875 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1190 | sourceEntropy=1.518 | portEntropy=0
+
+Cooldown remaining: 25m 0s
+Cooldown remaining: 24m 30s
+
+[2026-04-21T23:55:06.956Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=122919 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=13.1375 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=1051 | sourceEntropy=1.412 | portEntropy=0
+
+Cooldown remaining: 24m 0s
+Cooldown remaining: 23m 30s
+
+[2026-04-21T23:56:07.925Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=122119 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=11.55 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=924 | sourceEntropy=1.322 | portEntropy=0
+
+Cooldown remaining: 23m 0s
+Cooldown remaining: 22m 30s
+
+[2026-04-21T23:57:10.557Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=117587 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=10.7625 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=861 | sourceEntropy=1.684 | portEntropy=0
+
+Cooldown remaining: 22m 0s
+Cooldown remaining: 21m 30s
+
+[2026-04-21T23:58:07.681Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=117274 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=9.075 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=726 | sourceEntropy=1.567 | portEntropy=0
+
+Cooldown remaining: 21m 0s
+Cooldown remaining: 20m 30s
+
+[2026-04-21T23:59:04.229Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=116958 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=7.3 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=584 | sourceEntropy=1.403 | portEntropy=0
+
+Cooldown remaining: 20m 0s
+Cooldown remaining: 19m 30s
+
+[2026-04-22T00:00:02.865Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=115629 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=5.8875 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=471 | sourceEntropy=1.437 | portEntropy=0
+
+Cooldown remaining: 19m 0s
+Cooldown remaining: 18m 30s
+
+[2026-04-22T00:01:08.470Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=111399 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=5.5875 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=447 | sourceEntropy=1.498 | portEntropy=0
+
+Cooldown remaining: 18m 0s
+Cooldown remaining: 17m 30s
+
+[2026-04-22T00:02:05.515Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=106102 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=5.9875 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=479 | sourceEntropy=1.546 | portEntropy=0
+
+Cooldown remaining: 17m 0s
+Cooldown remaining: 16m 30s
+
+[2026-04-22T00:03:12.219Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=99978 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=6.5625 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=525 | sourceEntropy=2.36 | portEntropy=0
+
+Cooldown remaining: 16m 0s
+Cooldown remaining: 15m 30s
+
+[2026-04-22T00:04:07.262Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=94404 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=6.7375 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=539 | sourceEntropy=2.524 | portEntropy=0
+
+Cooldown remaining: 15m 0s
+Cooldown remaining: 14m 30s
+
+[2026-04-22T00:05:06.061Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=88487 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=6.3875 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=511 | sourceEntropy=2.572 | portEntropy=0
+
+Cooldown remaining: 14m 0s
+Cooldown remaining: 13m 30s
+
+[2026-04-22T00:06:05.499Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=81758 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=6.3 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=504 | sourceEntropy=2.483 | portEntropy=0
+
+Cooldown remaining: 13m 0s
+Cooldown remaining: 12m 30s
+Cooldown remaining: 12m 0s
+
+[2026-04-22T00:07:21.743Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=76684 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=6.075 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=486 | sourceEntropy=2.254 | portEntropy=0
+
+Cooldown remaining: 11m 30s
+Cooldown remaining: 11m 0s
+
+[2026-04-22T00:08:14.150Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=72697 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=6.15 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=492 | sourceEntropy=2.251 | portEntropy=0
+
+Cooldown remaining: 10m 30s
+Cooldown remaining: 10m 0s
+
+[2026-04-22T00:09:13.988Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=69105 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=6.0875 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=487 | sourceEntropy=2.22 | portEntropy=0
+
+Cooldown remaining: 9m 30s
+
+[2026-04-22T00:10:07.987Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=62572 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=6.1 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=488 | sourceEntropy=2.151 | portEntropy=0
+
+Cooldown remaining: 9m 0s
+Cooldown remaining: 8m 30s
+
+[2026-04-22T00:11:07.584Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=56787 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=5.7375 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=459 | sourceEntropy=1.685 | portEntropy=0
+
+Cooldown remaining: 8m 0s
+Cooldown remaining: 7m 30s
+
+[2026-04-22T00:12:04.241Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=50598 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=5.7 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=456 | sourceEntropy=1.646 | portEntropy=0
+
+Cooldown remaining: 7m 0s
+Cooldown remaining: 6m 30s
+
+[2026-04-22T00:13:05.739Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=43320 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=5.625 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=450 | sourceEntropy=1.688 | portEntropy=0
+
+Cooldown remaining: 6m 0s
+Cooldown remaining: 5m 30s
+
+[2026-04-22T00:14:06.161Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=36138 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=5.9125 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=473 | sourceEntropy=2.1 | portEntropy=0
+
+Cooldown remaining: 5m 0s
+Cooldown remaining: 4m 30s
+
+[2026-04-22T00:15:07.586Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=30053 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=5.625 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=450 | sourceEntropy=1.738 | portEntropy=0
+
+Cooldown remaining: 4m 0s
+Cooldown remaining: 3m 30s
+
+[2026-04-22T00:16:06.543Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=22919 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=5.7125 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=457 | sourceEntropy=1.766 | portEntropy=0
+
+Cooldown remaining: 3m 0s
+Cooldown remaining: 2m 30s
+
+[2026-04-22T00:17:01.582Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=16529 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=4.7125 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=377 | sourceEntropy=1.758 | portEntropy=0
+
+Cooldown remaining: 2m 0s
+Cooldown remaining: 1m 30s
+
+[2026-04-22T00:17:58.441Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 10 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=10293 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=3.0375 | c2=40 | impact=0
+Dominant: c2 (40)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=0 | c2Bonus=10 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=243 | sourceEntropy=2.083 | portEntropy=0
+
+Cooldown remaining: 1m 0s
+Cooldown remaining: 0m 30s
+
+[2026-04-22T00:18:56.197Z] phase=cooldown | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 22 | State: stable
+
+--- Attack Volume ---
+1m=0 | 5m=0 | 15m=0 | 1h=2856 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=0.7125 | c2=65 | impact=0
+Dominant: c2 (65)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=5.454545454545455 | c2Bonus=16.25 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=57 | sourceEntropy=1.143 | portEntropy=0
+
+Cooldown remaining: 0m 10s
+Cooldown remaining: 0m 9s
+Cooldown remaining: 0m 8s
+Cooldown remaining: 0m 7s
+Cooldown remaining: 0m 6s
+Cooldown remaining: 0m 5s
+Cooldown remaining: 0m 4s
+Cooldown remaining: 0m 3s
+Cooldown remaining: 0m 2s
+Cooldown remaining: 0m 1s
+🛑 Evaluation loop stopped
+
+📊 GLOBAL Metrics (All Windows Combined):
+{"TP":88,"FP":0,"TN":116,"FN":0,"total_samples":204,"precision":1,"recall":1,"specificity":1,"fpr":0,"fnr":0,"accuracy":1,"balanced_accuracy":1,"f1":1}
+
+✅ Experiment saved → /home/ubuntu/research/outputs/full_experiment/2018-04-03_win12_fixed_346-1_clean_2026-04-21T20-48-55-057Z.json
