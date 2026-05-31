@@ -1,0 +1,16 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	files
+#open	2026-02-18-23-20-59
+#fields	ts	fuid	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	source	depth	analyzers	mime_type	filename	duration	local_orig	is_orig	seen_bytes	total_bytes	missing_bytes	overflow_bytes	timedout	parent_fuid	md5	sha1	sha256	extracted	extracted_cutoff	extracted_size
+#types	time	string	string	addr	port	addr	port	string	count	set[string]	string	string	interval	bool	bool	count	count	count	count	bool	string	string	string	string	string	bool	count
+12.611994	FfRe5i2pgy2Wt4uxYi	CUtu9I1GxvE7QUkaC5	192.168.1.112	49159	195.113.232.75	80	HTTP	0	(empty)	text/plain	-	0.000000	F	F	14	14	0	0	F	-	-	-	-	-	-	-
+492.200992	F2f8f7Cwbzh1cXhrg	CULPaB4vBxWwKOUF55	192.168.1.112	49177	192.168.1.2	80	HTTP	0	(empty)	text/html	-	0.000000	T	F	232	232	0	0	F	-	-	-	-	-	-	-
+495.269763	FI0qjDhSPw80xi3qj	CyTE3mCbtrzc7ze7a	192.168.1.112	49180	192.168.1.2	80	HTTP	0	(empty)	text/html	-	0.000000	T	F	239	239	0	0	F	-	-	-	-	-	-	-
+497.857708	FIScL21GrVLOcAEZHf	CxzxNYSshFktXTjJd	192.168.1.112	49183	192.168.1.2	80	HTTP	0	(empty)	text/html	-	0.000000	T	F	232	232	0	0	F	-	-	-	-	-	-	-
+500.437794	FOZmCjEfp4VCfpr54	CfFBv12MOAMji1AVxj	192.168.1.112	49185	192.168.1.2	80	HTTP	0	(empty)	text/html	-	0.000000	T	F	243	243	0	0	F	-	-	-	-	-	-	-
+503.017742	FGyLkY3cVJoK0i3rC8	CNos2x1tllGZ13AAPd	192.168.1.112	49187	192.168.1.2	80	HTTP	0	(empty)	text/html	-	0.000000	T	F	232	232	0	0	F	-	-	-	-	-	-	-
+650.803898	Ff9jNV6W5i23HrOR5	Cfpjna1BhsouBqW7S3	192.168.1.112	49262	192.168.1.1	80	HTTP	0	(empty)	text/html	-	0.000000	T	F	345	345	0	0	F	-	-	-	-	-	-	-
+#close	2026-02-18-23-20-59

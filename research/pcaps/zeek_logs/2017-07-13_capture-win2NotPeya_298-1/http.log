@@ -1,0 +1,18 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	http
+#open	2026-02-18-23-20-59
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	trans_depth	method	host	uri	referrer	version	user_agent	origin	request_body_len	response_body_len	status_code	status_msg	info_code	info_msg	tags	username	password	proxied	orig_fuids	orig_filenames	orig_mime_types	resp_fuids	resp_filenames	resp_mime_types
+#types	time	string	addr	port	addr	port	count	string	string	string	string	string	string	string	count	count	count	string	count	string	set[enum]	string	string	set[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]
+12.400373	CUtu9I1GxvE7QUkaC5	192.168.1.112	49159	195.113.232.75	80	1	GET	www.msftncsi.com	/ncsi.txt	-	1.1	Microsoft NCSI	-	0	14	200	OK	-	-	(empty)	-	-	-	-	-	-	FfRe5i2pgy2Wt4uxYi	-	text/plain
+470.717877	CsEQXk2GYQxS9IvGv7	192.168.1.112	49166	192.168.1.2	80	1	OPTIONS	192.168.1.2	/	-	1.1	DavClnt	-	0	0	200	OK	-	-	(empty)	-	-	-	-	-	-	-	-	-
+489.566817	CULPaB4vBxWwKOUF55	192.168.1.112	49177	192.168.1.2	80	1	OPTIONS	192.168.1.2	/admin$	-	1.1	Microsoft-WebDAV-MiniRedir/6.1.7600	-	0	0	200	OK	-	-	(empty)	-	-	-	-	-	-	-	-	-
+492.151249	CULPaB4vBxWwKOUF55	192.168.1.112	49177	192.168.1.2	80	2	PROPFIND	192.168.1.2	/admin$	-	1.1	Microsoft-WebDAV-MiniRedir/6.1.7600	-	0	232	405	Method Not Allowed	-	-	(empty)	-	-	-	-	-	-	F2f8f7Cwbzh1cXhrg	-	text/html
+495.056143	CyTE3mCbtrzc7ze7a	192.168.1.112	49180	192.168.1.2	80	1	PROPFIND	192.168.1.2	/admin$/PetyaA	-	1.1	Microsoft-WebDAV-MiniRedir/6.1.7600	-	0	239	405	Method Not Allowed	-	-	(empty)	-	-	-	-	-	-	FI0qjDhSPw80xi3qj	-	text/html
+497.639608	CxzxNYSshFktXTjJd	192.168.1.112	49183	192.168.1.2	80	1	PROPFIND	192.168.1.2	/admin$	-	1.1	Microsoft-WebDAV-MiniRedir/6.1.7600	-	0	232	405	Method Not Allowed	-	-	(empty)	-	-	-	-	-	-	FIScL21GrVLOcAEZHf	-	text/html
+500.222490	CfFBv12MOAMji1AVxj	192.168.1.112	49185	192.168.1.2	80	1	PROPFIND	192.168.1.2	/admin$/PetyaA.dat	-	1.1	Microsoft-WebDAV-MiniRedir/6.1.7600	-	0	243	405	Method Not Allowed	-	-	(empty)	-	-	-	-	-	-	FOZmCjEfp4VCfpr54	-	text/html
+502.804280	CNos2x1tllGZ13AAPd	192.168.1.112	49187	192.168.1.2	80	1	PROPFIND	192.168.1.2	/admin$	-	1.1	Microsoft-WebDAV-MiniRedir/6.1.7600	-	0	232	405	Method Not Allowed	-	-	(empty)	-	-	-	-	-	-	FGyLkY3cVJoK0i3rC8	-	text/html
+650.803303	Cfpjna1BhsouBqW7S3	192.168.1.112	49262	192.168.1.1	80	1	OPTIONS	192.168.1.1	/admin$	-	1.1	Microsoft-WebDAV-MiniRedir/6.1.7600	-	0	345	404	Not Found	-	-	(empty)	-	-	-	-	-	-	Ff9jNV6W5i23HrOR5	-	text/html
+#close	2026-02-18-23-20-59

@@ -1,0 +1,12 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	smb_mapping
+#open	2026-02-18-23-20-59
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	path	service	native_file_system	share_type
+#types	time	string	addr	port	addr	port	string	string	string	string
+1087.199603	C3rb1g172xnZ0lex0a	192.168.1.112	49487	192.168.1.135	445	\\\\123.12.31.2\\IPC$	IPC	-	PIPE
+1087.205491	CfDyES1kql2C6jQbbg	192.168.1.112	49488	192.168.1.135	445	\\\\123.12.31.2\\IPC$	IPC	-	PIPE
+1090.575044	Clmoan4b23dXb3sUui	192.168.1.112	49511	192.168.1.135	445	\\\\123.12.31.2\\IPC$	IPC	-	PIPE
+#close	2026-02-18-23-20-59
