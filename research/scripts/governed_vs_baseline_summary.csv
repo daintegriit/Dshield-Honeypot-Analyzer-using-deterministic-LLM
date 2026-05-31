@@ -1,0 +1,6 @@
+model,tokenReductionPercent,latencyChangePercent,costReductionPercent
+gemma,64.42,9.77,4.34
+llama3.1:8b,52.93,-5.49,3.92
+mistral,17.33,-25.72,1.05
+phi3,85.91,35.89,11.01
+qwen2.5:7b-instruct,72.5,8.31,7.54

@@ -1,0 +1,11 @@
+model,mode,estimatedTokens,totalTokens,latencyMs,inferenceCostTokens,grounded,passed
+gemma,baseline,385.0,4373.0,23325.0,4373.0,1.0,1.0
+gemma,governed,137.0,4183.0,21046.68,4183.0,1.0,1.0
+llama3.1:8b,baseline,410.0,4390.0,21117.98,4390.0,1.0,1.0
+llama3.1:8b,governed,193.0,4218.0,22276.81,4218.0,1.0,1.0
+mistral,baseline,225.0,4274.0,17096.23,4274.0,1.0,1.0
+mistral,governed,186.0,4229.0,21493.37,4229.0,1.0,1.0
+phi3,baseline,660.0,4678.0,16091.51,4678.0,1.0,1.0
+phi3,governed,93.0,4163.0,10316.38,4163.0,1.0,1.0
+qwen2.5:7b-instruct,baseline,549.0,4534.0,26334.6,4534.0,1.0,1.0
+qwen2.5:7b-instruct,governed,151.0,4192.0,24145.83,4192.0,1.0,1.0

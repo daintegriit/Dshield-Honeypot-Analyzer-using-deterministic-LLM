@@ -1,0 +1,36 @@
+[
+  {
+    "model": "llama3.1:8b",
+    "mode": "governed",
+    "window": 1,
+    "question": "What behavior supports the detected attack?",
+    "answer": "Here is the response:\n\n**Detected Hostile Scanning Activity**\n\nThe deterministic analysis engine detected hostile scanning activity, consistent with reconnaissance behavior. Deterministic analysis identified repeated probing behavior targeting web-facing infrastructure ports, specifically port 8080, which is currently one of the dominant targeted web services in the active observation window.\n\n**Threat Implication**\n\nThis activity may indicate a potential threat to the organization's web infrastructure, and further investigation is recommended to determine the scope and severity of the threat.\n\n**Analyst Priority**\n\nP1: Urgent analyst investigation recommended to validate the presence of hostile scanning activity and assess the operational impact on the organization's web services.",
+    "estimatedTokens": 198,
+    "hallucinationDetected": false,
+    "grounded": true,
+    "passed": true,
+    "latencyMs": 66100.46,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "totalTokens": 0,
+    "promptEvalDuration": 0,
+    "evalDuration": 0
+  },
+  {
+    "model": "llama3.1:8b",
+    "mode": "baseline",
+    "window": 1,
+    "question": "What behavior supports the detected attack?",
+    "answer": "Here is the response:\n\nThe deterministic analysis engine detected hostile scanning activity, consistent with web probing behavior. Deterministic analysis identified repeated probing behavior targeting port 8080, which is currently one of the dominant targeted web services in the active observation window.\n\nThis activity was concentrated among a limited set of source systems, and command-and-control behavioral indicators contributed additional escalation pressure to the overall risk score.\n\nThe recommended action is to investigate and monitor this activity further, with a priority level of P1 (urgent investigation).",
+    "estimatedTokens": 155,
+    "hallucinationDetected": false,
+    "grounded": true,
+    "passed": true,
+    "latencyMs": 54362.64,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "totalTokens": 0,
+    "promptEvalDuration": 0,
+    "evalDuration": 0
+  }
+]

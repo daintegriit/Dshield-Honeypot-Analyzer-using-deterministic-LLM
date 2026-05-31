@@ -1,0 +1,962 @@
+[
+  {
+    "windowMinutes": 1,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 5,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 15,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 30,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 60,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 1,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 5,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 15,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 30,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 60,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 1,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 5,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 15,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 30,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  {
+    "windowMinutes": 60,
+    "riskScore0to100": 0,
+    "state": "stable",
+    "replayState": "baseline",
+    "dominantAttack": "dos",
+    "hallucinationDetected": false,
+    "estimatedReasoningTokens": 14,
+    "passed": true,
+    "validation": {
+      "stateMatchesRiskThreshold": true,
+      "expectedState": "stable",
+      "attackDetectionConsistent": true,
+      "confidenceConsistent": true,
+      "dominantAttackValid": true,
+      "validReplayState": true,
+      "explanationPresent": true,
+      "estimatedReasoningTokens": 14,
+      "hallucinationDetected": false,
+      "questionEvaluations": [
+        {
+          "question": "What behavior supports the detected attack?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "Why was this classified as the dominant attack type?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What telemetry supports the current risk score?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What evidence supports escalation to the current state?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        },
+        {
+          "question": "What indicators suggest malicious activity?",
+          "response": "Behavioral indicators remain inconclusive despite elevated telemetry activity. No significant malicious behavioral indicators detected.",
+          "estimatedResponseTokens": 14,
+          "hallucinationDetected": false,
+          "responseLengthChars": 135,
+          "grounded": true
+        }
+      ],
+      "passed": true
+    }
+  }
+]
