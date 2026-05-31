@@ -1,0 +1,33 @@
+
+🚀 STARTING FULL EXPERIMENT (PHASE-CORRECT)
+
+BASE_URL=http://localhost:5002
+WINDOWS=1 (largest=1m)
+Baseline=600s | PreCooldown=0s | Cooldown=610s | Poll=60000ms
+Replay=python3 replay_pcap_events.py
+Max runtime cap=28800s
+🔄 Evaluation loop started
+
+🧊 BASELINE PHASE: 600s (evaluating now)
+Baseline remaining: 10m 0s
+
+[2026-03-23T08:13:31.895Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 16 | State: stable
+
+--- Attack Volume ---
+5m=0 | 15m=0 | 1h=10103 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=56.025 | c2=50 | impact=0
+Dominant: web_probe (56.025)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=3.006818181818182 | c2Bonus=12.5 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=4482 | sourceEntropy=3.807 | portEntropy=0
+

@@ -1,0 +1,75 @@
+{
+  "runId": "2026-04-13T02-15-31-713Z",
+  "capturedAt": "2026-04-13T02:16:01.777Z",
+  "injectionStart": "2026-04-13T02:15:41.751Z",
+  "injectionEnd": "2026-04-13T02:15:41.967Z",
+  "attackStartEffective": "2026-04-13T02:15:41.751Z",
+  "truthMode": "replay_start",
+  "baselineSeconds": 10,
+  "preCooldownSeconds": 0,
+  "cooldownSeconds": 10,
+  "pollIntervalMs": 15000,
+  "windowsEvaluated": [
+    1
+  ],
+  "totalEvaluations": 0,
+  "results": [],
+  "metrics_global_all_windows": {
+    "TP": 0,
+    "FP": 0,
+    "TN": 0,
+    "FN": 0,
+    "total_samples": 0,
+    "precision": 0,
+    "recall": 0,
+    "specificity": 0,
+    "fpr": 0,
+    "fnr": 0,
+    "accuracy": 0,
+    "balanced_accuracy": 0,
+    "f1": 0
+  },
+  "metrics_per_window": {
+    "1": {
+      "TP": 0,
+      "FP": 0,
+      "TN": 0,
+      "FN": 0,
+      "total_samples": 0,
+      "precision": 0,
+      "recall": 0,
+      "specificity": 0,
+      "fpr": 0,
+      "fnr": 0,
+      "accuracy": 0,
+      "balanced_accuracy": 0,
+      "f1": 0
+    }
+  },
+  "latency_seconds": {
+    "global": null,
+    "perWindow": {}
+  },
+  "stability": {
+    "1": {
+      "samples": 0,
+      "flips": 0,
+      "flip_rate": 0
+    }
+  },
+  "risk_separation": {
+    "normal_n": 0,
+    "attack_n": 0,
+    "normal_mean": null,
+    "attack_mean": null,
+    "separation_margin": null
+  },
+  "replay": {
+    "python": "python3",
+    "script": "replay_pcap_events.py",
+    "exitCode": 0
+  },
+  "infectionBoundary": null,
+  "pcap": "2017-06-24_win10emotet_271-1",
+  "mode": "mixed"
+}

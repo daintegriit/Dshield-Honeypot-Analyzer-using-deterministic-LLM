@@ -1,0 +1,80 @@
+
+🚀 STARTING FULL EXPERIMENT (PHASE-CORRECT)
+
+BASE_URL=http://34.232.64.91:5002
+WINDOWS=1 (largest=1m)
+Baseline=600s | PreCooldown=0s | Cooldown=610s | Poll=60000ms
+Replay=python3 replay_pcap_events.py
+Max runtime cap=28800s
+🔄 Evaluation loop started
+
+🧊 BASELINE PHASE: 600s (evaluating now)
+Baseline remaining: 10m 0s
+
+[2026-03-23T08:15:35.951Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 14 | State: stable
+
+--- Attack Volume ---
+5m=0 | 15m=0 | 1h=8959 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=49.7625 | c2=50 | impact=0
+Dominant: c2 (50)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=1.3636363636363638 | c2Bonus=12.5 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3981 | sourceEntropy=3.807 | portEntropy=0
+
+Baseline remaining: 9m 30s
+Baseline remaining: 9m 0s
+
+[2026-03-23T08:16:35.906Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 14 | State: stable
+
+--- Attack Volume ---
+5m=0 | 15m=0 | 1h=8406 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=46.7375 | c2=50 | impact=0
+Dominant: c2 (50)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=1.3636363636363638 | c2Bonus=12.5 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3739 | sourceEntropy=3.807 | portEntropy=0
+
+Baseline remaining: 8m 30s
+Baseline remaining: 8m 0s
+
+[2026-03-23T08:17:35.819Z] phase=baseline | window=1m
+Prediction(raw): Normal | Prediction(exp): Normal | Truth: Normal
+Risk: 14 | State: stable
+
+--- Attack Volume ---
+5m=0 | 15m=0 | 1h=7854 | burstRatio5mOverHour=0
+
+--- Source Breakdown ---
+pcapCount=0 | dshieldCount=0 | total=0 | pcapRatio=0.000
+
+--- Attack Type Scores (0..100) ---
+dos=0 | scan=0 | brute_force=0 | web_probe=43.725 | c2=50 | impact=0
+Dominant: c2 (50)
+
+--- Risk Components ---
+volume=0 | severity=0 | behavior=0 | signalAmplifier=1.3636363636363638 | c2Bonus=12.5 | impactBonus=0 | couplingBonus=0
+
+--- Scanning Indicators ---
+authPortPressure=0 | webPortPressure=3498 | sourceEntropy=3.807 | portEntropy=0
+
+Baseline remaining: 7m 30s
