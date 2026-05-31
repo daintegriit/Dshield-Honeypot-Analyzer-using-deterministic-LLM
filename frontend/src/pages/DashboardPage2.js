@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
@@ -20,189 +20,500 @@ import ComparativeAnalysisChart from "../components/ComparativeAnalysisChart";
 
 import apiService from "../services/apiService";
 
+const REFRESH_INTERVAL_MS = 10000;
+const STALE_AFTER_MS = 30000;
+
+const CARD =
+  "bg-gray-800 rounded-xl p-3 border border-gray-700 flex flex-col min-h-0 overflow-hidden shadow-lg shadow-black/20";
+
+const CARD_BODY =
+  "flex-1 bg-gray-900 rounded-lg min-h-0 overflow-hidden";
+
+const CARD_BODY_CENTER =
+  "flex-1 bg-gray-900 rounded-lg min-h-0 overflow-hidden flex items-center justify-center";
+
+const CARD_TITLE =
+  "text-sm font-bold text-gray-100 leading-none";
+
+const CONTROL =
+  "bg-gray-900 border border-gray-600 text-xs px-2 py-1 rounded text-gray-100 outline-none focus:border-blue-400";
+
+const SMALL_BUTTON =
+  "text-black text-xs px-2 py-1 rounded font-semibold transition";
+
 const DashboardPage2 = () => {
-  // ✅ AUTH (FROM OLD DASHBOARD)
   const { isAuthenticated } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
-  // ✅ REAL DATA STATE (FROM OLD DASHBOARD)
-  const [honeypotData, setHoneypotData] = useState([]);
-  const [honeypotError, setHoneypotError] = useState(false);
-  const [attackTypesData] = useState([]);
-  const [ipData] = useState([]);
+  const [lastRefreshAt, setLastRefreshAt] =
+    useState(null);
 
-  // ✅ DATA FETCH (MINIMUM REQUIRED)
+  const [dashboardError, setDashboardError] =
+    useState(false);
+
+  const [isRefreshing, setIsRefreshing] =
+    useState(false);
+
+  const [summary, setSummary] =
+    useState({
+      topCountries: [],
+      attackTrends: [],
+      heatmap: [],
+      threatSummary: null,
+    });
+
+  // ====================================================
+  // DASHBOARD FETCH ENGINE
+  // ====================================================
+
   useEffect(() => {
-    const fetchData = async () => {
+    let mounted = true;
+
+    let intervalId = null;
+
+    const fetchDashboardPulse = async () => {
       try {
-        const response = await apiService.getTopCountries();
+        setIsRefreshing(true);
 
-        if (!Array.isArray(response)) {
-          console.error("Unexpected API response:", response);
-          setHoneypotError(true);
-          return;
-        }
+        const [
+          topCountries,
+          attackTrends,
+          heatmap,
+          threatSummary,
+        ] = await Promise.allSettled([
+          apiService.getTopCountries(),
+          apiService.getAttackTrends(60),
+          apiService.getHeatmapData(),
+          apiService.getThreatSummary(),
+        ]);
 
-        setHoneypotData(response);
-        setHoneypotError(false);
+        if (!mounted) return;
+
+        setSummary({
+          topCountries:
+            topCountries.status === "fulfilled" &&
+            Array.isArray(topCountries.value)
+              ? topCountries.value
+              : [],
+
+          attackTrends:
+            attackTrends.status === "fulfilled" &&
+            Array.isArray(attackTrends.value)
+              ? attackTrends.value
+              : [],
+
+          heatmap:
+            heatmap.status === "fulfilled" &&
+            Array.isArray(heatmap.value)
+              ? heatmap.value
+              : [],
+
+          threatSummary:
+            threatSummary.status === "fulfilled"
+              ? threatSummary.value
+              : null,
+        });
+
+        setLastRefreshAt(Date.now());
+
+        setDashboardError(false);
       } catch (err) {
-        console.error("Honeypot fetch error:", err);
-        setHoneypotError(true);
+        console.error(
+          "Dashboard pulse fetch error:",
+          err
+        );
+
+        if (mounted) {
+          setDashboardError(true);
+        }
+      } finally {
+        if (mounted) {
+          setIsRefreshing(false);
+        }
       }
     };
 
-    fetchData();
+    fetchDashboardPulse();
+
+    intervalId = setInterval(
+      fetchDashboardPulse,
+      REFRESH_INTERVAL_MS
+    );
+
+    return () => {
+      mounted = false;
+
+      clearInterval(intervalId);
+    };
   }, []);
 
-  // ✅ REPORT DOWNLOAD HANDLER (RESTORED)
+  // ====================================================
+  // TELEMETRY STATE
+  // ====================================================
+
+  const telemetryState = useMemo(() => {
+    if (dashboardError) return "offline";
+
+    if (!lastRefreshAt) return "loading";
+
+    const age =
+      Date.now() - lastRefreshAt;
+
+    if (age > STALE_AFTER_MS) {
+      return "stale";
+    }
+
+    if (isRefreshing) {
+      return "refreshing";
+    }
+
+    return "online";
+  }, [
+    dashboardError,
+    lastRefreshAt,
+    isRefreshing,
+  ]);
+
+  // ====================================================
+  // TELEMETRY BADGE
+  // ====================================================
+
+  const telemetryBadge = useMemo(() => {
+    switch (telemetryState) {
+      case "online":
+        return {
+          label: "ONLINE",
+          className:
+            "border-green-500/40 bg-green-500/10 text-green-400",
+        };
+
+      case "refreshing":
+        return {
+          label: "SYNC",
+          className:
+            "border-cyan-500/40 bg-cyan-500/10 text-cyan-300",
+        };
+
+      case "stale":
+        return {
+          label: "STALE",
+          className:
+            "border-yellow-500/40 bg-yellow-500/10 text-yellow-300",
+        };
+
+      case "offline":
+        return {
+          label: "OFFLINE",
+          className:
+            "border-red-500/40 bg-red-500/10 text-red-400",
+        };
+
+      default:
+        return {
+          label: "LOADING",
+          className:
+            "border-gray-500/40 bg-gray-500/10 text-gray-300",
+        };
+    }
+  }, [telemetryState]);
+
+  // ====================================================
+  // DOWNLOAD
+  // ====================================================
+
   const handleDownloadClick = () => {
     if (!isAuthenticated) {
       navigate("/login");
-    } else {
-      console.log("Downloading report...");
-      // future: generate PDF / CSV
+      return;
     }
+
+    console.log("Downloading report...");
   };
 
+  // ====================================================
+  // HEADER
+  // ====================================================
+
+  const Header = ({
+    title,
+    children,
+  }) => (
+    <div className="flex items-center justify-between gap-2 mb-2 shrink-0">
+      <h2 className={CARD_TITLE}>
+        {title}
+      </h2>
+
+      {children ? (
+        <div className="flex items-center gap-2 shrink-0">
+          {children}
+        </div>
+      ) : null}
+    </div>
+  );
+
+  // ====================================================
+  // STATUS BADGE
+  // ====================================================
+
+  const StatusBadge = () => (
+    <span
+      className={`text-[10px] px-2 py-1 rounded-md border font-semibold tracking-wide ${telemetryBadge.className}`}
+      title={
+        lastRefreshAt
+          ? `Last refresh: ${new Date(
+              lastRefreshAt
+            ).toLocaleTimeString()}`
+          : "Waiting for first telemetry refresh"
+      }
+    >
+      {telemetryBadge.label}
+    </span>
+  );
+
+  // ====================================================
+  // UI
+  // ====================================================
+
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen p-4 text-white">
+    <div className="bg-gradient-to-b from-gray-900 to-black h-[calc(100vh-64px)] overflow-hidden p-3 text-white flex flex-col">
+      <div className="grid grid-cols-12 gap-3 flex-1 min-h-0">
 
-      <h1 className="text-3xl font-extrabold text-center text-green-400 mb-2">
-        Cyber Threat Dashboard
-      </h1>
+        {/* ========================================= */}
+        {/* LEFT SIDE */}
+        {/* ========================================= */}
 
-      <div className="flex gap-6 items-start">
+        <div className="col-span-9 grid grid-rows-[1fr_1fr_1fr] gap-3 min-h-0">
 
-        {/* LEFT COLUMN */}
-        <div className="flex flex-col gap-6 w-2/3">
+          {/* ===================================== */}
+          {/* ROW 1 */}
+          {/* ===================================== */}
 
-          {/* Row 1 */}
-          <div className="flex gap-6 items-start">
+          <div className="grid grid-cols-12 gap-3 min-h-0">
 
-            <div className="bg-gray-800 rounded-lg p-4 shrink-0">
-              <h2 className="text-sm font-bold mb-2">Global Threat Visualization</h2>
-              <div className="w-[360px] h-[300px] bg-gray-900 rounded-lg flex items-center justify-center">
+            {/* GLOBAL VISUALIZATION */}
+
+            <div className={`col-span-3 ${CARD}`}>
+              <Header title="Global Threat Visualization">
+                <StatusBadge />
+              </Header>
+
+              <div className={CARD_BODY_CENTER}>
                 <ThreatVisualization />
               </div>
             </div>
 
-            <div className="bg-gray-800 rounded-lg p-4 w-[806px]">
-              <h2 className="text-sm font-bold mb-2">Attack Trends Over Time</h2>
-              <div className="h-[300px] bg-gray-900 rounded-lg overflow-hidden">
+            {/* ATTACK TRENDS */}
+
+            <div className={`col-span-6 ${CARD}`}>
+              <Header title="Attack Trends Over Time" />
+
+              <div className={CARD_BODY}>
                 <AttackTrendsChart />
               </div>
             </div>
 
-            <div className="bg-gray-800 rounded-lg p-4">
-              <h2 className="text-sm font-bold mb-2">Geo Heatmap</h2>
-              <div className="w-[360px] h-[300px] bg-gray-900 rounded-lg flex items-center justify-center">
-                {honeypotError ? "Error" : <EChartsHeatmap />}
+            {/* HEATMAP */}
+
+            <div className={`col-span-3 ${CARD}`}>
+              <Header title="Geo Heatmap" />
+
+              <div className={CARD_BODY_CENTER}>
+                {dashboardError ? (
+                  <span className="text-xs text-red-400">
+                    Heatmap telemetry unavailable
+                  </span>
+                ) : (
+                  <EChartsHeatmap
+                    data={summary.heatmap}
+                  />
+                )}
               </div>
             </div>
-
           </div>
 
-          {/* Row 2 */}
-          <div className="flex gap-6">
+          {/* ===================================== */}
+          {/* ROW 2 */}
+          {/* ===================================== */}
 
-            <div className="bg-gray-800 rounded-lg p-4">
-              <h2 className="text-sm font-bold mb-2">Top 10 Countries by Attacks</h2>
-              <div className="w-[360px] h-[300px] bg-gray-900 rounded-lg flex items-center justify-center">
-                {honeypotError ? "Error" : <Top10CountriesChart data={honeypotData} />}
+          <div className="grid grid-cols-12 gap-3 min-h-0">
+
+            {/* TOP COUNTRIES */}
+
+            <div className={`col-span-3 ${CARD}`}>
+              <Header title="Top Countries">
+                <select
+                  className={CONTROL}
+                  defaultValue="24h"
+                >
+                  <option>24h</option>
+                  <option>7d</option>
+                  <option>30d</option>
+                </select>
+
+                <button
+                  className={`${SMALL_BUTTON} bg-green-500 hover:bg-green-400`}
+                  type="button"
+                >
+                  CSV
+                </button>
+              </Header>
+
+              <div className={CARD_BODY}>
+                <Top10CountriesChart
+                  data={summary.topCountries}
+                />
               </div>
             </div>
 
-            <div className="bg-gray-800 rounded-lg p-4">
-              <h2 className="text-sm font-bold mb-2">Top 10 Attack Types</h2>
-              <div className="w-[360px] h-[300px] bg-gray-900 rounded-lg flex items-center justify-center">
-                {honeypotError
-                  ? "Error"
-                  : <Top10AttacksPiechart data={attackTypesData} />}
+            {/* ATTACK TYPES */}
+
+            <div className={`col-span-3 ${CARD}`}>
+              <Header title="Attack Types" />
+
+              <div className={CARD_BODY}>
+                <Top10AttacksPiechart />
               </div>
             </div>
 
-            <div className="bg-gray-800 rounded-lg p-4">
-              <h2 className="text-sm font-bold mb-2">Top 25 Source IPs</h2>
-              <div className="w-[360px] h-[300px] bg-gray-900 rounded-lg flex items-center justify-center">
-                {honeypotError ? "Error" : <Top25SourceIPsChart />}
+            {/* TOP SOURCE IPS */}
+
+            <div className={`col-span-3 ${CARD}`}>
+              <Header title="Top Source IPs">
+
+                <select
+                  className={CONTROL}
+                  defaultValue="24h"
+                >
+                  <option>24h</option>
+                  <option>7d</option>
+                  <option>30d</option>
+                </select>
+
+                <select
+                  className={CONTROL}
+                  defaultValue="25"
+                >
+                  <option>25</option>
+                  <option>50</option>
+                  <option>100</option>
+                </select>
+
+                <button
+                  type="button"
+                  className={`${SMALL_BUTTON} bg-blue-500 hover:bg-blue-400`}
+                >
+                  Table
+                </button>
+
+                <button
+                  type="button"
+                  className={`${SMALL_BUTTON} bg-green-500 hover:bg-green-400`}
+                >
+                  CSV
+                </button>
+              </Header>
+
+              <div className={`${CARD_BODY} p-2`}>
+                <Top25SourceIPsChart />
               </div>
             </div>
 
-            <div className="bg-gray-800 rounded-lg p-4">
-              <h2 className="text-sm font-bold mb-2">Source ASN Analysis</h2>
-              <div className="w-[360px] h-[300px] bg-gray-900 rounded-lg flex items-center justify-center">
-                {honeypotError ? "Error" : <SourceASNChart />}
+            {/* ASN */}
+
+            <div className={`col-span-3 ${CARD}`}>
+              <Header title="ASN Analysis" />
+
+              <div className={CARD_BODY}>
+                <SourceASNChart />
               </div>
             </div>
-
           </div>
 
-          {/* Row 3 */}
-          <div className="flex gap-6">
+          {/* ===================================== */}
+          {/* ROW 3 */}
+          {/* ===================================== */}
 
-            <div className="bg-gray-800 rounded-lg p-4">
-              <h2 className="text-sm font-bold mb-2">Protocol Breakdown</h2>
-              <div className="w-[360px] h-[300px] bg-gray-900 rounded-lg flex items-center justify-center">
-                {honeypotError ? "Error" : <ProtocolBreakdownChart />}
+          <div className="grid grid-cols-12 gap-3 min-h-0">
+
+            {/* PROTOCOLS */}
+
+            <div className={`col-span-3 ${CARD}`}>
+              <Header title="Protocol Breakdown" />
+
+              <div className={CARD_BODY}>
+                <ProtocolBreakdownChart />
               </div>
             </div>
 
-            <div className="bg-gray-800 rounded-lg p-4">
-              <h2 className="text-sm font-bold mb-2">Port Scanning Analysis</h2>
-              <div className="w-[360px] h-[300px] bg-gray-900 rounded-lg flex items-center justify-center">
-                {honeypotError ? "Error" : <PortScanningChart />}
+            {/* PORTS */}
+
+            <div className={`col-span-3 ${CARD}`}>
+              <Header title="Port Scanning" />
+
+              <div className={CARD_BODY}>
+                <PortScanningChart />
               </div>
             </div>
 
-            <div className="bg-gray-800 rounded-lg p-4">
-              <h2 className="text-sm font-bold mb-2">Severity Distribution</h2>
-              <div className="w-[360px] h-[300px] bg-gray-900 rounded-lg flex items-center justify-center">
-                {honeypotError ? "Error" : <SeverityDistributionChart />}
+            {/* SEVERITY */}
+
+            <div className={`col-span-3 ${CARD}`}>
+              <Header title="Severity Distribution" />
+
+              <div className={CARD_BODY}>
+                <SeverityDistributionChart />
               </div>
             </div>
 
-            <div className="bg-gray-800 rounded-lg p-4">
-              <h2 className="text-sm font-bold mb-2">Comparative Traffic Analysis</h2>
-              <div className="w-[360px] h-[300px] bg-gray-900 rounded-lg flex items-center justify-center">
-                {honeypotError ? "Error" : <ComparativeAnalysisChart />}
+            {/* COMPARATIVE */}
+
+            <div className={`col-span-3 ${CARD}`}>
+              <Header title="Comparative Analysis" />
+
+              <div className={CARD_BODY}>
+                <ComparativeAnalysisChart />
               </div>
             </div>
-
           </div>
         </div>
 
-        {/* RIGHT COLUMN */}
-        <div className="flex flex-col gap-6 w-1/3">
+        {/* ========================================= */}
+        {/* RIGHT SIDE */}
+        {/* ========================================= */}
 
-          <div className="bg-gray-800 rounded-lg p-4">
-            <h2 className="text-sm font-bold mb-1">Live Attack Log Feed (Terminal View)</h2>
-            <p className="text-gray-400 text-xs mb-2">
-              Real-time events from honeypot → ingestion engine → dashboard.
-            </p>
-            <div className="h-[360px] bg-black rounded-lg border border-gray-700 overflow-hidden">
+        <div className="col-span-3 flex flex-col gap-3 min-h-0">
+
+          {/* LIVE FEED */}
+
+          <div className={`${CARD} shrink-0`}>
+            <div className="h-[290px] bg-black rounded-lg border border-gray-700 overflow-hidden">
               <RecentLogsTerminal />
             </div>
           </div>
 
-          <div className="bg-gray-800 rounded-lg p-4">
-            <h2 className="text-sm font-bold mb-2">AI Threat Copilot</h2>
-            <div className="h-[680px] bg-gray-900 rounded-lg overflow-hidden">
+          {/* COPILOT */}
+
+          <div className={`${CARD} flex-1`}>
+            <Header title="AI Threat Copilot" />
+
+            <div className="flex-1 bg-gray-900 rounded-lg overflow-hidden min-h-0">
               <CopilotPanel />
             </div>
           </div>
 
-          <div className="bg-gray-800 rounded-lg p-4 text-center">
-            <h2 className="text-sm font-bold mb-3">Reports</h2>
+          {/* DOWNLOAD */}
+
+          <div className="bg-gray-800 rounded-xl p-3 text-center border border-gray-700 shrink-0 shadow-lg shadow-black/20">
             <button
               onClick={handleDownloadClick}
-              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+              className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition w-full"
+              type="button"
             >
               Download Report
             </button>
           </div>
-
         </div>
-
       </div>
     </div>
   );

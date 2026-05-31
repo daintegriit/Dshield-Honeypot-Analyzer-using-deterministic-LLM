@@ -1,308 +1,614 @@
-import React, { useEffect, useState, useRef } from "react";
-import axios from "axios";
-import { Sparklines, SparklinesLine } from "react-sparklines";
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  useMemo,
+} from "react";
+
+import {
+  FaShieldAlt,
+  FaSkullCrossbones,
+  FaNetworkWired,
+  FaBug,
+  FaRobot,
+  FaExclamationTriangle,
+  FaTerminal,
+  FaBrain,
+  FaFingerprint,
+} from "react-icons/fa";
+
+import {
+  Sparklines,
+  SparklinesLine,
+} from "react-sparklines";
+
+import apiService from "../services/apiService";
+
+// ======================================================
+// CONFIG
+// ======================================================
+
+const REFRESH_MS = 3000;
+
+// ======================================================
+// HELPERS
+// ======================================================
+
+const severityConfig = {
+  stable: {
+    label: "STABLE",
+    icon: <FaShieldAlt />,
+    border:
+      "border-green-500 shadow-[0_0_12px_rgba(34,197,94,0.25)]",
+    badge:
+      "bg-green-500/10 text-green-400 border border-green-500/30",
+  },
+
+  elevated: {
+    label: "ELEVATED",
+    icon: <FaExclamationTriangle />,
+    border:
+      "border-yellow-500 shadow-[0_0_12px_rgba(250,204,21,0.25)]",
+    badge:
+      "bg-yellow-500/10 text-yellow-300 border border-yellow-500/30",
+  },
+
+  high: {
+    label: "HIGH",
+    icon: <FaBug />,
+    border:
+      "border-orange-500 shadow-[0_0_12px_rgba(249,115,22,0.25)]",
+    badge:
+      "bg-orange-500/10 text-orange-300 border border-orange-500/30",
+  },
+
+  critical: {
+    label: "CRITICAL",
+    icon: <FaSkullCrossbones />,
+    border:
+      "border-red-500 shadow-[0_0_14px_rgba(239,68,68,0.35)]",
+    badge:
+      "bg-red-500/10 text-red-400 border border-red-500/30",
+  },
+};
+
+const safeArray = (v) =>
+  Array.isArray(v) ? v : [];
+
+// ======================================================
+// COMPONENT
+// ======================================================
 
 const CopilotPanel = () => {
-  const [summary, setSummary] = useState(null);
+  const [summary, setSummary] =
+    useState(null);
 
-  // Core telemetry
-  const [logs, setLogs] = useState([]);
-  const [trends, setTrends] = useState([]);
+  const [logs, setLogs] =
+    useState([]);
 
-  const [lastUpdate, setLastUpdate] = useState(Date.now());
+  const [trends, setTrends] =
+    useState([]);
 
-  // Copilot chat
-  const [conversation, setConversation] = useState([]);
-  const [copilotLoading, setCopilotLoading] = useState(false);
-  const [copilotError, setCopilotError] = useState(null);
-  const [question, setQuestion] = useState("");
+  const [conversation, setConversation] =
+    useState([]);
 
-  // UI helpers
-  const [copied, setCopied] = useState(false);
-  const [insightsExpanded, setInsightsExpanded] = useState(false);
+  const [question, setQuestion] =
+    useState("");
 
-  // --------------------------------
-  // Fetch Intel
-  // --------------------------------
+  const [loading, setLoading] =
+    useState(false);
+
+  const [error, setError] =
+    useState(null);
+
+  const [lastUpdate, setLastUpdate] =
+    useState(Date.now());
+
+  const mountedRef = useRef(true);
+
+  // ======================================================
+  // LIVE FETCH ENGINE
+  // ======================================================
+
   useEffect(() => {
+    mountedRef.current = true;
+
     const loadIntel = async () => {
       try {
         const [
           summaryRes,
           logsRes,
-          trendRes,
-        ] = await Promise.all([
-          axios.get("/api/charts/threat-summary"),
-          axios.get("/api/charts/recent-logs"),
-          axios.get("/api/charts/attack-trends"),
+          trendsRes,
+        ] = await Promise.allSettled([
+          apiService.getThreatSummary(),
+          apiService.getRecentLogs(),
+          apiService.getAttackTrends(60),
         ]);
 
-        setSummary(summaryRes.data);
-        setLogs(logsRes.data || []);
-        setTrends(trendRes.data || []);
+        if (!mountedRef.current) return;
+
+        if (
+          summaryRes.status === "fulfilled"
+        ) {
+          setSummary(summaryRes.value || {});
+        }
+
+        if (
+          logsRes.status === "fulfilled"
+        ) {
+          setLogs(
+            safeArray(logsRes.value)
+          );
+        }
+
+        if (
+          trendsRes.status === "fulfilled"
+        ) {
+          setTrends(
+            safeArray(trendsRes.value)
+          );
+        }
+
         setLastUpdate(Date.now());
       } catch (err) {
-        console.error("Copilot Intel Error:", err);
+        console.error(
+          "Copilot Intel Error:",
+          err
+        );
       }
     };
 
     loadIntel();
-    const interval = setInterval(loadIntel, 5000);
-    return () => clearInterval(interval);
+
+    const interval = setInterval(
+      loadIntel,
+      REFRESH_MS
+    );
+
+    return () => {
+      mountedRef.current = false;
+      clearInterval(interval);
+    };
   }, []);
 
-  // --------------------------------
-  // Loading
-  // --------------------------------
-  if (!summary) {
-    return (
-      <div className="bg-gray-900 text-white p-4 rounded-lg">
-        <p className="animate-pulse">Loading Copilot Intelligence…</p>
-      </div>
-    );
-  }
+  // ======================================================
+  // ANALYTICS ENGINE
+  // ======================================================
 
-  // --------------------------------
-  // Real-time analytics
-  // --------------------------------
-  const now = Date.now();
-  const fiveMinutesAgo = now - 5 * 60 * 1000;
+  const analytics = useMemo(() => {
+    const core = summary?.coreSummary || {};
+    const reasoning = core?.reasoning || {};
 
-  const recentAttackRate = logs.filter(
-    (l) => new Date(l.timestamp).getTime() >= fiveMinutesAgo
-  ).length;
+    const topIP =
+      core?.scanningIndicators?.topSourceIp?.ip ||
+      summary?.topIP?._id ||
+      "N/A";
 
-  const ipCounts = {};
-  const portCounts = {};
+    const attackTrend = trends
+      .map((t) => Number(t.count || 0))
+      .slice(-20);
 
-  logs.forEach((l) => {
-    if (l.source_ip)
-      ipCounts[l.source_ip] = (ipCounts[l.source_ip] || 0) + 1;
-    if (l.target_port)
-      portCounts[l.target_port] = (portCounts[l.target_port] || 0) + 1;
-  });
+    const dominantAttack =
+      reasoning?.dominantAttackType ||
+      core?.attackClassification?.dominantAttack?.type ||
+      "unknown";
 
-  const topIP =
-    Object.entries(ipCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || "N/A";
+    const riskScore =
+      Number(core?.riskScore0to100 ?? 0);
 
-  const topPort =
-    Object.entries(portCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || "N/A";
+    const severity =
+      core?.state?.toLowerCase?.() ||
+      "stable";
 
-  const attackTrend =
-    trends.length > 0
-      ? trends.map((t) => t.count).slice(-12)
-      : [5, 8, 10, 12, recentAttackRate];
+    const attackDetected =
+      reasoning?.attackDetected === true;
 
-  const asnOrg = summary.topASN?.org || "Unknown";
-  const asnCount = summary.topASN?.count || 0;
+    const attackConfidence =
+      reasoning?.attackConfidence ||
+      "unknown";
 
-  const threatScore = Math.min(
-    100,
-    Math.floor(
-      recentAttackRate / 2 +
-        asnCount / 150 +
-        (["Google LLC", "Akamai", "OVH", "Hetzner", "DigitalOcean"].includes(asnOrg)
-          ? 20
-          : 0)
-    )
-  );
+    const analystSummary =
+      reasoning?.analystSummary ||
+      "No active intelligence summary available.";
 
-  let threatBadge = "🟢 Stable";
-  if (threatScore >= 90) threatBadge = "🔴 Critical";
-  else if (threatScore >= 70) threatBadge = "🟠 High";
-  else if (threatScore >= 40) threatBadge = "🟡 Elevated";
+    return {
+      topIP,
 
-  const riskGlow =
-    threatScore >= 90
-      ? "border-red-500 shadow-[0_0_18px_#ff4444]"
-      : threatScore >= 70
-      ? "border-orange-500 shadow-[0_0_18px_#ff8800]"
-      : threatScore >= 40
-      ? "border-yellow-500 shadow-[0_0_18px_#ffee00]"
-      : "border-green-500 shadow-[0_0_18px_#00ff88]";
+      attackTrend,
 
-  const secondsAgo = Math.floor((Date.now() - lastUpdate) / 1000);
+      recentAttackRate:
+        Number(
+          core?.attackMetrics?.attacksLast5Min ||
+          summary?.recentAttackRate ||
+          0
+        ),
 
-  // --------------------------------
-  // Rule-based Insights (deterministic)
-  // --------------------------------
-  const insights = [];
+      threatScore:
+        Number(riskScore || 0),
 
-  if (recentAttackRate > 200)
-    insights.push("🚨 Extremely high attack volume detected in the last 5 minutes.");
-  else if (recentAttackRate > 50)
-    insights.push("⚠️ Noticeable surge in attack traffic detected.");
-  else insights.push("✅ Attack activity currently stable.");
+      severity:
+        String(severity || "stable"),
 
-  if ([22, 23, 445, 3389].includes(parseInt(topPort))) {
-    insights.push(
-      `🔍 Critical service port ${topPort} is the primary target — likely brute-force or exploit scanning.`
-    );
-  }
+      dominantAttack:
+        String(dominantAttack || "unknown"),
 
-  if (asnOrg !== "Unknown") {
-    insights.push(`🌐 Majority of traffic originates from ASN: ${asnOrg}.`);
-  }
+      attackDetected:
+        Boolean(attackDetected),
 
-  insights.push(`🎯 Top attacking IP observed: ${topIP}`);
+      analystSummary,
 
-  // --------------------------------
-  // Ask Copilot
-  // --------------------------------
+      attackConfidence,
+    };
+  }, [trends, summary]);
+
+  // ======================================================
+  // INSIGHTS
+  // ======================================================
+
+  const insights = useMemo(() => {
+    const list = [];
+
+    if (analytics.attackDetected) {
+      list.push({
+        icon: (
+          <FaExclamationTriangle />
+        ),
+        text:
+          "Deterministic malicious activity detected.",
+      });
+    } else {
+      list.push({
+        icon: <FaShieldAlt />,
+        text:
+          "Telemetry stable within expected thresholds.",
+      });
+    }
+
+    if (
+      analytics.dominantAttack &&
+      analytics.dominantAttack !==
+        "unknown"
+    ) {
+      list.push({
+        icon: <FaFingerprint />,
+        text: `Dominant attack classification: ${analytics.dominantAttack}`,
+      });
+    }
+
+    return list.slice(0, 2);
+  }, [analytics]);
+
+  // ======================================================
+  // COPILOT ASK
+  // ======================================================
+
   const askCopilot = async () => {
     if (!question.trim()) return;
 
+    const currentQuestion =
+      question;
+
     setConversation((c) => [
       ...c,
-      { role: "user", content: question, ts: Date.now() },
+      {
+        role: "user",
+        content: currentQuestion,
+      },
     ]);
+
     setQuestion("");
 
     try {
-      setCopilotLoading(true);
-      setCopilotError(null);
+      setLoading(true);
+      setError(null);
 
-      const res = await axios.post("/api/copilot/ask", { question, templateId: "ATTACK_INTENT" });
+      const response = await fetch(
+        `${process.env.REACT_APP_API_BASE_URL}/api/copilot/ask`,
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json",
+          },
+
+          body: JSON.stringify({
+            question:
+              currentQuestion,
+            templateId:
+              "ATTACK_INTENT",
+          }),
+        }
+      );
+
+      const data =
+        await response.json();
 
       setConversation((c) => [
         ...c,
         {
           role: "assistant",
-          headline: "Copilot Response",
-          content: res.data?.answer || "No response generated.",
-          ts: Date.now(),
+          content:
+            data?.answer ||
+            "No intelligence response available.",
         },
       ]);
-    } catch {
-      setCopilotError("Copilot failed to answer the question");
+    } catch (err) {
+      console.error(err);
+
+      setError(
+        "Copilot inference failed."
+      );
     } finally {
-      setCopilotLoading(false);
+      setLoading(false);
     }
   };
 
-  // --------------------------------
-  // Render
-  // --------------------------------
+  // ======================================================
+  // LOADING
+  // ======================================================
+
+  if (!summary) {
+    return (
+      <div className="h-full bg-gray-900 rounded-lg flex items-center justify-center text-gray-400 text-xs">
+        <div className="animate-pulse flex items-center gap-2">
+          <FaRobot />
+          Loading intelligence...
+        </div>
+      </div>
+    );
+  }
+
+  const severityData =
+    severityConfig[
+      analytics.severity
+    ] ||
+    severityConfig.stable;
+
+  const secondsAgo = Math.floor(
+    (Date.now() - lastUpdate) /
+      1000
+  );
+
+  // ======================================================
+  // UI
+  // ======================================================
+
   return (
     <div
-      className={`h-full flex flex-col bg-gradient-to-b from-gray-800 to-black text-white p-6 rounded-lg border ${riskGlow} overflow-hidden`}
+      className={`
+        h-full flex flex-col
+        bg-gray-900
+        rounded-lg
+        border
+        overflow-hidden
+        ${severityData.border}
+      `}
     >
-      {/* Header */}
-      <div className="flex items-center justify-between mb-4 shrink-0">
-        <span className="px-3 py-1 rounded-full bg-gray-900 border border-green-600 text-sm">
-          {threatBadge}
-        </span>
+      {/* HEADER */}
 
-        <p className="text-xs text-gray-400">
-          Updated {secondsAgo}s ago
-        </p>
-      </div>
+      <div className="border-b border-gray-800 px-3 py-2 bg-black/30">
 
-      {/* Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-5 shrink-0">
-        <div className="bg-gray-900 p-4 rounded border border-gray-700">
-          <div className="flex justify-between items-center">
-            <p className="text-green-300 text-sm">Top Attacker IP</p>
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(topIP);
-                setCopied(true);
-                setTimeout(() => setCopied(false), 1200);
-              }}
-              className="text-xs text-gray-400 hover:text-green-400"
-            >
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </div>
-          <p className="text-xl font-bold">{topIP}</p>
-        </div>
+        <div className="flex items-center justify-between">
 
-        <div className="bg-gray-900 p-4 rounded border border-gray-700">
-          <p className="text-green-300 text-sm">Most Targeted Port</p>
-          <p className="text-xl font-bold">{topPort}</p>
-        </div>
+          <div className="flex items-center gap-2">
 
-        <div className="bg-gray-900 p-4 rounded border border-gray-700">
-          <p className="text-green-300 text-sm">Live Attack Rate</p>
-          <p className="text-xl font-bold">{recentAttackRate}/5 min</p>
-          <Sparklines data={attackTrend} height={28}>
-            <SparklinesLine color="#00ff88" />
-          </Sparklines>
-        </div>
+            <FaBrain className="text-cyan-400 text-sm" />
 
-        <div className="bg-gray-900 p-4 rounded border border-gray-700 text-center">
-          <p className="text-red-400 font-bold">
-            Threat Score: {threatScore}/100
-          </p>
-        </div>
-      </div>
+            <div>
+              <div className="text-xs font-bold text-white">
+                Threat Intelligence
+              </div>
 
-      {/* Rule-based Insights */}
-      <div className="bg-black p-4 rounded border border-green-600 mb-4 shrink-0">
-        <h3 className="text-green-300 font-bold mb-2">
-          📌 Copilot Insights (Rule-Based)
-        </h3>
-
-        <div className="space-y-1">
-          {insights.map((line, idx) => (
-            <p
-              key={idx}
-              className="text-gray-300 text-sm leading-snug"
-            >
-              {line}
-            </p>
-          ))}
-        </div>
-      </div>
-
-      {/* Copilot Chat */}
-      <div className="flex flex-col flex-1 min-h-0 bg-black p-5 rounded border border-green-600 overflow-hidden">
-        <h3 className="text-green-300 font-bold mb-3 shrink-0">
-          Copilot Assessment
-        </h3>
-
-        <div className="flex-1 overflow-y-auto space-y-4 pr-2">
-          {conversation.map((m, i) => (
-            <div
-              key={i}
-              className={`p-3 rounded ${
-                m.role === "user"
-                  ? "bg-gray-900 border border-gray-700"
-                  : "bg-black border border-green-500"
-              }`}
-            >
-              {m.role === "assistant" && (
-                <p className="text-green-300 font-semibold mb-1">
-                  {m.headline || "Copilot Response"}
-                </p>
-              )}
-              <p className="text-sm text-gray-300 whitespace-pre-wrap">
-                {m.content}
-              </p>
+              <div className="text-[9px] text-gray-500">
+                Deterministic real-time threat analysis
+              </div>
             </div>
-          ))}
+          </div>
+
+          <div
+            className={`
+              px-2 py-[2px]
+              rounded-md
+              text-[9px]
+              flex items-center gap-1
+              font-semibold tracking-wide
+              ${severityData.badge}
+            `}
+          >
+            {severityData.icon}
+            {severityData.label}
+          </div>
+        </div>
+      </div>
+
+      {/* METRICS */}
+
+      <div className="grid grid-cols-4 gap-1 p-2">
+
+        <MetricCard
+          icon={<FaNetworkWired />}
+          label="Attacker"
+          value={analytics.topIP}
+        />
+
+        <MetricCard
+          icon={<FaBug />}
+          label="Attack"
+          value={
+            analytics.dominantAttack
+              ?.toUpperCase?.() || "UNKNOWN"
+          }
+          danger={
+            analytics.attackDetected
+          }
+        />
+
+        <MetricCard
+          icon={<FaTerminal />}
+          label="Rate"
+          value={`${analytics.recentAttackRate}/5m`}
+        />
+
+        <MetricCard
+          icon={<FaShieldAlt />}
+          label="Score"
+          value={`${analytics.threatScore}/100`}
+          danger={
+            analytics.threatScore >= 70
+          }
+        />
+      </div>
+
+      {/* TREND */}
+
+      <div className="px-2 pb-2">
+
+        <div className="bg-black rounded-lg border border-gray-800 p-1 h-[70px]">
+
+          <div className="flex items-center justify-between mb-1">
+
+            <span className="text-[9px] text-gray-500">
+              Threat Acceleration
+            </span>
+
+            <span className="text-[9px] text-gray-500">
+              {secondsAgo}s ago
+            </span>
+          </div>
+
+          <div className="h-[40px] overflow-hidden rounded">
+
+            <Sparklines
+              data={
+                analytics.attackTrend
+              }
+            >
+              <SparklinesLine
+                color="#00ff88"
+              />
+            </Sparklines>
+          </div>
+        </div>
+      </div>
+
+      {/* INSIGHTS */}
+
+      <div className="px-2 pb-2">
+
+        <div className="bg-black rounded-lg border border-gray-800 p-2 space-y-1">
+
+          {insights.map(
+            (item, idx) => (
+              <div
+                key={idx}
+                className="flex items-start gap-2 text-[10px] text-gray-300"
+              >
+                <div className="mt-[1px] text-cyan-400">
+                  {item.icon}
+                </div>
+
+                <div>{item.text}</div>
+              </div>
+            )
+          )}
+        </div>
+      </div>
+
+      {/* CHAT */}
+
+      <div className="flex-1 min-h-0 flex flex-col px-2 pb-2">
+
+        <div className="h-[110px] overflow-y-auto bg-black rounded-lg border border-gray-800 p-2 space-y-2">
+
+          {conversation.length ===
+            0 && (
+            <div className="text-[10px] text-gray-500">
+              Ask about attack
+              behavior, ports,
+              scans, anomalies,
+              replay telemetry,
+              or threat reasoning.
+            </div>
+          )}
+
+          {conversation.map(
+            (m, idx) => (
+              <div
+                key={idx}
+                className={`text-[10px] ${
+                  m.role ===
+                  "assistant"
+                    ? "text-cyan-300"
+                    : "text-green-400"
+                }`}
+              >
+                <span className="font-bold">
+                  {m.role ===
+                  "assistant"
+                    ? "COPILOT"
+                    : "USER"}
+                  :
+                </span>{" "}
+                {m.content}
+              </div>
+            )
+          )}
+
+          {loading && (
+            <div className="text-[10px] text-yellow-400 animate-pulse">
+              Processing...
+            </div>
+          )}
+
+          {error && (
+            <div className="text-[10px] text-red-400">
+              {error}
+            </div>
+          )}
         </div>
 
-        {copilotLoading && (
-          <p className="text-gray-400 animate-pulse mt-2">
-            Generating analyst-grade response…
-          </p>
-        )}
+        {/* INPUT */}
 
-        {copilotError && (
-          <p className="text-red-400 mt-2">{copilotError}</p>
-        )}
+        <div className="mt-2 flex gap-1">
 
-        <div className="mt-4 flex gap-2 shrink-0">
           <input
             value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            placeholder="Why is port 22 being targeted?"
-            className="flex-1 bg-gray-900 border border-gray-700 rounded px-3 py-2 text-white"
+            onChange={(e) =>
+              setQuestion(
+                e.target.value
+              )
+            }
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                askCopilot();
+              }
+            }}
+            placeholder="Ask copilot..."
+            className="
+              flex-1
+              bg-black
+              border border-gray-700
+              rounded-md
+              px-2 py-1
+              text-[10px] text-white
+              outline-none
+              focus:border-cyan-500
+            "
           />
+
           <button
             onClick={askCopilot}
-            className="bg-green-600 hover:bg-green-500 px-4 py-2 rounded font-semibold"
+            disabled={loading}
+            className="
+              bg-green-600 hover:bg-green-500
+              px-2 py-1
+              rounded-md
+              text-[10px]
+              font-semibold
+              transition
+              disabled:opacity-50
+            "
           >
             Ask
           </button>
@@ -311,5 +617,50 @@ const CopilotPanel = () => {
     </div>
   );
 };
+
+// ======================================================
+// METRIC CARD
+// ======================================================
+
+const MetricCard = ({
+  icon,
+  label,
+  value,
+  danger,
+}) => (
+  <div
+    className={`
+      rounded-lg
+      border
+      p-1.5
+      bg-black
+      ${
+        danger
+          ? "border-red-500/40"
+          : "border-gray-800"
+      }
+    `}
+  >
+    <div className="flex items-center gap-1 text-[9px] text-gray-400 mb-1">
+      {icon}
+      {label}
+    </div>
+
+    <div
+      className={`
+        text-[10px]
+        font-bold
+        truncate
+        ${
+          danger
+            ? "text-red-400"
+            : "text-white"
+        }
+      `}
+    >
+      {value}
+    </div>
+  </div>
+);
 
 export default CopilotPanel;

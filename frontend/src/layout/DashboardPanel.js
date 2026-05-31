@@ -1,18 +1,5 @@
 import React from "react";
 
-/**
- * DashboardPanel
- *
- * PURPOSE:
- * - Enforces consistent sizing & spacing across the dashboard
- * - Prevents components from breaking layout
- * - Makes the DashboardPage the single source of layout truth
- *
- * RULES:
- * - Components render content ONLY
- * - Panel controls height, padding, overflow
- */
-
 const DashboardPanel = ({
   title,
   subtitle,

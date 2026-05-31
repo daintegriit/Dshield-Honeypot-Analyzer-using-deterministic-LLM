@@ -1,34 +1,43 @@
-import React, { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
-import * as topojson from 'topojson-client';
-import worldMapData from '../data/world-110m.json';
+import React, { useEffect, useRef } from "react";
+import * as d3 from "d3";
+import * as topojson from "topojson-client";
+import worldMapData from "../data/world-110m.json";
+import apiService from "../services/apiService";
 
 const RealTimeThreatMap = () => {
   const svgRef = useRef(null);
   const wrapperRef = useRef(null);
+  const intervalRef = useRef(null);
+  const mountedRef = useRef(true);
 
   useEffect(() => {
     if (!wrapperRef.current) return;
 
+    mountedRef.current = true;
+
     const wrapper = wrapperRef.current;
     const svg = d3.select(svgRef.current);
 
-    const render = () => {
+    let zoomBehavior;
+
+    const render = async () => {
       const width = wrapper.clientWidth;
       const height = wrapper.clientHeight;
 
-      svg.selectAll('*').remove();
+      svg.selectAll("*").remove();
 
       svg
-        .attr('viewBox', `0 0 ${width} ${height}`)
-        .attr('preserveAspectRatio', 'xMidYMid meet')
-        .style('cursor', 'grab');
+        .attr("viewBox", `0 0 ${width} ${height}`)
+        .attr("preserveAspectRatio", "xMidYMid meet")
+        .style("cursor", "grab");
 
-      // Root transform layer (IMPORTANT)
-      const g = svg.append('g');
+      const g = svg.append("g");
 
-      // Projection auto-fit
+      // ----------------------------
+      // Projection
+      // ----------------------------
       const projection = d3.geoMercator();
+
       const geoData = topojson.feature(
         worldMapData,
         worldMapData.objects.countries
@@ -38,74 +47,101 @@ const RealTimeThreatMap = () => {
 
       const path = d3.geoPath().projection(projection);
 
-      // Draw map
-      g.append('path')
+      // ----------------------------
+      // Draw Map
+      // ----------------------------
+      g.append("path")
         .datum(geoData)
-        .attr('d', path)
-        .attr('fill', '#1f2937')
-        .attr('stroke', '#374151')
-        .attr('stroke-width', 0.5);
+        .attr("d", path)
+        .attr("fill", "#111827")
+        .attr("stroke", "#374151")
+        .attr("stroke-width", 0.5);
 
-      // Mock attack data
-      const attackData = [
-        { source: [-74.006, 40.7128], target: [-118.2437, 34.0522], type: 'DDoS' },
-        { source: [-0.1278, 51.5074], target: [2.3522, 48.8566], type: 'Malware' },
-      ];
+      // ----------------------------
+      // 🔥 Fetch REAL attack data
+      // ----------------------------
+      let attackData = [];
 
+      try {
+        const res = await apiService.getGeolocation();
+
+        if (res?.results && Array.isArray(res.results)) {
+          attackData = res.results
+            .filter((d) => d.latitude && d.longitude)
+            .slice(0, 50); // 🔥 prevent overload
+        }
+      } catch (err) {
+        console.error("Threat map fetch error:", err);
+      }
+
+      // ----------------------------
+      // Color scale
+      // ----------------------------
       const colorScale = d3
-        .scaleOrdinal()
-        .domain(['DDoS', 'Malware'])
-        .range(['#ef4444', '#f59e0b']);
+        .scaleSequential(d3.interpolateReds)
+        .domain([0, d3.max(attackData, (d) => d.count) || 1]);
 
-      // Arcs
-      g.selectAll('.arc')
+      // ----------------------------
+      // Attack Points
+      // ----------------------------
+      g.selectAll(".attack-point")
         .data(attackData)
         .enter()
-        .append('path')
-        .attr('class', 'arc')
-        .attr('d', d => {
-          const [sx, sy] = projection(d.source);
-          const [tx, ty] = projection(d.target);
-          const dx = tx - sx;
-          const dy = ty - sy;
-          const dr = Math.sqrt(dx * dx + dy * dy) * 1.2;
-          return `M${sx},${sy}A${dr},${dr} 0 0,1 ${tx},${ty}`;
-        })
-        .attr('fill', 'none')
-        .attr('stroke', d => colorScale(d.type))
-        .attr('stroke-width', 2)
-        .attr('opacity', 0.8);
+        .append("circle")
+        .attr("cx", (d) => projection([d.longitude, d.latitude])[0])
+        .attr("cy", (d) => projection([d.longitude, d.latitude])[1])
+        .attr("r", (d) => Math.max(2, Math.log(d.count + 1)))
+        .attr("fill", (d) => colorScale(d.count))
+        .attr("opacity", 0.85)
+        .append("title")
+        .text((d) => `${d.ip} (${d.country}) → ${d.count} attacks`);
 
-      // Attack points
-      g.selectAll('.attack-point')
-        .data(attackData)
-        .enter()
-        .append('circle')
-        .attr('cx', d => projection(d.source)[0])
-        .attr('cy', d => projection(d.source)[1])
-        .attr('r', 4)
-        .attr('fill', d => colorScale(d.type));
-
-      // 🧭 ZOOM + PAN (Globe-equivalent UX)
-      const zoom = d3.zoom()
-        .scaleExtent([1, 6]) // zoom limits
-        .on('zoom', (event) => {
-          g.attr('transform', event.transform);
+      // ----------------------------
+      // Zoom + Pan
+      // ----------------------------
+      zoomBehavior = d3
+        .zoom()
+        .scaleExtent([1, 6])
+        .on("zoom", (event) => {
+          g.attr("transform", event.transform);
         });
 
-      svg.call(zoom);
+      svg.call(zoomBehavior);
     };
 
+    // initial render
     render();
 
-    const resizeObserver = new ResizeObserver(render);
+    // live refresh
+    intervalRef.current = setInterval(() => {
+      if (mountedRef.current) render();
+    }, 5000);
+
+    // resize handling
+    const resizeObserver = new ResizeObserver(() => {
+      render();
+    });
+
     resizeObserver.observe(wrapper);
 
-    return () => resizeObserver.disconnect();
+    // ----------------------------
+    // CLEANUP
+    // ----------------------------
+    return () => {
+      mountedRef.current = false;
+      clearInterval(intervalRef.current);
+
+      if (zoomBehavior) {
+        svg.on(".zoom", null);
+      }
+
+      resizeObserver.disconnect();
+      svg.selectAll("*").remove();
+    };
   }, []);
 
   return (
-    <div ref={wrapperRef} className="w-full h-full relative">
+    <div className="w-full h-full min-h-0 overflow-hidden" ref={wrapperRef}>
       <svg ref={svgRef} className="w-full h-full" />
     </div>
   );

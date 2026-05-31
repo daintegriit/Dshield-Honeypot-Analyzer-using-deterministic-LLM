@@ -1,140 +1,397 @@
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = `${process.env.REACT_APP_API_BASE_URL}/api`;
+// ---------------------------------------------
+// BASE URL RESOLUTION
+// ---------------------------------------------
+const resolvedBaseURL =
+  process.env.REACT_APP_API_BASE_URL ||
+  "http://localhost:5002";
 
-const apiService = {
-    // Fetch Top 10 Countries
-    getTopCountries: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/top-countries`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Top 10 Countries:", error);
-            return [];
-        }
-    },
+// ---------------------------------------------
+// AXIOS INSTANCE
+// ---------------------------------------------
+const API = axios.create({
+  baseURL: resolvedBaseURL,
+  timeout: 180000,
+});
 
-    // Fetch Top 25 Source IPs
-    getTopSourceIPs: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/top-ips`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Top Source IPs:", error);
-            return [];
-        }
-    },
+// ---------------------------------------------
+// DEBUG BASE URL
+// ---------------------------------------------
+console.log("🌐 API BASE URL:", resolvedBaseURL);
 
-    // Fetch Top Attack Types
-    getTopAttackTypes: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/top-attack-types`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Top Attack Types:", error);
-            return [];
-        }
-    },
+// ---------------------------------------------
+// REQUEST LOGGER
+// ---------------------------------------------
+API.interceptors.request.use(
+  (config) => {
+    console.log(
+      `🚀 API Request → ${config.method?.toUpperCase()} ${config.baseURL}${config.url}`
+    );
+    return config;
+  },
+  (error) => {
+    console.error("❌ Request Interceptor Error:", error);
+    return Promise.reject(error);
+  }
+);
 
-    // Fetch Attack Trends Over Time
-    getAttackTrends: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/attack-trends`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Attack Trends:", error);
-            return [];
-        }
-    },
+// ---------------------------------------------
+// RESPONSE LOGGER
+// ---------------------------------------------
+API.interceptors.response.use(
+  (response) => {
+    console.log(
+      `✅ API Response ← ${response.config.url}`,
+      response.data
+    );
+    return response;
+  },
+  (error) => {
+    console.error(
+      "❌ API Response Error:",
+      error?.response?.status,
+      error?.message
+    );
 
-    // Fetch Port Scanning Analysis
-    getPortScanningData: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/port-scanning`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Port Scanning Data:", error);
-            return [];
-        }
-    },
+    return Promise.reject(error);
+  }
+);
 
-    // Fetch Protocol Breakdown
-    getProtocolBreakdown: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/protocol-breakdown`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Protocol Breakdown:", error);
-            return [];
-        }
-    },
+// ======================================================
+// SAFE REQUEST HANDLER
+// ======================================================
+const safeRequest = async (
+  fn,
+  fallback,
+  endpointName = "UnknownEndpoint"
+) => {
+  try {
+    const res = await fn();
 
-    // Fetch Severity Distribution of Attacks
-    getSeverityDistribution: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/severity-distribution`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Severity Distribution:", error);
-            return [];
-        }
-    },
+    // ---------------------------------------------
+    // 🔥 NULL / UNDEFINED GUARD
+    // ---------------------------------------------
+    if (res?.data === undefined || res?.data === null) {
+      console.warn(`⚠️ ${endpointName} returned empty response`);
+      return fallback;
+    }
 
-    // Fetch Source ASN Analysis
-    getSourceASNAnalysis: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/source-asn`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Source ASN Analysis:", error);
-            return [];
-        }
-    },
+    return res.data;
+  } catch (err) {
+    console.error(
+      `❌ ${endpointName} Failed:`,
+      err?.response?.status,
+      err?.message
+    );
 
-    // Fetch Comparative Traffic Analysis
-    getComparativeTraffic: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/comparative-traffic`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Comparative Traffic Analysis:", error);
-            return [];
-        }
-    },
-
-    // Fetch Global Threat Intelligence Data
-    getGlobalThreats: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/global-threats`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Global Threat Intelligence Data:", error);
-            return [];
-        }
-    },
-
-    // Fetch Heatmap Data
-    getHeatmapData: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/heatmap-data`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Heatmap Data:", error);
-            return [];
-        }
-    },
-
-    // Fetch Threat Map Data (if needed)
-    getThreatMapData: async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}/attacks/threat-map`);
-            return response.data;
-        } catch (error) {
-            console.error("Error fetching Threat Map Data:", error);
-            return [];
-        }
-    },
+    return fallback;
+  }
 };
 
-// Export the API service
+
+const apiService = {
+  // ==================================================
+  // TOP COUNTRIES
+  // ==================================================
+  getTopCountries: async () => {
+    const data = await safeRequest(
+      () => API.get(`/api/charts/top-countries`),
+      [],
+      "TopCountries"
+    );
+
+    console.log("🌍 Top Countries:", data);
+
+    return Array.isArray(data) ? data : [];
+  },
+
+  // ==================================================
+  // TOP SOURCE IPS
+  // ==================================================
+  getTopSourceIPs: async () => {
+    const data = await safeRequest(
+      () => API.get(`/api/charts/top-ips`),
+      [],
+      "TopSourceIPs"
+    );
+
+    console.log("🛰️ Top Source IPs:", data);
+
+    return Array.isArray(data) ? data : [];
+  },
+
+  // ==================================================
+  // ATTACK TYPES
+  // ==================================================
+  getTopAttackTypes: async () => {
+    const data = await safeRequest(
+      () => API.get(`/api/charts/top-attack-types`),
+      [],
+      "TopAttackTypes"
+    );
+
+    console.log("⚔️ Attack Types:", data);
+
+    return Array.isArray(data) ? data : [];
+  },
+
+  // ==================================================
+  // ATTACK TRENDS
+  // ==================================================
+  getAttackTrends: async (minutes = 60) => {
+    const data = await safeRequest(
+      () =>
+        API.get(`/api/charts/attack-trends?minutes=${minutes}`),
+      [],
+      "AttackTrends"
+    );
+
+    console.log("📈 Raw Attack Trends:", data);
+
+    // ---------------------------------------------
+    // SHAPE NORMALIZATION
+    // ---------------------------------------------
+    if (!Array.isArray(data)) {
+      console.warn("⚠️ Attack trends not array");
+      return [];
+    }
+
+    const normalized = data.map((item, index) => ({
+      time:
+        item.time ||
+        item.timestamp ||
+        item.minute ||
+        `T${index}`,
+
+      count:
+        Number(
+          item.count ??
+          item.total ??
+          item.value ??
+          0
+        ) || 0,
+    }));
+
+    console.log("📊 Normalized Attack Trends:", normalized);
+
+    return normalized;
+  },
+
+  // ==================================================
+  // PORT SCANNING
+  // ==================================================
+  getPortScanningData: async () => {
+    const data = await safeRequest(
+      () => API.get(`/api/charts/port-scanning`),
+      [],
+      "PortScanning"
+    );
+
+    console.log("🚪 Port Scanning:", data);
+
+    return Array.isArray(data) ? data : [];
+  },
+
+  // ==================================================
+  // PROTOCOL BREAKDOWN
+  // ==================================================
+  getProtocolBreakdown: async () => {
+    const data = await safeRequest(
+      () => API.get(`/api/charts/protocol-breakdown`),
+      [],
+      "ProtocolBreakdown"
+    );
+
+    console.log("📡 Protocol Breakdown:", data);
+
+    return Array.isArray(data) ? data : [];
+  },
+
+  // ==================================================
+  // SEVERITY DISTRIBUTION
+  // ==================================================
+  getSeverityDistribution: async (
+    minutes = 60
+  ) => {
+
+    const data =
+      await safeRequest(
+
+        () =>
+          API.get(
+
+            `/api/charts/severity-distribution`,
+
+            {
+              params: {
+                minutes,
+              },
+            }
+          ),
+
+        {
+
+          total: 0,
+
+          dominantSeverity:
+            "none",
+
+          severities: [],
+
+        },
+
+        "SeverityDistribution"
+      );
+
+    console.log(
+      "🚨 Severity Distribution:",
+      data
+    );
+
+    // ==========================================
+    // RETURN FULL OBJECT
+    // ==========================================
+
+    if (
+      !data ||
+      typeof data !== "object"
+    ) {
+
+      return {
+
+        total: 0,
+
+        dominantSeverity:
+          "none",
+
+        severities: [],
+
+      };
+    }
+
+    return {
+
+      total:
+        Number(
+          data.total || 0
+        ),
+
+      dominantSeverity:
+        data.dominantSeverity ||
+        "none",
+
+      severities:
+        Array.isArray(
+          data.severities
+        )
+          ? data.severities
+          : [],
+    };
+  },
+
+  // ==================================================
+  // ASN ANALYSIS
+  // ==================================================
+  getTopASNs: async () => {
+    const data = await safeRequest(
+      () => API.get(`/api/charts/top-asns`),
+      [],
+      "TopASNs"
+    );
+
+    console.log("🌐 ASN Analysis:", data);
+
+    return Array.isArray(data) ? data : [];
+  },
+
+  // ==================================================
+  // GEOLOCATION
+  // ==================================================
+  getGeolocation: async () => {
+    const data = await safeRequest(
+      () => API.get(`/api/charts/geolocation`),
+      { results: [] },
+      "Geolocation"
+    );
+
+    console.log("🗺️ Geolocation:", data);
+
+    return data;
+  },
+
+  // ==================================================
+  // HEATMAP
+  // ==================================================
+  getHeatmapData: async () => {
+    const data = await safeRequest(
+      () => API.get(`/api/charts/heatmap`),
+      [],
+      "Heatmap"
+    );
+
+    console.log("🔥 Heatmap:", data);
+
+    return Array.isArray(data) ? data : [];
+  },
+
+  // ==================================================
+  // THREAT SUMMARY
+  // ==================================================
+  getThreatSummary: async () => {
+    const data = await safeRequest(
+      () => API.get(`/api/charts/threat-summary`),
+      {},
+      "ThreatSummary"
+    );
+
+    console.log("🧠 Threat Summary:", data);
+
+    return data || {};
+  },
+
+  // ==================================================
+  // RECENT LOGS
+  // ==================================================
+  getRecentLogs: async () => {
+    const data = await safeRequest(
+      () => API.get(`/api/charts/recent-logs`),
+      [],
+      "RecentLogs"
+    );
+
+    console.log("📜 Recent Logs:", data);
+
+    return Array.isArray(data) ? data : [];
+  },
+
+  // ==================================================
+  // COMPARATIVE ANALYSIS
+  // ==================================================
+  getComparativeTraffic: async () => {
+
+    const data =
+      await safeRequest(
+
+        () =>
+          API.get(
+            `/api/charts/comparative-analysis`
+          ),
+
+        [],
+
+        "ComparativeAnalysis"
+      );
+
+    console.log(
+      "⚖️ Comparative Analysis:",
+      data
+    );
+
+    return Array.isArray(data)
+      ? data
+      : [];
+  },
+};
+
 export default apiService;

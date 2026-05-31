@@ -20,6 +20,7 @@
     "flag-icons": "^7.2.3",
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^1.16.0",
     "mongodb": "^6.10.0",
     "mongoose": "^8.8.1",
     "react": "^18.3.1",
@@ -27,10 +28,13 @@
     "react-country-flag": "^3.1.0",
     "react-dom": "^18.3.1",
     "react-heatmap-grid": "^0.9.1",
+    "react-icons": "^5.6.0",
     "react-router-dom": "^6.28.0",
     "react-scripts": "^5.0.1",
     "react-sparklines": "^1.7.0",
     "react-world-flags": "^1.6.0",
+    "recharts": "^3.8.1",
+    "socket.io-client": "^4.8.3",
     "three": "^0.170.0",
     "topojson-client": "^3.1.0",
     "web-vitals": "^2.1.4"
@@ -63,6 +67,5 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "tailwindcss": "^3.4.15",
     "webpack-dev-server": "^3.11.3"
-  },
-  "proxy": "http://localhost:5002"
+  }
 }
