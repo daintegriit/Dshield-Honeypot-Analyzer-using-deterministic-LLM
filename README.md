@@ -18,7 +18,6 @@ The system combines:
 - Risk Timeline Extraction
 - Real-Time Threat Visualization
 - Explainable AI Copilot Integration
-- Research Artifact Generation
 
 ## Tech Stack
 
