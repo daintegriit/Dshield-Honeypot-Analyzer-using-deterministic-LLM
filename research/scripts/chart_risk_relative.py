@@ -46,7 +46,7 @@ def plot_relative(file_path):
     plt.grid(alpha=0.3)
 
     # --------------------------------------------------
-    # OPTIONAL: PHASE MARKERS (VERY IMPORTANT)
+    # PHASE MARKERS
     # --------------------------------------------------
     attack_start = None
     cooldown_start = None

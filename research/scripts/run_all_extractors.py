@@ -4,7 +4,7 @@ import sys
 import json
 
 # --------------------------------------------------
-# CONFIG (ABSOLUTE SAFE PATHS)
+# CONFIG
 # --------------------------------------------------
 
 SCRIPT_DIR = os.path.dirname(

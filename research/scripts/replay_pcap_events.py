@@ -1,46 +1,4 @@
 #!/usr/bin/env python3
-"""
-Zeek Multi-Log PCAP Replay → DShield-style raw ingestion
-========================================================
-
-Purpose
--------
-Replay Zeek-derived multi-log events into the existing ingest controller
-without backend changes, while preserving ordering and providing a correct,
-explicit timing model.
-
-Supported logs
---------------
-- conn.log
-- dns.log
-- http.log
-- ssl.log
-
-Replay modes
-------------
-1) REPLAY_MODE=scaled_ts   (default, recommended)
-   - Preserves original Zeek event timing shape (bursts + gaps)
-   - Compresses or stretches the full event timeline into TARGET_DURATION_SECONDS
-
-2) REPLAY_MODE=flat
-   - Evenly spaces all events across TARGET_DURATION_SECONDS
-   - Useful only for controlled uniform scheduling experiments
-
-Research-safe behavior
-----------------------
-- Single-pass replay only (NO looping)
-- Absolute scheduled send times
-- Drift-aware scheduling
-- Startup latency probe
-- CSV artifact output
-- Preserves chronological ordering
-- No backend changes required
-
-Important note
---------------
-For burst-sensitive downstream systems (copilot, charts, burst ratios, short
-time-window anomaly detection), REPLAY_MODE=scaled_ts is the correct mode.
-"""
 
 import os
 import time
@@ -55,10 +13,6 @@ from typing import Dict, List, Optional, Tuple
 
 # ============================================================
 # CONFIG
-# ============================================================
-
-# ============================================================
-# 🔥 BATCHING CONFIG
 # ============================================================
 
 BATCH_SIZE = int(os.environ.get("BATCH_SIZE", "50"))
@@ -384,8 +338,6 @@ def build_raw_http(fields: List[str], stats: LoadStats, log_type: str) -> Option
 
 
 def build_raw_ssl(fields: List[str], stats: LoadStats, log_type: str) -> Optional[str]:
-    # Your current logic assumes:
-    # 0 ts, 2 id.orig_h, 3 id.orig_p, 4 id.resp_h, 5 id.resp_p, 6 version, 9 server_name
     try:
         src = fields[2]
         dst = fields[4]
@@ -597,14 +549,7 @@ def compute_schedule_offsets(
 def maybe_truncate_events_for_network_floor(
     events: List[Event], target_duration_seconds: int, avg_latency: Optional[float]
 ) -> Tuple[List[Event], bool, Optional[int], Optional[float]]:
-    """
-    Very conservative truncation helper.
-    Only truncates when TRUNCATE=1 and the target EPS appears higher than
-    the measured headroom-adjusted network floor.
 
-    Returns:
-      truncated_events, did_truncate, max_sendable, max_sustainable_eps
-    """
     if not avg_latency:
         return events, False, None, None
 
@@ -828,7 +773,6 @@ def main() -> None:
             sent_count += 1
 
             # ---- flush conditions ----
-            # ---- flush conditions ----
             now = time.monotonic()
             batch_age = now - last_flush_time
 
@@ -871,10 +815,6 @@ def main() -> None:
 
                         return
 
-                    # -------------------------------------
-                    # CRITICAL:
-                    # prevents backend burst flooding
-                    # -------------------------------------
 
                     time.sleep(0.02)
 

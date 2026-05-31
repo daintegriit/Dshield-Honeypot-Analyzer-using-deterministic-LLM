@@ -1,35 +1,4 @@
 #!/usr/bin/env python3
-"""
-====================================================================
-CHIRON — BULK WINDOW METRICS EXTRACTION PIPELINE
-====================================================================
-
-PURPOSE
--------
-Loop through ALL replay-aligned Chiron experiment JSONs
-and generate deterministic evaluation metrics.
-
-This script:
-
-1. Loads all experiment JSONs
-2. Extracts replay metadata
-3. Extracts sliding windows
-4. Aligns replay phases
-5. Computes confusion metrics
-6. Generates paper-ready CSV + JSON outputs
-
-OUTPUTS
--------
-Per experiment:
-- *_window_metrics.csv
-- *_evaluation_summary.json
-- *_confusion_matrix.json
-
-Global:
-- aggregate_summary.csv
-
-====================================================================
-"""
 
 import json
 import pandas as pd

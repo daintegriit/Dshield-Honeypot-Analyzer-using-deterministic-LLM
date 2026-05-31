@@ -86,7 +86,7 @@ def parse_time(ts):
 
 
 # --------------------------------------------------
-# 📈 ABSOLUTE RISK
+# ABSOLUTE RISK
 # --------------------------------------------------
 
 def plot_risk(file_path):
@@ -151,7 +151,7 @@ def plot_risk(file_path):
 
 
 # --------------------------------------------------
-# 🚀 RELATIVE RISK
+# RELATIVE RISK
 # --------------------------------------------------
 
 def plot_risk_relative(file_path):
@@ -218,7 +218,7 @@ def plot_risk_relative(file_path):
 
 
 # --------------------------------------------------
-# 🔥 ATTACK-ALIGNED
+# ATTACK-ALIGNED
 # --------------------------------------------------
 
 def plot_attack_aligned(file_path):
@@ -576,7 +576,7 @@ def plot_attack_aligned(file_path):
 
 
 # --------------------------------------------------
-# 🔵 STATE TRANSITIONS
+# STATE TRANSITIONS
 # --------------------------------------------------
 
 STATE_MAP = {
@@ -666,7 +666,7 @@ def plot_transitions(file_path):
     plt.close()
 
     print(
-        f"🔵 Transition chart → {filename}"
+        f"Transition chart → {filename}"
     )
 
 

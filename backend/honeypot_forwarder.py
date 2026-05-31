@@ -6,7 +6,7 @@ import requests
 from datetime import datetime
 
 # ===== CONFIG =====
-BACKEND_URL = os.environ.get("INGEST_ENDPOINT", "http://YOUR_DASHBOARD_PUBLIC_IP:5002/api/ingest/log")
+BACKEND_URL = os.environ.get("INGEST_ENDPOINT", "http://DASHBOARD_PUBLIC_IP:5002/api/ingest/log")
 INGEST_SHARED_KEY = os.environ.get("INGEST_SHARED_KEY")
 
 # verified DShield log path:

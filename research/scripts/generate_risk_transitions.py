@@ -32,11 +32,6 @@ os.makedirs(
 )
 
 
-# --------------------------------------------------
-# GLOBAL X-AXIS
-# FORCE CONSISTENCY ACROSS ALL CHARTS
-# --------------------------------------------------
-
 GLOBAL_X_MAX = 210
 
 
@@ -162,10 +157,6 @@ def plot_risk_transitions(file_path):
 
     attack_start = baseline_shift
 
-    # --------------------------------------------------
-    # ADD TRUE ORIGIN ANCHOR
-    # --------------------------------------------------
-
     if x[0] > 0:
 
         initial_risk = y[0]
@@ -248,9 +239,6 @@ def plot_risk_transitions(file_path):
         zorder=3
     )
 
-    # --------------------------------------------------
-    # SMART LABEL PLACEMENT
-    # --------------------------------------------------
 
     previous_y = None
 

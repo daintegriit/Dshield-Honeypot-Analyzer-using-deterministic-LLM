@@ -1,44 +1,4 @@
 #!/usr/bin/env python3
-
-"""
-===========================================================
-CHIRON LIVE DETERMINISTIC GROUNDING BENCHMARK
-===========================================================
-
-PURPOSE
--------
-Evaluate:
-
-- deterministic grounding fidelity
-- hallucination resistance
-- telemetry consistency
-- attack classification consistency
-- replay-state consistency
-- explanation quality
-- operational reasoning integrity
-
-IMPORTANT
----------
-This benchmark evaluates ONLY deterministic output from:
-
-    /api/charts/threat-summary
-
-This endpoint is NOT an LLM inference route.
-
-Therefore:
-- NO live prompt tokens
-- NO completion tokens
-- NO generation metrics
-
-are evaluated here.
-
-Those belong in a separate:
-
-    benchmark_copilot_llm.py
-
-===========================================================
-"""
-
 import requests
 import json
 import time

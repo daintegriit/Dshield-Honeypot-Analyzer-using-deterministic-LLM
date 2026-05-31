@@ -1,31 +1,5 @@
 #!/usr/bin/env python3
 
-"""
-====================================================================
-CHIRON — GOVERNED vs BASELINE LLM COMPARISON BENCHMARK
-====================================================================
-
-PURPOSE
--------
-Compare:
-
-1) Governed Chiron reasoning pipeline
-vs
-2) Ungoverned baseline LLM reasoning
-
-Across MULTIPLE LOCAL OLLAMA MODELS.
-
-This benchmark demonstrates:
-
-- deterministic grounding
-- hallucination resistance
-- evidence-bounded reasoning
-- operational consistency
-- governed cybersecurity narration
-
-====================================================================
-"""
-
 import os
 import json
 import time

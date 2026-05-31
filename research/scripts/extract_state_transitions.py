@@ -71,7 +71,6 @@ def extract_risk_score(record):
 
     risk_score = None
 
-    # Preferred modern structure
     if isinstance(
         record.get("core"),
         dict
@@ -83,21 +82,18 @@ def extract_risk_score(record):
             )
         )
 
-    # Legacy direct field
     if risk_score is None:
 
         risk_score = record.get(
             "riskScore0to100"
         )
 
-    # Older fallback
     if risk_score is None:
 
         risk_score = record.get(
             "riskScore"
         )
 
-    # Ultimate safety fallback
     if risk_score is None:
 
         risk_score = 0
@@ -262,11 +258,6 @@ def extract_transitions(file_path):
 
             prev_state = state
             prev_ts = ts
-
-            # ==============================================
-            # IMPORTANT:
-            # SAVE INITIAL BASELINE STATE
-            # ==============================================
 
             transitions.append({
 

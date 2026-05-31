@@ -55,7 +55,6 @@ def extract_risk_relative(file_path):
             "phase": r.get("phase")
         })
 
-    # ✅ IMPORTANT: sort by time (fixes chart jitter issues)
     timeline.sort(key=lambda x: x["t_min"])
 
     return timeline

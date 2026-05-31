@@ -68,7 +68,6 @@ console.log("✓ /api/copilot");
 app.use("/api/ingest", ingestRoutes);
 console.log("Registered: /api/ingest");
 
-// We DO NOT expose /api/ingest locally.
 // Ingest belongs to EC2 ONLY.
 
 // --------------------------------------------
