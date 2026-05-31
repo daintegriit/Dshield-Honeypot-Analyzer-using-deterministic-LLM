@@ -1,16 +1,8 @@
 // backend/services/behaviorSummary.js
 // FEATURE EXTRACTION ONLY
-// ---------------------------------------------------------------------
-// Goal:
-//   Convert raw DShield logs into a compact, structured situation report.
-//   This module MUST NOT make final "Attack/Normal" decisions or produce
-//   an overall risk score. It only extracts deterministic signals + normalized
-//   factors so copilotCore (decision layer) can fuse them.
-// This separation ensures the summary is a stable, explainable representation
-// of observed behavior, while copilotCore can evolve its reasoning and scoring
-// without breaking the summary's consistency or explainability.
 
 const DShieldLog = require("../models/DShieldLogModel");
+const { buildCopilotCore } = require("./copilotCore");
 
 // -------------------------
 // Safe helpers
@@ -87,7 +79,7 @@ function toEpochMs(ts) {
 //   2) well-known ranges for categories
 //   3) fallback to WELL_KNOWN / REGISTERED / DYNAMIC
 //
-// Note: labels are for explainability + aggregation, not attribution.
+// labels are for explainability + aggregation, not attribution.
 const PORT_LABELS_EXACT = Object.freeze({
   // Remote access / auth
   20: "FTP-DATA",
@@ -272,7 +264,6 @@ function computeScanSignals(events) {
     let spanSec = 0;
     if (times.length >= 2) spanSec = (times[times.length - 1] - times[0]) / 1000;
 
-    // Heuristic:
     // - many distinct ports in small time span => scan-y
     // spanFactor compresses long spans; increases when span is tight.
     const spanFactor = spanSec <= 0 ? 1 : 1 / Math.log2(spanSec + 2);
@@ -450,59 +441,96 @@ async function buildBehaviorSummary({ minutes = 60, limit = 5000 } = {}) {
   // Focus = average dominance of top src and top port
   const focusFactor = clamp((topSrcPct + topPortPct) / 2, 0, 1);
 
+  const core = await buildCopilotCore({ minutes });
+
   return {
+
     generatedAt: new Date().toISOString(),
 
-    window: {
-      minutes,
-      start: toIso(windowStartMs),
-      end: toIso(nowMs),
-      sampleLimit: limit,
-      totalEvents: total,
-      minutesWithEvents: binArr.length,
-    },
+    core,
 
-    distributions: {
-      protocols: topK(byProtocol, 10),
-      ports: topK(byPort, 10).map((x) => ({
-        ...x,
-        service: portLabel(Number(x.key)),
-        bucket: portBucket(Number(x.key)),
-      })),
-      services: topK(byService, 15),
-      severities: topK(bySeverity, 10),
-      attackCategories: topK(byAttackCategory, 10),
-      countries: topK(byCountry, 10),
-      asns: topK(byAsn, 10),
-      topSourceIps: topK(bySourceIp, 10),
-    },
+    behavior: {
 
-    signals: {
-      // activity shape
-      latestMinuteCount: latestCount,
-      medianMinuteCount: median,
-      burstRatio: Number(burstRatio.toFixed(2)),
+      window: {
 
-      // spread / focus
-      portEntropy: Number(portEntropy.toFixed(2)),
-      sourceEntropy: Number(srcEntropy.toFixed(2)),
-      topSourceIpConcentration: Number(topSrcPct.toFixed(3)),
-      topPortConcentration: Number(topPortPct.toFixed(3)),
+        minutes,
 
-      // behavioral indicators
-      scanCandidates: scanSignals,
+        start: toIso(windowStartMs),
 
-      // severity
-      highSeverityCount,
+        end: toIso(nowMs),
 
-      // normalized scoring inputs (0..1)
-      normalized: {
-        severityFactor: Number(severityFactor.toFixed(3)),
-        scanFactor: Number(scanFactor.toFixed(3)),
-        burstFactor: Number(burstFactor.toFixed(3)),
-        focusFactor: Number(focusFactor.toFixed(3)),
+        sampleLimit: limit,
+
+        totalEvents: total,
+
+        minutesWithEvents: binArr.length,
+
       },
+
+      distributions: {
+
+        protocols: topK(byProtocol, 10),
+
+        ports: topK(byPort, 10).map((x) => ({
+
+          ...x,
+
+          service: portLabel(Number(x.key)),
+
+          bucket: portBucket(Number(x.key)),
+
+        })),
+
+        services: topK(byService, 15),
+
+        severities: topK(bySeverity, 10),
+
+        attackCategories: topK(byAttackCategory, 10),
+
+        countries: topK(byCountry, 10),
+
+        asns: topK(byAsn, 10),
+
+        topSourceIps: topK(bySourceIp, 10),
+
+      },
+
+      signals: {
+
+        latestMinuteCount: latestCount,
+
+        medianMinuteCount: median,
+
+        burstRatio: Number(burstRatio.toFixed(2)),
+
+        portEntropy: Number(portEntropy.toFixed(2)),
+
+        sourceEntropy: Number(srcEntropy.toFixed(2)),
+
+        topSourceIpConcentration: Number(topSrcPct.toFixed(3)),
+
+        topPortConcentration: Number(topPortPct.toFixed(3)),
+
+        scanCandidates: scanSignals,
+
+        highSeverityCount,
+
+        normalized: {
+
+          severityFactor: Number(severityFactor.toFixed(3)),
+
+          scanFactor: Number(scanFactor.toFixed(3)),
+
+          burstFactor: Number(burstFactor.toFixed(3)),
+
+          focusFactor: Number(focusFactor.toFixed(3)),
+
+        },
+
+      },
+
     },
+
   };
 }
 
@@ -533,3 +561,9 @@ module.exports = {
   portLabel, // useful for UI/tooling
   portBucket,
 };
+
+
+
+
+
+

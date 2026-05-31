@@ -217,37 +217,385 @@ exports.getProtocolBreakdown = async (req, res) => {
 // Severity Distribution
 // -------------------------------
 exports.getSeverityDistribution = async (req, res) => {
+
   try {
+
+    console.log(
+      "🚀 /api/charts/severity-distribution HIT"
+    );
+
+    // ============================================
+    // WINDOW
+    // ============================================
+
+    const rawWindow =
+      req.query.minutes || "60";
+
+    const isAllTime =
+      String(rawWindow)
+        .toLowerCase() === "all";
+
+    const windowMinutes =
+      isAllTime
+        ? "all"
+        : Number(rawWindow);
+
+    // ============================================
+    // SINCE
+    // ============================================
+
+    const since =
+      !isAllTime
+        ? new Date(
+            Date.now() -
+            windowMinutes *
+              60 *
+              1000
+          )
+        : null;
+
+    // ============================================
+    // ORDER
+    // ============================================
+
+    const severityOrder = {
+      critical: 0,
+      high: 1,
+      medium: 2,
+      low: 3,
+    };
+
+    // ============================================
+    // MONGO MODE
+    // ============================================
+
     if (USE_MONGO) {
-      const result = await Attack.aggregate([
-        { $group: { _id: "$severity", count: { $sum: 1 } } },
-        { $sort: { count: -1 } }
-      ]);
-      return res.json(result);
+
+      let normalized = [];
+
+      // ==========================================
+      // ALL-TIME MODE
+      // ==========================================
+
+      if (isAllTime) {
+
+        console.log(
+          "📚 Using cumulative severity collection"
+        );
+
+        const result =
+          await mongoose.connection
+            .collection("severity")
+            .find({})
+            .toArray();
+
+        normalized =
+          result.map((r) => ({
+
+            severity:
+              String(
+                r.level || ""
+              ).toLowerCase(),
+
+            count:
+              Number(
+                r.count || 0
+              ),
+
+            first_seen:
+              r.first_seen || null,
+
+            last_updated:
+              r.last_updated || null,
+
+          }));
+
+      } else {
+
+        // ========================================
+        // LIVE WINDOW MODE
+        // ========================================
+
+        console.log(
+          `⚡ Using rolling Attack aggregation (${windowMinutes}m)`
+        );
+
+        const aggregation =
+          await Attack.aggregate([
+
+            // ====================================
+            // TIME WINDOW
+            // ====================================
+
+            {
+              $match: {
+                timestamp: {
+                  $gte: since,
+                },
+              },
+            },
+
+            // ====================================
+            // GROUP
+            // ====================================
+
+            {
+              $group: {
+
+                _id: {
+                  $toLower:
+                    "$severity",
+                },
+
+                count: {
+                  $sum: 1,
+                },
+
+                latest: {
+                  $max:
+                    "$timestamp",
+                },
+
+                earliest: {
+                  $min:
+                    "$timestamp",
+                },
+              },
+            },
+          ]);
+
+        normalized =
+          aggregation.map((r) => ({
+
+            severity:
+              r._id || "unknown",
+
+            count:
+              Number(
+                r.count || 0
+              ),
+
+            first_seen:
+              r.earliest || null,
+
+            last_updated:
+              r.latest || null,
+
+          }));
+      }
+
+      // ==========================================
+      // ENSURE ALL LEVELS EXIST
+      // ==========================================
+
+      const existingLevels =
+        new Set(
+          normalized.map(
+            (n) => n.severity
+          )
+        );
+
+      const allLevels = [
+        "critical",
+        "high",
+        "medium",
+        "low",
+      ];
+
+      for (const level of allLevels) {
+
+        if (
+          !existingLevels.has(level)
+        ) {
+
+          normalized.push({
+
+            severity: level,
+
+            count: 0,
+
+            first_seen: null,
+
+            last_updated: null,
+
+          });
+        }
+      }
+
+      // ==========================================
+      // SORT
+      // ==========================================
+
+      normalized.sort(
+        (a, b) =>
+          severityOrder[a.severity] -
+          severityOrder[b.severity]
+      );
+
+      // ==========================================
+      // TOTAL
+      // ==========================================
+
+      const total =
+        normalized.reduce(
+          (sum, s) =>
+            sum + s.count,
+          0
+        );
+
+      // ==========================================
+      // DOMINANT
+      // ==========================================
+
+      const dominant =
+        [...normalized]
+          .sort(
+            (a, b) =>
+              b.count - a.count
+          )[0]?.severity ||
+        "none";
+
+      console.log(
+        `✅ Severity telemetry returned | window=${windowMinutes} | total=${total} | dominant=${dominant}`
+      );
+
+      return res.json({
+
+        windowMinutes,
+
+        total,
+
+        dominantSeverity:
+          dominant,
+
+        generatedAt:
+          new Date(),
+
+        severities:
+          normalized,
+
+      });
     }
 
-    // Fallback
-    const logs = parseLogs();
-    const dist = { High: 0, Medium: 0, Low: 0 };
+    // ============================================
+    // FALLBACK MODE
+    // ============================================
+
+    console.warn(
+      "⚠️ Using fallback severity heuristics"
+    );
+
+    const logs =
+      parseLogs();
+
+    const dist = {
+
+      critical: 0,
+      high: 0,
+      medium: 0,
+      low: 0,
+
+    };
 
     for (const e of logs) {
-      if (e.dpt <= 1024) dist.High++;
-      else if (e.dpt <= 5000) dist.Medium++;
-      else dist.Low++;
+
+      if (e.dpt <= 1024) {
+
+        dist.critical++;
+
+      } else if (
+        e.dpt <= 5000
+      ) {
+
+        dist.high++;
+
+      } else if (
+        e.dpt <= 20000
+      ) {
+
+        dist.medium++;
+
+      } else {
+
+        dist.low++;
+      }
     }
 
-    res.json([
-      { severity: "High", count: dist.High },
-      { severity: "Medium", count: dist.Medium },
-      { severity: "Low", count: dist.Low }
-    ]);
+    const fallback = [
+
+      {
+        severity: "critical",
+        count: dist.critical,
+      },
+
+      {
+        severity: "high",
+        count: dist.high,
+      },
+
+      {
+        severity: "medium",
+        count: dist.medium,
+      },
+
+      {
+        severity: "low",
+        count: dist.low,
+      },
+
+    ];
+
+    const total =
+      fallback.reduce(
+        (sum, s) =>
+          sum + s.count,
+        0
+      );
+
+    return res.json({
+
+      windowMinutes,
+
+      total,
+
+      dominantSeverity:
+        [...fallback]
+          .sort(
+            (a, b) =>
+              b.count - a.count
+          )[0]?.severity ||
+        "none",
+
+      generatedAt:
+        new Date(),
+
+      severities:
+        fallback,
+
+    });
 
   } catch (err) {
-    console.error("Severity error:", err);
-    res.status(500).json({ message: "Error fetching severity distribution", err });
+
+    console.error(
+      "❌ Severity error:",
+      err
+    );
+
+    return res
+      .status(500)
+      .json({
+
+        message:
+          "Error fetching severity distribution",
+
+        error:
+          err.message || err,
+
+        severities: [],
+
+      });
   }
 };
-
 
 
 // -------------------------------
@@ -394,3 +742,12 @@ exports.getGlobalThreats = async (req, res) => {
     res.status(500).json({ message: "Error fetching global threats", err });
   }
 };
+
+
+
+
+
+
+
+
+

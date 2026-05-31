@@ -4,7 +4,7 @@ const axios = require("axios");
 const ThreatIntelCache = require("../models/ThreatIntelCacheModel");
 
 // ------------------------------------------------------------
-// 🔐 MULTI-KEY SUPPORT (comma-separated in .env)
+// MULTI-KEY SUPPORT (comma-separated in .env)
 // Example:
 // ABUSEIPDB_KEYS=key1,key2,key3
 // ------------------------------------------------------------
@@ -27,9 +27,7 @@ function getNextKey() {
 }
 
 // ------------------------------------------------------------
-// 🛑 GLOBAL DAILY RATE LIMIT SAFETY
-// AbuseIPDB daily limit = 1000 calls per key
-// We enforce a safer internal cap = 850 calls per key
+// GLOBAL DAILY RATE LIMIT SAFETY
 // ------------------------------------------------------------
 const DAILY_LIMIT = 850;
 
@@ -45,7 +43,7 @@ function resetCounterIfNeeded() {
 }
 
 // ------------------------------------------------------------
-// ⭐ MAIN FUNCTION
+// MAIN FUNCTION
 // ------------------------------------------------------------
 async function fetchThreatIntel(ip) {
   resetCounterIfNeeded();
@@ -55,8 +53,7 @@ async function fetchThreatIntel(ip) {
   }
 
   // ------------------------------------------------------------
-  // 1️⃣ CHECK TTL CACHE BEFORE API CALL
-  // TTL is handled in ThreatIntelCacheModel (12h auto-expire)
+  // CHECK TTL CACHE BEFORE API CALL
   // ------------------------------------------------------------
   const cached = await ThreatIntelCache.findOne({ ip });
 
@@ -75,7 +72,7 @@ async function fetchThreatIntel(ip) {
   }
 
   // ------------------------------------------------------------
-  // 2️⃣ SELECT NEXT API KEY (rotating)
+  // SELECT NEXT API KEY (rotating)
   // ------------------------------------------------------------
   const KEY = getNextKey();
   if (!KEY) return null;
@@ -107,7 +104,7 @@ async function fetchThreatIntel(ip) {
     }
 
     // ------------------------------------------------------------
-    // 3️⃣ SAVE INTO THREAT INTEL CACHE
+    // SAVE INTO THREAT INTEL CACHE
     // TTL auto-expire is applied at DB level
     // ------------------------------------------------------------
     await ThreatIntelCache.updateOne(
@@ -115,7 +112,7 @@ async function fetchThreatIntel(ip) {
       {
         $set: {
           abuseConfidenceScore: threat_score,
-          isTor: false, // AbuseIPDB doesn't return this, so false/null
+          isTor: false, 
           totalReports: data.totalReports ?? null,
           lastReportedAt: data.lastReportedAt ?? null,
           createdAt: new Date()

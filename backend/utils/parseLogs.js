@@ -50,3 +50,4 @@ function parseLogs() {
 }
 
 module.exports = parseLogs;
+

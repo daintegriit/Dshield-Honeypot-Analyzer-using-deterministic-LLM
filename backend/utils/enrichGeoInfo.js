@@ -1,8 +1,7 @@
 const { MongoClient } = require("mongodb");
 require("dotenv").config();
 
-const fetchGeoInfo = require("./fetchGeoInfo"); // Ensure this uses only the IPinfo API
-
+const fetchGeoInfo = require("./fetchGeoInfo"); 
 const dbUri = process.env.MONGO_URI;
 const dbName = "IntegriSecure";
 

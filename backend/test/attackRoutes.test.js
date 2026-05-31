@@ -1,11 +1,10 @@
 const request = require('supertest');
 const mongoose = require('mongoose'); // Import mongoose to manage database connection
-const app = require('../server'); // Adjust the path as necessary to import your Express app
+const app = require('../server'); // Adjust the path as necessary
 require('dotenv').config({ path: './.env.test' });
 
 // Setting up database connection before running tests
 beforeAll(async () => {
-    // Ensure you connect to a test database; the URI should be configured in your environment variables specifically for testing
     await mongoose.connect(process.env.TEST_DB_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -29,11 +28,11 @@ describe('Attack Routes', () => {
             });
         });
 
-        // Optional: Add a test for handling errors when the endpoint fails
+        // test for handling errors when the endpoint fails
         it('should handle errors when fetching top countries', async () => {
             // Simulate an error scenario if possible or mock it
             const response = await request(app).get('/api/attacks/top-countries');
-            expect(response.statusCode).not.toBe(500); // Assuming your server responds with status 500 on error
+            expect(response.statusCode).not.toBe(500); 
         });
     });
 
@@ -65,7 +64,7 @@ describe('Attack Routes', () => {
         });
     });
 
-    // ✅ Test: Fetch Attack Trends Over Time
+    // Test Fetch Attack Trends Over Time
     describe('GET /api/attacks/attack-trends', () => {
         it('should fetch attack trends over time', async () => {
             const response = await request(app).get('/api/attacks/attack-trends');
@@ -78,7 +77,7 @@ describe('Attack Routes', () => {
         });
     });
 
-    // ✅ Test: Fetch Protocol Breakdown
+    // Test Fetch Protocol Breakdown
     describe('GET /api/attacks/protocol-breakdown', () => {
         it('should fetch a breakdown of attack protocols', async () => {
             const response = await request(app).get('/api/attacks/protocol-breakdown');
@@ -91,7 +90,7 @@ describe('Attack Routes', () => {
         });
     });
 
-    // ✅ Test: Fetch Severity Distribution
+    // Test Fetch Severity Distribution
     describe('GET /api/attacks/severity-distribution', () => {
         it('should fetch severity distribution of attacks', async () => {
             const response = await request(app).get('/api/attacks/severity-distribution');
@@ -104,7 +103,7 @@ describe('Attack Routes', () => {
         });
     });
 
-    // ✅ Test: Fetch Port Scanning Analysis
+    // Test Fetch Port Scanning Analysis
     describe('GET /api/attacks/port-scanning', () => {
         it('should fetch port scanning analysis data', async () => {
             const response = await request(app).get('/api/attacks/port-scanning');
@@ -117,7 +116,7 @@ describe('Attack Routes', () => {
         });
     });
 
-    // ✅ Test: Fetch Source ASN Analysis
+    // Test Fetch Source ASN Analysis
     describe('GET /api/attacks/source-asn', () => {
         it('should fetch analysis of attack sources by ASN', async () => {
             const response = await request(app).get('/api/attacks/source-asn');
@@ -130,7 +129,7 @@ describe('Attack Routes', () => {
         });
     });
 
-    // ✅ Test: Fetch Comparative Traffic Analysis
+    // Test Fetch Comparative Traffic Analysis
     describe('GET /api/attacks/comparative-traffic', () => {
         it('should fetch comparative attack traffic analysis', async () => {
             const response = await request(app).get('/api/attacks/comparative-traffic');
@@ -143,7 +142,7 @@ describe('Attack Routes', () => {
         });
     });
 
-    // ✅ Test: Fetch Global Threats
+    // Test Fetch Global Threats
     describe("GET /api/attacks/global-threats", () => {
         it("should fetch live global threat intelligence data", async () => {
             const response = await request(app).get("/api/attacks/global-threats");

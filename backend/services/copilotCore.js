@@ -47,7 +47,7 @@ function stddev(arr) {
   return Math.sqrt(v);
 }
 
-// NOTE: probability-like normalization (not exponential softmax)
+// probability-like normalization (not exponential softmax)
 function softmaxLike(scoresObj) {
   const entries = Object.entries(scoresObj || {});
   const vals = entries.map(([, v]) => (typeof v === "number" ? v : 0));
@@ -204,11 +204,239 @@ function coeffOfVariation(arr) {
   return s / m;
 }
 
+function buildAttackIndicators({
+  dominantAttack,
+  scanCandidates,
+  authPortPressure,
+  webPortPressure,
+  dbPortPressure,
+  c2Signals,
+  attacksLast5Min,
+  burstRatio5mOverHour,
+  criticalCount,
+}) {
+  const indicators = {
+    highVolumeDetected: attacksLast5Min >= 25,
+    burstDetected: burstRatio5mOverHour > 0.35,
+    scanningDetected: dominantAttack.type === "scan" || scanCandidates.length > 0,
+    webInfrastructureTargeting: (webPortPressure || 0) > 100,
+    authenticationTargeting: (authPortPressure || 0) > 50,
+    databaseTargeting: (dbPortPressure || 0) > 50,
+    c2BehaviorDetected:
+      dominantAttack.type === "c2" ||
+      c2Signals.topFlowCount >= 12 ||
+      c2Signals.dominantFlowRatio >= 0.4,
+    severityEscalationDetected: criticalCount > 0,
+  };
+
+  const evidenceScore = Object.values(indicators).filter(Boolean).length;
+
+  return {
+    indicators,
+    evidenceScore,
+  };
+}
+
+function buildAttackExplanation({
+  dominantAttack,
+  attackTypeScores,
+  topPorts,
+  authPortPressure,
+  webPortPressure,
+  dbPortPressure,
+  scanCandidates,
+  c2Signals,
+  attacksLast5Min,
+  burstRatio5mOverHour,
+}) {
+
+  const reasons = [];
+
+  if (dominantAttack.type === "dos") {
+
+    if (attacksLast5Min > 100) {
+      reasons.push(
+        `High short-term attack volume detected with ${attacksLast5Min} attacks observed in the last 5 minutes.`
+      );
+    }
+
+    if (burstRatio5mOverHour > 0.35) {
+      reasons.push(
+        `Traffic burst ratio exceeded normal baseline behavior, indicating concentrated attack activity.`
+      );
+    }
+  }
+
+  if (dominantAttack.type === "scan") {
+
+    if (scanCandidates.length > 0) {
+      reasons.push(
+        `Multiple destination ports are receiving repeated connection attempts, consistent with reconnaissance or scanning activity.`
+      );
+    }
+
+    reasons.push(
+      `Elevated port entropy indicates broad service enumeration behavior.`
+    );
+  }
+
+  if (dominantAttack.type === "brute_force") {
+
+    if (authPortPressure > 0) {
+      reasons.push(
+        `Authentication-focused ports such as SSH, Telnet, or RDP are under concentrated targeting pressure.`
+      );
+    }
+  }
+
+  if (dominantAttack.type === "web_probe") {
+
+    if (webPortPressure > 0) {
+      reasons.push(
+        `Web-facing infrastructure ports are receiving abnormal request concentration.`
+      );
+    }
+
+    const topWebPort = topPorts.find(p =>
+      [80,443,8080,8443,8000,8888].includes(p.port)
+    );
+
+    if (topWebPort) {
+      reasons.push(
+        `Port ${topWebPort.port} is currently one of the dominant targeted web services in the active observation window.`
+      );
+    }
+  }
+
+  if (dominantAttack.type === "c2") {
+
+    if (c2Signals.topFlowCount >= 12) {
+      reasons.push(
+        `Repeated communication between the same source and destination pair suggests persistent beaconing behavior.`
+      );
+    }
+
+    if (c2Signals.periodicityCv !== null &&
+        c2Signals.periodicityCv < 0.65) {
+
+      reasons.push(
+        `Low inter-arrival timing variation indicates potentially automated command-and-control communication patterns.`
+      );
+    }
+
+    if (c2Signals.dominantFlowRatio > 0.40) {
+      reasons.push(
+        `One communication flow dominates the active window, which is consistent with centralized remote-control behavior.`
+      );
+    }
+  }
+
+  if (reasons.length === 0) {
+    reasons.push(
+      `Behavioral indicators remain inconclusive despite elevated telemetry activity.`
+    );
+  }
+
+  return reasons;
+}
+
+function buildRiskExplanation({
+  riskScore,
+  volumeComponent,
+  severityComponent,
+  behaviorComponent,
+  signalAmplifier,
+  c2Bonus,
+  impactBonus,
+  couplingBonus,
+}) {
+
+  const reasons = [];
+
+  if (volumeComponent >= 35) {
+    reasons.push(
+      `Attack volume significantly exceeded normal baseline conditions.`
+    );
+  }
+
+  if (severityComponent >= 15) {
+    reasons.push(
+      `Critical and high severity events materially increased overall system risk.`
+    );
+  }
+
+  if (behaviorComponent >= 10) {
+    reasons.push(
+      `Behavioral targeting against sensitive service categories increased risk weighting.`
+    );
+  }
+
+  if (signalAmplifier >= 8) {
+    reasons.push(
+      `Strong behavioral attack signatures amplified confidence in malicious activity classification.`
+    );
+  }
+
+  if (c2Bonus > 0) {
+    reasons.push(
+      `Command-and-control behavioral indicators contributed additional escalation pressure to the overall risk score.`
+    );
+  }
+
+  if (impactBonus > 0) {
+    reasons.push(
+      `Observed attack severity and operational impact indicators increased escalation confidence.`
+    );
+  }
+
+  if (couplingBonus > 0) {
+    reasons.push(
+      `Simultaneous high-volume and targeted behavioral activity produced compound escalation effects.`
+    );
+  }
+
+  if (riskScore >= 85) {
+    reasons.push(
+      `Overall threat posture reached critical operational risk levels.`
+    );
+  }
+
+  return reasons;
+}
+
+function buildConfidenceExplanation({
+  confidenceNumeric,
+  attackConfidence,
+  evidenceScore,
+  dominantAttack,
+  riskScore,
+}) {
+  return {
+    level: attackConfidence,
+    numeric: Number(confidenceNumeric.toFixed(2)),
+    evidenceScore,
+    explanation:
+      attackConfidence === "high"
+        ? "Multiple independent behavioral indicators align with elevated operational risk and the dominant attack classification."
+        : attackConfidence === "moderate"
+        ? "Several behavioral indicators support the detected classification, though not all escalation signals are active."
+        : "Observed telemetry contains limited or mixed behavioral evidence.",
+    basis: {
+      dominantAttackType: dominantAttack.type,
+      dominantAttackScore: Number(dominantAttack.score.toFixed(2)),
+      riskScore,
+      evidenceScore,
+    },
+  };
+}
+
+
 // ----------------------------
 // Core Builder Function
 // ----------------------------
 async function buildCopilotCore({ minutes = 60 } = {}) {
   const nowMs = Date.now();
+  const oneMinuteAgo = new Date(nowMs - 1 * 60 * 1000);
   const fiveMinutesAgo = new Date(nowMs - 5 * 60 * 1000);
   const fifteenMinutesAgo = new Date(nowMs - 15 * 60 * 1000);
   const oneHourAgo = new Date(nowMs - 60 * 60 * 1000);
@@ -218,7 +446,8 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
   // ==================================================
   // 1) ATTACK VOLUME SIGNALS (for DoS and general threat level)
   // ==================================================
-  const [attacksLast5Min, attacksLast15Min, attacksLastHour] = await Promise.all([
+  const [attacksLast1Min, attacksLast5Min, attacksLast15Min, attacksLastHour] = await Promise.all([
+    Attack.countDocuments({ timestamp: { $gte: oneMinuteAgo } }),
     Attack.countDocuments({ timestamp: { $gte: fiveMinutesAgo } }),
     Attack.countDocuments({ timestamp: { $gte: fifteenMinutesAgo } }),
     Attack.countDocuments({ timestamp: { $gte: oneHourAgo } }),
@@ -228,7 +457,7 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
   const burstRatio15mOverHour = attacksLastHour > 0 ? attacksLast15Min / attacksLastHour : 0;
 
   // ==================================================
-  // 2) LIFETIME CONTEXT (for stability + fallback, and also important signals like top ports and ASN)
+  // 2) LIFETIME CONTEXT (for stability + fallback, and also important signals like top ports a>
   // ==================================================
   const AUTH_PORTS = new Set([22, 23, 2222, 2223, 3389, 5900]);
   const WEB_PORTS = new Set([80, 443, 8000, 8080, 8443, 8888, 9000, 9443]);
@@ -551,10 +780,13 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
 
   // ---- HYBRID VOLUME (absolute + relative) ----
   // Relative catches bursts. Absolute catches sustained injections.
-  // Using max() ensures baseline doesn't inflate unless absolute is truly high.
 
-  const volumeAbs = clamp(attacksLast5Min / 2, 0, 60);        
-  const volumeRel = clamp(burstRatio5mOverHour * 80, 0, 60); 
+  const volumeAbs = clamp(        
+   Math.max(attacksLast1Min * 2, attacksLast5Min / 2),
+   0,
+   60
+ );
+ const volumeRel = clamp(burstRatio5mOverHour * 80, 0, 60); 
 
   const volumeComponent = Math.max(volumeAbs, volumeRel);
 
@@ -654,87 +886,748 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
   else if (riskScore >= 60) state = "high";
   else if (riskScore >= 45) state = "elevated";
 
+  const attackExplanation = buildAttackExplanation({
+    dominantAttack,
+    attackTypeScores,
+    topPorts: topPortsForOutput,
+    authPortPressure,
+    webPortPressure,
+    dbPortPressure,
+    scanCandidates,
+    c2Signals,
+    attacksLast5Min,
+    burstRatio5mOverHour,
+  });
 
+  const riskExplanation = buildRiskExplanation({
+    riskScore,
+    volumeComponent,
+    severityComponent,
+    behaviorComponent,
+    signalAmplifier,
+    c2Bonus,
+    impactBonus,
+    couplingBonus,
+  });
+
+  const attackIndicatorResult = buildAttackIndicators({
+    dominantAttack,
+    scanCandidates,
+    authPortPressure,
+    webPortPressure,
+    dbPortPressure,
+    c2Signals,
+    attacksLast5Min,
+    burstRatio5mOverHour,
+    criticalCount,
+  });
+
+  const attackDetected =
+    dominantAttack.score >= 40 ||
+    riskScore >= 60 ||
+    attackIndicatorResult.evidenceScore >= 3;
+
+  let confidenceNumeric = 0;
+
+  confidenceNumeric += dominantAttack.score * 0.5;
+  confidenceNumeric += Math.min(25, attackIndicatorResult.evidenceScore * 5);
+  confidenceNumeric += Math.min(25, riskScore * 0.25);
+  confidenceNumeric = clamp(confidenceNumeric, 0, 100);
+
+  const attackConfidence =
+    confidenceNumeric >= 75
+      ? "high"
+      : confidenceNumeric >= 45
+      ? "moderate"
+      : "low";
+
+  const confidenceExplanation = buildConfidenceExplanation({
+    confidenceNumeric,
+    attackConfidence,
+    evidenceScore: attackIndicatorResult.evidenceScore,
+    dominantAttack,
+    riskScore,
+  });
   // ==================================================
   // FINAL
   // ==================================================
-  return {
-    coreVersion: CORE_VERSION,
-    generatedAt: new Date().toISOString(),
-    windowMinutes: minutes,
-    windowStart: windowStart.toISOString(),
+  const replayState =
+    process.env.REPLAY_STATE ||
+    (
+      attacksLast5Min > 0
+        ? "injection"
+        : "baseline"
+    );
 
-    attackMetrics: {
+  const replayMode =
+    process.env.REPLAY_MODE ||
+    "scaled_ts";
+
+  const replayPcap =
+    process.env.PCAP_NAME ||
+    "unknown";
+
+  const replayStartedAt =
+    process.env.REPLAY_STARTED_AT ||
+    null;
+
+  const injectionStart =
+    process.env.INJECTION_START ||
+    null;
+
+  const cooldownStart =
+    process.env.COOLDOWN_START ||
+    null;
+
+  const replayEndedAt =
+    process.env.REPLAY_ENDED_AT ||
+    null;
+
+  const currentWindow =
+    Number(
+      process.env.CURRENT_WINDOW || 1
+    );
+
+  // --------------------------------------------------
+  // REAL REPLAY TIMELINE
+  // --------------------------------------------------
+
+  const replayTimeline = [
+
+    {
+      phase: "baseline",
+
+      startedAt:
+        replayStartedAt,
+
+      endedAt:
+        injectionStart,
+
+      isActive:
+        replayState ===
+        "baseline",
+
+      metadata: {
+        replayMode,
+        pcapName:
+          replayPcap,
+      },
+
+      overlay: {
+
+        attacksPerSecond:
+          replayState === "baseline"
+            ? attacksLast5Min
+            : 0,
+
+        attacksLast1Min:
+          replayState === "baseline"
+            ? attacksLast1Min
+            : 0,
+
+        attacksLast5Min:
+          replayState === "baseline"
+            ? attacksLast5Min
+            : 0,
+
+        attacksLast15Min:
+          replayState === "baseline"
+            ? attacksLast15Min
+            : 0,
+
+        attacksLastHour:
+          replayState === "baseline"
+            ? attacksLastHour
+            : 0,
+
+        burstRatio5mOverHour:
+          replayState === "baseline"
+            ? burstRatio5mOverHour
+            : 0,
+
+        dominantAttack:
+          replayState === "baseline"
+            ? dominantAttack.type
+            : "none",
+
+        dominantAttackScore:
+          replayState === "baseline"
+            ? Number(
+                dominantAttack.score.toFixed(2)
+              )
+            : 0,
+
+        riskScore0to100:
+          replayState === "baseline"
+            ? riskScore
+            : 0,
+
+        state:
+          replayState === "baseline"
+            ? state
+            : "stable",
+
+        attackDetected:
+          replayState === "baseline"
+            ? attackDetected
+            : false,
+
+        attackConfidence:
+          replayState === "baseline"
+            ? attackConfidence
+            : "low",
+
+        evidenceScore:
+          replayState === "baseline"
+            ? attackIndicatorResult.evidenceScore
+            : 0,
+
+        currentWindow,
+
+        windowMinutes:
+          minutes,
+
+      },
+
+    },
+
+    {
+      phase: "injection",
+
+      startedAt:
+        injectionStart,
+
+      endedAt:
+        cooldownStart,
+
+      isActive:
+        replayState ===
+        "injection",
+
+      metadata: {
+        replayMode,
+        pcapName:
+          replayPcap,
+      },
+
+      overlay: {
+
+        attacksPerSecond:
+          replayState === "injection"
+            ? attacksLast5Min
+            : 0,
+
+        attacksLast1Min:
+          replayState === "injection"
+            ? attacksLast1Min
+            : 0,
+
+        attacksLast5Min:
+          replayState === "injection"
+            ? attacksLast5Min
+            : 0,
+
+        attacksLast15Min:
+          replayState === "injection"
+            ? attacksLast15Min
+            : 0,
+
+        attacksLastHour:
+          replayState === "injection"
+            ? attacksLastHour
+            : 0,
+
+        burstRatio5mOverHour:
+          replayState === "injection"
+            ? burstRatio5mOverHour
+            : 0,
+
+        dominantAttack:
+          replayState === "injection"
+            ? dominantAttack.type
+            : "none",
+
+        dominantAttackScore:
+          replayState === "injection"
+            ? Number(
+                dominantAttack.score.toFixed(2)
+              )
+            : 0,
+
+        riskScore0to100:
+          replayState === "injection"
+            ? riskScore
+            : 0,
+
+        state:
+          replayState === "injection"
+            ? state
+            : "stable",
+
+        attackDetected:
+          replayState === "injection"
+            ? attackDetected
+            : false,
+
+        attackConfidence:
+          replayState === "injection"
+            ? attackConfidence
+            : "low",
+
+        evidenceScore:
+          replayState === "injection"
+            ? attackIndicatorResult.evidenceScore
+            : 0,
+
+        currentWindow,
+
+        windowMinutes:
+          minutes,
+
+      },
+
+    },
+
+    {
+      phase: "cooldown",
+
+      startedAt:
+        cooldownStart,
+
+      endedAt:
+        replayEndedAt,
+
+      isActive:
+        replayState ===
+        "cooldown",
+
+      metadata: {
+        replayMode,
+        pcapName:
+          replayPcap,
+      },
+
+      overlay: {
+
+        attacksPerSecond:
+          replayState === "cooldown"
+            ? attacksLast5Min
+            : 0,
+
+        attacksLast1Min:
+          replayState === "cooldown"
+            ? attacksLast1Min
+            : 0,
+
+        attacksLast5Min:
+          replayState === "cooldown"
+            ? attacksLast5Min
+            : 0,
+
+        attacksLast15Min:
+          replayState === "cooldown"
+            ? attacksLast15Min
+            : 0,
+
+        attacksLastHour:
+          replayState === "cooldown"
+            ? attacksLastHour
+            : 0,
+
+        burstRatio5mOverHour:
+          replayState === "cooldown"
+            ? burstRatio5mOverHour
+            : 0,
+
+        dominantAttack:
+          replayState === "cooldown"
+            ? dominantAttack.type
+            : "none",
+
+        dominantAttackScore:
+          replayState === "cooldown"
+            ? Number(
+                dominantAttack.score.toFixed(2)
+              )
+            : 0,
+
+        riskScore0to100:
+          replayState === "cooldown"
+            ? riskScore
+            : 0,
+
+        state:
+          replayState === "cooldown"
+            ? state
+            : "stable",
+
+        attackDetected:
+          replayState === "cooldown"
+            ? attackDetected
+            : false,
+
+        attackConfidence:
+          replayState === "cooldown"
+            ? attackConfidence
+            : "low",
+
+        evidenceScore:
+          replayState === "cooldown"
+            ? attackIndicatorResult.evidenceScore
+            : 0,
+
+        currentWindow,
+
+        windowMinutes:
+          minutes,
+
+      },
+
+    },
+
+  ];
+
+  // --------------------------------------------------
+  // LIVE TELEMETRY OVERLAY
+  // --------------------------------------------------
+
+  const liveReplayOverlay = {
+
+    attacksPerSecond:
       attacksLast5Min,
-      attacksLast15Min,
-      attacksLastHour,
-      burstRatio5mOverHour,
-      burstRatio15mOverHour,
-    },
 
-    scanningIndicators: {
-      scanCandidates,
-      topPorts: topPortsForOutput,
-      topSourceIp,
-      topExternalPeerIp,
-      sourceEntropy: Number(sourceEntropy.toFixed(3)),
-      portEntropy: Number(portEntropy.toFixed(3)),
-      authPortPressure,
-      webPortPressure,
-      dbPortPressure,
+    attacksLast1Min,
 
-      // debug / sanity fields
-      windowedEventCount: recentEvents.length,
-      windowedTopPortsCount: topPortsWindowed.length,
-      windowedMissingPortCount: missingPortCount,
-      usingWindowedPorts: topPortsWindowed.length > 0,
-      portDiversity,
-    },
+    attacksLast5Min,
 
-    severitySignals: {
-      criticalTotal,
-      highTotal,
-      mediumTotal,
-      criticalCount,
-      highCount,
-      mediumCount,
-      impactScore0to100: impactScore,
-    },
+    attacksLast15Min,
 
-    attributionSignals: {
-      topASN: topASN || null,
-    },
+    attacksLastHour,
 
-    attackClassification: {
-      attackTypeScores,
-      attackTypeProbabilities,
-      dominantAttack,
-      c2Signals,
-    },
+    burstRatio5mOverHour,
 
-    riskComponents: {
-      volumeComponent,
-      severityComponent,
-      behaviorComponent,
-      signalAmplifier,
-      c2Bonus,
-      impactBonus,
-      couplingBonus,
-    },
+    burstRatio15mOverHour,
 
-    riskScore0to100: riskScore,
+    dominantAttack:
+      dominantAttack.type,
+
+    dominantAttackScore:
+      Number(
+        dominantAttack.score.toFixed(2)
+      ),
+
+    riskScore0to100:
+      riskScore,
+
     state,
 
-    lifetimeContext: {
-      topPorts: topPortsLifetime,
-      authPortPressure: authPortPressureLifetime,
-      webPortPressure: webPortPressureLifetime,
-      dbPortPressure: dbPortPressureLifetime,
-      portEntropy: Number(portEntropyLifetime.toFixed(3)),
-      bytesMean,
-      bytesStd,
+    attackDetected,
+
+    attackConfidence,
+
+    evidenceScore:
+      attackIndicatorResult.evidenceScore,
+
+    currentWindow,
+
+    windowMinutes:
+      minutes,
+
+  };
+
+  // --------------------------------------------------
+  // FINAL RETURN
+  // --------------------------------------------------
+
+  return {
+
+    coreVersion:
+      CORE_VERSION,
+
+    generatedAt:
+      new Date().toISOString(),
+
+    windowMinutes:
+      minutes,
+
+    windowStart:
+      windowStart.toISOString(),
+
+    // ================================================
+    // ATTACK METRICS
+    // ================================================
+
+    attackMetrics: {
+
+      attacksLast1Min,
+
+      attacksLast5Min,
+
+      attacksLast15Min,
+
+      attacksLastHour,
+
+      burstRatio5mOverHour,
+
+      burstRatio15mOverHour,
+
     },
+
+    // ================================================
+    // SCANNING / ENTROPY
+    // ================================================
+
+    scanningIndicators: {
+
+      scanCandidates,
+
+      topPorts:
+        topPortsForOutput,
+
+      topSourceIp,
+
+      topExternalPeerIp,
+
+      sourceEntropy:
+        Number(
+          sourceEntropy.toFixed(3)
+        ),
+
+      portEntropy:
+        Number(
+          portEntropy.toFixed(3)
+        ),
+
+      authPortPressure,
+
+      webPortPressure,
+
+      dbPortPressure,
+
+      windowedEventCount:
+        recentEvents.length,
+
+      windowedTopPortsCount:
+        topPortsWindowed.length,
+
+      windowedMissingPortCount:
+        missingPortCount,
+
+      usingWindowedPorts:
+        topPortsWindowed.length > 0,
+
+      portDiversity,
+
+    },
+
+    // ================================================
+    // SEVERITY
+    // ================================================
+
+    severitySignals: {
+
+      criticalTotal,
+
+      highTotal,
+
+      mediumTotal,
+
+      criticalCount,
+
+      highCount,
+
+      mediumCount,
+
+      impactScore0to100:
+        impactScore,
+
+    },
+
+    // ================================================
+    // ATTRIBUTION
+    // ================================================
+
+    attributionSignals: {
+
+      topASN:
+        topASN || null,
+
+    },
+
+    // ================================================
+    // ATTACK CLASSIFICATION
+    // ================================================
+
+    attackClassification: {
+
+      attackTypeScores,
+
+      attackTypeProbabilities,
+
+      dominantAttack,
+
+      c2Signals,
+
+    },
+
+    // ================================================
+    // RISK FABRIC
+    // ================================================
+
+    riskComponents: {
+
+      volumeComponent,
+
+      severityComponent,
+
+      behaviorComponent,
+
+      signalAmplifier,
+
+      c2Bonus,
+
+      impactBonus,
+
+      couplingBonus,
+
+    },
+
+    riskScore0to100:
+      riskScore,
+
+    state,
+
+    // ================================================
+    // LIFETIME CONTEXT
+    // ================================================
+
+    lifetimeContext: {
+
+      topPorts:
+        topPortsLifetime,
+
+      authPortPressure:
+        authPortPressureLifetime,
+
+      webPortPressure:
+        webPortPressureLifetime,
+
+      dbPortPressure:
+        dbPortPressureLifetime,
+
+      portEntropy:
+        Number(
+          portEntropyLifetime.toFixed(3)
+        ),
+
+      bytesMean,
+
+      bytesStd,
+
+    },
+
+    // ================================================
+    // REPLAY CONTROL-PLANE TELEMETRY
+    // ================================================
+
+    replay: {
+
+      state:
+        replayState,
+
+      replayMode,
+
+      pcapName:
+        replayPcap,
+
+      currentWindow,
+
+      startedAt:
+        replayStartedAt,
+
+      injectionStart,
+
+      cooldownStart,
+
+      replayEndedAt,
+
+      timeline:
+        replayTimeline,
+
+    },
+
+    // ================================================
+    // LIVE OVERLAY TELEMETRY
+    // ================================================
+
+    replayOverlay:
+      liveReplayOverlay,
+
+    // ================================================
+    // BACKWARD COMPATIBILITY
+    // ================================================
+
+    replayState,
+
+    replayMode,
+
+    currentReplayPhase:
+      replayState,
+
+    replayTimeline,
+
+    replayAttackRate:
+      attacksLast5Min,
+
+    // ================================================
+    // REASONING
+    // ================================================
+
+    reasoning: {
+
+      attackDetected,
+
+      attackConfidence,
+
+      confidenceNumeric:
+        Number(
+          confidenceNumeric.toFixed(2)
+        ),
+
+      evidenceScore:
+        attackIndicatorResult.evidenceScore,
+
+      attackIndicators:
+        attackIndicatorResult.indicators,
+
+      dominantAttackType:
+        dominantAttack.type,
+
+      dominantAttackExplanation:
+        attackExplanation,
+
+      riskExplanation,
+
+      confidenceExplanation,
+
+      analystSummary:
+        attackDetected
+          ? attackExplanation.join(" ")
+          : "No significant malicious behavioral indicators detected.",
+
+    },
+
   };
 }
 
 module.exports = { buildCopilotCore };
+
+
+
+
+
+
+
+
+
+

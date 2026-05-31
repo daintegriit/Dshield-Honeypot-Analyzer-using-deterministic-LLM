@@ -1,26 +1,3 @@
-/**
- * frameworkMappings.js
- * ----------------------------------------
- * Purpose:
- * - Deterministically map observed behavior to
- *   MITRE ATT&CK, NIST CSF, CIS Controls, and SOC semantics
- * - Serve as the ONLY source of truth for framework alignment
- * - Feed Copilot explanations WITHOUT allowing speculation
- *
-  * Design Principles:
-  * - Explicit mappings only: no fuzzy logic or guesswork
-  * - Analyst-friendly labels and descriptions
-  * - Clear confidence drivers for each category
-  * - Modular structure for easy updates and expansions
-  * 
-  * use case: when an attack pattern is detected, reference this mapping to:
-  * 1) Tag the event with relevant MITRE, NIST, CIS categories
-  * 2) Generate a human-readable label and description for SOC analysts
-  * 3) Provide clear confidence drivers to explain why this classification was made
-  * 4) Ensure Copilot's explanations are grounded in these mappings, avoiding any speculation or overreach 
-  * 
-  * 
- */
 
 module.exports = {
   /* ======================================================

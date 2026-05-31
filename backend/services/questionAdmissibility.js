@@ -1,13 +1,6 @@
 // backend/services/questionAdmissibility.js
 // Deterministic governance gate for analyst questions
 // Runs BEFORE any LLM call
-//
-// Core principle:
-// The LLM may ONLY reason over verified system state
-// and may NEVER be granted authority, role, or external knowledge.
-//
-// This is NOT keyword filtering.
-// This is semantic admissibility checking.
 
 const QUESTION_TEMPLATES = require("./skills/questionTemplates");
 

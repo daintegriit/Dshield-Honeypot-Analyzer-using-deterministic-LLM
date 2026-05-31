@@ -1,9 +1,3 @@
-/**
- * enrichmentWorker.js – Background worker to enrich new attacks with geo and threat intel
- *
- * This worker continuously polls for new attacks that need enrichment, performs geo lookups and threat intelligence queries, and updates the attack records and dashboard stats accordingly.
- * ------------------------------------------------------------
- */
 
 require("dotenv").config();
 const mongoose = require("mongoose");
@@ -380,7 +374,7 @@ async function lookupThreatIntelCached(ip) {
 }
 
 /* -----------------------------------------------------------
-   MAIN LOOP (FULLY PATCHED)
+   MAIN LOOP
 ----------------------------------------------------------- */
 async function processQueue() {
   try {

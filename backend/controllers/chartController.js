@@ -1,628 +1,1389 @@
-/**
- * CHART CONTROLLER (Dual Mode: MongoDB + Log-Based)
- * -------------------------------------------------
- * USE_MONGO=false → Read /var/log/dshield.log (live honeypot data)
- * USE_MONGO=true  → Use MongoDB collections (future expansion)
- */
-
 const mongoose = require("mongoose");
 const { Parser } = require("json2csv");
-const parseLogs = require("../utils/parseLogs");     // reads /var/log/dshield.log
-const fetchGeoInfo = require("../utils/fetchGeoInfo"); // resolves IP → country
+
+const parseLogs = require("../utils/parseLogs");
+
 const DShieldLog = require("../models/DShieldLogModel");
-const ASN = require("../models/ASNModel");   // <-- ADD THIS
+const ASN = require("../models/ASNModel");
 const GeolocationCache = require("../models/GeolocationCacheModel");
-
-const USE_MONGO = process.env.USE_MONGO === "true";   // 🔥 toggle in .env
-
+const { buildCopilotCore } = require("../services/copilotCore");
+const { buildBehaviorSummary } = require("../services/behaviorSummary");
 
 // =========================================================
-// 🔥 Helper: determine attack type from port (temporary logic)
+// CONFIG
 // =========================================================
+
+const USE_MONGO =
+  process.env.USE_MONGO === "true";
+
+const MAX_ATTACK_TREND_MINUTES = 60;
+const MAX_HEATMAP_DOCS = 50000;
+const MAX_RECENT_LOGS = 50;
+const MAX_GEO_IPS = 50;
+
+// =========================================================
+// TEMP ATTACK CLASSIFIER
+// =========================================================
+
 function determineAttackType(port) {
-  if ([22].includes(port)) return "SSH Scan";
-  if ([23].includes(port)) return "Telnet Scan";
-  if (port >= 0 && port <= 1024) return "Low Port Scan";
+  if ([22].includes(port))
+    return "SSH Scan";
+
+  if ([23].includes(port))
+    return "Telnet Scan";
+
+  if (port >= 0 && port <= 1024)
+    return "Low Port Scan";
+
   return "General Scan";
 }
 
-
-
 // =========================================================
-// 🌍 TOP 10 COUNTRIES
+// TOP COUNTRIES
 // =========================================================
-exports.getTopCountries = async (req, res) => {
+
+exports.getTopCountries = async (
+  req,
+  res
+) => {
   try {
-    // ---------------- MongoDB MODE ----------------
+    console.log(
+      "🚀 /api/charts/top-countries HIT"
+    );
+
+    // =====================================================
+    // MONGO MODE
+    // =====================================================
+
     if (USE_MONGO) {
-      const results = await mongoose.connection
-        .collection("countries")
-        .aggregate([
-          { $match: { country: { $exists: true, $ne: "" } } },
-          { $sort: { attackCount: -1 } },
-          { $limit: 10 }
-        ])
-        .toArray();
+      const results =
+        await mongoose.connection
+          .collection("countries")
+          .find({})
+          .sort({
+            attackCount: -1,
+          })
+          .limit(10)
+          .toArray();
+
+      console.log(
+        `✅ countries returned: ${results.length}`
+      );
 
       return res.json(
-        results.map(item => ({
-          country: item.country,
-          attacks: item.attackCount
+        results.map((item) => ({
+          country:
+            item.country ||
+            "Unknown",
+
+          attacks:
+            item.attackCount || 0,
         }))
       );
     }
 
-    // ---------------- LOG FILE MODE ----------------
+    // =====================================================
+    // LOG MODE
+    // =====================================================
+
     const entries = parseLogs();
+
     const countryCount = {};
 
     for (const entry of entries) {
-      const geo = await fetchGeoInfo(entry.src);
-      const country = geo?.country_name || "Unknown";
+      const country =
+        entry.country || "Unknown";
 
-      if (!countryCount[country]) countryCount[country] = 0;
-      countryCount[country]++;
+      countryCount[country] =
+        (countryCount[country] ||
+          0) + 1;
     }
 
-    const formatted = Object.entries(countryCount)
-      .map(([country, attacks]) => ({ country, attacks }))
-      .sort((a, b) => b.attacks - a.attacks)
+    const formatted = Object.entries(
+      countryCount
+    )
+      .map(
+        ([country, attacks]) => ({
+          country,
+          attacks,
+        })
+      )
+      .sort(
+        (a, b) =>
+          b.attacks - a.attacks
+      )
       .slice(0, 10);
 
     return res.json(formatted);
-
   } catch (err) {
-    console.error("Error Top Countries:", err);
-    res.status(500).json({ error: "Internal Server Error" });
+    console.error(
+      "❌ Error Top Countries:",
+      err
+    );
+
+    return res
+      .status(500)
+      .json([]);
   }
 };
 
+// =========================================================
+// COUNTRIES CSV DOWNLOAD
+// =========================================================
 
+exports.downloadTopCountries =
+  async (req, res) => {
+    try {
+      const response =
+        await exports.getTopCountries(
+          req,
+          {
+            json: (data) => data,
+          }
+        );
 
+      const csv =
+        new Parser().parse(
+          response
+        );
+
+      res.header(
+        "Content-Type",
+        "text/csv"
+      );
+
+      res.attachment(
+        "top_countries.csv"
+      );
+
+      res.send(csv);
+    } catch (err) {
+      console.error(
+        "❌ CSV Download Error:",
+        err
+      );
+
+      return res
+        .status(500)
+        .json({
+          error:
+            "Internal Server Error",
+        });
+    }
+  };
 
 // =========================================================
-// 🌍 TOP COUNTRIES CSV DOWNLOAD
+// TOP SOURCE IPS
 // =========================================================
-exports.downloadTopCountries = async (req, res) => {
+
+exports.getTopIPs = async (
+  req,
+  res
+) => {
   try {
-    const response = await exports.getTopCountries(req, {
-      json: (data) => data
-    });
+    console.log(
+      "🚀 /api/charts/top-ips HIT"
+    );
 
-    const csv = new Parser().parse(response);
-    res.header("Content-Type", "text/csv");
-    res.attachment("top_countries.csv");
-    res.send(csv);
+    const limit =
+      parseInt(req.query.limit) ||
+      25;
 
-  } catch (err) {
-    console.error("Error downloading countries CSV:", err);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
+    // =====================================================
+    // MONGO MODE
+    // =====================================================
 
-
-
-
-// =========================================================
-// 🔥 TOP 25 SOURCE IPs
-// =========================================================
-exports.getTopIPs = async (req, res) => {
-  try {
-    const limit = parseInt(req.query.limit) || 25;
-
-    // ---------------- MongoDB MODE ----------------
     if (USE_MONGO) {
-      const results = await mongoose.connection
-        .collection("attacks")
-        .aggregate([
-          { $match: { source_ip: { $exists: true, $ne: "" } } },
-          { $group: { _id: "$source_ip", count: { $sum: 1 } } },
-          { $sort: { count: -1 } },
-          { $limit: limit }
-        ])
-        .toArray();
+      const results =
+        await mongoose.connection
+          .collection("topIPs")
+          .find({})
+          .sort({ count: -1 })
+          .limit(limit)
+          .toArray();
 
-      return res.json(results.map(ip => ({
-        sourceIP: ip._id,
-        count: ip.count
-      })));
+      console.log(
+        `✅ topIPs returned: ${results.length}`
+      );
+
+      return res.json(
+        results.map((ip) => ({
+          sourceIP:
+            ip.source_ip,
+          count: ip.count,
+
+          country:
+            ip.country ||
+            "Unknown",
+
+          asn:
+            ip.asn || "N/A",
+
+          threatScore:
+            ip.threat_score ??
+            0,
+        }))
+      );
     }
 
-    // ---------------- LOG FILE MODE ----------------
+    // =====================================================
+    // LOG MODE
+    // =====================================================
+
     const entries = parseLogs();
+
     const ipCount = {};
 
     for (const e of entries) {
-      if (!ipCount[e.src]) ipCount[e.src] = 0;
-      ipCount[e.src]++;
+      ipCount[e.src] =
+        (ipCount[e.src] || 0) +
+        1;
     }
 
-    const formatted = Object.entries(ipCount)
-      .map(([sourceIP, count]) => ({ sourceIP, count }))
-      .sort((a, b) => b.count - a.count)
+    const formatted = Object.entries(
+      ipCount
+    )
+      .map(
+        ([sourceIP, count]) => ({
+          sourceIP,
+          count,
+        })
+      )
+      .sort(
+        (a, b) =>
+          b.count - a.count
+      )
       .slice(0, limit);
 
-    res.json(formatted);
-
+    return res.json(formatted);
   } catch (err) {
-    console.error("Error Top IPs:", err);
-    res.status(500).json({ error: "Internal Server Error" });
+    console.error(
+      "❌ Error Top IPs:",
+      err
+    );
+
+    return res
+      .status(500)
+      .json([]);
   }
 };
 
+// =========================================================
+// TOP ATTACK TYPES
+// =========================================================
 
+exports.getTopAttackTypes =
+  async (req, res) => {
+    try {
+      console.log(
+        "🚀 /api/charts/top-attack-types HIT"
+      );
 
+      // ===================================================
+      // MONGO MODE
+      // ===================================================
+
+      if (USE_MONGO) {
+        const results =
+          await mongoose.connection
+            .collection(
+              "attackTypes"
+            )
+            .find({})
+            .sort({
+              count: -1,
+            })
+            .limit(10)
+            .toArray();
+
+        console.log(
+          `✅ attackTypes returned: ${results.length}`
+        );
+
+        return res.json(
+          results.map(
+            (entry) => ({
+              attackType:
+                entry.attackType ||
+                "Unknown",
+
+              count:
+                entry.count ||
+                0,
+            })
+          )
+        );
+      }
+
+      // ===================================================
+      // LOG MODE
+      // ===================================================
+
+      const entries =
+        parseLogs();
+
+      const typeCount = {};
+
+      for (const e of entries) {
+        const type =
+          determineAttackType(
+            e.dpt
+          );
+
+        typeCount[type] =
+          (typeCount[type] || 0) +
+          1;
+      }
+
+      const formatted =
+        Object.entries(
+          typeCount
+        )
+          .map(
+            ([
+              attackType,
+              count,
+            ]) => ({
+              attackType,
+              count,
+            })
+          )
+          .sort(
+            (a, b) =>
+              b.count - a.count
+          )
+          .slice(0, 10);
+
+      return res.json(
+        formatted
+      );
+    } catch (err) {
+      console.error(
+        "❌ Error Attack Types:",
+        err
+      );
+
+      return res
+        .status(500)
+        .json([]);
+    }
+  };
 
 // =========================================================
-// 🔥 TOP ATTACK TYPES
+// PORT SCANNING
 // =========================================================
-exports.getTopAttackTypes = async (req, res) => {
-  try {
-    // ---------------- MongoDB MODE ----------------
-    if (USE_MONGO) {
-      const results = await mongoose.connection
-        .collection("attacks")
-        .aggregate([
-          { $match: { attack_type: { $exists: true, $ne: "" } } },
-          { $group: { _id: "$attack_type", count: { $sum: 1 } } },
-          { $sort: { count: -1 } },
-          { $limit: 10 }
-        ])
-        .toArray();
 
-      return res.json(results.map(entry => ({
-        attackType: entry._id,
-        count: entry.count
-      })));
+exports.getPortScanning =
+  async (req, res) => {
+    try {
+      console.log(
+        "🚀 /api/charts/port-scanning HIT"
+      );
+
+      if (USE_MONGO) {
+        const results =
+          await mongoose.connection
+            .collection("ports")
+            .find({})
+            .sort({
+              count: -1,
+            })
+            .limit(15)
+            .toArray();
+
+        return res.json(
+          results.map((r) => ({
+            port: r.port,
+            count: r.count,
+          }))
+        );
+      }
+
+      const entries =
+        parseLogs();
+
+      const portCount = {};
+
+      for (const e of entries) {
+        const p =
+          e.dpt ||
+          e.port ||
+          e.target_port;
+
+        if (!p) continue;
+
+        portCount[p] =
+          (portCount[p] || 0) +
+          1;
+      }
+
+      const formatted =
+        Object.entries(
+          portCount
+        )
+          .map(
+            ([port, count]) => ({
+              port:
+                parseInt(
+                  port,
+                  10
+                ),
+              count,
+            })
+          )
+          .sort(
+            (a, b) =>
+              b.count - a.count
+          )
+          .slice(0, 15);
+
+      return res.json(
+        formatted
+      );
+    } catch (err) {
+      console.error(
+        "❌ Error Port Scan:",
+        err
+      );
+
+      return res
+        .status(500)
+        .json([]);
     }
-
-    // ---------------- LOG FILE MODE ----------------
-    const entries = parseLogs();
-    const typeCount = {};
-
-    for (const e of entries) {
-      const type = determineAttackType(e.dpt);
-
-      if (!typeCount[type]) typeCount[type] = 0;
-      typeCount[type]++;
-    }
-
-    const formatted = Object.entries(typeCount)
-      .map(([attackType, count]) => ({ attackType, count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 10);
-
-    res.json(formatted);
-
-  } catch (err) {
-    console.error("Error Attack Types:", err);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
-
-
-
-
-// =========================================================
-// 🔥 PORT SCANNING ANALYSIS
-// =========================================================
-exports.getPortScanning = async (req, res) => {
-  try {
-    if (USE_MONGO) {
-      // 🔥 Use the aggregated ports collection
-      const results = await mongoose.connection
-        .collection("ports")
-        .aggregate([
-          {
-            $match: {
-              port: { $exists: true },
-              count: { $gt: 0 } // only ports that actually saw traffic
-            }
-          },
-          {
-            $group: {
-              _id: "$port",
-              totalCount: { $sum: "$count" } // ✅ sum the stored count field
-            }
-          },
-          { $sort: { totalCount: -1 } },
-          { $limit: 15 }
-        ])
-        .toArray();
-
-      const formatted = results.map(r => ({
-        port: r._id,
-        count: r.totalCount
-      }));
-
-      console.log("[PortScanning] Top ports (ports collection):", formatted.slice(0, 5));
-      return res.json(formatted);
-    }
-
-    // ---------------- LOG FILE MODE ----------------
-    const entries = parseLogs();
-    const portCount = {};
-
-    for (const e of entries) {
-      const p = e.dpt || e.port || e.target_port;
-      if (!p) continue;
-      if (!portCount[p]) portCount[p] = 0;
-      portCount[p]++;
-    }
-
-    const formatted = Object.entries(portCount)
-      .map(([port, count]) => ({ port: parseInt(port, 10), count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 15);
-
-    console.log("[PortScanning] Top ports (log mode):", formatted.slice(0, 5));
-    res.json(formatted);
-
-  } catch (err) {
-    console.error("Error Port Scan:", err);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
-
-
-
+  };
 
 // =========================================================
 // 🔥 PROTOCOL BREAKDOWN
 // =========================================================
-exports.getProtocolBreakdown = async (req, res) => {
-  try {
-    // ---------------- MONGO MODE ----------------
-    if (USE_MONGO) {
-      const results = await mongoose.connection
-        .collection("protocols")
-        .aggregate([
-          { $match: { protocol: { $exists: true } } },
 
-          // Use the stored count field instead of counting documents
+exports.getProtocolBreakdown =
+  async (req, res) => {
+    try {
+      console.log(
+        "🚀 /api/charts/protocol-breakdown HIT"
+      );
+
+      if (USE_MONGO) {
+        const results =
+          await mongoose.connection
+            .collection(
+              "protocols"
+            )
+            .find({})
+            .sort({
+              count: -1,
+            })
+            .toArray();
+
+        return res.json(
+          results.map((r) => ({
+            protocol:
+              r.protocol,
+            count: r.count,
+          }))
+        );
+      }
+
+      const entries =
+        parseLogs();
+
+      const protoCount = {};
+
+      for (const e of entries) {
+        protoCount[e.proto] =
+          (protoCount[
+            e.proto
+          ] || 0) + 1;
+      }
+
+      const formatted =
+        Object.entries(
+          protoCount
+        )
+          .map(
+            ([
+              protocol,
+              count,
+            ]) => ({
+              protocol,
+              count,
+            })
+          )
+          .sort(
+            (a, b) =>
+              b.count - a.count
+          );
+
+      return res.json(
+        formatted
+      );
+    } catch (err) {
+      console.error(
+        "❌ Error Protocol Breakdown:",
+        err
+      );
+
+      return res
+        .status(500)
+        .json([]);
+    }
+  };
+
+// =========================================================
+// SEVERITY DISTRIBUTION
+// =========================================================
+
+exports.getSeverityDistribution =
+  async (req, res) => {
+    try {
+      console.log(
+        "🚀 /api/charts/severity-distribution HIT"
+      );
+
+      if (USE_MONGO) {
+        const results =
+          await mongoose.connection
+            .collection(
+              "severity"
+            )
+            .find({})
+            .sort({
+              count: -1,
+            })
+            .toArray();
+
+        return res.json(
+          results.map((r) => ({
+            severity:
+              r.level,
+            count: r.count,
+          }))
+        );
+      }
+
+      const entries =
+        parseLogs();
+
+      const sevCount = {
+        Low: 0,
+        Medium: 0,
+        High: 0,
+      };
+
+      for (const e of entries) {
+        if (e.dpt <= 1024)
+          sevCount.High++;
+        else if (
+          e.dpt <= 5000
+        )
+          sevCount.Medium++;
+        else sevCount.Low++;
+      }
+
+      return res.json([
+        {
+          severity: "High",
+          count:
+            sevCount.High,
+        },
+
+        {
+          severity: "Medium",
+          count:
+            sevCount.Medium,
+        },
+
+        {
+          severity: "Low",
+          count:
+            sevCount.Low,
+        },
+      ]);
+    } catch (err) {
+      console.error(
+        "❌ Error Severity:",
+        err
+      );
+
+      return res
+        .status(500)
+        .json([]);
+    }
+  };
+
+// =========================================================
+// ATTACK TRENDS
+// =========================================================
+
+exports.getAttackTrends =
+  async (req, res) => {
+    try {
+      console.log(
+        "🚀 /api/charts/attack-trends HIT"
+      );
+
+      const since = new Date(
+        Date.now() -
+          MAX_ATTACK_TREND_MINUTES *
+            60 *
+            1000
+      );
+
+      const results =
+        await DShieldLog.aggregate(
+          [
+            {
+              $match: {
+                timestamp: {
+                  $gte: since,
+                },
+              },
+            },
+
+            {
+              $group: {
+                _id: {
+                  $dateToString:
+                    {
+                      format:
+                        "%Y-%m-%d %H:%M",
+
+                      date:
+                        "$timestamp",
+                    },
+                },
+
+                count: {
+                  $sum: 1,
+                },
+              },
+            },
+
+            {
+              $sort: {
+                _id: 1,
+              },
+            },
+          ],
+          {
+            allowDiskUse:
+              false,
+
+            maxTimeMS: 5000,
+          }
+        );
+
+      return res.json(
+        results.map((r) => ({
+          time: r._id,
+          count: r.count,
+        }))
+      );
+    } catch (err) {
+      console.error(
+        "❌ Attack Trends Error:",
+        err
+      );
+
+      return res
+        .status(500)
+        .json([]);
+    }
+  };
+
+// =========================================================
+// HEATMAP
+// =========================================================
+
+exports.getHeatmapData =
+  async (req, res) => {
+    try {
+      console.log(
+        "🚀 /api/charts/heatmap HIT"
+      );
+
+      const results =
+        await DShieldLog.aggregate(
+          [
+            {
+              $match: {
+                timestamp: {
+                  $exists: true,
+                  $ne: null,
+                },
+              },
+            },
+
+            {
+              $sort: {
+                timestamp: -1,
+              },
+            },
+
+            {
+              $limit:
+                MAX_HEATMAP_DOCS,
+            },
+
+            {
+              $group: {
+                _id: {
+                  hour: {
+                    $hour: "$timestamp",
+                  },
+
+                  day: {
+                    $dayOfMonth: "$timestamp",
+                  },
+                },
+
+                count: {
+                  $sum: 1,
+                },
+              },
+            },
+
+            {
+              $sort: {
+                "_id.day": 1,
+                "_id.hour": 1,
+              },
+            },
+          ],
+          {
+            allowDiskUse: false,
+            maxTimeMS: 5000,
+          }
+        );
+
+      console.log(
+        `✅ heatmap buckets returned: ${results.length}`
+      );
+
+      const data =
+        results.map((r) => [
+          r._id.day,
+          r._id.hour,
+          r.count,
+        ]);
+
+      return res.json(data);
+    } catch (err) {
+      console.error(
+        "❌ Heatmap Error:",
+        err
+      );
+
+      return res
+        .status(500)
+        .json([]);
+    }
+  };
+
+// =========================================================
+// COMPARATIVE ANALYSIS
+// =========================================================
+
+exports.getComparativeAnalysis =
+  async (req, res) => {
+    try {
+      console.log(
+        "🚀 /api/charts/comparative-analysis HIT"
+      );
+
+      // ===================================================
+      // LOAD COMPARISON DATA
+      // ===================================================
+
+      const results =
+        await mongoose.connection
+          .collection("comparisons")
+          .find({})
+          .sort({
+            day: 1
+          })
+          .limit(30)
+          .toArray();
+
+      console.log(
+        `✅ comparisons returned: ${results.length}`
+      );
+
+      // ===================================================
+      // 🔥 EMPTY SAFETY
+      // ===================================================
+
+      if (!results.length) {
+        return res.json([]);
+      }
+
+      // ===================================================
+      // BUILD REAL TEMPORAL COMPARISON
+      // ===================================================
+
+      const formatted =
+        results.map(
+          (r, i, arr) => {
+
+            // ---------------------------------------------
+            // PREVIOUS PERIOD
+            // ---------------------------------------------
+
+            const previous =
+              i > 0
+                ? Number(
+                    arr[i - 1]
+                      ?.total_attacks || 0
+                  )
+                : Number(
+                    r.total_attacks || 0
+                  );
+
+            // ---------------------------------------------
+            // CURRENT PERIOD
+            // ---------------------------------------------
+
+            const current =
+              Number(
+                r.total_attacks || 0
+              );
+
+            // ---------------------------------------------
+            // DELTA %
+            // ---------------------------------------------
+
+            let delta = 0;
+
+            if (previous > 0) {
+              delta = Number(
+                (
+                  ((current - previous) /
+                    previous) *
+                  100
+                ).toFixed(2)
+              );
+            }
+
+            // ---------------------------------------------
+            // TREND LABEL
+            // ---------------------------------------------
+
+            let trend =
+              "stable";
+
+            if (delta >= 25) {
+              trend =
+                "surging";
+            } else if (
+              delta >= 10
+            ) {
+              trend =
+                "rising";
+            } else if (
+              delta <= -25
+            ) {
+              trend =
+                "collapsing";
+            } else if (
+              delta <= -10
+            ) {
+              trend =
+                "cooling";
+            }
+
+            // ---------------------------------------------
+            // SEVERITY INDEX
+            // ---------------------------------------------
+
+            const critical =
+              Number(
+                r.critical_count || 0
+              );
+
+            const high =
+              Number(
+                r.high_count || 0
+              );
+
+            const medium =
+              Number(
+                r.medium_count || 0
+              );
+
+            const low =
+              Number(
+                r.low_count || 0
+              );
+
+            const severityIndex =
+              (
+                critical * 1.0 +
+                high * 0.75 +
+                medium * 0.4 +
+                low * 0.15
+              ).toFixed(2);
+
+            // ---------------------------------------------
+            // RETURN
+            // ---------------------------------------------
+
+            return {
+              // -----------------------------
+              // LABEL
+              // -----------------------------
+
+              region:
+                r.day ||
+                "Unknown",
+
+              metric:
+                r.day ||
+                "Unknown",
+
+              // -----------------------------
+              // TEMPORAL WINDOWS
+              // -----------------------------
+
+              previous,
+              current,
+              delta,
+
+              // backwards compatibility
+              lastWeek:
+                previous,
+              thisWeek:
+                current,
+
+              // -----------------------------
+              // TOTALS
+              // -----------------------------
+
+              total:
+                current,
+
+              // -----------------------------
+              // SEVERITY
+              // -----------------------------
+
+              critical,
+              high,
+              medium,
+              low,
+
+              severityIndex:
+                Number(
+                  severityIndex
+                ),
+
+              // -----------------------------
+              // INFRASTRUCTURE
+              // -----------------------------
+
+              uniqueIPs:
+                Number(
+                  r.unique_ips || 0
+                ),
+
+              uniquePorts:
+                Number(
+                  r.unique_ports || 0
+                ),
+
+              uniqueCountries:
+                Number(
+                  r.unique_countries || 0
+                ),
+
+              // -----------------------------
+              // METADATA
+              // -----------------------------
+
+              trend,
+
+              timestamp:
+                r.last_updated ||
+                null,
+            };
+          }
+        );
+
+      // ===================================================
+      // RESPONSE
+      // ===================================================
+
+      return res.json(
+        formatted
+      );
+
+    } catch (err) {
+
+      console.error(
+        "❌ Comparative Analysis Error:",
+        err
+      );
+
+      return res
+        .status(500)
+        .json([]);
+    }
+  };
+
+// =========================================================
+// TOP ASNS
+// =========================================================
+
+exports.getTopASNs = async (
+  req,
+  res
+) => {
+  try {
+    console.log(
+      "🚀 /api/charts/top-asns HIT"
+    );
+
+    const results =
+      await mongoose.connection
+        .collection("asns")
+        .find({})
+        .sort({ count: -1 })
+        .limit(20)
+        .toArray();
+
+    return res.json(
+      results.map((item) => ({
+        asn: item.asn,
+
+        org:
+          item.asn_org,
+
+        provider:
+          item.provider,
+
+        count: item.count,
+      }))
+    );
+  } catch (err) {
+    console.error(
+      "❌ ASN Error:",
+      err
+    );
+
+    return res
+      .status(500)
+      .json([]);
+  }
+};
+
+// =========================================================
+// RECENT LOGS
+// =========================================================
+
+exports.getRecentLogs =
+  async (req, res) => {
+    try {
+      const logs =
+        await DShieldLog.find(
+          {},
+          {
+            raw: 1,
+            timestamp: 1,
+            source_ip: 1,
+            target_ip: 1,
+            source_port: 1,
+            target_port: 1,
+          }
+        )
+          .sort({
+            timestamp: -1,
+          })
+          .limit(
+            MAX_RECENT_LOGS
+          )
+          .lean()
+          .maxTimeMS(3000);
+
+      return res.json(logs);
+    } catch (err) {
+      console.error(
+        "❌ Recent Logs Error:",
+        err
+      );
+
+      return res
+        .status(500)
+        .json([]);
+    }
+  };
+
+// =========================================================
+// THREAT SUMMARY
+// =========================================================
+
+exports.getThreatSummary =
+  async (req, res) => {
+
+    try {
+
+      console.log(
+        "🚀 /api/charts/threat-summary HIT"
+      );
+
+      // =====================================================
+      // BUILD DETERMINISTIC CORE
+      // =====================================================
+
+      const coreSummary =
+        await buildCopilotCore();
+
+      // =====================================================
+      // OPTIONAL BEHAVIOR SUMMARY
+      // =====================================================
+
+      const behaviorSummary =
+        await buildBehaviorSummary({
+          minutes: 60,
+          limit: 5000,
+        });
+
+      // =====================================================
+      // SUPPORTING DASHBOARD DATA
+      // =====================================================
+
+      const since = new Date(
+        Date.now() -
+        60 * 60 * 1000
+      );
+
+      const topIP =
+        await DShieldLog.aggregate([
+          {
+            $match: {
+              timestamp: {
+                $gte: since,
+              },
+            },
+          },
+
+          {
+            $group: {
+              _id: "$source_ip",
+
+              count: {
+                $sum: 1,
+              },
+            },
+          },
+
+          {
+            $sort: {
+              count: -1,
+            },
+          },
+
+          {
+            $limit: 1,
+          },
+        ]);
+
+      const topPort =
+        await DShieldLog.aggregate([
+          {
+            $match: {
+              timestamp: {
+                $gte: since,
+              },
+            },
+          },
+
+          {
+            $group: {
+              _id: "$target_port",
+
+              count: {
+                $sum: 1,
+              },
+            },
+          },
+
+          {
+            $sort: {
+              count: -1,
+            },
+          },
+
+          {
+            $limit: 1,
+          },
+        ]);
+
+      const topASN =
+        await ASN.aggregate([
+          {
+            $sort: {
+              count: -1,
+            },
+          },
+
+          {
+            $limit: 1,
+          },
+
           {
             $project: {
               _id: 0,
-              protocol: "$protocol",
-              count: "$count"   // <-- THIS IS THE REAL VALUE
-            }
+
+              asn: "$asn",
+
+              org: "$asn_org",
+
+              provider: "$provider",
+
+              count: 1,
+            },
           },
+        ]);
 
-          { $sort: { count: -1 } }
-        ])
-        .toArray();
-
-      return res.json(results);
-    }
-
-    // ---------------- LOG MODE ----------------
-    const entries = parseLogs();
-    const protoCount = {};
-
-    for (const e of entries) {
-      if (!protoCount[e.proto]) protoCount[e.proto] = 0;
-      protoCount[e.proto]++;
-    }
-
-    const formatted = Object.entries(protoCount)
-      .map(([protocol, count]) => ({ protocol, count }))
-      .sort((a, b) => b.count - a.count);
-
-    res.json(formatted);
-
-  } catch (err) {
-    console.error("Error Protocol Breakdown:", err);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
-
-
-
-
-// =========================================================
-// 🔥 SEVERITY DISTRIBUTION (temporary placeholder)
-// =========================================================
-exports.getSeverityDistribution = async (req, res) => {
-  try {
-    // ---------------- MongoDB MODE ----------------
-    if (USE_MONGO) {
-      const results = await mongoose.connection
-        .collection("severity")
-        .aggregate([
-          {
-            $project: {
-              _id: 0,
-              severity: "$level",
-              count: "$count"
-            }
+      const recentAttackRate =
+        await DShieldLog.countDocuments({
+          timestamp: {
+            $gte: new Date(
+              Date.now() -
+              5 * 60 * 1000
+            ),
           },
-          { $sort: { count: -1 } }
-        ])
-        .toArray();
+        });
 
-      return res.json(results);
-    }
+      // =====================================================
+      // FINAL RESPONSE
+      // =====================================================
 
-    // ---------------- LOG FILE MODE ----------------
-    // DShield does not include severity → fake based on port ranges
-    const entries = parseLogs();
-    const sevCount = { Low: 0, Medium: 0, High: 0 };
+      const payload = {
 
-    for (const e of entries) {
-      if (e.dpt <= 1024) sevCount.High++;
-      else if (e.dpt <= 5000) sevCount.Medium++;
-      else sevCount.Low++;
-    }
+        ok: true,
 
-    res.json([
-      { severity: "High", count: sevCount.High },
-      { severity: "Medium", count: sevCount.Medium },
-      { severity: "Low", count: sevCount.Low }
-    ]);
+        generatedAt:
+          new Date().toISOString(),
 
-  } catch (err) {
-    console.error("Error Severity Dist:", err);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
+        // ============================================
+        // CORE
+        // ============================================
 
+        coreSummary,
 
+        // ============================================
+        // BEHAVIOR
+        // ============================================
 
-// ------------------------------
-// 🆕 Live Attack Trends Controller
-// ------------------------------
-exports.getAttackTrends = async (req, res) => {
-  try {
-    const results = await DShieldLog.aggregate([
-      {
-        $group: {
-          _id: {
-            $dateToString: { 
-              format: "%Y-%m-%d %H:%M",
-              date: "$timestamp"
-            }
-          },
-          count: { $sum: 1 }
-        }
-      },
-      // Sort newest first so limit returns the latest 100 minutes
-      { $sort: { "_id": -1 } },
+        behaviorSummary,
 
-      { $limit: 100 },  
+        // ============================================
+        // SUPPORTING METRICS
+        // ============================================
 
-      // Sort back to ascending order for chart readability
-      { $sort: { "_id": 1 } }
-    ]);
+        topIP:
+          topIP[0] || null,
 
-    const formatted = results.map(r => ({
-      time: r._id,
-      count: r.count
-    }));
+        topPort:
+          topPort[0] || null,
 
-    res.json(formatted);
+        topASN:
+          topASN[0] || null,
 
-  } catch (err) {
-    console.error("❌ Error in getAttackTrends:", err);
-    res.status(500).json({ error: "Failed to fetch attack trends" });
-  }
-};
-
-exports.getHeatmapData = async (req, res) => {
-  try {
-    const view = req.query.view || "daily"; // daily | weekly | monthly
-
-    // Convert timestamps per mode
-    let groupStage;
-
-    if (view === "daily") {
-      // Group by HOUR + DAY
-      groupStage = {
-        _id: {
-          hour: { $hour: "$timestamp" },
-          day: { $dayOfMonth: "$timestamp" }
-        },
-        count: { $sum: 1 }
+        recentAttackRate,
       };
-    } else if (view === "weekly") {
-      // Group by hour + DAY OF WEEK (0–6)
-      groupStage = {
-        _id: {
-          hour: { $hour: "$timestamp" },
-          day: { $dayOfWeek: "$timestamp" }
-        },
-        count: { $sum: 1 }
-      };
-    } else if (view === "monthly") {
-      // Group by hour + DAY OF MONTH
-      groupStage = {
-        _id: {
-          hour: { $hour: "$timestamp" },
-          day: { $dayOfMonth: "$timestamp" }
-        },
-        count: { $sum: 1 }
-      };
-    }
 
-    const results = await DShieldLog.aggregate([
-      { $match: { timestamp: { $exists: true } } },
-      { $group: groupStage },
-      { $sort: { "_id.day": 1, "_id.hour": 1 } }
-    ]);
+      // ==============================================
+      // REAL-TIME BROADCAST
+      // ==============================================
 
-    // Convert results into ECharts heatmap-friendly format:
-    // [dayIndex, hourIndex, count]
-    const data = results.map(r => [
-      r._id.day,
-      r._id.hour,
-      r.count
-    ]);
+      if (req.app.locals.io) {
 
-    res.json(data);
+        req.app.locals.io.emit(
+          "telemetry:update",
+          payload
+        );
 
-  } catch (err) {
-    console.error("❌ Error in getHeatmapData:", err);
-    res.status(500).json({ error: "Failed to generate heatmap data." });
-  }
-};
+        console.log(
+          "📡 telemetry:update broadcasted"
+        );
+      }
 
-// =========================================================
-// 🔥 TOP ATTACKING ASNs
-// =========================================================
-exports.getTopASNs = async (req, res) => {
-  try {
-    if (!USE_MONGO) {
-      return res.status(400).json({
-        error: "ASN data only available in MongoDB mode."
+      // ==============================================
+      // RESPONSE
+      // ==============================================
+
+      return res.json(payload);
+
+    } catch (err) {
+
+      console.error(
+        "❌ Threat Summary Error:",
+        err
+      );
+
+      return res.status(500).json({
+        ok: false,
+        error:
+          err.message ||
+          "Threat summary failed",
       });
     }
+  };
 
-    const results = await mongoose.connection
-      .collection("asns")
-      .aggregate([
-        { $match: { asn: { $exists: true } } },
-        { $sort: { count: -1 } },
-        { $limit: 20 }
-      ])
-      .toArray();
+// =========================================================
+// GEOLOCATION
+// =========================================================
 
-    const formatted = results.map(item => ({
-      asn: item.asn,
-      org: item.asn_org,          // 🔥 CORRECT FIELD
-      provider: item.provider,    // 🔥 OPTIONAL but you have this in Mongo
-      count: item.count
-    }));
-
-    res.json(formatted);
-
-  } catch (err) {
-    console.error("Error in getTopASNs:", err);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
-
-// ================================
-// Recent Honeypot Logs (Raw + Parsed)
-// ================================
-exports.getRecentLogs = async (req, res) => {
-  try {
-    const logs = await DShieldLog.find(
-      {},
-      {
-        raw: 1,
-        timestamp: 1,
-        source_ip: 1,
-        target_ip: 1,
-        source_port: 1,
-        target_port: 1,
-      }
-    )
-      .sort({ timestamp: -1 })
-      .limit(50);   // Optimal for real-time terminal
-
-    res.json(logs);
-  } catch (err) {
-    console.error("Error fetching recent logs:", err);
-    res.status(500).json({ error: "Failed to load logs" });
-  }
-};
-
-// ================================
-// THREAT SUMMARY FOR COPILOT
-// ================================
-// ================================
-// THREAT SUMMARY FOR COPILOT
-// ================================
-exports.getThreatSummary = async (req, res) => {
-  try {
-    // Top attacking IP
-    const topIP = await DShieldLog.aggregate([
-      { $group: { _id: "$source_ip", count: { $sum: 1 } } },
-      { $sort: { count: -1 } },
-      { $limit: 1 }
-    ]);
-
-    // Most targeted port
-    const topPort = await DShieldLog.aggregate([
-      { $group: { _id: "$target_port", count: { $sum: 1 } } },
-      { $sort: { count: -1 } },
-      { $limit: 1 }
-    ]);
-
-    // 🟩 FIXED — Pull ASN summary from the ASN collection (correct!)
-    const topASN = await ASN.aggregate([
-      { $sort: { count: -1 } },
-      { $limit: 1 },
-      {
-        $project: {
-          _id: 0,
-          asn: "$asn",
-          org: "$asn_org",
-          provider: "$provider",
-          count: 1
-        }
-      }
-    ]);
-
-    // Recent attack rate (5 minutes)
-    const recentAttackRate = await DShieldLog.countDocuments({
-      timestamp: { $gte: new Date(Date.now() - 5 * 60 * 1000) }
-    });
-
-    // Return combined intelligence summary
-    res.json({
-      topIP: topIP[0] || null,
-      topPort: topPort[0] || null,
-      topASN: topASN[0] || null,  // <── Correct data now!
-      recentAttackRate
-    });
-
-  } catch (err) {
-    console.error("Threat Summary Error:", err);
-    res.status(500).json({ error: "Failed to compute summary" });
-  }
-};
-
-// ======================================
-// GEO + ASN ENRICHED INTELLIGENCE LOOKUP
-// ======================================
 exports.getGeolocation = async (req, res) => {
   try {
-    // 1️⃣ Aggregate attack counts by IP
-    const attackCounts = await DShieldLog.aggregate([
-      { $group: { _id: "$source_ip", count: { $sum: 1 } } },
-      { $sort: { count: -1 } },
-      { $limit: 50 }   // top 50 attacking IPs
-    ]);
+    console.log("🚀 /api/charts/geolocation HIT");
 
-    const enriched = [];
+    const geoDocs = await GeolocationCache.find({
+      latitude: { $ne: null },
+      longitude: { $ne: null },
+    })
+      .sort({ createdAt: -1 })
+      .limit(MAX_GEO_IPS)
+      .lean();
 
-    // 2️⃣ For each IP, lookup the GEO + ASN info
-    for (const entry of attackCounts) {
-      const ip = entry._id;
-      const count = entry.count;
+    console.log(`✅ geo cache docs found: ${geoDocs.length}`);
 
-      // lookup in geolocation_cache collection
-      const geo = await GeolocationCache.findOne({ ip });
+    const results = geoDocs.map((geo) => ({
+      ip: geo.ip,
 
-      enriched.push({
-        ip,
-        count,
-        country: geo?.country || "Unknown",
-        region: geo?.region || "Unknown",
-        city: geo?.city || "Unknown",
-        latitude: geo?.latitude || null,
-        longitude: geo?.longitude || null,
-        asn: geo?.asn || "N/A",
-        org: geo?.org || "Unknown Org",
-        provider: geo?.provider || "Unknown Provider"
-      });
-    }
+      count: geo.count || 1,
 
-    // 3️⃣ Respond with enriched dataset
-    res.json({ results: enriched });
+      country: geo.country || "Unknown",
+      region: geo.region || "Unknown",
+      city: geo.city || "Unknown",
+
+      latitude: Number(geo.latitude),
+      longitude: Number(geo.longitude),
+
+      asn: geo.asn || "N/A",
+
+      org:
+        geo.asn_org ||
+        geo.org ||
+        "Unknown Org",
+
+      provider:
+        geo.provider ||
+        "Unknown Provider",
+    }));
+
+    console.log(`✅ geolocation results returned: ${results.length}`);
+
+    return res.json({
+      results,
+    });
 
   } catch (err) {
     console.error("❌ Geolocation Error:", err);
-    res.status(500).json({ error: "Failed to fetch enriched geolocation data" });
+
+    return res.status(500).json({
+      error: "Geolocation route failed",
+      details: err.message,
+    });
   }
 };

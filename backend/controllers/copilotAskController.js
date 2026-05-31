@@ -1,9 +1,4 @@
 // backend/controllers/copilotAskController.js
-// Orchestrates governed Copilot question answering
-// - Deterministic summaries
-// - Hard governance gates
-// - LLM is NEVER a policy layer
-
 const {
   buildBehaviorSummary,
   buildMultiWindowBehaviorSummary,

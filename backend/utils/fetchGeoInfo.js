@@ -39,7 +39,7 @@ function detectProvider(asn_org) {
 async function fetchGeoInfo(ip) {
     if (!ip) return null;
 
-    // 1️⃣ Try cache first (same as enrichment worker)
+    // Try cache first (same as enrichment worker)
     const cached = await GeoCache.findOne({ ip });
     if (cached) {
         return {
@@ -54,7 +54,7 @@ async function fetchGeoInfo(ip) {
         };
     }
 
-    // 2️⃣ Fetch from ip-api.com (same as worker)
+    // Fetch from ip-api.com (same as worker)
     try {
         const resp = await axios.get(
             `http://ip-api.com/json/${ip}?fields=status,country,regionName,city,lat,lon,as,query`
