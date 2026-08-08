@@ -9,6 +9,8 @@ const { buildBehaviorSummary } = require("../services/behaviorSummary");
 const { buildCopilotCore } = require("../services/copilotCore");
 const { generateCopilotInsight } = require("../services/copilotReasoner");
 const { checkStateSupportsNarration } = require("../services/stateDegeneracy");
+const { checkCoreConsistency } = require("../services/coreConsistency");
+const { validateInsight } = require("../services/insightValidator");
 
 const insightCache = require('../services/insightCache');
 
@@ -136,6 +138,29 @@ async function getCopilotInsightLive(req, res) {
       copilotInsight = { available: false, reason: err.message };
     }
 
+    // The cached path runs consistency and validation; this one did not.
+    // Found by check_path_coverage.js, which was written to detect exactly
+    // this and found it in code added an hour earlier.
+    let consistency = null;
+    let validation = null;
+    try {
+      consistency = checkCoreConsistency(coreSummary);
+    } catch (e) {
+      consistency = { error: e.message };
+    }
+    try {
+      const ins =
+        copilotInsight && copilotInsight.insight
+          ? copilotInsight.insight
+          : copilotInsight;
+      validation = validateInsight(ins, {
+        core: coreSummary,
+        behavior: behaviorSummary,
+      });
+    } catch (e) {
+      validation = { error: e.message };
+    }
+
     return res.json({
       ok: true,
 
@@ -146,6 +171,8 @@ async function getCopilotInsightLive(req, res) {
       // actually contributed to a given evaluation cycle.
       llmStatus,
       behaviorStatus,
+      consistency,
+      validation,
 
       // Expose layers explicitly (UI + audit-friendly)
       behaviorSummary,
