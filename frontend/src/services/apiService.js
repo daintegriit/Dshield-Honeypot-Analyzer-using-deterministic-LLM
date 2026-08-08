@@ -338,6 +338,22 @@ const apiService = {
   // ==================================================
   // THREAT SUMMARY
   // ==================================================
+  // ==================================================
+  // GOVERNED COPILOT INSIGHT
+  // Runs the LLM over the verified situation report. Slow (~30s) and
+  // optional: the endpoint returns coreSummary regardless, and reports
+  // llmStatus separately so the UI can distinguish "no model" from
+  // "no activity".
+  // ==================================================
+  getCopilotInsight: async (minutes = 60) => {
+    const data = await safeRequest(
+      () => API.get(`/api/copilot/insight?minutes=${minutes}`),
+      null,
+      "CopilotInsight"
+    );
+    return data || null;
+  },
+
   getThreatSummary: async () => {
     const data = await safeRequest(
       () => API.get(`/api/charts/threat-summary`),

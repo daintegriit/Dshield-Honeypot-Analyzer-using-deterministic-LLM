@@ -29,6 +29,8 @@ import apiService from "../services/apiService";
 // ======================================================
 
 const REFRESH_MS = 3000;
+// Generated summaries take ~30s. Keep them off the dashboard tick.
+const INSIGHT_REFRESH_MS = 300000;
 
 // ======================================================
 // HELPERS
@@ -103,6 +105,11 @@ const CopilotPanel = () => {
 
   const [lastUpdate, setLastUpdate] =
     useState(Date.now());
+  const [insight, setInsight] =
+    useState(null);
+  const [insightStatus, setInsightStatus] =
+    useState("loading");
+  // "loading" | "ok" | "llm-unavailable" | "no-data" | "error"
 
   const mountedRef = useRef(true);
 
@@ -168,6 +175,58 @@ const CopilotPanel = () => {
     return () => {
       mountedRef.current = false;
       clearInterval(interval);
+    };
+  }, []);
+
+  // ======================================================
+  // GOVERNED INSIGHT (separate, slower cadence)
+  //
+  // The deterministic core refreshes every REFRESH_MS. The generated
+  // summary cannot: a single generation takes ~30s. Polling it on the
+  // dashboard tick would queue requests indefinitely.
+  // ======================================================
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadInsight = async () => {
+      const data =
+        await apiService.getCopilotInsight(60);
+      if (cancelled) return;
+
+      if (!data || data.ok === false) {
+        setInsight(null);
+        setInsightStatus("error");
+        return;
+      }
+
+      const events =
+        data?.coreSummary?.attackMetrics
+          ?.attacksLast5Min ?? 0;
+
+      if (events === 0) {
+        setInsight(null);
+        setInsightStatus("no-data");
+      } else if (
+        data.llmStatus !== "ok" ||
+        data.copilot?.available === false
+      ) {
+        setInsight(null);
+        setInsightStatus("llm-unavailable");
+      } else {
+        // schema fields are nested: copilot = { ok, reportHash, tokenMetrics, insight }
+        setInsight(data.copilot?.insight || null);
+        setInsightStatus("ok");
+      }
+    };
+
+    loadInsight();
+    const id = setInterval(
+      loadInsight,
+      INSIGHT_REFRESH_MS
+    );
+    return () => {
+      cancelled = true;
+      clearInterval(id);
     };
   }, []);
 
@@ -248,6 +307,54 @@ const CopilotPanel = () => {
   const insights = useMemo(() => {
     const list = [];
 
+    // Model output when available. This is the governed path: every
+    // finding carries cited field names, which is the whole point of
+    // the layer and the thing an analyst can check.
+    if (
+      insightStatus === "ok" &&
+      insight
+    ) {
+      if (insight.headline) {
+        list.push({
+          icon: <FaBrain />,
+          text: insight.headline,
+        });
+      }
+      const top =
+        insight.top_findings?.[0];
+      if (top?.finding) {
+        const cited = safeArray(
+          top.evidence
+        ).length;
+        list.push({
+          icon: (
+            <FaExclamationTriangle />
+          ),
+          text: `${top.finding} (${cited} cited field${
+            cited === 1 ? "" : "s"
+          })`,
+        });
+      }
+      return list.slice(0, 2);
+    }
+
+    // No model output. State which reason applies rather than
+    // substituting a deterministic string that reads as generated.
+    if (insightStatus !== "loading") {
+      list.push({
+        icon: <FaShieldAlt />,
+        text: {
+          "no-data":
+            "No events in this window. Nothing to analyse.",
+          "llm-unavailable":
+            "Reasoning model unreachable. Deterministic scoring below is unaffected.",
+          error:
+            "Could not reach the analysis endpoint.",
+        }[insightStatus],
+      });
+      return list.slice(0, 2);
+    }
+
     if (analytics.attackDetected) {
       list.push({
         icon: (
@@ -260,7 +367,7 @@ const CopilotPanel = () => {
       list.push({
         icon: <FaShieldAlt />,
         text:
-          "Telemetry stable within expected thresholds.",
+          "Analysing current window\u2026",
       });
     }
 
@@ -276,7 +383,7 @@ const CopilotPanel = () => {
     }
 
     return list.slice(0, 2);
-  }, [analytics]);
+  }, [analytics, insight, insightStatus]);
 
   // ======================================================
   // COPILOT ASK
