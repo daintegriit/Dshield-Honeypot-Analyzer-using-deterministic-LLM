@@ -663,6 +663,33 @@ function pearson(xs, ys) {
       component_nonzero_windows: componentNonZero,
       never_exercised: neverExercised,
     },
+    // Which guards were present when this result was produced, not only which
+    // tripped. A result carrying no guards block predates guard instrumentation
+    // entirely; a result carrying one lists what it was checked against. Both
+    // are recoverable from the artifact rather than from the file date.
+    //
+    // Retroactively applying the 2026-08-08 guard set to this project's own
+    // archive: 68 of 92 previously published runs would be withheld today.
+    guards: {
+      version: "2026-08-08",
+      ran: [
+        "WINDOW_SPAN",
+        "UNREACHABLE_THRESHOLD",
+        "EMPTY_CLASS",
+        "SATURATED_COMPONENT",
+      ],
+      failed: guardFailures.map((g) => g.guard),
+      passed: [
+        "WINDOW_SPAN",
+        "UNREACHABLE_THRESHOLD",
+        "EMPTY_CLASS",
+        "SATURATED_COMPONENT",
+      ].filter((g) => !guardFailures.some((f) => f.guard === g)),
+      warnings: inertComponents.map((c) => c.condition + ":" + c.component),
+      // Not implemented in this harness; audited retroactively by
+      // research/scripts/guard_audit.py.
+      not_run: ["TRIVIAL_NEGATIVE_CLASS", "UNDERPOWERED_CLASS", "DEGENERATE_SWEEP"],
+    },
     guard_failures: guardFailures,
     component_distribution: componentStats,
     inert_components: inertComponents,
