@@ -19,6 +19,8 @@
 const { buildBehaviorSummary } = require("./behaviorSummary");
 const { buildCopilotCore } = require("./copilotCore");
 const { generateCopilotInsight } = require("./copilotReasoner");
+const { validateInsight } = require("./insightValidator");
+const { checkCoreConsistency } = require("./coreConsistency");
 
 const REFRESH_MS = Number(process.env.INSIGHT_CACHE_REFRESH_MS || 300000);
 const WINDOW_MIN = Number(process.env.INSIGHT_WINDOW_MIN || 60);
@@ -72,8 +74,35 @@ async function generateOnce() {
     copilot = { available: false, reason: err.message };
   }
 
+  // Validate the generation against the report it came from. Syntactic
+  // grounding cannot detect a claim that contradicts the core's own
+  // determination; this can, for the subjects it knows about.
+  // Self-consistency of the deterministic core, independent of the model.
+  let consistency = null;
+  try {
+    consistency = checkCoreConsistency(coreSummary);
+    if (consistency && consistency.consistent === false) {
+      console.log("core consistency: " + JSON.stringify(consistency.counts));
+    }
+  } catch (e) {
+    consistency = { error: e.message };
+  }
+
+  let validation = null;
+  try {
+    const ins = copilot && copilot.insight ? copilot.insight : copilot;
+    validation = validateInsight(ins, { core: coreSummary, behavior: behaviorSummary });
+    if (validation && validation.clean === false) {
+      console.log("insight validation: " + JSON.stringify(validation.issueCounts));
+    }
+  } catch (e) {
+    validation = { error: e.message };
+  }
+
   cache = {
     generatedAt: new Date().toISOString(),
+    validation,
+    consistency,
     durationMs: Date.now() - started,
     llmStatus,
     behaviorStatus,

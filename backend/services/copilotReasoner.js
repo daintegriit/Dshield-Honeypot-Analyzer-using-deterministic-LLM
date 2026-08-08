@@ -23,6 +23,27 @@ function sha256(obj) {
    Autonomous Insight Prompt
 --------------------------------------------------*/
 
+/**
+ * buildBehaviorSummary() returns an object containing its own copy of the
+ * deterministic core. Interpolating it whole put the core into the prompt
+ * TWICE: once under "VERIFIED CORE STATE (AUTHORITATIVE)" as five named
+ * fields, and again inside the behavioral blob under "BEHAVIORAL CONTEXT
+ * (INTERPRETIVE)" -- complete, including reasoning.confidenceExplanation.basis,
+ * which the authoritative section omits.
+ *
+ * Measured consequence (live traffic, 2026-08-08): the model cited
+ * attackClassification.dominantAttackScore and .dominantAttackType six times.
+ * Those keys exist only in basis, reachable only through the duplicate. The
+ * model read the name from the interpretive copy and prefixed it with the
+ * authoritative section's path. Every citation resolved through the grounding
+ * checker's leaf-key fallback and scored as grounded.
+ */
+function stripDuplicateCore(behavior) {
+  if (!behavior || typeof behavior !== "object") return behavior;
+  const { core, ...rest } = behavior;
+  return rest;
+}
+
 function buildCopilotPrompt(report) {
   return `
 You are a SOC-grade Threat Intelligence Copilot.
@@ -55,7 +76,7 @@ riskComponents: ${JSON.stringify(report.core.riskComponents)}
 ------------------------------------
 BEHAVIORAL CONTEXT (INTERPRETIVE)
 ------------------------------------
-${JSON.stringify(report.behavior)}
+${JSON.stringify(stripDuplicateCore(report.behavior))}
 
 ------------------------------------
 YOUR TASKS

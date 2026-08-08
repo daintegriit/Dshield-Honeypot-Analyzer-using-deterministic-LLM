@@ -304,7 +304,18 @@ function extractCitations(insight) {
                 (malformedButReal ? `  (${malformedButReal} malformed-but-real)` : "") +
                 (miss ? `   <- ${results.filter(r=>r.verdict==="UNRESOLVED").map(r=>r.field).join(", ")}` : ""));
 
-    runs.push({ i, ok: true, headline: insight.headline, citations: results });
+    // Store the report and the full findings so semantic validation can be
+    // run over the batch afterwards. The grounding checker records citations
+    // and claims only, which is enough for existence checking but not for
+    // contradiction checking -- that needs attackIndicators from the report.
+    runs.push({
+      i,
+      ok: true,
+      headline: insight.headline,
+      citations: results,
+      findings: insight.top_findings || [],
+      report: { core: report.core, behavior: report.behavior },
+    });
   }
 
   // ---------------- report ----------------

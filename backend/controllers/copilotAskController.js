@@ -98,7 +98,12 @@ async function askCopilot(req, res) {
     const decision =
       assessQuestionAdmissibility({
 
-        summary,
+        // buildBehaviorSummary returns { core, behavior, ... }; the templates
+        // declare paths relative to the behavior object (signals.*,
+        // distributions.*). Passing the outer object made hasPath() fail on
+        // every required field, so this gate returned INSUFFICIENT_EVIDENCE
+        // unconditionally.
+        summary: summary.behavior || summary,
 
         templateId,
 

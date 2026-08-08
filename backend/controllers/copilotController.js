@@ -15,8 +15,16 @@ async function getCopilotInsight(req, res) {
   // Serve the last completed generation immediately. Generation runs on a
   // timer with single-flight; requests never trigger one. Staleness is
   // reported via ageMs rather than hidden behind a blocking call.
+  // The cache holds ONE generation, scored with no sourceFilter and a fixed
+  // window. Any request that asks for a specific scope or window must bypass it
+  // and score live -- otherwise the caller silently receives an unscoped result.
+  // This was a real regression: the replay harness requests ?source=replay and
+  // was served cached scores computed over live honeypot traffic.
+  const wantsScope = !!req.query.source;
+  const wantsWindow = req.query.minutes !== undefined;
+
   const c = insightCache.get();
-  if (c.generatedAt) {
+  if (!wantsScope && !wantsWindow && c.generatedAt) {
     return res.json({
       ok: true,
       sourceFilter: 'all',
@@ -25,6 +33,9 @@ async function getCopilotInsight(req, res) {
       ageMs: c.ageMs,
       refreshing: c.refreshing,
       durationMs: c.durationMs,
+      validation: c.validation,
+      consistency: c.consistency,
+      consistency: c.consistency,
       llmStatus: c.llmStatus,
       behaviorStatus: c.behaviorStatus,
       behaviorSummary: c.behaviorSummary,

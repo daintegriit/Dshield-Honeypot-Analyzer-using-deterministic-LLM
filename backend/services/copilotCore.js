@@ -56,11 +56,13 @@ const REACHABILITY_PROFILES = Object.freeze({
     severity: true,
     behavior: true,
     entropy: true,
-    concentration: false, // retired v4.0 -- falsified, rho = -0.42
+    // Corrected 2026-08-08 after coreConsistency flagged both as declared
+    // unreachable while contributing: concentration 2.44, impact 12.00.
+    concentration: true,  // falsified (rho = -0.42) but still summed
     amplifier: true,
     c2: true,
-    impact: false,        // inputs not wired
-    coupling: false,      // inputs not wired
+    impact: true,
+    coupling: false,      // observed zero across every run to date
   },
   netflow: {
     severity: false,      // measured 0.41% critical on CTU-13
@@ -512,7 +514,17 @@ function buildAttackExplanation({
   return reasons;
 }
 
+// Prose gated on the same determinations as attackIndicators, not on separate
+// magnitude thresholds. Previously these diverged: the scanning sentence fired
+// on entropyComponent >= 12 while attackIndicators.scanningDetected is
+// (dominantAttack.type === "scan" || scanCandidates.length > 0). Entropy
+// saturates at its 20-point cap in ~98% of windows, so the report asserted
+// scanning behaviour in prose while denying it in the boolean, in the same
+// object. Thresholds are not retuned here -- retuning would mean choosing
+// constants from observed values, which is fitting. Consistency is structural
+// instead.
 function buildRiskExplanation({
+  indicators,
   riskScore,
   severityComponent,
   behaviorComponent,
@@ -528,7 +540,7 @@ function buildRiskExplanation({
 
   // v4.0: volume no longer contributes to risk (it saturated and measured
   // event rate rather than threat). Entropy and concentration replace it.
-  if (entropyComponent >= 12) {
+  if (indicators && indicators.scanningDetected) {
     reasons.push(
       `Traffic is distributed across a wide range of destination ports, consistent with enumeration or scanning behaviour.`
     );
@@ -540,13 +552,13 @@ function buildRiskExplanation({
     );
   }
 
-  if (severityComponent >= 15) {
+  if (indicators && indicators.severityEscalationDetected) {
     reasons.push(
       `Critical and high severity events materially increased overall system risk.`
     );
   }
 
-  if (behaviorComponent >= 10) {
+  if (indicators && indicators.authenticationTargeting) {
     reasons.push(
       `Behavioral targeting against sensitive service categories increased risk weighting.`
     );
@@ -564,7 +576,8 @@ function buildRiskExplanation({
     );
   }
 
-  if (impactBonus > 0) {
+  // Was impactBonus > 0, which fired on values as small as 0.02 out of 12.
+  if (impactBonus >= 1) {
     reasons.push(
       `Observed attack severity and operational impact indicators increased escalation confidence.`
     );
@@ -1268,18 +1281,10 @@ async function buildCopilotCore({ minutes = 60, sourceFilter = null, windowEnd =
     burstRatio5mOverHour,
   });
 
-  const riskExplanation = buildRiskExplanation({
-    riskScore,
-    severityComponent,
-    behaviorComponent,
-    entropyComponent,
-    concentrationComponent,
-    signalAmplifier,
-    c2Bonus,
-    impactBonus,
-    couplingBonus,
-  });
-
+  // Indicators are computed FIRST so the prose can be gated on the same
+  // determinations. Previously the explanation was built before the indicators
+  // existed, which is why it used independent magnitude thresholds and could
+  // contradict them.
   const attackIndicatorResult = buildAttackIndicators({
     dominantAttack,
     scanCandidates,
@@ -1290,6 +1295,19 @@ async function buildCopilotCore({ minutes = 60, sourceFilter = null, windowEnd =
     attacksLast5Min,
     burstRatio5mOverHour,
     criticalCount,
+  });
+
+  const riskExplanation = buildRiskExplanation({
+    indicators: attackIndicatorResult.indicators,
+    riskScore,
+    severityComponent,
+    behaviorComponent,
+    entropyComponent,
+    concentrationComponent,
+    signalAmplifier,
+    c2Bonus,
+    impactBonus,
+    couplingBonus,
   });
 
   const attackDetected =
@@ -1826,17 +1844,17 @@ async function buildCopilotCore({ minutes = 60, sourceFilter = null, windowEnd =
 
     severitySignals: {
 
-      criticalTotal,
+      criticalTotalLifetime: criticalTotal,
 
-      highTotal,
+      highTotalLifetime: highTotal,
 
-      mediumTotal,
+      mediumTotalLifetime: mediumTotal,
 
-      criticalCount,
+      criticalCountWindow: criticalCount,
 
-      highCount,
+      highCountWindow: highCount,
 
-      mediumCount,
+      mediumCountWindow: mediumCount,
 
       impactScore0to100:
         impactScore,
@@ -1936,6 +1954,8 @@ async function buildCopilotCore({ minutes = 60, sourceFilter = null, windowEnd =
     // ================================================
 
     lifetimeContext: {
+      scope: "lifetime-cumulative",
+      notCurrentWindow: true,
 
       topPorts:
         topPortsLifetime,
