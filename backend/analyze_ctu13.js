@@ -347,6 +347,209 @@ function pearson(xs, ys) {
   }
   const deployed = rates(deployedCm);
 
+  // ------------------------------------------------------------------
+  // VALIDITY GUARDS — refuse a confusion matrix that cannot mean anything.
+  //
+  // These sit alongside the window-to-span rule above. That rule catches too
+  // few windows; these catch two conditions under which the right number of
+  // windows still yields an uninterpretable matrix.
+  // ------------------------------------------------------------------
+
+  // Nominal budgets, from copilotCore.js RISK_BUDGET. Duplicated rather than
+  // imported: a guard that shares a constant with the code it guards cannot
+  // detect that constant changing in one place.
+  const COMPONENT_BUDGETS = {
+    severityComponent: 25,
+    behaviorComponent: 20,
+    entropyComponent: 20,
+    concentrationComponent: 15,
+    signalAmplifier: 25,
+    c2Bonus: 20,
+    impactBonus: 12,
+    couplingBonus: 5,
+    volumeComponent: 0, // retired v4.0
+  };
+
+  // The operating point predicts attack at state high or critical.
+  const DEPLOYED_STATE_THRESHOLD = 60;
+
+  const componentMaxima = {};
+  const componentNonZero = {};
+  for (const w of windows) {
+    const rc = w.riskComponents || {};
+    for (const [k, raw] of Object.entries(rc)) {
+      const v = Number(raw) || 0;
+      componentMaxima[k] = Math.max(componentMaxima[k] || 0, v);
+      if (v > 0) componentNonZero[k] = (componentNonZero[k] || 0) + 1;
+    }
+  }
+  // The threshold is compared against riskScore, so the guard must be too.
+  // Summing per-component maxima overestimates: the maxima occur in different
+  // windows and need not co-occur. Measured on CTU-13 s9, 100 windows:
+  // summed maxima 59.06, actual highest riskScore 50.00 unnormalised and
+  // 77.00 normalised. The sum was simultaneously too high to describe any real
+  // window and blind to the normalisation applied after summation.
+  const observedCeiling = +Math.max(...windows.map((w) => Number(w.riskScore) || 0)).toFixed(2);
+  const summedComponentMaxima = +Object.values(componentMaxima)
+    .reduce((a, b) => a + b, 0)
+    .toFixed(2);
+
+  const neverExercised = Object.keys(COMPONENT_BUDGETS).filter(
+    (k) => COMPONENT_BUDGETS[k] > 0 && !componentNonZero[k]
+  );
+
+  const nMalicious = windows.filter((w) => w.botnet_fraction >= DEPLOYED_TRUTH_THR).length;
+  const nBenign = windows.length - nMalicious;
+
+  // ------------------------------------------------------------------
+  // GUARD 3 — saturated / invariant components.
+  //
+  // Reported, not withheld: an inert component does not invalidate the
+  // matrix, it invalidates claims that the score fuses multiple signals.
+  // ------------------------------------------------------------------
+  const SATURATION_VALUE_FRAC = 0.95;  // "at its cap" means >= 95% of budget
+  const SATURATION_WINDOW_FRAC = 0.95; // "in nearly every window"
+  const INVARIANCE_CV = 0.01;          // coefficient of variation below this
+
+  const componentSeries = {};
+  for (const w of windows) {
+    const rc = w.riskComponents || {};
+    for (const [k, raw] of Object.entries(rc)) {
+      (componentSeries[k] = componentSeries[k] || []).push(Number(raw) || 0);
+    }
+  }
+
+  const componentStats = {};
+  const inertComponents = [];
+
+  for (const [name, series] of Object.entries(componentSeries)) {
+    const budget = COMPONENT_BUDGETS[name] || 0;
+    const n = series.length;
+    if (!n) continue;
+
+    const mu = series.reduce((a, b) => a + b, 0) / n;
+    const variance = series.reduce((a, v) => a + (v - mu) ** 2, 0) / n;
+    const sd = Math.sqrt(variance);
+    const cv = mu > 0 ? sd / mu : 0;
+    const atCap = budget > 0
+      ? series.filter((v) => v >= budget * SATURATION_VALUE_FRAC).length
+      : 0;
+
+    componentStats[name] = {
+      budget,
+      mean: +mu.toFixed(3),
+      sd: +sd.toFixed(3),
+      cv: +cv.toFixed(4),
+      min: +Math.min(...series).toFixed(3),
+      max: +Math.max(...series).toFixed(3),
+      windows_at_cap: atCap,
+      windows: n,
+    };
+
+    if (budget > 0 && atCap >= n * SATURATION_WINDOW_FRAC) {
+      inertComponents.push({
+        component: name,
+        condition: "SATURATED",
+        detail:
+          `at >= ${Math.round(SATURATION_VALUE_FRAC * 100)}% of its ${budget}-point budget ` +
+          `in ${atCap} of ${n} windows. The cap discards any variation above it, so the ` +
+          `component contributes a near-constant offset and cannot separate windows.`,
+        ...componentStats[name],
+      });
+    } else if (budget > 0 && mu > 0 && cv < INVARIANCE_CV) {
+      inertComponents.push({
+        component: name,
+        condition: "INVARIANT",
+        detail:
+          `constant at ${mu.toFixed(2)} across all ${n} windows ` +
+          `(cv = ${cv.toFixed(4)}). Contributes a fixed offset to every score and ` +
+          `cannot affect the ranking between windows.`,
+        ...componentStats[name],
+      });
+    }
+  }
+
+  if (inertComponents.length) {
+    console.log("");
+    console.log("  " + "~".repeat(70));
+    console.log("  ⚠️  VALIDITY WARNING — component carries no discriminative information");
+    console.log("  " + "~".repeat(70));
+    for (const c of inertComponents) {
+      console.log(`     [${c.condition}] ${c.component}`);
+      console.log(`     ${c.detail}`);
+      console.log(
+        `     mean ${c.mean}  sd ${c.sd}  range ${c.min}..${c.max}  budget ${c.budget}`
+      );
+      console.log("");
+    }
+    console.log("     The confusion matrix is unaffected and is reported as normal.");
+    console.log("     Claims that the score fuses these signals are not supported.");
+    console.log("");
+  }
+
+  const guardFailures = [];
+
+  if (observedCeiling < DEPLOYED_STATE_THRESHOLD) {
+    guardFailures.push({
+      guard: "UNREACHABLE_THRESHOLD",
+      detail:
+        `the deployed operating point predicts attack at risk >= ${DEPLOYED_STATE_THRESHOLD}, ` +
+        `but the highest attainable score over ${windows.length} scored windows is ` +
+        `${observedCeiling}. No window could be predicted attack, so TP and FP are ` +
+        `structurally zero and the matrix describes the evaluation rather than the detector.`,
+      observed_ceiling: observedCeiling,
+      required: DEPLOYED_STATE_THRESHOLD,
+      component_maxima: componentMaxima,
+      never_exercised: neverExercised,
+    });
+  }
+
+  if (nMalicious === 0 || nBenign === 0) {
+    const empty = nMalicious === 0 ? "malicious" : "benign";
+    guardFailures.push({
+      guard: "EMPTY_CLASS",
+      detail:
+        `no ${empty} windows at truth threshold ${DEPLOYED_TRUTH_THR} ` +
+        `(malicious ${nMalicious}, benign ${nBenign} of ${windows.length}). ` +
+        `Recall or specificity is undefined and balanced accuracy reduces to a ` +
+        `function of the populated class alone.`,
+      malicious_n: nMalicious,
+      benign_n: nBenign,
+      truth_threshold: DEPLOYED_TRUTH_THR,
+    });
+  }
+
+  if (guardFailures.length) {
+    console.log("");
+    console.log("  " + "!".repeat(70));
+    console.log("  ⚠️  VALIDITY GUARD — confusion matrix withheld");
+    console.log("  " + "!".repeat(70));
+    for (const g of guardFailures) {
+      console.log(`     [${g.guard}]`);
+      console.log(`     ${g.detail}`);
+      if (g.never_exercised && g.never_exercised.length) {
+        console.log(`     never exercised: ${g.never_exercised.join(", ")}`);
+      }
+      console.log("");
+    }
+    console.log("     Correlation and risk separation are still reported where both");
+    console.log("     classes are populated. The binary metrics are not.");
+    console.log("");
+  }
+
+  // Withheld, not omitted: a stale run in the archive should say why it has no
+  // matrix rather than appear to have lost the field.
+  const deployedReported = guardFailures.length
+    ? {
+        withheld: true,
+        reason: guardFailures.map((g) => g.guard).join("+"),
+        guards: guardFailures,
+        truth_threshold: DEPLOYED_TRUTH_THR,
+        // retained so the withheld values can be inspected deliberately
+        would_have_been: { ...deployedCm, ...deployed },
+      }
+    : { truth_threshold: DEPLOYED_TRUTH_THR, ...deployed };
+
   // ---- 5. Risk separation ----
   const malicious = windows.filter((w) => w.botnet_fraction >= 0.5).map((w) => w.riskScore);
   const benign = windows.filter((w) => w.botnet_fraction < 0.5).map((w) => w.riskScore);
@@ -450,7 +653,19 @@ function pearson(xs, ys) {
     windows_scored: windows.length,
     separation,
     correlation,
-    deployed_operating_point: { truth_threshold: DEPLOYED_TRUTH_THR, ...deployed },
+    deployed_operating_point: deployedReported,
+    reachability: {
+      observed_ceiling: observedCeiling,
+      nominal_budget: Object.values(COMPONENT_BUDGETS).reduce((a, b) => a + b, 0),
+      deployed_state_threshold: DEPLOYED_STATE_THRESHOLD,
+      summed_component_maxima: summedComponentMaxima,
+      component_maxima: componentMaxima,
+      component_nonzero_windows: componentNonZero,
+      never_exercised: neverExercised,
+    },
+    guard_failures: guardFailures,
+    component_distribution: componentStats,
+    inert_components: inertComponents,
     c2_evaluation: c2Eval,
     attack_type_table: typeTable,
     threshold_sweep: sweep,
