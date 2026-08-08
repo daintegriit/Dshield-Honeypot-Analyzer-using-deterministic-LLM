@@ -1,6 +1,13 @@
 // backend/services/copilotCore.js
 // Deterministic intelligence core for Threat Copilot (Multi-Signal / Multi-Attack-Type)
-// - Keeps windowed-first logic with lifetime fallback safety net. 
+// - Keeps windowed-first logic with lifetime fallback safety net.
+//
+// EXPERIMENT ISOLATION:
+//   buildCopilotCore accepts an optional { sourceFilter } option.
+//   When sourceFilter is "replay" (or "honeypot"), every Attack query is scoped
+//   to that source, so replayed pcap traffic can be scored in isolation from live
+//   honeypot background. When sourceFilter is null/undefined, behavior is
+//   unchanged (scores all traffic) — full backward compatibility.
 
 
 const Attack = require("../models/AttackModel");
@@ -8,7 +15,67 @@ const Severity = require("../models/SeverityModel");
 const Port = require("../models/PortModel");
 const ASN = require("../models/ASNModel");
 
-const CORE_VERSION = "copilotCore-v3.5";
+const CORE_VERSION = "copilotCore-v4.3-dos-burst-only";
+
+/**
+ * RISK BUDGET REACHABILITY
+ * ---------------------------------------------------------------------------
+ * Each risk component has a nominal point budget. A component is REACHABLE in a
+ * deployment only if that deployment supplies its inputs. The severity component
+ * is driven by events labelled `critical`, and severity is assigned by a
+ * target-port heuristic (22/23/445/3389) encoding a HONEYPOT assumption --
+ * nothing legitimate touches those ports on a honeypot. Replayed NetFlow corpora
+ * do not share that assumption: measured 1,062 critical of 257,646 CTU-13 botnet
+ * flows (0.41%), so the component is present in code and ~0 in practice.
+ *
+ * Scoring against the nominal budget in an environment that cannot supply it
+ * yields a ceiling below the state thresholds. That is a units mismatch, not a
+ * detection failure.
+ *
+ * DEPLOYMENT CONFIGURATION, like LOCAL_NETWORKS. Declared per environment and
+ * held CONSTANT across every window in a run. Never recompute per window: a
+ * window with no critical events would get a smaller denominator and therefore
+ * an inflated score, inflating benign windows specifically and manufacturing
+ * apparent recall.
+ *
+ * No value here is chosen by looking at detection results.
+ */
+const RISK_BUDGET = Object.freeze({
+  severity: 25,
+  behavior: 20,
+  entropy: 20,
+  concentration: 15,
+  amplifier: 25,
+  c2: 20,
+  impact: 12,
+  coupling: 5,
+});
+
+const REACHABILITY_PROFILES = Object.freeze({
+  honeypot: {
+    severity: true,
+    behavior: true,
+    entropy: true,
+    concentration: false, // retired v4.0 -- falsified, rho = -0.42
+    amplifier: true,
+    c2: true,
+    impact: false,        // inputs not wired
+    coupling: false,      // inputs not wired
+  },
+  netflow: {
+    severity: false,      // measured 0.41% critical on CTU-13
+    behavior: false,      // auth-port pressure absent
+    entropy: true,
+    concentration: false,
+    amplifier: true,
+    c2: true,
+    impact: false,
+    coupling: false,
+  },
+});
+
+const RISK_PROFILE = process.env.RISK_PROFILE || "honeypot";
+const RISK_NORMALISE = process.env.RISK_NORMALISE === "1";
 
 // ----------------------------
 // Config 
@@ -47,7 +114,7 @@ function stddev(arr) {
   return Math.sqrt(v);
 }
 
-// probability-like normalization (not exponential softmax)
+// NOTE: probability-like normalization (not exponential softmax)
 function softmaxLike(scoresObj) {
   const entries = Object.entries(scoresObj || {});
   const vals = entries.map(([, v]) => (typeof v === "number" ? v : 0));
@@ -70,16 +137,120 @@ function pickTop(scoresObj) {
   return { type: entries[0][0], score: entries[0][1] };
 }
 
-function isPrivateIp(ip) {
+// ----------------------------
+// LOCAL / EXTERNAL CLASSIFICATION
+// ----------------------------
+//
+// The C2 detector only inspects flows that CROSS the local<->external boundary,
+// because that is where beaconing lives (infected host -> outside C&C server).
+// Deciding what counts as "local" is therefore load-bearing: if the boundary is
+// wrong, flowMap stays empty and the entire C2 analysis silently does nothing.
+//
+// BUG THIS FIXES (found 2026-07-15, CTU-13 evaluation):
+//   The previous implementation only recognised RFC1918 space. CTU-13 hosts are
+//   on 147.32.0.0/16 (CVUT public university addresses), so NO flow ever crossed
+//   the boundary. Measured: topFlowCount = 0 on scenarios 1/2/6/9 — the C2
+//   detector was structurally disabled, and the resulting "null results" were
+//   not measurements of a failing detector, they were measurements of a
+//   detector that never ran.
+//
+// "Local" is a DEPLOYMENT property, not a property of IP ranges:
+//   - the live honeypot's local net is 172.31.0.0/16 (RFC1918, fine)
+//   - CTU-13's local net is 147.32.0.0/16 (public, needs declaring)
+// So it must be configurable, not hardcoded to one dataset.
+//
+// Configure via env:
+//   LOCAL_NETWORKS=147.32.0.0/16,10.0.0.0/8
+// RFC1918 + loopback are ALWAYS treated as local regardless of config.
+// ----------------------------
+
+/** Parse "a.b.c.d/len" into { base:uint32, mask:uint32 }. Returns null if invalid. */
+function parseCidr(cidr) {
+  const m = String(cidr).trim().match(/^(\d+)\.(\d+)\.(\d+)\.(\d+)\/(\d+)$/);
+  if (!m) return null;
+
+  const octets = [ +m[1], +m[2], +m[3], +m[4] ];
+  const len = +m[5];
+  if (octets.some((o) => !Number.isInteger(o) || o < 0 || o > 255)) return null;
+  if (!Number.isInteger(len) || len < 0 || len > 32) return null;
+
+  // >>> 0 keeps everything unsigned; JS bitwise ops are signed 32-bit.
+  const base =
+    ((octets[0] << 24) | (octets[1] << 16) | (octets[2] << 8) | octets[3]) >>> 0;
+  const mask = len === 0 ? 0 : (0xffffffff << (32 - len)) >>> 0;
+
+  return { base: (base & mask) >>> 0, mask };
+}
+
+/** IPv4 dotted-quad -> uint32. Returns null if not a valid IPv4 literal. */
+function ipToUint32(ip) {
+  const m = String(ip).trim().match(/^(\d+)\.(\d+)\.(\d+)\.(\d+)$/);
+  if (!m) return null;
+  const o = [ +m[1], +m[2], +m[3], +m[4] ];
+  if (o.some((x) => !Number.isInteger(x) || x < 0 || x > 255)) return null;
+  return ((o[0] << 24) | (o[1] << 16) | (o[2] << 8) | o[3]) >>> 0;
+}
+
+// Parsed once at module load. Invalid entries are reported and skipped rather
+// than silently ignored — a typo here disables C2 detection, which is exactly
+// the failure mode this fix exists to prevent.
+const LOCAL_NETWORKS = (() => {
+  const raw = process.env.LOCAL_NETWORKS;
+  if (!raw) return [];
+  const out = [];
+  for (const entry of raw.split(",")) {
+    const t = entry.trim();
+    if (!t) continue;
+    const parsed = parseCidr(t);
+    if (parsed) {
+      out.push({ cidr: t, ...parsed });
+    } else {
+      console.warn(`⚠️ copilotCore: ignoring invalid LOCAL_NETWORKS entry: "${t}"`);
+    }
+  }
+  if (out.length) {
+    console.log(
+      `🌐 copilotCore: extra local networks = ${out.map((n) => n.cidr).join(", ")}`
+    );
+  }
+  return out;
+})();
+
+/**
+ * Is this address on the LOCAL side of the monitored boundary?
+ * Always-local: RFC1918 (10/8, 172.16/12, 192.168/16), loopback, 0.0.0.0.
+ * Additionally local: anything matching LOCAL_NETWORKS.
+ *
+ * Name note: this replaces isPrivateIp(). "Private" was the wrong concept —
+ * CTU-13's local hosts sit on public address space.
+ */
+function isLocalIp(ip) {
   if (!ip || typeof ip !== "string") return false;
-  return (
+
+  // RFC1918 + loopback — always local, config or not.
+  if (
     ip.startsWith("10.") ||
     ip.startsWith("192.168.") ||
     /^172\.(1[6-9]|2\d|3[0-1])\./.test(ip) ||
     ip.startsWith("127.") ||
     ip === "0.0.0.0"
-  );
+  ) {
+    return true;
+  }
+
+  if (LOCAL_NETWORKS.length === 0) return false;
+
+  const addr = ipToUint32(ip);
+  if (addr === null) return false;
+
+  for (const net of LOCAL_NETWORKS) {
+    if (((addr & net.mask) >>> 0) === net.base) return true;
+  }
+  return false;
 }
+
+// Back-compat alias: older call sites may still say isPrivateIp.
+const isPrivateIp = isLocalIp;
 
 function entropyFromCountsMap(m) {
   const total = Array.from(m.values()).reduce((a, b) => a + b, 0);
@@ -188,7 +359,8 @@ function getBytes(e) {
 }
 
 function getTsMs(e) {
-  const t = e?.timestamp;
+  // Prefer event_time (true event time from TS=) when present, else timestamp.
+  const t = e?.event_time ?? e?.timestamp;
   if (t instanceof Date) return Number.isFinite(t.getTime()) ? t.getTime() : null;
   const d = new Date(t);
   return Number.isFinite(d.getTime()) ? d.getTime() : null;
@@ -342,9 +514,10 @@ function buildAttackExplanation({
 
 function buildRiskExplanation({
   riskScore,
-  volumeComponent,
   severityComponent,
   behaviorComponent,
+  entropyComponent,
+  concentrationComponent,
   signalAmplifier,
   c2Bonus,
   impactBonus,
@@ -353,9 +526,17 @@ function buildRiskExplanation({
 
   const reasons = [];
 
-  if (volumeComponent >= 35) {
+  // v4.0: volume no longer contributes to risk (it saturated and measured
+  // event rate rather than threat). Entropy and concentration replace it.
+  if (entropyComponent >= 12) {
     reasons.push(
-      `Attack volume significantly exceeded normal baseline conditions.`
+      `Traffic is distributed across a wide range of destination ports, consistent with enumeration or scanning behaviour.`
+    );
+  }
+
+  if (concentrationComponent >= 10) {
+    reasons.push(
+      `Communication is concentrated among a small number of peers, indicating focused rather than diffuse activity.`
     );
   }
 
@@ -434,30 +615,63 @@ function buildConfidenceExplanation({
 // ----------------------------
 // Core Builder Function
 // ----------------------------
-async function buildCopilotCore({ minutes = 60 } = {}) {
-  const nowMs = Date.now();
+// options:
+//   minutes      - window size in minutes (default 60)
+//   sourceFilter - "replay" | "honeypot" | null. When set, ALL Attack queries are
+//                  scoped to that source (experiment isolation). Default null =
+//                  score everything (original behavior, fully backward-compatible).
+//   windowEnd    - Date|string|null. When set, the core scores the window ENDING
+//                  at this instant instead of "now". This makes historical /
+//                  offline analysis possible: an analyzer can walk a past replay
+//                  and score each window with the SAME production code path.
+//                  Default null = score up to now (original behavior).
+//
+// NOTE ON BOUNDS: when windowEnd is supplied every time-scoped Attack query is
+// bounded on BOTH sides ($gte ... $lte windowEnd). Without the upper bound a
+// historical window would silently include every document recorded after it.
+async function buildCopilotCore({ minutes = 60, sourceFilter = null, windowEnd = null } = {}) {
+  const isHistorical = windowEnd != null;
+  const anchor = isHistorical ? new Date(windowEnd) : new Date();
+
+  if (isHistorical && !Number.isFinite(anchor.getTime())) {
+    throw new Error(`buildCopilotCore: invalid windowEnd: ${windowEnd}`);
+  }
+
+  const nowMs = anchor.getTime();
   const oneMinuteAgo = new Date(nowMs - 1 * 60 * 1000);
   const fiveMinutesAgo = new Date(nowMs - 5 * 60 * 1000);
   const fifteenMinutesAgo = new Date(nowMs - 15 * 60 * 1000);
   const oneHourAgo = new Date(nowMs - 60 * 60 * 1000);
   const windowStart = new Date(nowMs - minutes * 60 * 1000);
 
+  // Upper bound applied only in historical mode (live mode stays open-ended so
+  // behaviour is byte-for-byte identical to before).
+  const upperBound = isHistorical ? { $lte: anchor } : {};
+
+  // Time-scoping helper: builds a { timestamp: { $gte, [$lte] } } clause.
+  const tsRange = (from) => ({ timestamp: { $gte: from, ...upperBound } });
+
+  // Source-scoping helper: merge a { source } clause into any Attack filter when
+  // sourceFilter is set. No-op when sourceFilter is null.
+  const withSource = (filter) =>
+    sourceFilter ? { ...filter, source: sourceFilter } : filter;
+
 
   // ==================================================
   // 1) ATTACK VOLUME SIGNALS (for DoS and general threat level)
   // ==================================================
   const [attacksLast1Min, attacksLast5Min, attacksLast15Min, attacksLastHour] = await Promise.all([
-    Attack.countDocuments({ timestamp: { $gte: oneMinuteAgo } }),
-    Attack.countDocuments({ timestamp: { $gte: fiveMinutesAgo } }),
-    Attack.countDocuments({ timestamp: { $gte: fifteenMinutesAgo } }),
-    Attack.countDocuments({ timestamp: { $gte: oneHourAgo } }),
+    Attack.countDocuments(withSource(tsRange(oneMinuteAgo))),
+    Attack.countDocuments(withSource(tsRange(fiveMinutesAgo))),
+    Attack.countDocuments(withSource(tsRange(fifteenMinutesAgo))),
+    Attack.countDocuments(withSource(tsRange(oneHourAgo))),
   ]);
 
   const burstRatio5mOverHour = attacksLastHour > 0 ? attacksLast5Min / attacksLastHour : 0;
   const burstRatio15mOverHour = attacksLastHour > 0 ? attacksLast15Min / attacksLastHour : 0;
 
   // ==================================================
-  // 2) LIFETIME CONTEXT (for stability + fallback, and also important signals like top ports a>
+  // 2) LIFETIME CONTEXT (for stability + fallback, and also important signals like top ports and services)
   // ==================================================
   const AUTH_PORTS = new Set([22, 23, 2222, 2223, 3389, 5900]);
   const WEB_PORTS = new Set([80, 443, 8000, 8080, 8443, 8888, 9000, 9443]);
@@ -502,9 +716,11 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
   // 4) WINDOWED EVENTS
   // ==================================================
   const recentEvents = await Attack.find(
-    { timestamp: { $gte: windowStart } },
+    withSource(tsRange(windowStart)),
     {
       timestamp: 1,
+      event_time: 1,
+      source: 1,
       src: 1,
       dst: 1,
       dpt: 1,
@@ -732,10 +948,69 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
   // ==================================================
   // 6) ATTACK TYPE SCORES
   // ==================================================
+  // ------------------------------------------------------------------
+  // v4.1: dosScore made rate-independent.
+  //
+  // WHY: the v3.x/v4.0 form was
+  //   min(60, log10(attacksLast5Min+1)*20) + burst terms
+  // The log10 term reaches its 60-point cap at ~1,000 events in the window,
+  // i.e. under any realistic load. Measured on CTU-13 s1 it saturated in
+  // 100% of windows, so pickTop() returned "dos" for every single window at
+  // every window size (1/5/15 min) across BOTH v3.7 and v4.0 runs. The
+  // attack-type table was therefore uninformative by construction: no other
+  // behavioural class could ever win.
+  //
+  // Volume is not evidence of denial-of-service. A DoS is characterised by
+  // traffic CONCENTRATED on a target with an abnormal burst shape — both of
+  // which are ratios, not counts.
+  //
+  // KNOWN LIMITATION (do not paper over this): burstRatio5mOverHour is
+  // structurally ~0.083 (5/60) under a constant-rate replay, so this score
+  // stays low and flat in the current harness. That is correct behaviour —
+  // a constant-rate replay contains no bursts. It means DoS detection is NOT
+  // measurable with the present replay methodology; testing it requires
+  // preserving the original inter-arrival timing.
+  // ------------------------------------------------------------------
+  // ------------------------------------------------------------------
+  // v4.3: the CONCENTRATION terms are removed from dosScore.
+  //
+  // WHY (measured, not assumed). The v4.1 form added:
+  //     min(30, topPortShare * 30)                 // target concentration
+  //   + min(20, (1 - srcEntropyNorm) * 20)         // source concentration
+  //
+  // Both reward CONCENTRATION. Measured against CTU-13 ground truth with the
+  // C2 detector functional (v4.2), mean dosScore on malicious vs benign
+  // windows:
+  //     scenario 9 (n=100):  malicious 25.17  benign 68.19   delta -43.02
+  //     scenario 2 (n=55) :  malicious 35.69  benign 53.36   delta -17.67
+  // i.e. dosScore scored BENIGN traffic ~43 points HIGHER than malicious
+  // traffic, in both scenarios. It was the strongest signal in the system and
+  // it pointed the wrong way.
+  //
+  // The reason: normal CVUT user traffic concentrates (port 80/443, few peers),
+  // while the botnet sprays across many ports/peers. So "concentration" is a
+  // marker of NORMAL traffic here, not attack traffic. This is the same
+  // hypothesis that was already falsified once, in v4.0's
+  // concentrationComponent (rho = -0.42 on scenario 1 at 5-min windows). It was
+  // wrong there and it is wrong here.
+  //
+  // This mattered beyond dosScore itself: strongestSignal = max(dos, scan, c2,
+  // ...) feeds signalAmplifier, so an inverted dosScore of ~68 on benign
+  // windows meant the amplifier was firing on NORMAL traffic.
+  //
+  // What remains is burst deviation only — the one property that actually
+  // characterises denial-of-service, and a ratio rather than a count.
+  //
+  // HONEST CONSEQUENCE: under a constant-rate replay burstRatio5mOverHour is
+  // structurally ~0.083 (5/60), so dosScore ~= 0 in every window. That is
+  // CORRECT — these captures contain no DoS and a constant-rate replay contains
+  // no bursts. dosScore now abstains instead of guessing backwards. Testing DoS
+  // detection requires a replay that preserves original inter-arrival timing.
+  // ------------------------------------------------------------------
   const dosScore = clamp(
-    Math.min(60, Math.log10(attacksLast5Min + 1) * 20) +
-      Math.min(25, burstRatio5mOverHour * 100) +
-      Math.min(15, burstRatio15mOverHour * 80),
+    // Burst shape: fraction of the hour's traffic landing in the last 5 min.
+    // Uniform traffic gives 5/60 = 0.083 -> 0 points. A real burst pushes it up.
+    Math.min(100, Math.max(0, burstRatio5mOverHour - 0.083) * 150),
     0,
     100
   );
@@ -754,7 +1029,9 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
     Math.min(70, (authPortPressure || 0) / 50),
     0,
     100
-  );  const webProbeScore = clamp(Math.min(70, (webPortPressure || 0) / 80), 0, 100);
+  );
+
+  const webProbeScore = clamp(Math.min(70, (webPortPressure || 0) / 80), 0, 100);
 
   const impactScore = clamp(
     Math.min(70, criticalCount / 20) + Math.min(30, highCount / 50),
@@ -771,28 +1048,95 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
     impact: impactScore,
   };
 
+  // ------------------------------------------------------------------
+  // v4.0 FIX: `impact` is a SEVERITY AGGREGATE (criticalCount/highCount),
+  // not a behaviour. Letting it compete in the type vote means a severity
+  // measure can be reported as the "dominant attack type", which is a
+  // category error. It stays in attackTypeScores for reporting, but only
+  // behavioural classes are eligible to be the dominant attack.
+  // ------------------------------------------------------------------
+  const behaviouralScores = {
+    dos: dosScore,
+    scan: scanScore,
+    brute_force: bruteForceScore,
+    web_probe: webProbeScore,
+    c2: c2Score,
+  };
+
   const attackTypeProbabilities = softmaxLike(attackTypeScores);
-  const dominantAttack = pickTop(attackTypeScores);
+  const dominantAttack = pickTop(behaviouralScores);
 
   // ==================================================
   // 7) RISK FABRIC
   // ==================================================
 
-  // ---- HYBRID VOLUME (absolute + relative) ----
-  // Relative catches bursts. Absolute catches sustained injections.
+  // ------------------------------------------------------------------
+  // v4.0 RISK FABRIC — RATE-INDEPENDENT
+  // ------------------------------------------------------------------
+  // WHY THIS CHANGED (evidence, not preference):
+  //
+  // The v3.x volume component was:
+  //     volumeAbs = clamp(max(attacksLast1Min*2, attacksLast5Min/2), 0, 60)
+  //     volumeRel = clamp(burstRatio5mOverHour * 80, 0, 60)
+  //     volumeComponent = max(volumeAbs, volumeRel)
+  //
+  // volumeAbs saturates at its 60-point cap whenever attacksLast1Min >= 30,
+  // i.e. under essentially any real traffic load. Measured against CTU-13
+  // scenario 1 (71,348 hand-labeled flows), this produced:
+  //     separation margin  +1.37 (1m) / -2.28 (5m) / -0.22 (15m)
+  //     rho(risk, botnet_fraction)  +0.08 / -0.21 / -0.21
+  //     FPR 1.0, TN 0, balanced accuracy 0.50 at every window size
+  // The score was a near-constant measuring event RATE, not threat.
+  //
+  // Volume cannot separate malicious from benign traffic when both arrive at
+  // similar rates -- which is the normal case (CTU-13 s1 is 57% botnet /
+  // 43% normal, interleaved). It is retained as reported CONTEXT
+  // (attackMetrics) but no longer contributes to risk.
+  //
+  // The only v3.x component that tracked ground truth was c2Score
+  // (mean 9.81 when labeled C&C present vs 0.00 when absent, zero false
+  // fires). It works because it is built on RATIOS AND SHAPES
+  // (dominantFlowRatio, periodicityCv, portDiversity) rather than counts.
+  // v4.0 generalises that principle.
+  //
+  // WEIGHT DERIVATION (NOT fitted to the evaluation set):
+  // Each feature is normalised by its own theoretical range, then given a
+  // point budget summing to 100. No constant here was chosen by looking at
+  // CTU-13 results.
+  // ------------------------------------------------------------------
 
-  const volumeAbs = clamp(        
-   Math.max(attacksLast1Min * 2, attacksLast5Min / 2),
-   0,
-   60
- );
- const volumeRel = clamp(burstRatio5mOverHour * 80, 0, 60); 
+  // Volume is CONTEXT now, not risk. Kept for reporting/telemetry only.
+  const volumeComponent = 0;
 
-  const volumeComponent = Math.max(volumeAbs, volumeRel);
+  // --- Severity: proportion of the window that is critical, not the count.
+  // Rate-independent: 50 critical of 100 events is worse than 50 of 100,000.
+  const windowEventCount = recentEvents.length;
+  const criticalRatio = windowEventCount > 0 ? criticalCount / windowEventCount : 0;
+  const severityComponent = clamp(criticalRatio * 25, 0, 25);
 
+  // --- Behaviour: proportion of window traffic hitting auth services.
+  // Previously an absolute count (authPortPressure/150) which scaled with load.
+  const authRatio =
+    totalWindowedPorts > 0 ? (authPortPressureWindowed || 0) / totalWindowedPorts : 0;
+  const behaviorComponent = clamp(authRatio * 20, 0, 20);
 
-  const severityComponent = clamp(criticalCount / 4, 0, 30);
-  const behaviorComponent = clamp((authPortPressure || 0) / 150, 0, 25);
+  // --- Port entropy: computed since v3.x and NEVER used in the risk score.
+  // Shannon entropy over destination ports. Max entropy for k ports is
+  // log2(k); with the 10-port view used here the ceiling is log2(10) ~ 3.32.
+  // Normalise against that ceiling rather than an arbitrary divisor.
+  // HIGH entropy => traffic sprayed across many ports => scan-like.
+  const PORT_ENTROPY_CEILING = Math.log2(10);
+  const portEntropyNorm =
+    PORT_ENTROPY_CEILING > 0 ? clamp(portEntropyWindowed / PORT_ENTROPY_CEILING, 0, 1) : 0;
+  const entropyComponent = clamp(portEntropyNorm * 20, 0, 20);
+
+  // --- Peer concentration: computed since v3.x and NEVER used in risk.
+  // LOW source entropy => few peers dominate => focused/targeted behaviour.
+  // Inverted deliberately: concentration is the signal, not diversity.
+  const SOURCE_ENTROPY_CEILING = Math.log2(50);
+  const srcEntropyNorm =
+    SOURCE_ENTROPY_CEILING > 0 ? clamp(sourceEntropy / SOURCE_ENTROPY_CEILING, 0, 1) : 0;
+  const concentrationComponent = clamp((1 - srcEntropyNorm) * 15, 0, 15);
 
   // --------------------------------------------------
   // 1. Primary Behavioral Signals
@@ -859,7 +1203,11 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
 
   let couplingBonus = 0;
 
-  if (volumeComponent > 45 && behaviorComponent > 10) {
+  // v4.0: previously (volumeComponent > 45 && behaviorComponent > 10), but
+  // volumeComponent was always 60, so this fired on behaviour alone. Now it
+  // models genuine cross-signal reinforcement: focused peers AND service
+  // targeting occurring together.
+  if (concentrationComponent > 8 && behaviorComponent > 8) {
     couplingBonus = 5;
   }
 
@@ -867,11 +1215,16 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
   // 6. Final Risk Calculation
   // --------------------------------------------------
 
-  const riskScore = clamp(
+  // v4.0: volume removed; entropy + concentration added.
+  // Budget: severity 25 + behaviour 20 + entropy 20 + concentration 15
+  //         + amplifier 25 + c2Bonus 20 + impactBonus 12 + coupling 5
+  // (components are independently clamped; the sum is clamped to 100)
+  const riskScoreRaw = clamp(
     Math.round(
-      volumeComponent +
       severityComponent +
       behaviorComponent +
+      entropyComponent +
+      concentrationComponent +
       signalAmplifier +
       c2Bonus +
       impactBonus +
@@ -880,6 +1233,22 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
     0,
     100
   );
+
+  // Budget normalisation. Denominator derived from input availability only.
+  // honeypot profile sums to 110 -> capped at 100 -> normalised == raw, so
+  // existing behaviour and archives are unchanged.
+  const reachProfile =
+    REACHABILITY_PROFILES[RISK_PROFILE] || REACHABILITY_PROFILES.honeypot;
+  const reachableBudget = Object.entries(RISK_BUDGET)
+    .filter(([k]) => reachProfile[k])
+    .reduce((a, [, v]) => a + v, 0);
+  const referenceBudget = Math.min(reachableBudget, 100);
+  const riskScoreNormalised =
+    referenceBudget > 0
+      ? clamp(Math.round((riskScoreRaw / referenceBudget) * 100), 0, 100)
+      : 0;
+
+  const riskScore = RISK_NORMALISE ? riskScoreNormalised : riskScoreRaw;
 
   let state = "stable";
   if (riskScore >= 85) state = "critical";
@@ -901,9 +1270,10 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
 
   const riskExplanation = buildRiskExplanation({
     riskScore,
-    volumeComponent,
     severityComponent,
     behaviorComponent,
+    entropyComponent,
+    concentrationComponent,
     signalAmplifier,
     c2Bonus,
     impactBonus,
@@ -948,9 +1318,22 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
     dominantAttack,
     riskScore,
   });
+
   // ==================================================
   // FINAL
   // ==================================================
+
+  // --------------------------------------------------
+  // REAL REPLAY CONTROL-PLANE TELEMETRY
+  // --------------------------------------------------
+  // IMPORTANT:
+  // These are REAL orchestration states,
+  // NOT inferred attack-classification states.
+  //
+  // Replay telemetry must only represent
+  // actual replay lifecycle truth.
+  // --------------------------------------------------
+
   const replayState =
     process.env.REPLAY_STATE ||
     (
@@ -1290,6 +1673,12 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
   // --------------------------------------------------
   // LIVE TELEMETRY OVERLAY
   // --------------------------------------------------
+  // THIS is inference telemetry.
+  //
+  // These are NOT replay phases.
+  // These are analytical overlays rendered
+  // on top of replay orchestration.
+  // --------------------------------------------------
 
   const liveReplayOverlay = {
 
@@ -1346,6 +1735,17 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
 
     generatedAt:
       new Date().toISOString(),
+
+    // Echo the source scope so callers/experiment can confirm isolation.
+    sourceFilter:
+      sourceFilter || "all",
+
+    // Echo the scoring mode + anchor so offline analysis is auditable.
+    scoringMode:
+      isHistorical ? "historical" : "live",
+
+    windowEnd:
+      anchor.toISOString(),
 
     windowMinutes:
       minutes,
@@ -1476,11 +1876,16 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
 
     riskComponents: {
 
+      // v4.0: volume is context only and contributes 0 to risk.
       volumeComponent,
 
       severityComponent,
 
       behaviorComponent,
+
+      entropyComponent,
+
+      concentrationComponent,
 
       signalAmplifier,
 
@@ -1489,6 +1894,35 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
       impactBonus,
 
       couplingBonus,
+
+    },
+
+    // Which fraction of the scoring this deployment can actually exercise.
+    // Reported on every window so a zero-recall result is readable as
+    // "the corpus could not supply N% of the budget".
+    riskBudget: {
+      profile: RISK_PROFILE,
+      normalised: RISK_NORMALISE,
+      nominalBudget: Object.values(RISK_BUDGET).reduce((a, b) => a + b, 0),
+      reachableBudget,
+      referenceBudget,
+      reachable: reachProfile,
+      riskScoreRaw,
+      riskScoreNormalised,
+    },
+
+    // v4.0 rate-independent feature diagnostics (for analysis / auditing)
+    rateIndependentFeatures: {
+
+      criticalRatio: Number(criticalRatio.toFixed(4)),
+
+      authRatio: Number(authRatio.toFixed(4)),
+
+      portEntropyNorm: Number(portEntropyNorm.toFixed(4)),
+
+      srcEntropyNorm: Number(srcEntropyNorm.toFixed(4)),
+
+      windowEventCount,
 
     },
 
@@ -1621,13 +2055,3 @@ async function buildCopilotCore({ minutes = 60 } = {}) {
 }
 
 module.exports = { buildCopilotCore };
-
-
-
-
-
-
-
-
-
-

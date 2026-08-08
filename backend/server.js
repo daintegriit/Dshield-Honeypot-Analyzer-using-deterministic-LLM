@@ -41,7 +41,7 @@ const PORT = process.env.PORT || 5002;
 console.log("🚀 Starting server...");
 
 // =====================================================
-// REAL-TIME INGEST QUEUE
+// 🔥 REAL-TIME INGEST QUEUE (CORE UPGRADE)
 // =====================================================
 const ingestQueue = [];
 const MAX_QUEUE_SIZE = 10000;
@@ -50,7 +50,7 @@ const MAX_QUEUE_SIZE = 10000;
 app.locals.ingestQueue = ingestQueue;
 
 // =====================================================
-// QUEUE PROCESSOR (NON-BLOCKING PIPELINE)
+// 🔥 QUEUE PROCESSOR (NON-BLOCKING PIPELINE)
 // =====================================================
 const parseDShieldLog = require("./utils/parseLogs");
 const Attack = require("./models/AttackModel");
@@ -120,7 +120,7 @@ const processQueue = async () => {
   processing = false;
 };
 
-// run queue processor continuously
+// 🔥 run queue processor continuously
 setInterval(processQueue, 1000);
 
 // =====================================================
@@ -194,6 +194,7 @@ console.log("Registered: /api/ingest");
 
 app.use("/api/copilot", copilotRoutes);
 console.log("Registered: /api/copilot");
+require("./services/insightCache").start();
 
 // =====================================================
 // HEALTH CHECK (UPGRADED)
