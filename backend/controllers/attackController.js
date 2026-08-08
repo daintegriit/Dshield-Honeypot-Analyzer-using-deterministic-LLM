@@ -216,6 +216,9 @@ exports.getProtocolBreakdown = async (req, res) => {
 // -------------------------------
 // Severity Distribution
 // -------------------------------
+// -------------------------------
+// Severity Distribution
+// -------------------------------
 exports.getSeverityDistribution = async (req, res) => {
 
   try {
@@ -703,7 +706,7 @@ exports.getComparativeTrafficAnalysis = async (req, res) => {
 exports.getGlobalThreats = async (req, res) => {
   try {
     if (USE_MONGO) {
-      // ONLY USE ATTACK MODEL
+      // ONLY USE ATTACK MODEL — your system uses this
       const attacks = await Attack.find({})
         .sort({ timestamp: -1 })
         .limit(100)
@@ -742,6 +745,9 @@ exports.getGlobalThreats = async (req, res) => {
     res.status(500).json({ message: "Error fetching global threats", err });
   }
 };
+
+
+
 
 
 

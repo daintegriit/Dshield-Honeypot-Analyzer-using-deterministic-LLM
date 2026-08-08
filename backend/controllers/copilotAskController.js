@@ -1,4 +1,10 @@
 // backend/controllers/copilotAskController.js
+// Orchestrates governed Copilot question answering
+// - Deterministic summaries
+// - Hard governance gates
+// - LLM is NEVER a policy layer
+// - Returns token + latency metrics for benchmarking
+
 const {
   buildBehaviorSummary,
   buildMultiWindowBehaviorSummary,
@@ -13,86 +19,218 @@ const {
 } = require("../services/questionAdmissibility");
 
 async function askCopilot(req, res) {
+
+  const requestStarted =
+    Date.now();
+
   try {
+
     const {
       question,
       templateId,
       minutes,
       limit = 5000,
       windows = [15, 60, 240],
+      baselineMode = false,
+      model = null,
     } = req.body;
 
-    if (!question || typeof question !== "string") {
+    // =====================================================
+    // VALIDATION
+    // =====================================================
+
+    if (
+      !question ||
+      typeof question !== "string"
+    ) {
+
       return res.status(400).json({
+
         ok: false,
-        error: "Missing or invalid question",
+
+        error:
+          "Missing or invalid question",
       });
     }
 
-    if (!templateId || typeof templateId !== "string") {
+    if (
+      !templateId ||
+      typeof templateId !== "string"
+    ) {
+
       return res.status(400).json({
+
         ok: false,
-        error: "Missing or invalid templateId",
+
+        error:
+          "Missing or invalid templateId",
       });
     }
 
-    // Build deterministic context ONLY
+    // =====================================================
+    // BUILD DETERMINISTIC CONTEXT
+    // =====================================================
+
     const summary =
       minutes != null
+
         ? await buildBehaviorSummary({
-            minutes: Number(minutes),
-            limit: Number(limit),
+
+            minutes:
+              Number(minutes),
+
+            limit:
+              Number(limit),
           })
+
         : await buildMultiWindowBehaviorSummary({
+
             windows,
-            limit: Number(limit),
+
+            limit:
+              Number(limit),
           });
 
-    // Governance hard gate
-    const decision = assessQuestionAdmissibility({
-      summary,
-      templateId,
-      question,
-    });
+    // =====================================================
+    // GOVERNANCE GATE
+    // =====================================================
 
-    //  HARD REFUSAL (no LLM call)
-    // HARD REFUSAL (only when explicitly required)
-    if (decision.action === "HARD_REFUSE") {
+    const decision =
+      assessQuestionAdmissibility({
+
+        summary,
+
+        templateId,
+
+        question,
+      });
+
+    // =====================================================
+    // HARD REFUSAL
+    // =====================================================
+
+    if (
+      decision.action ===
+      "HARD_REFUSE"
+    ) {
+
       return res.status(403).json({
+
         ok: false,
+
         refusal: true,
-        reason: decision.reason,
+
+        reason:
+          decision.reason,
+
         answer:
           "I cannot answer this question because it is outside the scope of security analysis.",
       });
     }
 
-    // Allowed — pass constraints into reasoner
-    const result = await answerCopilotQuestion({
-      summary,
-      templateId,
-      question,
-      constraints: decision.constraint || null,
-    });
+    // =====================================================
+    // LLM REASONING
+    // =====================================================
+
+    const result =
+      await answerCopilotQuestion({
+
+        summary,
+
+        templateId,
+
+        question,
+
+        constraints:
+          decision.constraint || null,
+
+        baselineMode,
+
+        model,
+      });
+
+    // =====================================================
+    // LATENCY
+    // =====================================================
+
+    const latencyMs =
+      Date.now() -
+      requestStarted;
+
+    // =====================================================
+    // TOKEN METRICS
+    // =====================================================
+
+    const tokenMetrics =
+      result.tokenMetrics || {
+
+        promptTokens: 0,
+
+        completionTokens: 0,
+
+        totalTokens: 0,
+
+        promptEvalDuration: 0,
+
+        evalDuration: 0,
+      };
+
+    // =====================================================
+    // RESPONSE
+    // =====================================================
 
     return res.json({
+
       ok: true,
-      template: templateId,
-      constraints: decision.constraint || null,
-      answer: result.answer,
+
+      template:
+        templateId,
+
+      model:
+        model || null,
+
+      baselineMode:
+        Boolean(baselineMode),
+
+      constraints:
+        decision.constraint || null,
+
+      answer:
+        result.answer,
+
+      latencyMs,
+
+      tokenMetrics,
+
       windowsUsed:
+
         minutes != null
+
           ? [`${minutes}m`]
-          : windows.map((w) => `${w}m`),
+
+          : windows.map(
+              (w) => `${w}m`
+            ),
     });
+
   } catch (err) {
-    console.error("Copilot ask error:", err);
+
+    console.error(
+      "Copilot ask error:",
+      err
+    );
 
     return res.status(500).json({
+
       ok: false,
-      error: err.message || "Copilot failed to answer the question",
+
+      error:
+        err.message ||
+        "Copilot failed to answer the question",
     });
   }
 }
 
-module.exports = { askCopilot };
+module.exports = {
+  askCopilot,
+};

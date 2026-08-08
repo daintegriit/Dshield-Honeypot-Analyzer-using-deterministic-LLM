@@ -1,6 +1,8 @@
 // backend/services/copilotReasoner.js
 // - Uses ONLY structured summaries
 // - Enforces deterministic + interpretive separation
+// - Produces SOC-grade, auditable output
+// - Supports autonomous insight + governed analyst questions
 
 const crypto = require("crypto");
 const { callLocalOllama } = require("./llmProviders/localOllamaProvider");
@@ -109,6 +111,27 @@ RULES
 - evidence MUST reference explicit fields
 - If evidence is weak, LOWER confidence
 - If data is insufficient, say so
+
+------------------------------------
+EVIDENCE FORMAT (STRICT)
+------------------------------------
+Every entry in "evidence" and "what_changed" must be a FIELD NAME copied from
+the VERIFIED CORE STATE above, in dot notation.
+
+CORRECT:
+  "evidence": ["attackMetrics.attacksLast5Min", "scanningIndicators.portEntropy"]
+
+WRONG — colon instead of dot:
+  "evidence": ["attackMetrics:attacksLast5Min"]
+
+WRONG — value included in the name:
+  "evidence": ["portEntropy: 1.646"]
+
+WRONG — prose instead of a field name:
+  "evidence": ["Elevated port entropy indicates scanning"]
+
+Put your interpretation in "finding" or "assessment". Put ONLY field names in
+"evidence" and "what_changed".
 
 Respond ONLY with valid JSON.
 `.trim();
@@ -802,6 +825,9 @@ async function callLLM({
 /* -------------------------------------------------
    Autonomous Insight Entry Point
 --------------------------------------------------*/
+/* -------------------------------------------------
+   Autonomous Insight Entry Point
+--------------------------------------------------*/
 
 async function generateCopilotInsight(summary) {
 
@@ -814,6 +840,11 @@ async function generateCopilotInsight(summary) {
   const raw =
     await callLLM({ prompt });
 
+  // =================================================
+  // SUPPORT:
+  // - legacy string responses
+  // - new structured provider responses
+  // =================================================
 
   const rawText =
     typeof raw === "string"
@@ -920,6 +951,9 @@ async function generateCopilotInsight(summary) {
 /* -------------------------------------------------
    Governed Question Answering
 --------------------------------------------------*/
+/* -------------------------------------------------
+   Governed Question Answering
+--------------------------------------------------*/
 
 async function answerCopilotQuestion({
 
@@ -971,6 +1005,12 @@ async function answerCopilotQuestion({
 
   const raw =
     await callLLM({ prompt, model });
+
+  // =================================================
+  // SUPPORT:
+  // - legacy string responses
+  // - structured provider responses
+  // =================================================
 
   const answer =
     typeof raw === "string"

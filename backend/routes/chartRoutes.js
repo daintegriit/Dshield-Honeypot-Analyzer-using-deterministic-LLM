@@ -1,50 +1,196 @@
 const express = require("express");
 const router = express.Router();
+
 const {
+
   getTopCountries,
   downloadTopCountries,
+
   getTopIPs,
   getTopAttackTypes,
+
   getPortScanning,
   getProtocolBreakdown,
   getSeverityDistribution,
+
   getAttackTrends,
   getHeatmapData,
+  getComparativeAnalysis,
+
   getTopASNs,
   getRecentLogs,
   getThreatSummary,
   getGeolocation
+
 } = require("../controllers/chartController");
 
-console.log({
-  getTopCountries,
-  downloadTopCountries,
-  getTopIPs,
-  getTopAttackTypes,
-  getPortScanning,
-  getProtocolBreakdown,
-  getSeverityDistribution,
-  getAttackTrends,
-  getHeatmapData,
-  getTopASNs,
-  getRecentLogs,
-  getThreatSummary,
-  getGeolocation
-});
+// =========================================================
+// 🔥 RESPONSE CACHE HEADERS
+// =========================================================
 
-// Routes
-router.get("/top-countries", getTopCountries); // Route for top countries
-router.get("/download/top-countries", downloadTopCountries); // Route for downloading CSV
-router.get("/top-ips", getTopIPs); // Route for top IPs
-router.get("/top-attack-types", getTopAttackTypes); // Route for top attack types
-router.get("/port-scanning", getPortScanning); // Implement similar for Port Scanning
-router.get("/protocol-breakdown", getProtocolBreakdown); // Implement similar for Protocol Breakdown
-router.get("/severity-distribution", getSeverityDistribution); // Implement similar for Severity Distribution
-router.get('/attack-trends', getAttackTrends); // Route for attack trends
-router.get("/heatmap", getHeatmapData); // Route for heatmap data
-router.get("/top-asns", getTopASNs); // Route for top ASNs
-router.get("/recent-logs", getRecentLogs); // Route for recent logs
-router.get("/threat-summary", getThreatSummary); // Route for threat summary
-router.get("/geolocation", getGeolocation); // Route for geolocation data
+const telemetryHeaders = (
+  req,
+  res,
+  next
+) => {
+
+  // -------------------------------------------------------
+  // SHORT-LIVED DASHBOARD CACHE
+  // -------------------------------------------------------
+
+  res.set({
+
+    // browser cache
+    "Cache-Control":
+      "public, max-age=5, stale-while-revalidate=30",
+
+    // observability
+    "X-Chiron-Service":
+      "telemetry-engine",
+
+    "X-Chiron-Version":
+      "2.0.0",
+
+    // compression hint
+    "Vary":
+      "Accept-Encoding"
+  });
+
+  next();
+};
+
+// =========================================================
+// 🔥 ROUTER MIDDLEWARE
+// =========================================================
+
+router.use(
+  telemetryHeaders
+);
+
+// =========================================================
+// 🌍 COUNTRIES
+// =========================================================
+
+router.get(
+  "/top-countries",
+  getTopCountries
+);
+
+router.get(
+  "/download/top-countries",
+  downloadTopCountries
+);
+
+// =========================================================
+// 🔥 TOP IPS
+// =========================================================
+
+router.get(
+  "/top-ips",
+  getTopIPs
+);
+
+// =========================================================
+// 🔥 ATTACK TYPES
+// =========================================================
+
+router.get(
+  "/top-attack-types",
+  getTopAttackTypes
+);
+
+// =========================================================
+// 🔥 PORT SCANNING
+// =========================================================
+
+router.get(
+  "/port-scanning",
+  getPortScanning
+);
+
+// =========================================================
+// 🔥 PROTOCOL BREAKDOWN
+// =========================================================
+
+router.get(
+  "/protocol-breakdown",
+  getProtocolBreakdown
+);
+
+// =========================================================
+// 🔥 SEVERITY DISTRIBUTION
+// =========================================================
+
+router.get(
+  "/severity-distribution",
+  getSeverityDistribution
+);
+
+// =========================================================
+// 🔥 ATTACK TRENDS
+// =========================================================
+
+router.get(
+  "/attack-trends",
+  getAttackTrends
+);
+
+// =========================================================
+// 🔥 HEATMAP
+// =========================================================
+
+router.get(
+  "/heatmap",
+  getHeatmapData
+);
+
+// =========================================================
+// 🔥 COMPARATIVE ANALYSIS
+// =========================================================
+
+router.get(
+  "/comparative-analysis",
+  getComparativeAnalysis
+);
+
+// =========================================================
+// 🔥 ASN ANALYSIS
+// =========================================================
+
+router.get(
+  "/top-asns",
+  getTopASNs
+);
+
+// =========================================================
+// 🔥 RECENT LOGS
+// =========================================================
+
+router.get(
+  "/recent-logs",
+  getRecentLogs
+);
+
+// =========================================================
+// 🔥 THREAT SUMMARY
+// =========================================================
+
+router.get(
+  "/threat-summary",
+  getThreatSummary
+);
+
+// =========================================================
+// 🔥 GEOLOCATION
+// =========================================================
+
+router.get(
+  "/geolocation",
+  getGeolocation
+);
+
+// =========================================================
+// 🔥 EXPORT
+// =========================================================
 
 module.exports = router;

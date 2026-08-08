@@ -1,3 +1,33 @@
+/**
+ * =========================================================
+ * 🔥 CHIRON / DSHIELD ELITE CHART CONTROLLER
+ * =========================================================
+ *
+ * PRODUCTION-GRADE CYBER THREAT ANALYTICS ENGINE
+ *
+ * ARCHITECTURE:
+ * ---------------------------------------------------------
+ * USE_MONGO=false
+ *   → parses live /var/log/dshield.log
+ *
+ * USE_MONGO=true
+ *   → uses optimized aggregated MongoDB collections
+ *
+ * DESIGN GOALS:
+ * ---------------------------------------------------------
+ * ✅ zero blocking geo lookups
+ * ✅ bounded aggregation windows
+ * ✅ scalable for millions of events
+ * ✅ optimized for ECharts dashboards
+ * ✅ production-safe queries
+ * ✅ low latency
+ * ✅ memory-safe aggregation
+ * ✅ SOC-ready analytics
+ * ✅ deterministic responses
+ *
+ * =========================================================
+ */
+
 const mongoose = require("mongoose");
 const { Parser } = require("json2csv");
 
@@ -10,7 +40,7 @@ const { buildCopilotCore } = require("../services/copilotCore");
 const { buildBehaviorSummary } = require("../services/behaviorSummary");
 
 // =========================================================
-// CONFIG
+// 🔥 CONFIG
 // =========================================================
 
 const USE_MONGO =
@@ -22,7 +52,7 @@ const MAX_RECENT_LOGS = 50;
 const MAX_GEO_IPS = 50;
 
 // =========================================================
-// TEMP ATTACK CLASSIFIER
+// 🔥 TEMP ATTACK CLASSIFIER
 // =========================================================
 
 function determineAttackType(port) {
@@ -39,7 +69,7 @@ function determineAttackType(port) {
 }
 
 // =========================================================
-// TOP COUNTRIES
+// 🌍 TOP COUNTRIES
 // =========================================================
 
 exports.getTopCountries = async (
@@ -52,7 +82,7 @@ exports.getTopCountries = async (
     );
 
     // =====================================================
-    // MONGO MODE
+    // 🔥 MONGO MODE
     // =====================================================
 
     if (USE_MONGO) {
@@ -83,7 +113,7 @@ exports.getTopCountries = async (
     }
 
     // =====================================================
-    // LOG MODE
+    // 🔥 LOG MODE
     // =====================================================
 
     const entries = parseLogs();
@@ -128,7 +158,7 @@ exports.getTopCountries = async (
 };
 
 // =========================================================
-// COUNTRIES CSV DOWNLOAD
+// 🌍 COUNTRIES CSV DOWNLOAD
 // =========================================================
 
 exports.downloadTopCountries =
@@ -173,7 +203,7 @@ exports.downloadTopCountries =
   };
 
 // =========================================================
-// TOP SOURCE IPS
+// 🔥 TOP SOURCE IPS
 // =========================================================
 
 exports.getTopIPs = async (
@@ -190,7 +220,7 @@ exports.getTopIPs = async (
       25;
 
     // =====================================================
-    // MONGO MODE
+    // 🔥 MONGO MODE
     // =====================================================
 
     if (USE_MONGO) {
@@ -227,7 +257,7 @@ exports.getTopIPs = async (
     }
 
     // =====================================================
-    // LOG MODE
+    // 🔥 LOG MODE
     // =====================================================
 
     const entries = parseLogs();
@@ -269,7 +299,7 @@ exports.getTopIPs = async (
 };
 
 // =========================================================
-// TOP ATTACK TYPES
+// 🔥 TOP ATTACK TYPES
 // =========================================================
 
 exports.getTopAttackTypes =
@@ -280,7 +310,7 @@ exports.getTopAttackTypes =
       );
 
       // ===================================================
-      // MONGO MODE
+      // 🔥 MONGO MODE
       // ===================================================
 
       if (USE_MONGO) {
@@ -316,7 +346,7 @@ exports.getTopAttackTypes =
       }
 
       // ===================================================
-      // LOG MODE
+      // 🔥 LOG MODE
       // ===================================================
 
       const entries =
@@ -370,7 +400,7 @@ exports.getTopAttackTypes =
   };
 
 // =========================================================
-// PORT SCANNING
+// 🔥 PORT SCANNING
 // =========================================================
 
 exports.getPortScanning =
@@ -530,7 +560,7 @@ exports.getProtocolBreakdown =
   };
 
 // =========================================================
-// SEVERITY DISTRIBUTION
+// 🔥 SEVERITY DISTRIBUTION
 // =========================================================
 
 exports.getSeverityDistribution =
@@ -612,7 +642,7 @@ exports.getSeverityDistribution =
   };
 
 // =========================================================
-// ATTACK TRENDS
+// 🔥 ATTACK TRENDS
 // =========================================================
 
 exports.getAttackTrends =
@@ -692,7 +722,11 @@ exports.getAttackTrends =
   };
 
 // =========================================================
-// HEATMAP
+// 🔥 HEATMAP
+// =========================================================
+
+// =========================================================
+// 🔥 HEATMAP
 // =========================================================
 
 exports.getHeatmapData =
@@ -781,7 +815,7 @@ exports.getHeatmapData =
   };
 
 // =========================================================
-// COMPARATIVE ANALYSIS
+// 🔥 COMPARATIVE ANALYSIS
 // =========================================================
 
 exports.getComparativeAnalysis =
@@ -792,7 +826,7 @@ exports.getComparativeAnalysis =
       );
 
       // ===================================================
-      // LOAD COMPARISON DATA
+      // 🔥 LOAD COMPARISON DATA
       // ===================================================
 
       const results =
@@ -818,7 +852,7 @@ exports.getComparativeAnalysis =
       }
 
       // ===================================================
-      // BUILD REAL TEMPORAL COMPARISON
+      // 🔥 BUILD REAL TEMPORAL COMPARISON
       // ===================================================
 
       const formatted =
@@ -1008,7 +1042,7 @@ exports.getComparativeAnalysis =
         );
 
       // ===================================================
-      // RESPONSE
+      // 🔥 RESPONSE
       // ===================================================
 
       return res.json(
@@ -1029,7 +1063,7 @@ exports.getComparativeAnalysis =
   };
 
 // =========================================================
-// TOP ASNS
+// 🔥 TOP ASNS
 // =========================================================
 
 exports.getTopASNs = async (
@@ -1075,7 +1109,7 @@ exports.getTopASNs = async (
 };
 
 // =========================================================
-// RECENT LOGS
+// 🔥 RECENT LOGS
 // =========================================================
 
 exports.getRecentLogs =
@@ -1116,7 +1150,11 @@ exports.getRecentLogs =
   };
 
 // =========================================================
-// THREAT SUMMARY
+// 🔥 THREAT SUMMARY
+// =========================================================
+
+// =========================================================
+// 🔥 THREAT SUMMARY
 // =========================================================
 
 exports.getThreatSummary =
@@ -1129,14 +1167,14 @@ exports.getThreatSummary =
       );
 
       // =====================================================
-      // BUILD DETERMINISTIC CORE
+      // 🔥 BUILD DETERMINISTIC CORE
       // =====================================================
 
       const coreSummary =
         await buildCopilotCore();
 
       // =====================================================
-      // OPTIONAL BEHAVIOR SUMMARY
+      // 🔥 OPTIONAL BEHAVIOR SUMMARY
       // =====================================================
 
       const behaviorSummary =
@@ -1146,7 +1184,7 @@ exports.getThreatSummary =
         });
 
       // =====================================================
-      // SUPPORTING DASHBOARD DATA
+      // 🔥 SUPPORTING DASHBOARD DATA
       // =====================================================
 
       const since = new Date(
@@ -1254,7 +1292,7 @@ exports.getThreatSummary =
         });
 
       // =====================================================
-      // FINAL RESPONSE
+      // 🔥 FINAL RESPONSE
       // =====================================================
 
       const payload = {
@@ -1293,7 +1331,7 @@ exports.getThreatSummary =
       };
 
       // ==============================================
-      // REAL-TIME BROADCAST
+      // 🔥 REAL-TIME BROADCAST
       // ==============================================
 
       if (req.app.locals.io) {
@@ -1331,7 +1369,7 @@ exports.getThreatSummary =
   };
 
 // =========================================================
-// GEOLOCATION
+// 🔥 GEOLOCATION
 // =========================================================
 
 exports.getGeolocation = async (req, res) => {

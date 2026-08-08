@@ -37,7 +37,33 @@ const AttackSchema = new mongoose.Schema({
     // ---------------------------------------
     // TIMESTAMP
     // ---------------------------------------
+    // `timestamp` = ingest-arrival time (kept for dashboard backward-compat).
     timestamp: { type: Date, default: Date.now, index: true },
+
+    // `event_time` = true event time parsed from the raw line:
+    //   - replay/pcap lines: from the TS= field
+    //   - live honeypot lines: from the leading Unix epoch prefix
+    // This is the time-correct field the experiment harness uses for ground truth.
+    event_time: { type: Date, default: null, index: true },
+
+    // ---------------------------------------
+    // SOURCE TAGGING (experiment isolation)
+    // ---------------------------------------
+    // "honeypot" = live DShield honeypot traffic (default)
+    // "replay"   = injected pcap replay traffic (experiment)
+    source:      { type: String, default: "honeypot", index: true },
+    replay_pcap: { type: String, default: null },
+
+    // ---------------------------------------
+    // CTU-13 GROUND TRUTH (labeled netflow replay)
+    // ---------------------------------------
+    // Hand-curated per-flow labels from the Stratosphere CTU-13 dataset.
+    // ctu_class: "botnet" | "normal" | "background"
+    // ctu_subclass: "c2" | "spam" | "dns" | "ad" | "download" | "icmp" | "other"
+    // ctu_label: the original full label string, kept for auditability.
+    ctu_label:    { type: String, default: null },
+    ctu_class:    { type: String, default: null, index: true },
+    ctu_subclass: { type: String, default: null, index: true },
 
     // ---------------------------------------
     // GEO + ASN ENRICHMENT
@@ -64,7 +90,7 @@ const AttackSchema = new mongoose.Schema({
     needs_enrichment: { type: Boolean, default: true }
 },
 {
-    collection: "attacks" 
+    collection: "attacks"
 });
 
 module.exports = mongoose.model("Attack", AttackSchema);

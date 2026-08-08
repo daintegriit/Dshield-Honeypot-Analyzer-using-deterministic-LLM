@@ -1,5 +1,14 @@
 // backend/services/behaviorSummary.js
 // FEATURE EXTRACTION ONLY
+// ---------------------------------------------------------------------
+// Goal:
+//   Convert raw DShield logs into a compact, structured situation report.
+//   This module MUST NOT make final "Attack/Normal" decisions or produce
+//   an overall risk score. It only extracts deterministic signals + normalized
+//   factors so copilotCore (decision layer) can fuse them.
+// This separation ensures the summary is a stable, explainable representation
+// of observed behavior, while copilotCore can evolve its reasoning and scoring
+// without breaking the summary's consistency or explainability.
 
 const DShieldLog = require("../models/DShieldLogModel");
 const { buildCopilotCore } = require("./copilotCore");
@@ -79,7 +88,7 @@ function toEpochMs(ts) {
 //   2) well-known ranges for categories
 //   3) fallback to WELL_KNOWN / REGISTERED / DYNAMIC
 //
-// labels are for explainability + aggregation, not attribution.
+// Note: labels are for explainability + aggregation, not attribution.
 const PORT_LABELS_EXACT = Object.freeze({
   // Remote access / auth
   20: "FTP-DATA",
@@ -264,6 +273,7 @@ function computeScanSignals(events) {
     let spanSec = 0;
     if (times.length >= 2) spanSec = (times[times.length - 1] - times[0]) / 1000;
 
+    // Heuristic:
     // - many distinct ports in small time span => scan-y
     // spanFactor compresses long spans; increases when span is tight.
     const spanFactor = spanSec <= 0 ? 1 : 1 / Math.log2(spanSec + 2);
@@ -290,12 +300,26 @@ function computeScanSignals(events) {
 // -------------------------
 // Main Summary Builder
 // -------------------------
-async function buildBehaviorSummary({ minutes = 60, limit = 5000 } = {}) {
-  const nowMs = Date.now();
+async function buildBehaviorSummary({
+  minutes = 60,
+  limit = 5000,
+  sourceFilter = null,
+  windowEnd = null,
+} = {}) {
+  const isHistorical = windowEnd != null;
+  const anchor = isHistorical ? new Date(windowEnd) : new Date();
+  if (isHistorical && !Number.isFinite(anchor.getTime())) {
+    throw new Error(`buildBehaviorSummary: invalid windowEnd: ${windowEnd}`);
+  }
+  const nowMs = anchor.getTime();
   const windowStartMs = nowMs - minutes * 60 * 1000;
 
   // Pull recent logs
-  const logs = await DShieldLog.find({ timestamp: { $gte: windowStartMs } })
+  const logFilter = { timestamp: { $gte: windowStartMs } };
+  if (isHistorical) logFilter.timestamp.$lte = anchor;
+  if (sourceFilter) logFilter.source = sourceFilter;
+
+  const logs = await DShieldLog.find(logFilter)
     .sort({ timestamp: -1 })
     .limit(limit)
     .lean();
@@ -441,11 +465,17 @@ async function buildBehaviorSummary({ minutes = 60, limit = 5000 } = {}) {
   // Focus = average dominance of top src and top port
   const focusFactor = clamp((topSrcPct + topPortPct) / 2, 0, 1);
 
-  const core = await buildCopilotCore({ minutes });
+  const core = await buildCopilotCore({ minutes, sourceFilter, windowEnd });
 
   return {
 
     generatedAt: new Date().toISOString(),
+
+    sourceFilter: sourceFilter || "all",
+
+    scoringMode: isHistorical ? "historical" : "live",
+
+    windowEnd: anchor.toISOString(),
 
     core,
 

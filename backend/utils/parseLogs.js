@@ -1,53 +1,56 @@
-// utils/parseLogs.js
 const fs = require("fs");
-const path = "/var/log/dshield.log";
+const Attack = require("../models/AttackModel");
+
+const FILE_PATH = "/var/log/dshield.log";
 
 /**
- * Parse local DShield honeypot logs
- * Extracts:
- *  - source_ip (SRC)
- *  - target_ip (DST)
- *  - source_port (SPT)
- *  - target_port (DPT)
- *  - protocol (PROTO)
- *  - timestamp (parsed from kernel[] or NOW fallback)
- *  - raw line
+ * Hybrid log parser:
+ * 1) Try reading from local dshield.log
+ * 2) Fallback to MongoDB attacks collection
  */
-function parseLogs() {
-  if (!fs.existsSync(path)) {
-    console.warn("⚠️ dshield.log does not exist:", path);
-    return [];
+async function parseLogs() {
+
+  // =====================================================
+  // 🔥 OPTION 1: FILE-BASED (REAL HONEYPOT)
+  // =====================================================
+  if (fs.existsSync(FILE_PATH)) {
+    console.log("📄 Using dshield.log file source");
+
+    const lines = fs.readFileSync(FILE_PATH, "utf-8").split("\n");
+
+    return lines
+      .filter(line => line.includes("DSHIELDINPUT"))
+      .map(line => ({
+        source_ip: line.match(/SRC=([0-9.:]+)/)?.[1] || null,
+        target_ip: line.match(/DST=([0-9.:]+)/)?.[1] || null,
+        source_port: Number(line.match(/SPT=([0-9]+)/)?.[1]) || null,
+        target_port: Number(line.match(/DPT=([0-9]+)/)?.[1]) || null,
+        protocol: line.match(/PROTO=([A-Za-z0-9]+)/)?.[1] || "UNKNOWN",
+        timestamp: new Date(),
+        raw: line,
+      }))
+      .filter(e => e.source_ip);
   }
 
-  const lines = fs.readFileSync(path, "utf-8").split("\n");
+  // =====================================================
+  // 🔥 OPTION 2: MONGO FALLBACK (YOUR CURRENT SYSTEM)
+  // =====================================================
+  console.warn("⚠️ dshield.log missing → using Mongo fallback");
 
-  const entries = lines
-    .filter(line => line.includes("DSHIELDINPUT"))
-    .map(line => {
-      const source_ip   = line.match(/SRC=([0-9.:]+)/)?.[1] || null;
-      const target_ip   = line.match(/DST=([0-9.:]+)/)?.[1] || null;
-      const source_port = line.match(/SPT=([0-9]+)/)?.[1] || null;
-      const target_port = line.match(/DPT=([0-9]+)/)?.[1] || null;
-      const protocol    = line.match(/PROTO=([A-Za-z0-9]+)/)?.[1] || "UNKNOWN";
+  const logs = await Attack.find({})
+    .sort({ timestamp: -1 })
+    .limit(500)
+    .lean();
 
-      // Extract kernel timestamp: [44618.552681] → seconds since boot
-      const kernelTime = line.match(/\[([0-9]+\.[0-9]+)\]/);
-      const timestamp = kernelTime ? new Date(Date.now()) : new Date();
-
-      return {
-        source_ip,
-        target_ip,
-        source_port: source_port ? Number(source_port) : null,
-        target_port: target_port ? Number(target_port) : null,
-        protocol,
-        timestamp,
-        raw: line,
-      };
-    })
-    .filter(entry => entry.source_ip); // only valid logs
-
-  return entries;
+  return logs.map(a => ({
+    source_ip: a.source_ip,
+    target_ip: a.target_ip,
+    source_port: a.source_port,
+    target_port: a.target_port,
+    protocol: a.protocol,
+    timestamp: a.timestamp,
+    raw: a.raw,
+  })).filter(e => e.source_ip);
 }
 
 module.exports = parseLogs;
-

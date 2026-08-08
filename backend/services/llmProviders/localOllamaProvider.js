@@ -17,7 +17,7 @@ const CONFIG = {
   ),
 
   NUM_CTX: Number(
-    process.env.OLLAMA_NUM_CTX || 8192
+    process.env.OLLAMA_NUM_CTX || 4096
   ),
 
   NUM_PREDICT: Number(
@@ -159,6 +159,19 @@ async function callLocalOllama({
       prompt,
 
       stream: false,
+
+      // Constrained JSON decoding. Ollama restricts the sampler to tokens that
+      // keep the output valid JSON, making malformed output structurally
+      // impossible rather than merely requested.
+      //
+      // MEASURED (n=20, llama3.1:8b, identical situation report): 3/20
+      // generations (15%) failed with "Expected ',' or ']' after array
+      // element" — the model breaking mid-array while emitting evidence field
+      // names. That failure class cannot occur under constrained decoding.
+      //
+      // NOTE: this does NOT fix malformed CONTENT. "attackMetrics:attacksLast1Min"
+      // is valid JSON; only the prompt can address separator choice.
+      format: process.env.OLLAMA_FORMAT || "json",
 
       keep_alive:
         CONFIG.KEEP_ALIVE,
