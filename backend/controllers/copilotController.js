@@ -8,6 +8,7 @@
 const { buildBehaviorSummary } = require("../services/behaviorSummary");
 const { buildCopilotCore } = require("../services/copilotCore");
 const { generateCopilotInsight } = require("../services/copilotReasoner");
+const { checkStateSupportsNarration } = require("../services/stateDegeneracy");
 
 const insightCache = require('../services/insightCache');
 
@@ -35,7 +36,7 @@ async function getCopilotInsight(req, res) {
       durationMs: c.durationMs,
       validation: c.validation,
       consistency: c.consistency,
-      consistency: c.consistency,
+      narration: c.narration,
       llmStatus: c.llmStatus,
       behaviorStatus: c.behaviorStatus,
       behaviorSummary: c.behaviorSummary,
@@ -107,7 +108,21 @@ async function getCopilotInsightLive(req, res) {
     let llmStatus = "ok";
 
     try {
-      copilotInsight = await generateCopilotInsight(situationReport);
+      // Same gate as the cached path. Adding it to one path only left this
+      // one open: a scoped request for a window with zero events still
+      // returned "Potential Scanning Activity Detected". A guard placed on one
+      // route is silently absent from every other route to the same operation,
+      // and neither route reports an error.
+      const narration = checkStateSupportsNarration(coreSummary);
+      if (narration.narratable === false) {
+        copilotInsight = { ok: true, refused: true, insight: narration.refusal };
+        console.log(
+          "narration refused (live): " +
+            narration.conditions.map((c) => c.condition).join(", ")
+        );
+      } else {
+        copilotInsight = await generateCopilotInsight(situationReport);
+      }
       // generateCopilotInsight catches transport errors internally and RETURNS
       // { available:false, reason }. Without this check llmStatus reports "ok"
       // for a request that timed out.

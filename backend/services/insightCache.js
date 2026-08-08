@@ -21,6 +21,7 @@ const { buildCopilotCore } = require("./copilotCore");
 const { generateCopilotInsight } = require("./copilotReasoner");
 const { validateInsight } = require("./insightValidator");
 const { checkCoreConsistency } = require("./coreConsistency");
+const { checkStateSupportsNarration } = require("./stateDegeneracy");
 
 const REFRESH_MS = Number(process.env.INSIGHT_CACHE_REFRESH_MS || 300000);
 const WINDOW_MIN = Number(process.env.INSIGHT_WINDOW_MIN || 60);
@@ -56,9 +57,24 @@ async function generateOnce() {
     behaviorSummary = { available: false, reason: err.message };
   }
 
+  // Does this state support narration at all? Checked BEFORE generating: a
+  // window with no events still yields a fully populated report, and the model
+  // will describe the cumulative fields it finds there. Measured 2026-08-08:
+  // an empty 60-minute window produced "Stable System State with Elevated
+  // Scanning Activity" citing a lifetime-derived port entropy, scoring 100% on
+  // grounding, schema compliance and fabrication.
+  const narration = checkStateSupportsNarration(coreSummary);
+
   let copilot = null;
   let llmStatus = "ok";
   try {
+    if (narration.narratable === false) {
+      copilot = { ok: true, refused: true, insight: narration.refusal };
+      console.log(
+        "narration refused: " + narration.conditions.map((c) => c.condition).join(", ")
+      );
+      throw { __skipGeneration: true };
+    }
     copilot = await generateCopilotInsight({
       behavior: behaviorSummary,
       core: coreSummary,
@@ -70,8 +86,12 @@ async function generateOnce() {
       llmStatus = "unavailable";
     }
   } catch (err) {
-    llmStatus = "unavailable";
-    copilot = { available: false, reason: err.message };
+    if (err && err.__skipGeneration) {
+      // refusal already set above; not an LLM failure
+    } else {
+      llmStatus = "unavailable";
+      copilot = { available: false, reason: err.message };
+    }
   }
 
   // Validate the generation against the report it came from. Syntactic
@@ -103,6 +123,7 @@ async function generateOnce() {
     generatedAt: new Date().toISOString(),
     validation,
     consistency,
+    narration,
     durationMs: Date.now() - started,
     llmStatus,
     behaviorStatus,
