@@ -1935,6 +1935,18 @@ async function buildCopilotCore({ minutes = 60, sourceFilter = null, windowEnd =
     // Which fraction of the scoring this deployment can actually exercise.
     // Reported on every window so a zero-recall result is readable as
     // "the corpus could not supply N% of the budget".
+    // Gate values as the core actually resolved them, not as a caller assumes.
+    // The harness runs in a separate process and cannot observe the backend's
+    // environment; without this it records "backend default" and an ablation
+    // arm is indistinguishable from a default run in its own output.
+    detectorGates: {
+      c2: {
+        minEvents: CFG.c2.minEvents,
+        minFlowCount: CFG.c2.minFlowCount,
+        periodicitySpanMinSec: CFG.c2.periodicitySpanMinSec,
+      },
+      c2BonusMinScore: Number(process.env.C2_BONUS_MIN_SCORE ?? 40),
+    },
     riskBudget: {
       profile: RISK_PROFILE,
       normalised: RISK_NORMALISE,
