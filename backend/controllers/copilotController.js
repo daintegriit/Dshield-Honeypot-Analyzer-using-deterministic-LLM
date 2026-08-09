@@ -57,8 +57,18 @@ async function getCopilotInsightLive(req, res) {
     // Experiment isolation: when ?source=replay (or honeypot) is passed, scope the
     // deterministic core to that traffic source only. Absent => score everything.
     const rawSource = (req.query.source || "").toString().toLowerCase();
-    const sourceFilter =
-      rawSource === "replay" || rawSource === "honeypot" ? rawSource : null;
+    // An unrecognised scope previously became null, which means UNSCOPED: the
+    // caller asked for one population and received every source, with HTTP 200
+    // and no error. This is the same failure as the cache regression that
+    // served the replay harness scores computed over live honeypot traffic.
+    // Reject rather than widen.
+    if (rawSource && rawSource !== "replay" && rawSource !== "honeypot") {
+      return res.status(400).json({
+        ok: false,
+        error: `unrecognised source "${rawSource}"; expected "replay" or "honeypot"`,
+      });
+    }
+    const sourceFilter = rawSource || null;
 
     const safeMinutes = Number.isFinite(minutes) ? minutes : 60;
     const safeLimit = Number.isFinite(limit) ? limit : 5000;

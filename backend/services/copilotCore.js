@@ -87,13 +87,19 @@ const CFG = Object.freeze({
 
   // C2 thresholds
   c2: {
-    minEvents: 30,            // don’t claim C2 off tiny samples
-    minFlowCount: 12,         // repeats to same peer
+    // Env-overridable for ablation. The default of 30 events per window
+    // encodes an implicit minimum traffic RATE that varies with window
+    // width: 30/min at a 1-minute window, 6/min at five. Measured
+    // consequence: c2Score is zero in every window of seven malware
+    // captures delivering 2-18 events/min, which is indistinguishable in
+    // the output from having evaluated the traffic and found no C2.
+    minEvents: Number(process.env.C2_MIN_EVENTS ?? 30),
+    minFlowCount: Number(process.env.C2_MIN_FLOW_COUNT ?? 12),
     dominantFlowRatio: 0.40,  // one flow dominates window
     lowBurstMax: 0.40,        // C2 is usually not bursty like DoS
     maxPortDiversity: 4,      // C2 often reuses same port(s)
     periodicityCvMax: 0.65,   // coefficient of variation for inter-arrivals
-    periodicitySpanMinSec: 90 // must span some time
+    periodicitySpanMinSec: Number(process.env.C2_MIN_SPAN_SEC ?? 90)
   },
 });
 
@@ -1149,7 +1155,14 @@ async function buildCopilotCore({ minutes = 60, sourceFilter = null, windowEnd =
   const SOURCE_ENTROPY_CEILING = Math.log2(50);
   const srcEntropyNorm =
     SOURCE_ENTROPY_CEILING > 0 ? clamp(sourceEntropy / SOURCE_ENTROPY_CEILING, 0, 1) : 0;
-  const concentrationComponent = clamp((1 - srcEntropyNorm) * 15, 0, 15);
+  // Zero sources is not maximal concentration. With no events,
+  // sourceEntropy is 0, so (1 - 0) * 15 awarded this component its full
+  // budget on an empty window: measured 2026-08-09, a window with zero
+  // events scored 15 raw and 23 normalised, entirely from this term.
+  const hasSources = (peerCounts.size || srcCounts.size) > 0;
+  const concentrationComponent = hasSources
+    ? clamp((1 - srcEntropyNorm) * 15, 0, 15)
+    : 0;
 
   // --------------------------------------------------
   // 1. Primary Behavioral Signals
@@ -1189,7 +1202,11 @@ async function buildCopilotCore({ minutes = 60, sourceFilter = null, windowEnd =
 
   let c2Bonus = 0;
 
-  if (attackTypeScores.c2 >= 40) {
+  // Second gate, independent of CFG.c2.minEvents. c2Score can be computed
+  // and still contribute nothing: measured on 284-1 at 5-minute windows,
+  // c2 = 25 with c2Bonus = 0. Note the discontinuity -- c2 = 39 gives 0,
+  // c2 = 40 gives 10, half the bonus range appearing at a single step.
+  if (attackTypeScores.c2 >= Number(process.env.C2_BONUS_MIN_SCORE ?? 40)) {
     // allow C2 to directly influence risk
     c2Bonus = clamp(attackTypeScores.c2 / 4, 0, 20);
   }
