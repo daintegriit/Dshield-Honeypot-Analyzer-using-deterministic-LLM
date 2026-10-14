@@ -1,0 +1,3104 @@
+{
+  "runId": "2026-08-08T04-28-04-920Z",
+  "capturedAt": "2026-08-08T04:53:04.947Z",
+  "pcap": "2017-07-11_capture-win2wannacryfailed_283-1",
+  "mode": "clean",
+  "sourceScope": "replay",
+  "injectionStart": "2026-08-08T04:33:05.278Z",
+  "injectionEnd": "2026-08-08T04:46:52.560Z",
+  "attackStartEffective": "2026-08-08T04:38:02.278Z",
+  "infectionOffsetReplaySeconds": 297,
+  "truthMode": "time_based_infection_offset",
+  "baselineSeconds": 300,
+  "preCooldownSeconds": 0,
+  "cooldownSeconds": 300,
+  "pollIntervalMs": 60000,
+  "windowsEvaluated": [
+    1
+  ],
+  "totalEvaluations": 21,
+  "results": [
+    {
+      "timestamp": "2026-08-08T04:28:23.576Z",
+      "phase": "baseline",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 0,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 0
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 0,
+        "attacksLast15Min": 0,
+        "attacksLastHour": 0,
+        "burstRatio5mOverHour": 0,
+        "burstRatio15mOverHour": 0
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770051,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:20:30.385Z",
+            "low_count": 0,
+            "medium_count": 770051,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": null
+    },
+    {
+      "timestamp": "2026-08-08T04:29:22.054Z",
+      "phase": "baseline",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 0,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 0
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 0,
+        "attacksLast15Min": 0,
+        "attacksLastHour": 0,
+        "burstRatio5mOverHour": 0,
+        "burstRatio15mOverHour": 0
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770051,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:20:30.385Z",
+            "low_count": 0,
+            "medium_count": 770051,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": null
+    },
+    {
+      "timestamp": "2026-08-08T04:30:20.984Z",
+      "phase": "baseline",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 0,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 0
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 0,
+        "attacksLast15Min": 0,
+        "attacksLastHour": 0,
+        "burstRatio5mOverHour": 0,
+        "burstRatio15mOverHour": 0
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770051,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:20:30.385Z",
+            "low_count": 0,
+            "medium_count": 770051,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": null
+    },
+    {
+      "timestamp": "2026-08-08T04:31:28.184Z",
+      "phase": "baseline",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 0,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 0
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 0,
+        "attacksLast15Min": 0,
+        "attacksLastHour": 0,
+        "burstRatio5mOverHour": 0,
+        "burstRatio15mOverHour": 0
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770052,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:30:38.413Z",
+            "low_count": 0,
+            "medium_count": 770052,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": null
+    },
+    {
+      "timestamp": "2026-08-08T04:33:01.914Z",
+      "phase": "baseline",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 0,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 0
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 0,
+        "attacksLast15Min": 0,
+        "attacksLastHour": 0,
+        "burstRatio5mOverHour": 0,
+        "burstRatio15mOverHour": 0
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770052,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:30:38.413Z",
+            "low_count": 0,
+            "medium_count": 770052,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": null
+    },
+    {
+      "timestamp": "2026-08-08T04:33:56.208Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 0,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 0
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 0,
+        "attacksLast15Min": 0,
+        "attacksLastHour": 0,
+        "burstRatio5mOverHour": 0,
+        "burstRatio15mOverHour": 0
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770053,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:32:58.076Z",
+            "low_count": 0,
+            "medium_count": 770053,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:34:36.172Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 0,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 0
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 0,
+        "attacksLast15Min": 0,
+        "attacksLastHour": 0,
+        "burstRatio5mOverHour": 0,
+        "burstRatio15mOverHour": 0
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770053,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:32:58.076Z",
+            "low_count": 0,
+            "medium_count": 770053,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:35:42.413Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 0,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 0
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 0,
+        "attacksLast15Min": 0,
+        "attacksLastHour": 0,
+        "burstRatio5mOverHour": 0,
+        "burstRatio15mOverHour": 0
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770055,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:34:43.991Z",
+            "low_count": 0,
+            "medium_count": 770055,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:37:33.304Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 0,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 0
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 0,
+        "attacksLast15Min": 0,
+        "attacksLastHour": 0,
+        "burstRatio5mOverHour": 0,
+        "burstRatio15mOverHour": 0
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770055,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:34:43.991Z",
+            "low_count": 0,
+            "medium_count": 770055,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:39:13.459Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Attack",
+      "state": "elevated",
+      "riskScore": 53,
+      "startState": "stable",
+      "endState": "elevated",
+      "isTransition": true,
+      "attackScores": {
+        "dos": 100,
+        "scan": 15.692033712970767,
+        "brute_force": 0,
+        "web_probe": 0.05,
+        "c2": 10,
+        "impact": 18.2
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 100
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 368,
+        "attacksLast5Min": 368,
+        "attacksLast15Min": 368,
+        "attacksLastHour": 368,
+        "burstRatio5mOverHour": 1,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 445,
+            "count": 364
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 445,
+            "count": 364
+          },
+          {
+            "port": 80,
+            "count": 4
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.112",
+          "count": 368
+        },
+        "topExternalPeerIp": {
+          "ip": "195.113.232.73",
+          "count": 4
+        },
+        "sourceEntropy": 8.274,
+        "portEntropy": 0.087,
+        "authPortPressure": 0,
+        "webPortPressure": 4,
+        "dbPortPressure": 0,
+        "windowedEventCount": 368,
+        "windowedTopPortsCount": 2,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 2
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 24.728260869565215,
+        "behaviorComponent": 0,
+        "entropyComponent": 0.5208072640372976,
+        "concentrationComponent": 0,
+        "signalAmplifier": 25,
+        "c2Bonus": 0,
+        "impactBonus": 3.033333333333333,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:40:32.040Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "detectorPredicted": "Attack",
+      "truth": "Attack",
+      "state": "high",
+      "riskScore": 62,
+      "startState": "elevated",
+      "endState": "high",
+      "isTransition": true,
+      "attackScores": {
+        "dos": 100,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 10,
+        "impact": 70
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 100
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 3436,
+        "attacksLast5Min": 6459,
+        "attacksLast15Min": 6459,
+        "attacksLastHour": 6459,
+        "burstRatio5mOverHour": 1,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 445,
+            "count": 3440
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 445,
+            "count": 3440
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.112",
+          "count": 3440
+        },
+        "topExternalPeerIp": {
+          "ip": "204.41.190.9",
+          "count": 4
+        },
+        "sourceEntropy": 11.702,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 0,
+        "dbPortPressure": 0,
+        "windowedEventCount": 3440,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 25,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 0,
+        "signalAmplifier": 25,
+        "c2Bonus": 0,
+        "impactBonus": 12,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:41:52.026Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "detectorPredicted": "Attack",
+      "truth": "Attack",
+      "state": "high",
+      "riskScore": 62,
+      "startState": "high",
+      "endState": "high",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 100,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 10,
+        "impact": 70
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 100
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 3436,
+        "attacksLast5Min": 9897,
+        "attacksLast15Min": 9897,
+        "attacksLastHour": 9897,
+        "burstRatio5mOverHour": 1,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 445,
+            "count": 3439
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 445,
+            "count": 3439
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.112",
+          "count": 3439
+        },
+        "topExternalPeerIp": {
+          "ip": "86.97.39.1",
+          "count": 3
+        },
+        "sourceEntropy": 11.673,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 0,
+        "dbPortPressure": 0,
+        "windowedEventCount": 3439,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 25,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 0,
+        "signalAmplifier": 25,
+        "c2Bonus": 0,
+        "impactBonus": 12,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:43:11.823Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "detectorPredicted": "Attack",
+      "truth": "Attack",
+      "state": "high",
+      "riskScore": 62,
+      "startState": "high",
+      "endState": "high",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 100,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 10,
+        "impact": 70
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 100
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 3344,
+        "attacksLast5Min": 13241,
+        "attacksLast15Min": 13241,
+        "attacksLastHour": 13241,
+        "burstRatio5mOverHour": 1,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 445,
+            "count": 3350
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 445,
+            "count": 3350
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.112",
+          "count": 3350
+        },
+        "topExternalPeerIp": {
+          "ip": "5.107.35.12",
+          "count": 3
+        },
+        "sourceEntropy": 11.616,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 0,
+        "dbPortPressure": 0,
+        "windowedEventCount": 3350,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 25,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 0,
+        "signalAmplifier": 25,
+        "c2Bonus": 0,
+        "impactBonus": 12,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:44:30.811Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "detectorPredicted": "Attack",
+      "truth": "Attack",
+      "state": "high",
+      "riskScore": 62,
+      "startState": "high",
+      "endState": "high",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 100,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 10,
+        "impact": 70
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 100
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 3275,
+        "attacksLast5Min": 16849,
+        "attacksLast15Min": 19872,
+        "attacksLastHour": 19872,
+        "burstRatio5mOverHour": 0.8478764090177133,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 445,
+            "count": 3287
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 445,
+            "count": 3287
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.112",
+          "count": 3287
+        },
+        "topExternalPeerIp": {
+          "ip": "196.213.31.44",
+          "count": 4
+        },
+        "sourceEntropy": 11.574,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 0,
+        "dbPortPressure": 0,
+        "windowedEventCount": 3287,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 25,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 0,
+        "signalAmplifier": 25,
+        "c2Bonus": 0,
+        "impactBonus": 12,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:45:23.947Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "detectorPredicted": "Attack",
+      "truth": "Attack",
+      "state": "high",
+      "riskScore": 60,
+      "startState": "high",
+      "endState": "high",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 95.69254859611232,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 10,
+        "impact": 70
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 95.69254859611232
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 3278,
+        "attacksLast5Min": 16690,
+        "attacksLast15Min": 23150,
+        "attacksLastHour": 23150,
+        "burstRatio5mOverHour": 0.7209503239740821,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 445,
+            "count": 3287
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 445,
+            "count": 3287
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.112",
+          "count": 3287
+        },
+        "topExternalPeerIp": {
+          "ip": "218.95.39.13",
+          "count": 4
+        },
+        "sourceEntropy": 11.57,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 0,
+        "dbPortPressure": 0,
+        "windowedEventCount": 3287,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 25,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 0,
+        "signalAmplifier": 22.74837767524053,
+        "c2Bonus": 0,
+        "impactBonus": 12,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:46:34.467Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Attack",
+      "state": "elevated",
+      "riskScore": 52,
+      "startState": "high",
+      "endState": "elevated",
+      "isTransition": true,
+      "attackScores": {
+        "dos": 81.37874872299369,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 10,
+        "impact": 70
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 81.37874872299369
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 3279,
+        "attacksLast5Min": 16532,
+        "attacksLast15Min": 26429,
+        "attacksLastHour": 26429,
+        "burstRatio5mOverHour": 0.6255249914866245,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 445,
+            "count": 3289
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 445,
+            "count": 3289
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.112",
+          "count": 3289
+        },
+        "topExternalPeerIp": {
+          "ip": "122.3.129.61",
+          "count": 3
+        },
+        "sourceEntropy": 11.558,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 0,
+        "dbPortPressure": 0,
+        "windowedEventCount": 3289,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 25,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 0,
+        "signalAmplifier": 15.266164105201248,
+        "c2Bonus": 0,
+        "impactBonus": 12,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:47:50.731Z",
+      "phase": "cooldown",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "elevated",
+      "riskScore": 46,
+      "startState": "elevated",
+      "endState": "elevated",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 68.57448341725993,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 10,
+        "impact": 70
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 68.57448341725993
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 2366,
+        "attacksLast5Min": 15554,
+        "attacksLast15Min": 28795,
+        "attacksLastHour": 28795,
+        "burstRatio5mOverHour": 0.5401632227817329,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 445,
+            "count": 2366
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 445,
+            "count": 2366
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.112",
+          "count": 2366
+        },
+        "topExternalPeerIp": {
+          "ip": "218.95.39.74",
+          "count": 7
+        },
+        "sourceEntropy": 11.068,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 0,
+        "dbPortPressure": 0,
+        "windowedEventCount": 2366,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 25,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 0,
+        "signalAmplifier": 9.318181818181818,
+        "c2Bonus": 0,
+        "impactBonus": 12,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:48:43.154Z",
+      "phase": "cooldown",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 17,
+      "startState": "elevated",
+      "endState": "stable",
+      "isTransition": true,
+      "attackScores": {
+        "dos": 51.09228164611912,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 51.09228164611912
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 12198,
+        "attacksLast15Min": 28795,
+        "attacksLastHour": 28795,
+        "burstRatio5mOverHour": 0.42361521097412747,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770059,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:39:19.389Z",
+            "low_count": 0,
+            "medium_count": 770059,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 1.6615313580324869,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:49:50.785Z",
+      "phase": "cooldown",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 34.032028129883656,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 34.032028129883656
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 8923,
+        "attacksLast15Min": 28795,
+        "attacksLastHour": 28795,
+        "burstRatio5mOverHour": 0.30988018753255775,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770059,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:39:19.389Z",
+            "low_count": 0,
+            "medium_count": 770059,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:50:57.774Z",
+      "phase": "cooldown",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 16.95614690050356,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 16.95614690050356
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 5645,
+        "attacksLast15Min": 28795,
+        "attacksLastHour": 28795,
+        "burstRatio5mOverHour": 0.1960409793366904,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724170,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:21:33.223Z",
+            "low_count": 0,
+            "medium_count": 1724170,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889479,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:28:04.372Z",
+            "low_count": 889479,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770059,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:39:19.389Z",
+            "low_count": 0,
+            "medium_count": 770059,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    },
+    {
+      "timestamp": "2026-08-08T04:52:35.173Z",
+      "phase": "cooldown",
+      "window_minutes": 1,
+      "detectorPredicted": "Normal",
+      "truth": "Normal",
+      "state": "stable",
+      "riskScore": 15,
+      "startState": "stable",
+      "endState": "stable",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 0,
+        "scan": 0,
+        "brute_force": 0,
+        "web_probe": 0,
+        "c2": 0,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 0
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 2366,
+        "attacksLast15Min": 28795,
+        "attacksLastHour": 28795,
+        "burstRatio5mOverHour": 0.08216704288939052,
+        "burstRatio15mOverHour": 1
+      },
+      "scanningIndicators": {
+        "scanCandidates": [],
+        "topPorts": [
+          {
+            "_id": "6934af13324d0c9b5de6cd57",
+            "port": 445,
+            "__v": 0,
+            "count": 17832757,
+            "critical_count": 17832757,
+            "high_count": 0,
+            "last_updated": "2026-08-08T03:42:45.413Z",
+            "low_count": 0,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "693b7701324d0c9b5de8b3cf",
+            "port": 5355,
+            "__v": 0,
+            "count": 16973247,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-07-10T04:02:41.798Z",
+            "low_count": 16973247,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "693e21bf324d0c9b5de94b53",
+            "port": 61180,
+            "__v": 0,
+            "count": 2581069,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-16T16:01:05.940Z",
+            "low_count": 2581069,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6934a950324d0c9b5de6ca53",
+            "port": 137,
+            "__v": 0,
+            "count": 2200223,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T04:04:49.307Z",
+            "low_count": 0,
+            "medium_count": 2200223,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349e8e324d0c9b5de6c26d",
+            "port": 443,
+            "__v": 0,
+            "count": 1724173,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:50:33.826Z",
+            "low_count": 0,
+            "medium_count": 1724173,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69350157324d0c9b5de6f211",
+            "port": 5353,
+            "__v": 0,
+            "count": 1418763,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:17:57.568Z",
+            "low_count": 1418763,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "6935cc14324d0c9b5de73bf9",
+            "port": 1091,
+            "__v": 0,
+            "count": 1235451,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:38.579Z",
+            "low_count": 1235451,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "6934a085324d0c9b5de6c3f4",
+            "port": 8080,
+            "__v": 0,
+            "count": 889480,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:50:33.826Z",
+            "low_count": 889480,
+            "medium_count": 0,
+            "protocol": "TCP"
+          },
+          {
+            "_id": "69c27f2d5e3da84fb4147c40",
+            "port": 7894,
+            "__v": 0,
+            "count": 840934,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-05-27T01:57:49.722Z",
+            "low_count": 840934,
+            "medium_count": 0,
+            "protocol": "UDP"
+          },
+          {
+            "_id": "69349dfa324d0c9b5de6c0b4",
+            "port": 80,
+            "__v": 0,
+            "count": 770061,
+            "critical_count": 0,
+            "high_count": 0,
+            "last_updated": "2026-08-08T04:50:40.929Z",
+            "low_count": 0,
+            "medium_count": 770061,
+            "protocol": "TCP"
+          }
+        ],
+        "topSourceIp": null,
+        "topExternalPeerIp": null,
+        "sourceEntropy": 0,
+        "portEntropy": 0,
+        "authPortPressure": null,
+        "webPortPressure": null,
+        "dbPortPressure": null,
+        "windowedEventCount": 0,
+        "windowedTopPortsCount": 0,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": false,
+        "portDiversity": 0
+      },
+      "riskComponents": {
+        "volumeComponent": 0,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "entropyComponent": 0,
+        "concentrationComponent": 15,
+        "signalAmplifier": 0,
+        "c2Bonus": 0,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "sourceFilter": "replay",
+      "attack_start_effective": "2026-08-08T04:38:02.278Z"
+    }
+  ],
+  "replayTimeline": [
+    {
+      "phase": "baseline",
+      "pcapName": "2017-07-11_capture-win2wannacryfailed_283-1",
+      "groundTruth": "Normal",
+      "startedAt": "2026-08-08T04:28:04.921Z",
+      "endedAt": "2026-08-08T04:33:05.278Z",
+      "durationSeconds": 300,
+      "durationMinutes": 5
+    },
+    {
+      "phase": "injection",
+      "pcapName": "2017-07-11_capture-win2wannacryfailed_283-1",
+      "groundTruth": "Attack",
+      "startedAt": "2026-08-08T04:33:05.278Z",
+      "endedAt": "2026-08-08T04:46:52.560Z",
+      "attackTruthStart": "2026-08-08T04:38:02.278Z",
+      "durationSeconds": 827.28,
+      "durationMinutes": 13.79,
+      "overlay": {
+        "state": "elevated",
+        "riskScore0to100": 52,
+        "dominantAttack": "dos"
+      }
+    },
+    {
+      "phase": "cooldown",
+      "pcapName": "2017-07-11_capture-win2wannacryfailed_283-1",
+      "groundTruth": "Normal",
+      "startedAt": "2026-08-08T04:46:52.560Z",
+      "endedAt": "2026-08-08T04:51:52.560Z",
+      "durationSeconds": 300,
+      "durationMinutes": 5
+    }
+  ],
+  "metrics_global_all_windows": {
+    "TP": 5,
+    "FP": 0,
+    "TN": 14,
+    "FN": 2,
+    "total_samples": 21,
+    "precision": 1,
+    "recall": 0.7142857142857143,
+    "specificity": 1,
+    "fpr": 0,
+    "fnr": 0.2857142857142857,
+    "accuracy": 0.9047619047619048,
+    "balanced_accuracy": 0.8571428571428572,
+    "f1": 0.8333333333333333
+  },
+  "metrics_per_window": {
+    "1": {
+      "TP": 5,
+      "FP": 0,
+      "TN": 14,
+      "FN": 2,
+      "total_samples": 21,
+      "precision": 1,
+      "recall": 0.7142857142857143,
+      "specificity": 1,
+      "fpr": 0,
+      "fnr": 0.2857142857142857,
+      "accuracy": 0.9047619047619048,
+      "balanced_accuracy": 0.8571428571428572,
+      "f1": 0.8333333333333333
+    }
+  },
+  "latency_seconds": {
+    "global": {
+      "min": 78.581,
+      "max": 78.581,
+      "mean": 78.581
+    },
+    "perWindow": {
+      "1": 78.581
+    }
+  },
+  "stability": {
+    "1": {
+      "samples": 21,
+      "flips": 2,
+      "flip_rate": 0.1
+    }
+  },
+  "risk_separation": {
+    "normal_n": 14,
+    "attack_n": 7,
+    "normal_mean": 17.357142857142858,
+    "attack_mean": 59,
+    "separation_margin": 41.64285714285714
+  },
+  "replay": {
+    "python": "python3",
+    "script": "/home/ubuntu/research/scripts/replay_pcap_events.py",
+    "exitCode": 0
+  }
+}

@@ -1,0 +1,1193 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/dCohLFSrWkdjoV/vV9Q8eq7WFzA</id>
+  <title>arXiv Query: search_query=all:"intrusion detection" AND all:"UNSW-NB15" AND submittedDate:"202501010000 TO 202609302359"&amp;id_list=&amp;start=0&amp;max_results=50</title>
+  <updated>2026-10-08T17:15:58Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22intrusion+detection%22+AND+(all:%22UNSW-NB15%22+AND+submittedDate:%22202501010000+TO+202609302359%22)&amp;start=0&amp;max_results=50&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>62</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.39584v1</id>
+    <title>Cybersecurity in Edge Computing: A Trust-Aware Federated Hybrid Intrusion Detection Framework</title>
+    <updated>2026-09-30T12:12:26Z</updated>
+    <link href="https://arxiv.org/abs/2609.39584v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.39584v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Edge computing has emerged as a critical computing paradigm in modern distributed systems by migrating data processing closer to end users and Internet of Things (IoT) devices. While this paradigm decentralizes processes, minimizes latency, and reduces backhaul bandwidth congestion, it exponentially enlarges the cyberattack surface. Heterogeneous, resource-constrained edge devices deployed across unmanaged administrative domains present highly vulnerable targets. To address these vulnerabilities without compromising global data privacy regulations, this paper proposes a novel Trust-Aware Federated Hybrid Intrusion Detection Framework (TA-FHIDF). The proposed framework integrates an Autoencoder, a 1D Convolutional Neural Network (1D-CNN), and a Bidirectional Long Short-Term Memory (BiLSTM) model into a unified, localized deep learning engine capable of autonomous spatial and temporal feature extraction. Model training is performed collaboratively via federated learning, ensuring raw network telemetry remains isolated at local gateways. Furthermore, to defend against adversarial model poisoning attacks, we introduce a robust server-side trust-aware aggregation mechanism that evaluates client reliability using a cosine similarity metric before global model integration. Empirical evaluations across multi-vector benchmark datasets (UNSW-NB15, CICIDS2017, and Edge-IIoTset) demonstrate the framework's superior detection accuracy, rapid convergence, and high Byzantine fault tolerance under adversarial attack scenarios.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T12:12:26Z</published>
+    <arxiv:comment>10 pages, 7 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zawad Yalmie Sazid</name>
+    </author>
+    <author>
+      <name>Robert Abbas</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.24393v1</id>
+    <title>Passive Hybrid Network-Based Intrusion Detection System (Hybrid-NIDS) Combining Suricata and Random Forest</title>
+    <updated>2026-09-21T10:40:21Z</updated>
+    <link href="https://arxiv.org/abs/2609.24393v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.24393v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper evaluates a passive Hybrid Network-based Intrusion Detection System (Hybrid-NIDS) prototype that combines Suricata with Random Forest flow classification and centralized ELK-based alert handling. The study explicitly separates benchmark evaluation from PCAP/live operational validation and controls exact feature-duplicate leakage using feature hashing and group-aware splitting. From 2,540,047 UNSW-NB15 records, 453 conflicting-label hash groups containing 1,879 rows were removed; the resulting Development and Hold-out sets have zero exact feature-hash overlap. RF-41 achieved F1 = 0.971360 and ROC-AUC = 0.999671, while the NFStream-compatible RF-21 achieved F1 = 0.970148 on the same prepared hold-out boundary. However, operational validation revealed substantial benchmark-to-deployment domain shift: on a labeled laboratory PCAP, RF-21 and the strictly correlated branch achieved recall of only 0.0095, and RF-21 produced no alerts in five additional 60-second attack sessions. An unlabeled normal-traffic test produced 439 alerts from 2,375 flows; this value is reported only as an alert ratio and is not interpreted as a false-positive rate. These results show that strong performance on a public benchmark does not directly translate into operational effectiveness. Accordingly, the current Hybrid-NIDS should be interpreted as a passive prototype and evaluation framework, and the reported experiments do not demonstrate that Suricata-Random Forest correlation provides better operational detection than Suricata alone.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T10:40:21Z</published>
+    <arxiv:comment>Accepted for publication in the Proceedings of the 29th National Conference on Selected Issues of Information and Communication Technology (VNICT 2026), Hanoi, Vietnam, November 7-8, 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Quoc-Cuong Tang</name>
+    </author>
+    <author>
+      <name>Hoang-Lam Huynh</name>
+    </author>
+    <author>
+      <name>Van-Tri Phan</name>
+    </author>
+    <author>
+      <name>Khuong Nguyen-An</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.16363v1</id>
+    <title>FSNIC: A Low-Latency Flow-Based Intrusion Detection Architecture for FPGA SmartNICs</title>
+    <updated>2026-09-14T21:26:58Z</updated>
+    <link href="https://arxiv.org/abs/2609.16363v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.16363v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Modern data centres require high-performance networking alongside effective real-time security. Traditional Intrusion Detection Systems (IDS) commonly rely on general-purpose processors and often struggle to inspect high-speed traffic at line rate without introducing latency or performance bottlenecks. Smart Network Interface Cards (NICs) provide an alternative by enabling computation directly within the network data plane. This work presents a machine learning-based IDS implemented within an FPGA-based SmartNIC pipeline. The system integrates P4-based packet parsing with a LogicNets IDS model implemented in RTL, enabling deterministic, low-latency inference. Compared with traditional stateless packet-level classifiers, the proposed stateful flow-based IDS introduces minimal state by aggregating features across packets, capturing behavioural patterns not observable at the packet level. Experimental results on the UNSW-NB15 dataset show that the flow-based IDS improves detection accuracy from 86.92\% to 97.68\% compared with stateless packet-level classification. We also evaluate the proposed IDS on CICIDS2017 and compare its real-time hardware performance with prior FPGA-based IDS designs. Through hardware-software co-design, the proposed IDS achieves 6~ns inference latency using only 846 LUTs, with no BRAM or DSP usage, demonstrating a low latency and resource efficient implementation.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-14T21:26:58Z</published>
+    <arxiv:comment>Accepted by ICECS'26</arxiv:comment>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name>Nise O'Cuill</name>
+    </author>
+    <author>
+      <name>Changhong Li</name>
+    </author>
+    <author>
+      <name>Georgios Floros</name>
+    </author>
+    <author>
+      <name>Shreejith Shanker</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.04388v1</id>
+    <title>Candidate Comparability Before Promotion: Conditional Validation in Adaptive Network Intrusion Detection</title>
+    <updated>2026-09-03T18:55:09Z</updated>
+    <link href="https://arxiv.org/abs/2609.04388v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.04388v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Adaptive network intrusion detection systems retrain classifiers after drift alarms, but an alarm detects change; it does not establish that a challenger should replace the deployed incumbent. Promotion is security-relevant because it changes the model responsible for subsequent attack detection, and evaluating it has a methodological problem: promotion conclusions may depend on how the challenger was constructed and on how much evidence supports it. We test that dependence on CICIDS2017, UNSW-NB15 and ToN-IoT with self-contained challenger pipelines, nested candidate-size controls, a common-harness comparison of nine update policies, and a final sensitivity confining every exact feature vector to one evaluation, training or probe role. Incumbent-owned frozen preprocessing amplified apparent promotion harm; with self-contained challenger pipelines the mean full-drift harm did not persist. Raising nominal candidate evidence from 512 to 2,000 samples per class improved promotion under pool-constructed progressive drift by +0.53, +1.67 and +0.38 balanced-accuracy points: positive and statistically resolved in all three benchmarks, but materially benchmark-dependent rather than homogeneous, and driven mainly by fewer false positives. Policy conclusions were partially robust: policy ordering changed with candidate comparability, no policy globally dominated, and earlier compatibility statements for a label-free estimator and a calibrated ensemble narrowed. Validation helped evidence-disadvantaged challengers but added no average benefit at parity. Thirteen replays on real, time-ordered traffic showed no net harm from always deploying. Challenger construction and evidence should be controlled, reported and interpreted explicitly when promotion is evaluated.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-03T18:55:09Z</published>
+    <arxiv:comment>29 pages, 3 figures, 11 tables. Supplementary material (Online Resource 1) is included as an ancillary file</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Roberto Fernández-Barrios</name>
+    </author>
+    <author>
+      <name>Iker Pastor-López</name>
+    </author>
+    <author>
+      <name>Amaia Pikatza-Huerga</name>
+    </author>
+    <author>
+      <name>Pablo García Bringas</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.03420v1</id>
+    <title>Privacy, Robustness, and Fairness Trade-offs in Federated Intrusion Detection: Geometric Indistinguishability at the Aggregation Interface</title>
+    <updated>2026-09-03T06:27:03Z</updated>
+    <link href="https://arxiv.org/abs/2609.03420v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.03420v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Federated learning enables privacy-conscious collaboration for network intrusion detection without centralizing sensitive traffic data, yet its deployment in operational environments must simultaneously satisfy three competing requirements: formal differential privacy guaranties, tolerance to Byzantine-adversarial participants, and reliable detection coverage across severely imbalanced attack categories. Existing literature treats these properties as independently composable, an assumption that this paper challenges both theoretically and empirically. In this paper, we study how these requirements interact in class-imbalanced federated NIDS and introduce geometric indistinguishability as a conceptual lens for a regime in which privacy-induced dispersion in client updates can make minority-class signals harder for robust aggregation to preserve. Using UNSW-NB15 as a case study, we evaluate DP-SGD combined with coordinate-wise median under label-flip and model-poisoning attacks, with threat coverage assessed across attack categories. Our results provide initial evidence that the joint use of privacy noise and robust aggregation can disproportionately degrade detection of rare attacks relative to majority classes. We also show that part of the observed collapse under strong privacy can arise from training miscalibration, while a residual performance floor may remain for ultra-rare categories even after epsilon-dependent tuning. These findings motivate studying privacy, robustness, and rare-attack coverage jointly rather than as independently composable properties, and suggest that aggregation-aware modeling and sample-aware evaluation are promising directions for trustworthy federated NIDS.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-03T06:27:03Z</published>
+    <arxiv:comment>16 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Adrita Rahman Tory</name>
+    </author>
+    <author>
+      <name>ABM Shawkat Ali</name>
+    </author>
+    <author>
+      <name>Md Abu Layek</name>
+    </author>
+    <author>
+      <name>Khondokar Fida Hasan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.18155v1</id>
+    <title>How Quantum Is the Advantage? A Fair, Calibration- and Noise-Aware Benchmark and Attribution Audit of Quantum Machine Learning for Network Intrusion Detection</title>
+    <updated>2026-08-13T07:44:35Z</updated>
+    <link href="https://arxiv.org/abs/2608.18155v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.18155v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Quantum machine learning (QML) for network intrusion detection (NIDS) is routinely reported to reach near-perfect accuracy, yet the most rigorous studies find that well-tuned classical models remain competitive, and that apparent quantum gains may be artefacts of classical dimensionality reduction and implicit regularisation rather than genuine quantum effects. We ask not whether a quantum model can post a high accuracy, but how quantum the advantage really is. We present a unified, reproducible QML-IDS benchmark evaluating hybrid variational quantum circuits and quantum-kernel SVMs against five honestly-tuned classical baselines across four standard NIDS datasets (NSL-KDD, UNSW-NB15, CICIDS2017, NF-ToN-IoT-v2) under one leakage-controlled protocol, with an equal-budget feature view, imbalance- and calibration-aware metrics with significance testing, and a simulated NISQ noise sweep. We introduce a quantum-attribution audit (parameter-matched classical controls, a random-feature kernel, and a regularisation sweep) that quantifies how much of any gain is genuinely attributable to the quantum component. Tuned classical models (Random Forest, XGBoost) match or exceed the quantum models on aggregate detection on every dataset, and the audit attributes this to classical preprocessing and regularisation rather than quantum effects. Two advantages survive false-discovery-rate correction: the quantum-kernel SVM out-ranks its direct classical surrogate (a random-feature kernel) on AUPRC and ROC-AUC, and a small four-qubit hybrid out-detects the best classical baseline at the 1% false-positive operating point on the distribution-shifted NSL-KDD task (p = 0.005, BH q = 0.030). Code, seeds, and splits are released; our contribution stands whether quantum wins, ties, or loses.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-13T07:44:35Z</published>
+    <arxiv:comment>19 pages, 4 figures, 5 tables</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Syeda Anshrah Gillani</name>
+    </author>
+    <author>
+      <name>Mirza Samad Ahmed Baig</name>
+    </author>
+    <author>
+      <name>Shahid Munir Shah</name>
+    </author>
+    <author>
+      <name>Asher Ali</name>
+    </author>
+    <author>
+      <name>Hamzah Siddiqui</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.12190v1</id>
+    <title>Machine Learning-Based Cyber Defense for Cloud Infrastructure: An Adaptive Deep Q-Network Architecture for Intelligent Intrusion Detection and Automated Threat Mitigation</title>
+    <updated>2026-08-12T15:46:17Z</updated>
+    <link href="https://arxiv.org/abs/2608.12190v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.12190v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>With the increasing complexity of cyber assaults in cloud environments, adaptable security solutions are needed that can support real-time detection and autonomous response. In this paper, we propose a reinforcement learning-based dynamic cyber defense framework. We deploy a Deep Q-Network (DQN) to train effective defensive strategies to counteract the evolving cyberattacks. We leverage the CICIDS2017 dataset for model creation and the UNSW-NB15 dataset for external validation, involving preprocessing of data, feature engineering, and adaptive policy learning. We compare the proposed DQN with decision tree, support vector machine, random forest, XGBoost, and multilayer perceptron models. The proposed DQN achieves an accuracy of 99.72%, a precision of 99.68%, a recall of 99.65%, an F1-score of 99.66%, and an ROC-AUC of 0.999, while the false positive rate is 0.31%, the false negative rate is 0.35%, and the detection latency is 15 ms. The framework achieved 99.54% attack mitigation rate, demonstrating strong adaptive and real-time defensive capabilities. These results demonstrate the potential of reinforcement learning as a powerful and scalable approach for autonomous cybersecurity in modern cloud environments.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-12T15:46:17Z</published>
+    <arxiv:comment>THis paper already peer reviewed</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Md Yassir Mottalib</name>
+    </author>
+    <author>
+      <name>Md Yousuf</name>
+    </author>
+    <author>
+      <name>Eklachur Rahman Bhuiyan</name>
+    </author>
+    <author>
+      <name>S M Ahsan Habib</name>
+    </author>
+    <author>
+      <name>Sonjoy Kumar Dey</name>
+    </author>
+    <author>
+      <name>Md. Salahuddin Gazi</name>
+    </author>
+    <author>
+      <name>Molay Kumar Roy</name>
+    </author>
+    <author>
+      <name>Asaduzzaman Anik</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.08100v1</id>
+    <title>Defending Retrieval-Augmented Intrusion Detection Against Knowledge Poisoning and Prompt Injection</title>
+    <updated>2026-08-08T12:29:47Z</updated>
+    <link href="https://arxiv.org/abs/2608.08100v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.08100v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Retrieval-Augmented Generation (RAG) enables large language models to classify network flows and generate human-readable incident reports by retrieving semantically similar historical traffic from a vector knowledge base. However, the retrieval layer introduces vulnerabilities to knowledge poisoning and prompt-injection attacks. We present RAG-IDS, a three-tier multi-agent intrusion detection framework with a retrieval-boundary defense combining soft trust scoring, label-embedding consistency checking (LECC), and prompt sanitization, designed to recover classification quality under retrieval-layer attack. Experiments on CIC-UNSW-NB15 show recovery relative to clean undefended performance ranging from R=1.0 at 1% poisoning to R=0.57 at 30%, with negligible clean-performance overhead. Under prompt injection, multi-document retrieval limits label-flip success to 0.6-2.4%, compared with 35-55% for single-document retrieval. Ablation results show that LECC is the primary contributor to robustness, while soft trust-based demotion outperforms hard filtering. The defended RAG pipeline offers an explainable, attack-resilient foundation for intrusion detection, well suited for hybrid deployment alongside high-throughput classifiers.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-08T12:29:47Z</published>
+    <arxiv:comment>14 pages with Appnedix, 11 figures. Submitted to IEEE CIC 2026, Research Track (double-blind review)</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Kaysarul Anas Apurba</name>
+    </author>
+    <author>
+      <name>Md. Hasibul Hasan</name>
+    </author>
+    <author>
+      <name>Mahedee Zaman Moon</name>
+    </author>
+    <author>
+      <name>Sk. Md. Mizanur Rahman</name>
+    </author>
+    <author>
+      <name>Atsuo Inomata</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.00895v1</id>
+    <title>Multi-LLM Consensus Framework for Evaluating Banking-Sector NIDS Dataset Coverage of MITRE ATT&amp;CK Techniques</title>
+    <updated>2026-08-01T23:23:13Z</updated>
+    <link href="https://arxiv.org/abs/2608.00895v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.00895v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The systemic criticality of global banking networks has ren-dered them high-priority targets for advanced persistent threats, neces-sitating Network Intrusion Detection Systems (NIDS) whose operational effectiveness must extend beyond statistical accuracy. However, a signif-icant validation gap persists between experimental NIDS performance and real-world effectiveness: NIDS models that achieve high accuracy on standard benchmarks often fail in operational banking environments because generic datasets lack sector-specific patterns, such as SWIFT and ATM-related intrusions, that characterize real financial threats. To address this, the paper investigates a sector-aware evaluation method-ology that systematically assesses how well existing NIDS benchmark datasets cover the attack behaviors most relevant to banking infrastruc-ture. The methodology maps documented adversary behaviors from the MITRE ATT&amp;CK knowledge base to NIDS benchmarks while enforcing the realistic sensor limitations defined by NIST SP 800-94. Leveraging a multi-LLM consensus engine with four state-of-the-art models, we evalu-ated 210 banking-specific adversary techniques to derive a baseline of 68 network-observable behaviors for systematic coverage analysis. Results across five benchmark datasets demonstrate that UNSW-NB15 achieves the highest utility with an 82.2% weighted coverage score (though only 18.4% reflects direct, technique-level evidence), while CIC-DDoS2019 re-veals an 89.9% blind spot for core banking behaviors. These findings es-tablish a reproducible foundation for sector-aware NIDS evaluation and highlight the urgent need for banking-native datasets.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-01T23:23:13Z</published>
+    <arxiv:comment>17 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Sanjida Khanom</name>
+    </author>
+    <author>
+      <name>Sadia Afrin Khan</name>
+    </author>
+    <author>
+      <name>Adrita Rahman Tory</name>
+    </author>
+    <author>
+      <name>Md. Ahsan Habib</name>
+    </author>
+    <author>
+      <name>Khondokar Fida Hasan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.19899v1</id>
+    <title>Harnessing Disagreement: Detecting Correlated Agreement Blindness in Multi-Agent Triage</title>
+    <updated>2026-07-22T08:35:00Z</updated>
+    <link href="https://arxiv.org/abs/2607.19899v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.19899v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Disagreement-triggered escalation can create a structural blind spot in multi-agent arbitration: as base learners improve, they tend to converge, weakening safety monitoring where correlated failures concentrate. We term this correlated agreement blindness and present ARAT (Arbitrated Reasoning Agents for Alarm Triage), a directed-star system combining an inductive Random Forest (RF) agent, an analogical case-based k-nearest neighbour (k-NN) agent, and a calibrated meta-model to mitigate this effect. On 82,332 holdout samples from the UNSW-NB15 network intrusion detection dataset, 57.2% of errors occur under agreement and 90.6% of dangerous under-predictions evade disagreement-based monitoring even after conservative override; ablation shows that strengthening base learners increases error correlation while reducing disagreement. ARAT reduces under-prediction relative to soft voting from 4.80% to 1.70% via conservative override (-2.6pp) and a safety-flag gate (-0.5pp), demonstrating architectural gains. Cross-dataset validation on clinical readmission supports these indicators, suggesting that diversification improves safety only when it generates productive disagreement rather than convergence. These results indicate that disagreement-triggered escalation can be blind to correlated failure, a risk that may intensify as agentic pipelines deploy increasingly capable, correlated models.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-22T08:35:00Z</published>
+    <arxiv:comment>14 pages, 2 figures, 3 tables. Accepted at PAAMS 2026; this is the author's pre-review submitted version</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Shay Seiya McDonnell</name>
+    </author>
+    <author>
+      <name>Avantika Singh</name>
+    </author>
+    <author>
+      <name>Quoc-Viet Pham</name>
+    </author>
+    <author>
+      <name>Vratislav Havlik</name>
+    </author>
+    <author>
+      <name>Gregory M. P. O'Hare</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.13203v2</id>
+    <title>BARS: Benign-Anchored Ranking and Selection for False Alarm Reduction in Network Intrusion Detection</title>
+    <updated>2026-09-26T23:35:45Z</updated>
+    <link href="https://arxiv.org/abs/2607.13203v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.13203v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>False alarms remain a major barrier to deploying network intrusion detection systems (NIDS). In high-volume environments, even a sub-1% false positive rate can generate tens of thousands of daily alerts. Filter-based feature selection is attractive because it operates upstream of the classifier and adds no inference-time cost. However, classical filters use class-symmetric criteria that ignore the asymmetry of intrusion detection, where benign traffic defines the baseline and attacks are deviations from it. A recent class-asymmetric filter, Classwise Mean Deviation (CMD), addresses this issue but anchors its score to a global mean that shifts toward attack distributions under class imbalance, weakening the deviations it aims to capture.
+  We propose Benign-Anchored Ranking and Selection (BARS), a two-stage filter that replaces CMD's global anchor with the benign-class mean and applies an order-preserving decorrelation step. We evaluate BARS on CICIDS2017, CICDDoS2019, and UNSW-NB15 using feature budgets k = {5, 10, 20, 30, 40}. On attack-majority datasets, where global-anchor bias is strongest, BARS reduces false positive rate relative to CMD by 15.4% on UNSW-NB15 at k = 20 and by 21% to 23% on CICDDoS2019 at small feature budgets while preserving true positive rate and macro-F1. On benign-majority data, BARS and CMD converge, consistent with the theoretical limit where global- and benign-anchored scores coincide. BARS reduces false alarms by up to 32% while maintaining similar detection rates, with larger gains under stronger imbalance. Ablation results show that the two stages provide complementary benefits and select a consistent set of robust features. BARS retains linear-time scoring and a low memory footprint, making it suitable for resource-constrained deployments.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-14T18:53:14Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Abu Fuad Ahmad</name>
+    </author>
+    <author>
+      <name>Istiaque Ahmed</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.07739v1</id>
+    <title>Controllability-Aware Adversarial Examples Against LLM-Based Network Traffic Classifiers</title>
+    <updated>2026-07-08T04:21:04Z</updated>
+    <link href="https://arxiv.org/abs/2607.07739v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.07739v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are increasingly explored as network intrusion detection classifiers, but their adversarial robustness under realistic attacker constraints remains unclear. We present a controllability-aware black-box transfer framework for LLM-based network traffic classifiers. The framework partitions flow features into directly controllable (DC), indirectly controllable (IC), and uncontrollable (UC) groups according to network communication semantics, then restricts perturbations to DC features while freezing IC/UC features. Using a shared XGBoost surrogate, we generate finite-difference PGD, greedy coordinate-wise, and NES adversarial examples and transfer them to seven LLM targets and two conventional ML targets across five IDS benchmarks from 1999 to 2022. Across 27 valid LLM configurations and over 500,000 adversarial examples, we find that LLM transfer vulnerability is substantial but dataset- and comparator-dependent. Compared with LightGBM, LLMs are more vulnerable on RT-IoT2022 and CIC-IDS-2018, comparable on NSL-KDD and UNSW-NB15, and less vulnerable on HIKARI-2021; compared with the averaged ML baseline, LLMs show higher ASR on all five datasets. We further observe a consistent cross-architecture transfer hierarchy: gradient- and score-based perturbations transfer more effectively than greedy perturbations across all 27 LLM cells and 9/10 ML cells. Cross-surrogate validation with tree, neural, and linear surrogates yields similar LLM ASR, reducing evidence that the findings are XGBoost-specific. Constraint violation rate is 0\% by construction.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-08T04:21:04Z</published>
+    <arxiv:comment>13 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zhenpeng Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.02687v1</id>
+    <title>RES-DARE: Failure-Aware Expert Adaptation and Rollback-Safe Self-Repair for Intrusion Detection</title>
+    <updated>2026-07-02T18:26:23Z</updated>
+    <link href="https://arxiv.org/abs/2607.02687v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.02687v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Intrusion detection systems are often trained under static benchmark conditions, although deployed network environments are affected by traffic drift, sensor noise, changing workloads, and evolving attack behaviour. Under such distribution shifts, static detectors may produce confident but incorrect predictions, leading to silent and unsafe failure modes. In this paper, RES-DARE (Recursive Evolving Specialists-Digital Adaptive Reasoning Engine) is proposed as a failure-aware continual intrusion detection framework with rollback-safe self-repair. Difficult, uncertain, and misclassified samples are treated as failure signals for expert specialisation rather than being discarded as noise. A supervised contrastive encoder, two-pass expert router, failure-buffer mechanism, HDBSCAN-based failure-region discovery, and trust-risk monitor are integrated to support adaptive IDS behaviour. AEHM-v2 is introduced as a rollback-safe repair mechanism, where candidate adaptations are provisionally activated and committed only when macro-F1 is preserved or improved while trust risk remains stable. Otherwise, the system is rolled back to its last validated state. RES-DARE is evaluated on CICIDS2017, UNSW-NB15, and TON\_IoT, achieving macro-F1 scores of 0.9850, 0.9736, and 0.9691, respectively. Under Gaussian feature corruption at strength 0.10, RES-DARE retains an Attack-F1 of 0.7920 on CICIDS2017 and achieves near-zero catastrophic forgetting with F = 0.0015. The results show that RES-DARE improves robustness, warning capability, and deployment safety under degraded conditions.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-02T18:26:23Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Rahil Aftab</name>
+    </author>
+    <author>
+      <name>Anyash Prasad</name>
+    </author>
+    <author>
+      <name>Soumya Mazumdar</name>
+    </author>
+    <author>
+      <name>Vineet Kumar Rakesh</name>
+    </author>
+    <author>
+      <name>Tapas Samanta</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.00763v1</id>
+    <title>Forensic-Oriented Intrusion Detection Using Synthetic Network Traffic Data and Explainable Artificial Intelligence</title>
+    <updated>2026-07-01T10:47:19Z</updated>
+    <link href="https://arxiv.org/abs/2607.00763v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.00763v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Digital forensic investigations of network intrusions require analytical outputs that are traceable, reproducible, and court-defensible - requirements existing machine learning pipelines do not satisfy, since they treat original evidence as training data and produce opaque classifications without instance-level justification. This paper presents a forensic-oriented intrusion detection framework resolving both problems simultaneously, integrating synthetic data generation, binary classification, and explainability within a single pipeline governed by ISO/IEC 27037, 27041, 27042, and NIST SP 800-86.
+  The framework operationalises the ISO/IEC 27037 requirement for strict separation between original digital evidence and derived analytical artefacts. Original datasets are treated as immutable, hash-verified artefacts; all training operates on parameterized synthetic derivatives via SDV + CTGAN. XGBoost binary classification provides high-performance detection on tabular network flow data, and SHAP TreeExplainer produces instance-level feature attributions mapping statistical predictions to observable network behaviour for forensic reporting.
+  Train-on-Synthetic, Test-on-Real (TSTR) evaluation on CICIDS2017 achieves F1-macro = 0.96, within cross-validation variance of the real-data baseline (0.97). Kolmogorov-Smirnov testing confirms synthetic privacy preservation (mean |KS| = 0.38) alongside operational utility. Cross-dataset validation on UNSW-NB15 and Kitsune identifies feature space dimensionality as the primary determinant of synthetic training effectiveness, establishing a practical deployment boundary of approximately 30 numeric flow-level features. SHAP attributions for Brute Force, Port Scan, and DoS attacks are consistent across real and synthetic instances, confirming synthetic training preserves forensically relevant attack fingerprints required for expert witness testimony.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-01T10:47:19Z</published>
+    <arxiv:comment>23 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Jose Luis Vela Alonso</name>
+    </author>
+    <author>
+      <name>Carmen Pellicer</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.29797v2</id>
+    <title>Multi-Level Distributional Entropy from Flow Summary Statistics for Explainable Network Intrusion Detection</title>
+    <updated>2026-10-03T09:35:30Z</updated>
+    <link href="https://arxiv.org/abs/2606.29797v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.29797v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Machine learning network intrusion detection systems (IDS) operate on aggregate flow statistics that discard the distributional structure of traffic, and although information-theoretic measures capture that structure, established entropy estimators require raw packet sequences that pre-aggregated flow datasets do not contain. No prior method derives entropy from the summary statistics those records already hold. We introduce Multi-Level Distributional Entropy (MDE), which computes interpretable information-theoretic features analytically from flow-level summary statistics at three levels, within-flow Gaussian differential entropy, cross-directional Jensen-Shannon divergence (JSD), and Transmission Control Protocol (TCP) flag-incidence Shannon entropy, with closed-form properties and no raw packet access; only imputation medians and score bounds are fitted on the training split. We pair the features with a leakage-free, fold-local evaluation protocol that reports the full operational metric suite across cross-validation, temporal, pseudo-live, cross-dataset, and unseen-attack-family settings, on four benchmarks (NSL-KDD, CICIDS-2017, CICIDS-2018, UNSW-NB15) with tree-ensemble classifiers and SHAP. The protocol exposes failure modes that aggregate weighted F1 conceals: on CICIDS-2018 an F1 of 0.73 hides a detection rate (DR) of 0.44, on held-out attack families F1 exceeds 0.998 while DR falls to zero, and a 703K-flow pseudo-live replay reveals a threshold-ranking divergence in which score ranking is largely preserved (area under the ROC curve, AUC, 0.84 to 0.86) while fixed-threshold detection collapses (DR 0.08). The entropy features match conventional features within 0.1 percentage points of F1 and receive reproducible SHAP attributions (Spearman 0.84 to 0.94), so their contribution is a grounded, interpretable representation and an evaluation methodology rather than an accuracy gain.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-29T05:19:21Z</published>
+    <arxiv:comment>21 pages. v2: retitled from "Multi-Level Distributional Entropy for Explainable Network Intrusion Detection"; the paper now foregrounds the analytic, packet-free derivation of entropy features from flow summary statistics and the leakage-free evaluation methodology that exposes failure modes an aggregate F1 conceals. Code: https://github.com/drbouke/mde</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Mohamed Aly Bouke</name>
+    </author>
+    <author>
+      <name>Md Shohel Sayeed</name>
+    </author>
+    <author>
+      <name>Swee-Huay Heng</name>
+    </author>
+    <author>
+      <name>Azizol Abdullah</name>
+    </author>
+    <author>
+      <name>Mohamed Othman</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.28439v1</id>
+    <title>PLAA: Packet-level Adversarial Attacks in Network Traffic Detection</title>
+    <updated>2026-06-26T07:58:21Z</updated>
+    <link href="https://arxiv.org/abs/2606.28439v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.28439v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deep neural networks (DNNs) are widely applied in Network-based Intrusion Detection System (NIDS) due to their high accuracy. However, DNNs are highly susceptible to adversarial attacks, which generate malicious traffic to evade NIDS detection. Existing approaches often adapt adversarial attacks from computer vision (CV) tasks to the NIDS domain, overlooking the fundamental differences between CV and NIDS. This results in two major issues: 1) The generated network traffic may become invalid, 2) The generated traffic may lose its original attack semantics. To address these issues, this paper proposes an adversarial attack specifically designed for NIDS. Instead of directly generating flow-level features, our approach incrementally generates packet-level features to construct adversarial traffic. During the generation process, the semantic integrity of the traffic is monitored at each stage, effectively avoiding the issues of invalid traffic and semantic loss observed in existing methods. We evaluate our attack algorithm against current NIDS models using the CIC-UNSW-NB15, CIC-DDoS2019, and CIC-IDS-2017 datasets. The proposed method achieves an average evasion success rate of 92.78%, while ensuring that the generated adversarial traffic remains semantically consistent with the original malicious traffic.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-26T07:58:21Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <arxiv:journal_ref>2025 IEEE 24th International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom)</arxiv:journal_ref>
+    <author>
+      <name>Jinhao You</name>
+    </author>
+    <author>
+      <name>Zan Zhou</name>
+    </author>
+    <author>
+      <name>Shujie Yang</name>
+    </author>
+    <author>
+      <name>Yi Sun</name>
+    </author>
+    <author>
+      <name>Lei Zhang</name>
+    </author>
+    <author>
+      <name>Changqiao Xu</name>
+    </author>
+    <arxiv:doi>10.1109/Trustcom66490.2025.00153</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/Trustcom66490.2025.00153" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.11565v1</id>
+    <title>A Deterministic Forensic Preprocessing Framework for Heterogeneous Network Datasets: Formal Foundations, Implementation, and Empirical Validation</title>
+    <updated>2026-06-10T01:45:09Z</updated>
+    <link href="https://arxiv.org/abs/2606.11565v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.11565v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Digital forensic investigations increasingly depend on preprocessing heterogeneous network evidence from intrusion detection systems, IoT devices, and enterprise traffic logs. Incompatible schemas and timestamp formats hinder evidence correlation and timeline reconstruction, while current ad hoc approaches offer no mechanism to verify consistency across runs or analysis, creating reproducibility gaps that challenge evidence admissibility. This paper introduces a deterministic forensic preprocessing framework that converts heterogeneous network datasets into a reproducible canonical form. The framework formalises three preprocessing transformations: schema normalisation, temporal normalisation, and provenance tracking. These transformations are specified using set-theoretic definitions and supported by four theorems establishing determinism, information preservation, and provenance completeness. A chunk-based architecture provides O(c) bounded memory. Empirical evaluation across UNSW-NB15, IoT-23, and TON_IoT demonstrates 100% output consistency across repeated runs, robust temporal normalisation completeness over heterogeneous timestamp formats, and scalable performance from millions to hundreds of millions of records.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-10T01:45:09Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Ravi Chaudhary</name>
+    </author>
+    <author>
+      <name>Reza Ryan</name>
+    </author>
+    <author>
+      <name>Nasim Ferdosian</name>
+    </author>
+    <author>
+      <name>Nickson M. Karie</name>
+    </author>
+    <author>
+      <name>Qian Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.09934v2</id>
+    <title>nCMD: Benign-Anchored Feature Selection for Imbalanced Network Intrusion Detection</title>
+    <updated>2026-09-26T21:39:42Z</updated>
+    <link href="https://arxiv.org/abs/2606.09934v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.09934v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Feature selection is critical for network intrusion detection systems (NIDS) operating under high-dimensional, highly imbalanced traffic, as found in operational and defense networks. Traditional filter methods rank features using global statistics computed symmetrically across classes and thus fail to capture the asymmetry of intrusion detection, where attacks are best characterized as deviations from dominant benign traffic.
+  We propose benign-anchored Classwise Mean Deviation (nCMD), a lightweight and interpretable method that scores feature relevance based on the deviation of attack-class distributions from the benign-class mean, rather than a globally biased reference. This approach aligns feature selection with the operational semantics of NIDS at no additional computational cost.
+  Across four benchmark datasets (CICIDS2017, CICDDoS2019, NSL-KDD, and UNSW-NB15), multiple feature budgets, and three downstream classifiers, nCMD matches or exceeds classical filter baselines in macro-averaged F1-score. It achieves the best result on three of the four datasets and under every classifier, with the strongest improvements observed under tight feature budgets and severe class imbalance. These results support benign-anchored ranking as a scalable and interpretable preprocessing component for resource-constrained NIDS.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-07T19:01:05Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Abu Fuad Ahmad</name>
+    </author>
+    <author>
+      <name>Istiaque Ahmed</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.05844v1</id>
+    <title>GenTI: Benchmarking LLMs for Autonomous IDPS Rule Generation for Unseen Attacks</title>
+    <updated>2026-06-04T08:19:52Z</updated>
+    <link href="https://arxiv.org/abs/2606.05844v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.05844v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Rule-based Intrusion Detection and Prevention Systems (IDPS) offer precise attack detection as well as mitigation, however their manually crafted, signature-driven rules limit adaptability to emerging and zero-day threats. Additionally, existing public datasets (e.g., CICIDS2017, UNSW-NB15) focus on traffic classification and provide little structured information to support automatic rule synthesis or prevention logic. To address this gap, we propose Generative Thread Intelligence (GenTI) \footnote{GenTI refers to the proposed framework, and GTI refers to the dataset.} an LLM-driven benchmark for automatic generation of IDPS rules targeting unseen attacks. The dataset (GTI) aggregates over 150k detection and prevention rules from Snort, Suricata, Emerging Threats, as well as 50k YARA, each annotated with protocol behavior, payload signatures, contextual relationships, mappings to Cyber Threat Intelligence (CTI), along with actionable response types (alert, drop, reject). Moreover, on top of this corpus we design an LLM-based pipeline that transforms analyst prompts and representative payloads into deployable rules via structured prompt engineering, Chain-of-Thought (CoT) reasoning, as well as a Chain-of-Verification (CoVe) loop for syntactic, semantic, and security validation. The generated rules are executed in real time on (Snort/Suricata) and evaluated by syntax accuracy, semantic similarity, CTI coverage, security effectiveness as well as unseen attacks detection. Furthermore, our GenTI instantiation achieves a composite rule-quality score of 89.4\%, with 94.8\% CTI coverage, improving unseen attacks detection from 45\% to 87.4\% and reducing the false-positive rate from 8.5\% to 2.3\%. Overall, GenTI establishes the first large-scale benchmark that tightly couples rule-level CTI with LLM-based automation, enabling adaptive, self-evolving IDPS.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-04T08:19:52Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Hassan Jalil Hadi</name>
+    </author>
+    <author>
+      <name>Rehana Yasmin</name>
+    </author>
+    <author>
+      <name>Ali Shoker</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.26166v1</id>
+    <title>Enhancing Autonomous Online Intrusion Detection for IoT with Balanced Learning, Reliable Pseudo-Labels, and Lightweight Architectures</title>
+    <updated>2026-05-24T21:48:30Z</updated>
+    <link href="https://arxiv.org/abs/2605.26166v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.26166v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rapid proliferation of Internet of Things (IoT) devices has created an urgent demand for adaptive, resource-efficient Intrusion Detection Systems (IDS) capable of handling dynamic and evolving cyber threats. This paper investigates AOC-IDS, a state-of-the-art autonomous online IDS published at IEEE INFOCOM 2024, which employs an Autoencoder (AE) with Cluster Repelling Contrastive (CRC) loss and an autonomous Gaussian-based decision module. We first successfully replicate AOC-IDS on the UNSW-NB15 benchmark, achieving 89.39% accuracy in close agreement with the published 89.19%. We then identify four key limitations: class imbalance, unreliable pseudo-label generation, limited generalization, and computational overhead for IoT deployment, and propose targeted improvements for each. Our XGBoost-BalSamp method achieves 95.45% accuracy on UNSW-NB15, a gain of 6.26% over the baseline. Our combined deep learning approach (PseudoFilter, MixupAug, and LiteAE) achieves a best-run accuracy of 90.88% (F1: 91.45%), surpassing the base paper while reducing model parameters by 55%.These results demonstrate that targeted improvements to AOC-IDS yield consistent accuracy gains while improving practical deployability on IoT edge devices.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-24T21:48:30Z</published>
+    <arxiv:comment>9 pages, 5 figures; Code available at https://github.com/danishmemon847/AOC-IDS-Pipeline</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Hanzala Afzaal</name>
+    </author>
+    <author>
+      <name>Danish Memon</name>
+    </author>
+    <author>
+      <name>Chouhdary Bilal Raza</name>
+    </author>
+    <author>
+      <name>Muhammad Khurram Shahzad</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22529v1</id>
+    <title>Stabilising Explainability Fragility in Cybersecurity AI: The Impact and Mitigation of Multicollinearity in Public Benchmark Datasets</title>
+    <updated>2026-05-21T14:20:33Z</updated>
+    <link href="https://arxiv.org/abs/2605.22529v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22529v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper investigates a unexplored yet impactful vulnerability in AI explainability used in intrusion detection (IDS): multicollinearity-induced instability. Despite extensive reliance on post-hoc explainability tools such as SHAP or LIME, the impact of correlated features on explanation robustness is not evaluated. We introduce a formal theorem stating that multicollinearity inflates attribution variance. This demonstrates that explanations and feature importances are non-identifiable under multicollinearity. A suite of comprehensive experiments validates the theorem on a representative benchmark dataset, UNSW-NB15. Four widely used families of models are evaluated, including linear, tree-based, kernel, and neural, across full and pruned feature sets based on VIF and correlation thresholding. We propose the novel metric of Explanability Fragility Score and two novel methods to mitigate it with variable integration complexity. CAA-Filtering focuses on stabilising explanations by grouping attributions of trained models. SHARP is a novel training-time regularisation framework that penalises attribution instability, enabling controllable and monotonic improvement of explainability stability. The findings support stable predictive performance, using Kendall's τ to quantify instability across bootstrapped explanations. This work has direct implications for the trustworthiness and reproducibility of XAI in security-critical contexts, and motivates incorporating multicollinearity mitigations into the IDS pipelines, providing a set of guidelines for practitioners.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T14:20:33Z</published>
+    <arxiv:comment>35 pages, 3 figures, submitted to ACM TAISAP</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Ioannis J. Vourganas</name>
+    </author>
+    <author>
+      <name>Anna Lito Michala</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.19864v1</id>
+    <title>Multi-population Diversity-guided Genetic Algorithm for Feature Selection in Network Intrusion Detection</title>
+    <updated>2026-05-19T13:57:28Z</updated>
+    <link href="https://arxiv.org/abs/2605.19864v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.19864v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Network Intrusion Detection System is a critical means of ensuring cybersecurity. However, existing Genetic Algorithm-based feature selection methods face several limitations when dealing with high-dimensional redundant traffic features. For example, population diversity is difficult to maintain, and evolutionary operators lack guidance. To solve these problems, this study proposes the Multi-Population Diversity-Guided Genetic Algorithm (MPDGGA). First, we build a chained multi-population evolutionary structure. Second, we introduce a diversity-guided operator based on information gain ratio. Experiments on NSL-KDD, UNSW-NB15, and 9 UCI datasets show that the proposed model significantly outperforms four other advanced multi-population feature selection models. Across the 11 datasets, it attains the highest accuracy on 10 datasets and at least 2.26% of the features were selected.</summary>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-19T13:57:28Z</published>
+    <arxiv:primary_category term="cs.NE"/>
+    <author>
+      <name>Chunzhen Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.18647v1</id>
+    <title>Federated Naive Bayes with Real Mixture of Gaussians and Institutional Governance Regularization for Network Intrusion Detection</title>
+    <updated>2026-05-18T16:54:49Z</updated>
+    <link href="https://arxiv.org/abs/2605.18647v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.18647v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Federated learning for intrusion detection rests on a flawed premise: that every participating institution contributes equally to the shared model. In practice, a financial institution with mature security controls and low vulnerability exposure produces fundamentally different data than a government agency running with weaker controls and higher exposure. Treating their local models as equivalent discards information that organisations already collect through standard risk management audits. Four governance indicators from the CRISC framework of ISACA, specifically control maturity (CMM), proportion of implemented controls (KCI), risk indicator activation frequency (KRI), and mean vulnerability score (CVSS), are combined here into an Institutional Coherence Index (ICC). This index enters a Nelder-Mead federated weight optimizer as a regularization prior, guiding weight assignment toward institutional quality without imposing any fixed allocation. Each node trains a hybrid local classifier combining Categorical and Gaussian Naive Bayes. The server combines local distributions as a real Mixture of Gaussians, preserving each node's statistical identity rather than collapsing it into a global parameter vector. Validation on NSL-KDD (2009), CIC-IDS2017 (2017), and UNSW-NB15 (2015), under seven Dirichlet heterogeneity levels, shows that the ICC-regularized proposal outperforms size-proportional federated averaging in all three datasets: F1-macro 0.9135 vs. 0.9076 (+0.0059), 0.7556 vs. 0.6771 (+0.0785), and 0.2110 vs. 0.2060 (+0.0050). Statistical significance holds in 70 of 94 configurations (McNemar, p &lt; 0.05). In all three cases, the optimizer assigned the highest weight to the institutionally most mature node and the lowest to the least mature, without any explicit ordering constraint.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-18T16:54:49Z</published>
+    <arxiv:comment>7 pages, 11 figures, 8 tables. Preprint. Work in progress</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Herrera Logroño</name>
+    </author>
+    <author>
+      <name>Edgar Oswaldo; López Rubio</name>
+    </author>
+    <author>
+      <name> Ezequiel</name>
+    </author>
+    <author>
+      <name>Ortiz de Lazcano Lobato</name>
+    </author>
+    <author>
+      <name>Juan Miguel</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.17960v1</id>
+    <title>From Detection to Response: A Deep Learning and Retrieval-Augmented Generation Framework for Network Intrusion Mitigation</title>
+    <updated>2026-05-18T07:17:55Z</updated>
+    <link href="https://arxiv.org/abs/2605.17960v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.17960v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Machine-learning-based Intrusion Detection Systems (IDS) have achieved impressive accuracy in classifying network attacks, yet they consistently fall short on the question that matters most to a security analyst: what should I do next? This paper presents a unified, end-to-end framework that closes the gap between threat detection and actionable response. The system operates in two tightly coupled stages. First, an ensemble of three independently trained binary Deep Neural Networks (DNNs) classifies network traffic flows as Benign, Denial of Service (DoS), or Distributed Denial of Service (DDoS), achieving 99.84% accuracy on the CICIDS2018 dataset and 95.30% on the UNSW-NB15 dataset. Second, a Retrieval-Augmented Generation (RAG) pipeline constructs explanation-aware prompts from the top-5 anomalous features, retrieves the most semantically and lexically relevant guidance from a knowledge base derived from authorized sources and di- rects a locally deployed language model to synthesise structured, citation-grounded mitigation reports. The RAG-enhanced reports outperform vanilla LLM outputs across all automated evaluation metrics.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-18T07:17:55Z</published>
+    <arxiv:comment>14 pages, 7 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Md Navid Bin Islam</name>
+      <arxiv:affiliation>IEEE</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sajal Saha</name>
+      <arxiv:affiliation>IEEE</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Senior Member</name>
+      <arxiv:affiliation>IEEE</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.08910v1</id>
+    <title>Enhancing Adversarial Robustness in Network Intrusion Detection: A Layer-wise Adaptive Regularization Approach</title>
+    <updated>2026-05-09T12:10:01Z</updated>
+    <link href="https://arxiv.org/abs/2605.08910v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.08910v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The new wave of adversarial attacks that utilize gradient-related vulnerabilities in neural network-based classifiers makes Network Intrusion Detection Systems more open to such threats. Although state-of-the-art adversarial training methods have shown promising results in producing more robust classifiers, their interpretability and defense ability are limited due to their lack of understanding of how adversarial attacks propagate in different layers of network classifiers. In this paper, we present an insightful approach, called LARAR (Layer-wise Adversarial Robustness using Adaptive Regularization), that incorporates additional layer-wise vulnerability analysis and adaptive weighting in conventional adversarial training methods. Additionally, we utilize 'Auxiliary Classifiers' in our approach. LARAR provides interpretable layer-wise vulnerability scores, achieves a clean accuracy of 95.01%, and provides better robustness against adversarial attacks (FGSM, PGD, and transfer attacks) on the UNSW-NB15 dataset. Through the identification of vulnerable layers, the proposed framework reduces computational complexity and enables the early detection of adversarial samples, thus enhancing the effectiveness and interpretability of adversarial defense mechanisms in NIDS.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-09T12:10:01Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Hira Nasir</name>
+    </author>
+    <author>
+      <name>Eiman Javed</name>
+    </author>
+    <author>
+      <name>Balawal Shabir</name>
+    </author>
+    <author>
+      <name>Zunera Jalil</name>
+    </author>
+    <author>
+      <name>Ahmad Mohsin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.06629v1</id>
+    <title>Hybrid Quantum-Classical GANs for the Generation of Adversarial Network Flows</title>
+    <updated>2026-05-07T17:43:25Z</updated>
+    <link href="https://arxiv.org/abs/2605.06629v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.06629v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Classical generative adversarial networks (GANs) have been applied to generate adversarial network traffic capable of attacking intrusion detection systems, but they suffer from shortcomings such as the need for large amounts of high-dimensional datasets, mode collapse, and high computational overhead. In this work, we propose a hybrid quantum-classical GAN (QC-GAN) framework where a variational quantum generator is used to generate synthetic network traffic flows mimicking malicious traffic using latent representations. Instead of sampling classical noise vectors, we encode the latent vector (the hidden features) as a quantum state, which is the basis for claiming more expressive latent representations and reducing computational overhead. A classical discriminator will be trained on real-world datasets (UNSW-NB15) and the proposed QC-GAN-generated fake network flows. In this configuration, the generator aims to minimize the discriminator's ability to distinguish real from fake traffic, while the discriminator aims to maximize its classification accuracy, in an iterative manner. In our attack model, we assume that the attacker is a state actor with access to limited quantum computing power, whereas the discriminator is chosen to be classical, as will likely be the case for most end users and organizations. We test the generated flows using classical intrusion detection system (IDS) models, such as a random forest classifier and a convolutional neural network-based classifier, for their ability to bypass the detection process. This work aims to highlight the possibilities of quantum machine learning as a means of generating advanced attack flows and stress testing classical IDS. Lastly, we further evaluate how hardware-based noise affects these attacks to offer a new perspective on IDS, highlighting the need for a quantum resilient defense system.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-07T17:43:25Z</published>
+    <arxiv:comment>14 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Prateek Paudel</name>
+    </author>
+    <author>
+      <name>Nitin Jha</name>
+    </author>
+    <author>
+      <name>Abhishek Parakh</name>
+    </author>
+    <author>
+      <name>Mahadevan Subramaniam</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.05275v1</id>
+    <title>A Novel Byte-Level Flow-to-Image Encoding Method for Network Intrusion Detection Systems</title>
+    <updated>2026-05-06T14:27:45Z</updated>
+    <link href="https://arxiv.org/abs/2605.05275v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.05275v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Network-based Intrusion Detection Systems (IDS) are predominantly trained on tabular flow records, whose one-dimensional representations limit convolutional architectures from exploiting inter-feature spatial correlations. This paper presents a novel byte-level flow-to-image encoding method that converts each network-flow record into a fixed-size RGB image. Continuous features are serialised using IEEE-754 single-precision format and packed sequentially into pixels along an inverted-L shaped trajectory, while discrete features are mapped to byte values and placed contiguously in the middle image row's centre. The encoding is deterministic and reversible, preserving a fixed spatial layout across all samples. Four IDS models are evaluated on NSL-KDD and UNSW-NB15 datasets with both flow and image-based configurations. The image-based representation yields consistent accuracy gains of up to 15.6\% and 12.8\% for binary and multi-classification on UNSW-NB15, and up to 3.5\% and 3.2\% on NSL-KDD, highlighting the potential of byte-level visual encoding to strengthen AI-driven intrusion detection in local computer networks.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-06T14:27:45Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Ziyu Mu</name>
+    </author>
+    <author>
+      <name>Zihui Yan</name>
+    </author>
+    <author>
+      <name>Xiyu Shi</name>
+    </author>
+    <author>
+      <name>Safak Dogan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.04407v1</id>
+    <title>Assessing Generalisation Capability of Machine Learning Models for Intrusion Detection</title>
+    <updated>2026-05-06T01:59:09Z</updated>
+    <link href="https://arxiv.org/abs/2605.04407v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.04407v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The growth of networked and IoT systems has intensified cyber-security threats and exposed the limits of traditional signature-based intrusion detection. Although machine-learning-based intrusion detection systems often report strong benchmark performance, high ac- curacy within a single dataset does not necessarily guarantee reliable performance in unseen network environments. This study investigates the generalisation capability of supervised machine learning models for intrusion detection using UNSW-NB15 and TON_IoT. Random Forest, Logistic Regression, and Naive Bayes were evaluated under same-dataset and cross-dataset settings. Random Forest achieved the strongest same dataset performance, with 95.08% accuracy on UNSW-NB15 and 99.79% on TON_IoT, but performance dropped sharply in cross-dataset testing. When trained on UNSW-NB15 and tested on TON_IoT or vice versa, below 40% accuracy. These results reveal a significant generalisation gap in intrusion detection. We connect this challenge to affective computing and human-centric AI, where behavioural signal analysis, anomaly detection, domain shift, and context-sensitive modelling are also central. This framing highlights the need for adaptive, generalisable cyber-security models that can operate across changing network and IoT environments.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-06T01:59:09Z</published>
+    <arxiv:comment>13 Pages, 3 Figures, 5 Tables, Conference</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Md Zakir Hossain</name>
+    </author>
+    <author>
+      <name>Md Ayshik Rahman Khan</name>
+    </author>
+    <author>
+      <name>Md Rafiqul Islam</name>
+    </author>
+    <author>
+      <name>Syed Mohammed Shamsul Islam</name>
+    </author>
+    <author>
+      <name>Tom Gedeon</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.02987v1</id>
+    <title>LiteShield: Hybrid Feature Selection-Driven Lightweight Intrusion Detection for Resource-Constrained IoT Networks</title>
+    <updated>2026-05-04T14:04:59Z</updated>
+    <link href="https://arxiv.org/abs/2605.02987v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.02987v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rapid expansion of Internet of Things (IoT) deployments has enlarged the attack surface of modern digital infrastructure while exposing a key security mismatch: many intrusion detection systems (IDSs) remain too computationally expensive for constrained IoT environments. This paper presents LiteShield, a lightweight machine learning-based IDS that combines hybrid feature selection with efficient classifiers to support accurate attack detection under limited computational budgets. The proposed framework uses the UNSW-NB15 dataset, applies data preprocessing and imbalance-aware preparation, and employs a two-stage feature selection pipeline based on Mutual Information (MI) and Recursive Feature Elimination with Cross-Validation (RFECV). Six lightweight classifiers are evaluated for both binary and multiclass intrusion detection: Decision Tree, Random Forest, K-Nearest Neighbors (KNN), Logistic Regression, Naïve Bayes, and Support Vector Machine.
+  Experimental results show that KNN achieved the highest raw predictive performance, reaching 98.26% accuracy for binary classification and 85.22% accuracy for multiclass classification. However, Random Forest delivered the most practical trade-off between detection quality and deployment efficiency, obtaining 98.01% binary accuracy and 80.39% multiclass accuracy with substantially lower model size and inference cost than KNN. Additional ablation analysis on minority attack classes indicates that class imbalance materially affects multiclass performance. Overall, LiteShield demonstrates that hybrid feature selection and lightweight machine learning can provide a viable path toward accurate and computationally feasible intrusion detection for IoT-focused environments.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-04T14:04:59Z</published>
+    <arxiv:comment>This paper has been accepted at the 9th International Conference on Multi-Disciplinary Research Studies and Education (ICMDRSE-2026) Kuala Lumpur, Malaysia</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Dileepa Mabulage</name>
+    </author>
+    <author>
+      <name>Banuka Athuraliya</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.01962v1</id>
+    <title>FIRCE: A Framework for Intrusion Response and Conformal Evaluation</title>
+    <updated>2026-05-03T16:48:03Z</updated>
+    <link href="https://arxiv.org/abs/2605.01962v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.01962v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Machine learning-based intrusion detection systems deployed in real-world environments frequently suffer from model degradation due to concept drift, where changes in traffic patterns invalidate training assumptions. To address this, we present FIRCE, a Framework for Intrusion Response and Conformal Evaluation that augments supervised IDS classifiers with conformal evaluation-based uncertainty quantification and drift detection. FIRCE supports four conformal evaluation strategies: Inductive, Cross, Approximate Transductive, and our proposed Approximate Cross-Conformal Evaluator, which achieves robust performance with minimal calibration overhead. FIRCE also introduces an adaptive chunking mechanism that dynamically adjusts evaluation granularity in response to stream volatility, improving drift responsiveness while preserving computational efficiency. Using a custom IoT testbed of 10 commercial devices and time-series network captures under simulated attack and drift conditions, we demonstrate FIRCE's ability to detect distributional shifts and trigger model retraining. We additionally benchmark FIRCE on the CICIDS2018 and UNSW-NB15 datasets to validate its generalizability. Experimental results show that conformal evaluation-based drift detection, combined with adaptive chunking, enables an efficient and robust response to evolving threats.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-03T16:48:03Z</published>
+    <arxiv:comment>9 pages, 4 algorithms, 3 tables, 1 figure, accepted by IEEE SmartNets26</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Seth Barrett</name>
+    </author>
+    <author>
+      <name>Lin Li</name>
+    </author>
+    <author>
+      <name>Gokila Dorai</name>
+    </author>
+    <author>
+      <name>Swarnamugi Rajaganapathy</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.12655v1</id>
+    <title>Robust Semi-Supervised Temporal Intrusion Detection for Adversarial Cloud Networks</title>
+    <updated>2026-04-14T12:23:52Z</updated>
+    <link href="https://arxiv.org/abs/2604.12655v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.12655v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cloud networks increasingly rely on machine learning based Network Intrusion Detection Systems to defend against evolving cyber threats. However, real-world deployments are challenged by limited labeled data, non-stationary traffic, and adaptive adversaries. While semi-supervised learning can alleviate label scarcity, most existing approaches implicitly assume benign and stationary unlabeled traffic, leading to degraded performance in adversarial cloud environments. This paper proposes a robust semi-supervised temporal learning framework for cloud intrusion detection that explicitly addresses adversarial contamination and temporal drift in unlabeled network traffic. Operating on flow-level data, this framework combines supervised learning with consistency regularization, confidence-aware pseudo-labeling, and selective temporal invariance to conservatively exploit unlabeled traffic while suppressing unreliable samples. By leveraging the temporal structure of network flows, the proposed method improves robustness and generalization across heterogeneous cloud environments. Extensive evaluations on publicly available datasets (CIC-IDS2017, CSE-CIC-IDS2018, and UNSW-NB15) under limited-label conditions demonstrate that the proposed framework consistently outperforms state-of-the-art supervised and semi-supervised network intrusion detection systems in detection performance, label efficiency, and resilience to adversarial and non-stationary traffic.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-14T12:23:52Z</published>
+    <arxiv:comment>This work has been accepted for publication in IEEE 2026 EuCNC &amp; 6G Summit. This is a preprint version. The final published version will be available via IEEE Xplore</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Anasuya Chattopadhyay</name>
+    </author>
+    <author>
+      <name>Daniel Reti</name>
+    </author>
+    <author>
+      <name>Hans D. Schotten</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.03104v1</id>
+    <title>AlertStar: Path-Aware Alert Prediction on Hyper-Relational Knowledge Graphs</title>
+    <updated>2026-04-03T15:26:51Z</updated>
+    <link href="https://arxiv.org/abs/2604.03104v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.03104v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cyber-attacks continue to grow in scale and sophistication, yet existing network intrusion detection approaches lack the semantic depth required for path reasoning over attacker-victim interactions. We address this by first modelling network alerts as a knowledge graph, then formulating hyper-relational alert prediction as a hyper-relational knowledge graph completion (HR-KGC) problem, representing each network alert as a qualified statement (h, r, t, Q), where h and t are source and destination IPs, r denotes the attack type, and Q encodes flow-level metadata such as timestamps, ports, protocols, and attack intensity, going beyond standard KGC binary triples (h, r, t) that would discard this contextual richness. We introduce five models across three contributions: first, Hyper-relational Neural Bellman-Ford (HR-NBFNet) extends Neural Bellman-Ford Networks to the hyper-relational setting with qualifier-aware multi-hop path reasoning, while its multi-task variant MT-HR-NBFNet jointly predicts tail, relation, and qualifier-value within a single traversal pass; second, AlertStar fuses qualifier context and structural path information entirely in embedding space via cross-attention and learned path composition, and its multi-task extension MT-AlertStar eliminates the overhead of full knowledge graph propagation; third, HR-NBFNet-CQ extends qualifier-aware representations to answer complex first-order logic queries, including one-hop, two-hop chain, two-anchor intersection, and union, enabling multi-condition threat reasoning over the alert knowledge graph. Evaluated inductively on the Warden and UNSW-NB15 benchmarks across three qualifier-density regimes, AlertStar and MT-AlertStar achieve superior MR, MRR, and Hits@k, demonstrating that local qualifier fusion is both sufficient and more efficient than global path propagation for hyper-relational alert prediction.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-03T15:26:51Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zahra Makki Nayeri</name>
+    </author>
+    <author>
+      <name>Mohsen Rezvani</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.02299v1</id>
+    <title>PARD-SSM: Probabilistic Cyber-Attack Regime Detection via Variational Switching State-Space Models</title>
+    <updated>2026-04-02T17:38:52Z</updated>
+    <link href="https://arxiv.org/abs/2604.02299v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.02299v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Modern adversarial campaigns unfold as sequences of behavioural phases - Reconnaissance, Lateral Movement, Intrusion, and Exfiltration - each often indistinguishable from legitimate traffic when viewed in isolation. Existing intrusion detection systems (IDS) fail to capture this structure: signature-based methods cannot detect zero-day attacks, deep-learning models provide opaque anomaly scores without stage attribution, and standard Kalman Filters cannot model non-stationary multi-modal dynamics. We present PARD-SSM, a probabilistic framework that models network telemetry as a Regime-Dependent Switching Linear Dynamical System with K = 4 hidden regimes. A structured variational approximation reduces inference complexity from exponential to O(TK^2), enabling real-time detection on standard CPU hardware. An online EM algorithm adapts model parameters, while KL-divergence gating suppresses false positives. Evaluated on CICIDS2017 and UNSW-NB15, PARD-SSM achieves F1 scores of 98.2% and 97.1%, with latency less than 1.2 ms per flow. The model also produces predictive alerts approximately 8 minutes before attack onset, a capability absent in prior systems.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-02T17:38:52Z</published>
+    <arxiv:comment>18 pages, 3 figures, 3 tables, code available on GitHub</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Prakul Sunil Hiremath</name>
+    </author>
+    <author>
+      <name>PeerAhammad M Bagawan</name>
+    </author>
+    <author>
+      <name>Sahil Bhekane</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.28838v1</id>
+    <title>GMA-SAWGAN-GP: A Novel Data Generative Framework to Enhance IDS Detection Performance</title>
+    <updated>2026-03-30T14:35:23Z</updated>
+    <link href="https://arxiv.org/abs/2603.28838v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.28838v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Intrusion Detection System (IDS) is often calibrated to known attacks and generalizes poorly to unknown threats. This paper proposes GMA-SAWGAN-GP, a novel generative augmentation framework built on a Self-Attention-enhanced Wasserstein GAN with Gradient Penalty (WGAN-GP). The generator employs Gumbel-Softmax regularization to model discrete fields, while a Multilayer Perceptron (MLP)-based AutoEncoder acts as a manifold regularizer. A lightweight gating network adaptively balances adversarial and reconstruction losses via entropy regularization, improving stability and mitigating mode collapse. The self-attention mechanism enables the generator to capture both short- and long-range dependencies among features within each record while preserving categorical semantics through Gumbel-Softmax heads. Extensive experiments on NSL-KDD, UNSW-NB15, and CICIDS2017 using five representative IDS models demonstrate that GMA-SAWGAN-GP significantly improves detection performance on known attacks and enhances generalization to unknown attacks. Leave-One-Attack-type-Out (LOAO) evaluations using Area Under the Receiver Operating Characteristic (AUROC) and True Positive Rate at a 5 percent False Positive Rate confirm that IDS models trained on augmented datasets achieve higher robustness under unseen attack scenarios. Ablation studies validate the contribution of each component to performance gains. Compared with baseline models, the proposed framework improves binary classification accuracy by an average of 5.3 percent and multi-classification accuracy by 2.2 percent, while AUROC and True Positive Rate at a 5 percent False Positive Rate for unknown attacks increase by 3.9 percent and 4.8 percent, respectively, across the three datasets. Overall, GMA-SAWGAN-GP provides an effective approach to generative augmentation for mixed-type network traffic, improving IDS accuracy and resilience.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-30T14:35:23Z</published>
+    <arxiv:comment>13 pages, 2 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Ziyu Mu</name>
+    </author>
+    <author>
+      <name>Xiyu Shi</name>
+    </author>
+    <author>
+      <name>Safak Dogan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.17717v4</id>
+    <title>Machine Learning for Network Attacks Classification and Statistical Evaluation of Adversarial Learning Methodologies for Synthetic Data Generation</title>
+    <updated>2026-07-10T17:44:24Z</updated>
+    <link href="https://arxiv.org/abs/2603.17717v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.17717v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Supervised detection of network attacks has always been a critical part of network intrusion detection systems (NIDS). Nowadays, in a pivotal time for artificial intelligence (AI), with even more sophisticated attacks that utilize advanced techniques, such as generative artificial intelligence (GenAI) and reinforcement learning, it has become a vital component if we wish to protect our personal data, which are scattered across the web. In this paper, we address two tasks, in the first unified multi-modal NIDS dataset, which incorporates flow-level data, packet payload information and temporal contextual features, from the reprocessed CIC-IDS-2017, CIC-IoT-2023, UNSW-NB15 and CIC-DDoS-2019, with the same feature space. In the first task we use machine learning (ML) algorithms, with stratified cross validation, in order to prevent network attacks, with stability and reliability. In the second task we use adversarial learning algorithms to generate synthetic data, compare them with the real ones and evaluate their fidelity, utility and privacy using the SDV framework, f-divergences, distinguishability and non-parametric statistical tests. The findings provide stable ML models for intrusion detection and generative models with high fidelity and utility, by combining the Synthetic Data Vault framework, the TRTS and TSTR tests, with non-parametric statistical tests and f-divergence measures.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-18T13:35:02Z</published>
+    <arxiv:comment>Accepted at IEEE ISCC 2026, Portugal</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Iakovos-Christos Zarkadis</name>
+    </author>
+    <author>
+      <name>Christos Douligeris</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.10413v1</id>
+    <title>Enhancing Network Intrusion Detection Systems: A Multi-Layer Ensemble Approach to Mitigate Adversarial Attacks</title>
+    <updated>2026-03-11T04:53:48Z</updated>
+    <link href="https://arxiv.org/abs/2603.10413v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.10413v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Adversarial examples can represent a serious threat to machine learning (ML) algorithms. If used to manipulate the behaviour of ML-based Network Intrusion Detection Systems (NIDS), they can jeopardize network security. In this work, we aim to mitigate such risks by increasing the robustness of NIDS towards adversarial attacks. To that end, we explore two adversarial methods for generating malicious network traffic. The first method is based on Generative Adversarial Networks (GAN) and the second one is the Fast Gradient Sign Method (FGSM). The adversarial examples generated by these methods are then used to evaluate a novel multilayer defense mechanism, specifically designed to mitigate the vulnerability of ML-based NIDS. Our solution consists of one layer of stacking classifiers and a second layer based on an autoencoder. If the incoming network data are classified as benign by the first layer, the second layer is activated to ensure that the decision made by the stacking classifier is correct. We also incorporated adversarial training to further improve the robustness of our solution. Experiments on two datasets, namely UNSW-NB15 and NSL-KDD, demonstrate that the proposed approach increases resilience to adversarial attacks.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-11T04:53:48Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <arxiv:journal_ref>2025 IEEE International Conference on Systems, Man, and Cybernetics (SMC)</arxiv:journal_ref>
+    <author>
+      <name>Nasim Soltani</name>
+    </author>
+    <author>
+      <name>Shayan Nejadshamsi</name>
+    </author>
+    <author>
+      <name>Zakaria Abou El Houda</name>
+    </author>
+    <author>
+      <name>Raphael Khoury</name>
+    </author>
+    <author>
+      <name>Kelton A. P. Costa</name>
+    </author>
+    <author>
+      <name>Tiago H. Falk</name>
+    </author>
+    <author>
+      <name>Anderson R. Avila</name>
+    </author>
+    <arxiv:doi>10.1109/SMC58881.2025.11342479</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/SMC58881.2025.11342479" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.16098v1</id>
+    <title>Collaborative Zone-Adaptive Zero-Day Intrusion Detection for IoBT</title>
+    <updated>2026-02-18T00:02:15Z</updated>
+    <link href="https://arxiv.org/abs/2602.16098v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.16098v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Internet of Battlefield Things (IoBT) relies on heterogeneous, bandwidth-constrained, and intermittently connected tactical networks that face rapidly evolving cyber threats. In this setting, intrusion detection cannot depend on continuous central collection of raw traffic due to disrupted links, latency, operational security limits, and non-IID traffic across zones. We present Zone-Adaptive Intrusion Detection (ZAID), a collaborative detection and model-improvement framework for unseen attack types, where "zero-day" refers to previously unobserved attack families and behaviours (not vulnerability disclosure timing). ZAID combines a universal convolutional model for generalisable traffic representations, an autoencoder-based reconstruction signal as an auxiliary anomaly score, and lightweight adapter modules for parameter-efficient zone adaptation. To support cross-zone generalisation under constrained connectivity, ZAID uses federated aggregation and pseudo-labelling to leverage locally observed, weakly labelled behaviours. We evaluate ZAID on ToN_IoT using a zero-day protocol that excludes MITM, DDoS, and DoS from supervised training and introduces them during zone-level deployment and adaptation. ZAID achieves up to 83.16% accuracy on unseen attack traffic and transfers to UNSW-NB15 under the same procedure, with a best accuracy of 71.64%. These results indicate that parameter-efficient, zone-personalised collaboration can improve the detection of previously unseen attacks in contested IoBT environments.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-18T00:02:15Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Amirmohammad Pasdar</name>
+    </author>
+    <author>
+      <name>Shabnam Kasra Kermanshahi</name>
+    </author>
+    <author>
+      <name>Nour Moustafa</name>
+    </author>
+    <author>
+      <name>Van-Thuan Pham</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.06395v1</id>
+    <title>Empirical Analysis of Adversarial Robustness and Explainability Drift in Cybersecurity Classifiers</title>
+    <updated>2026-02-06T05:30:37Z</updated>
+    <link href="https://arxiv.org/abs/2602.06395v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.06395v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Machine learning (ML) models are increasingly deployed in cybersecurity applications such as phishing detection and network intrusion prevention. However, these models remain vulnerable to adversarial perturbations small, deliberate input modifications that can degrade detection accuracy and compromise interpretability. This paper presents an empirical study of adversarial robustness and explainability drift across two cybersecurity domains phishing URL classification and network intrusion detection. We evaluate the impact of L (infinity) bounded Fast Gradient Sign Method (FGSM) and Projected Gradient Descent (PGD) perturbations on model accuracy and introduce a quantitative metric, the Robustness Index (RI), defined as the area under the accuracy perturbation curve. Gradient based feature sensitivity and SHAP based attribution drift analyses reveal which input features are most susceptible to adversarial manipulation. Experiments on the Phishing Websites and UNSW NB15 datasets show consistent robustness trends, with adversarial training improving RI by up to 9 percent while maintaining clean-data accuracy. These findings highlight the coupling between robustness and interpretability degradation and underscore the importance of quantitative evaluation in the design of trustworthy, AI-driven cybersecurity systems.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-06T05:30:37Z</published>
+    <arxiv:comment>Accepted for publication in 18th ACM International Conference on Agents and Artificial Intelligence (ICAART 2026), Marbella, Spain</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Mona Rajhans</name>
+    </author>
+    <author>
+      <name>Vishal Khawarey</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.21318v2</id>
+    <title>QCL-IDS: Quantum Continual Learning for Intrusion Detection with Fidelity-Anchored Stability and Generative Replay</title>
+    <updated>2026-02-19T07:21:23Z</updated>
+    <link href="https://arxiv.org/abs/2601.21318v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.21318v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Continual intrusion detection must absorb newly emerging attack stages while retaining legacy detection capability under strict operational constraints, including bounded compute and qubit budgets and privacy rules that preclude long-term storage of raw telemetry. We propose QCL-IDS, a quantum-centric continual-learning framework that co-designs stability and privacy-governed rehearsal for NISQ-era pipelines. Its core component, Q-FISH (Quantum Fisher Anchors), enforces retention using a compact anchor coreset through (i) sensitivity-weighted parameter constraints and (ii) a fidelity-based functional anchoring term that directly limits decision drift on representative historical traffic. To regain plasticity without retaining sensitive flows, QCL-IDS further introduces privacy-preserved quantum generative replay (QGR) via frozen, task-conditioned generator snapshots that synthesize bounded rehearsal samples. Across a three-stage attack stream on UNSW-NB15 and CICIDS2017, QCL-IDS consistently attains the best retention-adaptation trade-off: the gradient-anchor configuration achieves mean Attack-F1 = 0.941 with forgetting = 0.005 on UNSW-NB15 and mean Attack-F1 = 0.944 with forgetting = 0.004 on CICIDS2017, versus 0.800/0.138 and 0.803/0.128 for sequential fine-tuning, respectively.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-29T06:27:05Z</published>
+    <arxiv:comment>11 pages</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Zirui Zhu</name>
+    </author>
+    <author>
+      <name>Xiangyang Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.04486v1</id>
+    <title>Decision-Aware Trust Signal Alignment for SOC Alert Triage</title>
+    <updated>2026-01-08T01:41:54Z</updated>
+    <link href="https://arxiv.org/abs/2601.04486v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.04486v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Detection systems that utilize machine learning are progressively implemented at Security Operations Centers (SOCs) to help an analyst to filter through high volumes of security alerts. Practically, such systems tend to reveal probabilistic results or confidence scores which are ill-calibrated and hard to read when under pressure. Qualitative and survey based studies of SOC practice done before reveal that poor alert quality and alert overload greatly augment the burden on the analyst, especially when tool outputs are not coherent with decision requirements, or signal noise. One of the most significant limitations is that model confidence is usually shown without expressing that there are asymmetric costs in decision making where false alarms are much less harmful than missed attacks. The present paper presents a decision-sensitive trust signal correspondence scheme of SOC alert triage. The framework combines confidence that has been calibrated, lightweight uncertainty cues, and cost-sensitive decision thresholds into coherent decision-support layer, instead of making changes to detection models. To enhance probabilistic consistency, the calibration is done using the known post-hoc methods and the uncertainty cues give conservative protection in situations where model certainty is low. To measure the model-independent performance of the suggested model, we apply the Logistic Regression and the Random Forest classifiers to the UNSW-NB15 intrusion detection benchmark. According to simulation findings, false negatives are greatly amplified by the presence of misaligned displays of confidence, whereas cost weighted loss decreases by orders of magnitude between models with decision aligned trust signals. Lastly, we describe a human-in-the-loop study plan that would allow empirically assessing the decision-making of the analysts with aligned and misaligned trust interfaces.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-08T01:41:54Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Israt Jahan Chowdhury</name>
+    </author>
+    <author>
+      <name>Md Abu Yousuf Tanvir</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.02237v1</id>
+    <title>Quantum AI for Cybersecurity: A hybrid Quantum-Classical models for attack path analysis</title>
+    <updated>2026-01-05T16:11:39Z</updated>
+    <link href="https://arxiv.org/abs/2601.02237v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.02237v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Modern cyberattacks are increasingly complex, posing significant challenges to classical machine learning methods, particularly when labeled data is limited and feature interactions are highly non-linear. In this study we investigates the potential of hybrid quantum-classical learning to enhance feature representations for intrusion detection and explore possible quantum advantages in cybersecurity analytics. Using the UNSW-NB15 dataset, network traffic is transformed into structured feature vectors through classical preprocessing and normalization. Classical models, including Logistic Regression and Support Vector Machines with linear and RBF kernels, are evaluated on the full dataset to establish baseline performance under large-sample conditions. Simultaneously, a quantum-enhanced pipeline maps classical features into variational quantum circuits via angle encoding and entangling layers, executed on a CPU-based quantum simulator, with resulting quantum embeddings classified using a classical SVM. Experiments show that while classical models achieve higher overall accuracy with large datasets, quantum-enhanced representations demonstrate superior attack recall and improved class separability when data is scarce, suggesting that quantum feature spaces capture complex correlations inaccessible to shallow classical models. These results highlight the potential of quantum embeddings to improve generalization and representation quality in cybersecurity tasks and provide a reproducible framework for evaluating quantum advantages as quantum hardware and simulators continue to advance.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-05T16:11:39Z</published>
+    <arxiv:comment>12 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Jessica A. Sciammarelli</name>
+    </author>
+    <author>
+      <name>Waqas Ahmed</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.23809v1</id>
+    <title>Zero-Trust Agentic Federated Learning for Secure IIoT Defense Systems</title>
+    <updated>2025-12-29T19:07:11Z</updated>
+    <link href="https://arxiv.org/abs/2512.23809v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.23809v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent attacks on critical infrastructure, including the 2021 Oldsmar water treatment breach and 2023 Danish energy sector compromises, highlight urgent security gaps in Industrial IoT (IIoT) deployments. While Federated Learning (FL) enables privacy-preserving collaborative intrusion detection, existing frameworks remain vulnerable to Byzantine poisoning attacks and lack robust agent authentication. We propose Zero-Trust Agentic Federated Learning (ZTA-FL), a defense in depth framework combining: (1) TPM-based cryptographic attestation achieving less than 0.0000001 false acceptance rate, (2) a novel SHAP-weighted aggregation algorithm providing explainable Byzantine detection under non-IID conditions with theoretical guarantees, and (3) privacy-preserving on-device adversarial training. Comprehensive experiments across three IDS benchmarks (Edge-IIoTset, CIC-IDS2017, UNSW-NB15) demonstrate that ZTA-FL achieves 97.8 percent detection accuracy, 93.2 percent accuracy under 30 percent Byzantine attacks (outperforming FLAME by 3.1 percent, p less than 0.01), and 89.3 percent adversarial robustness while reducing communication overhead by 34 percent. We provide theoretical analysis, failure mode characterization, and release code for reproducibility.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-29T19:07:11Z</published>
+    <arxiv:comment>9 Pages and 6 figures, Submitted in conference 2nd IEEE Conference on Secure and Trustworthy Cyber Infrastructure for IoT and Microelectronics, Houston TX, USA</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Samaresh Kumar Singh</name>
+    </author>
+    <author>
+      <name>Joyjit Roy</name>
+    </author>
+    <author>
+      <name>Martin So</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.12743v1</id>
+    <title>An Evaluation Framework for Network IDS/IPS Datasets: Leveraging MITRE ATT&amp;CK and Industry Relevance Metrics</title>
+    <updated>2025-11-16T19:17:00Z</updated>
+    <link href="https://arxiv.org/abs/2511.12743v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.12743v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The performance of Machine Learning (ML) and Deep Learning (DL)-based Intrusion Detection and Prevention Systems (IDS/IPS) is critically dependent on the relevance and quality of the datasets used for training and evaluation. However, current AI model evaluation practices for developing IDS/IPS focus predominantly on accuracy metrics, often overlooking whether datasets represent industry-specific threats. To address this gap, we introduce a novel multi-dimensional framework that integrates the MITRE ATT&amp;CK knowledge base for threat intelligence and employs five complementary metrics that together provide a comprehensive assessment of dataset suitability. Methodologically, this framework combines threat intelligence, natural language processing, and quantitative analysis to assess the suitability of datasets for specific industry contexts. Applying this framework to nine publicly available IDS/IPS datasets reveals significant gaps in threat coverage, particularly in the healthcare, energy, and financial sectors. In particular, recent datasets (e.g., CIC-IoMT, CIC-UNSW-NB15) align better with sector-specific threats, whereas others, like CICIoV-24, underperform despite their recency. Our findings provide a standardized, interpretable approach for selecting datasets aligned with sector-specific operational requirements, ultimately enhancing the real-world effectiveness of AI-driven IDS/IPS deployments. The efficiency and practicality of the framework are validated through deployment in a real-world case study, underscoring its capacity to inform dataset selection and enhance the effectiveness of AI-driven IDS/IPS in operational environments.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-16T19:17:00Z</published>
+    <arxiv:comment>32 Pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Adrita Rahman Tori</name>
+    </author>
+    <author>
+      <name>Khondokar Fida Hasan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.07793v1</id>
+    <title>HybridGuard: Enhancing Minority-Class Intrusion Detection in Dew-Enabled Edge-of-Things Networks</title>
+    <updated>2025-11-11T03:19:25Z</updated>
+    <link href="https://arxiv.org/abs/2511.07793v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.07793v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Securing Dew-Enabled Edge-of-Things (EoT) networks against sophisticated intrusions is a critical challenge. This paper presents HybridGuard, a framework that integrates machine learning and deep learning to improve intrusion detection. HybridGuard addresses data imbalance through mutual information based feature selection, ensuring that the most relevant features are used to improve detection performance, especially for minority attack classes. The framework leverages Wasserstein Conditional Generative Adversarial Networks with Gradient Penalty (WCGAN-GP) to further reduce class imbalance and enhance detection precision. It adopts a two-phase architecture called DualNetShield to support advanced traffic analysis and anomaly detection, improving the granular identification of threats in complex EoT environments. HybridGuard is evaluated on the UNSW-NB15, CIC-IDS-2017, and IOTID20 datasets, where it demonstrates strong performance across diverse attack scenarios and outperforms existing solutions in adapting to evolving cybersecurity threats. This approach establishes HybridGuard as an effective tool for protecting EoT networks against modern intrusions.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-11T03:19:25Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Binayak Kara</name>
+    </author>
+    <author>
+      <name>Ujjwal Sahua</name>
+    </author>
+    <author>
+      <name>Ciza Thomas</name>
+    </author>
+    <author>
+      <name>Jyoti Prakash Sahoo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.25802v1</id>
+    <title>Attention Augmented GNN RNN-Attention Models for Advanced Cybersecurity Intrusion Detection</title>
+    <updated>2025-10-29T03:47:02Z</updated>
+    <link href="https://arxiv.org/abs/2510.25802v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.25802v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we propose a novel hybrid deep learning architecture that synergistically combines Graph Neural Networks (GNNs), Recurrent Neural Networks (RNNs), and multi-head attention mechanisms to significantly enhance cybersecurity intrusion detection capabilities. By leveraging the comprehensive UNSW-NB15 dataset containing diverse network traffic patterns, our approach effectively captures both spatial dependencies through graph structural relationships and temporal dynamics through sequential analysis of network events. The integrated attention mechanism provides dual benefits of improved model interpretability and enhanced feature selection, enabling cybersecurity analysts to focus computational resources on high-impact security events -- a critical requirement in modern real-time intrusion detection systems. Our extensive experimental evaluation demonstrates that the proposed hybrid model achieves superior performance compared to traditional machine learning approaches and standalone deep learning models across multiple evaluation metrics, including accuracy, precision, recall, and F1-score. The model achieves particularly strong performance in detecting sophisticated attack patterns such as Advanced Persistent Threats (APTs), Distributed Denial of Service (DDoS) attacks, and zero-day exploits, making it a promising solution for next-generation cybersecurity applications in complex network environments.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-29T03:47:02Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Jayant Biradar</name>
+    </author>
+    <author>
+      <name>Smit Shah</name>
+    </author>
+    <author>
+      <name>Tanmay Naik</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.17883v2</id>
+    <title>From Flows to Words: Can Zero-/Few-Shot LLMs Detect Network Intrusions? A Grammar-Constrained, Calibrated Evaluation on UNSW-NB15</title>
+    <updated>2025-10-26T07:42:39Z</updated>
+    <link href="https://arxiv.org/abs/2510.17883v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.17883v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) can reason over natural-language inputs, but their role in intrusion detection without fine-tuning remains uncertain. This study evaluates a prompt-only approach on UNSW-NB15 by converting each network flow to a compact textual record and augmenting it with lightweight, domain-inspired boolean flags (asymmetry, burst rate, TTL irregularities, timer anomalies, rare service/state, short bursts). To reduce output drift and support measurement, the model is constrained to produce structured, grammar-valid responses, and a single decision threshold is calibrated on a small development split. We compare zero-shot, instruction-guided, and few-shot prompting to strong tabular and neural baselines under identical splits, reporting accuracy, precision, recall, F1, and macro scores. Empirically, unguided prompting is unreliable, while instructions plus flags substantially improve detection quality; adding calibrated scoring further stabilizes results. On a balanced subset of two hundred flows, a 7B instruction-tuned model with flags reaches macro-F1 near 0.78; a lighter 3B model with few-shot cues and calibration attains F1 near 0.68 on one thousand examples. As the evaluation set grows to two thousand flows, decision quality decreases, revealing sensitivity to coverage and prompting. Tabular baselines remain more stable and faster, yet the prompt-only pipeline requires no gradient training, produces readable artifacts, and adapts easily through instructions and flags. Contributions include a flow-to-text protocol with interpretable cues, a calibration method for thresholding, a systematic baseline comparison, and a reproducibility bundle with prompts, grammar, metrics, and figures.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-18T02:11:50Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Mohammad Abdul Rehman</name>
+    </author>
+    <author>
+      <name>Syed Imad Ali Shah</name>
+    </author>
+    <author>
+      <name>Abbas Anwar</name>
+    </author>
+    <author>
+      <name>Noor Islam</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.07285v3</id>
+    <title>GTCN-G: A Residual Graph-Temporal Fusion Network for Imbalanced Intrusion Detection</title>
+    <updated>2026-04-14T07:34:51Z</updated>
+    <link href="https://arxiv.org/abs/2510.07285v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.07285v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The escalating complexity of network threats and the inherent class imbalance in traffic data present formidable challenges for modern Intrusion Detection Systems (IDS). While Graph Neural Networks (GNNs) excel in modeling topological structures and Temporal Convolutional Networks (TCNs) are proficient in capturing time-series dependencies, a framework that synergistically integrates both while explicitly addressing data imbalance remains an open challenge. This paper introduces a novel deep learning framework, named Gated Temporal Convolutional Network and Graph (GTCN-G), engineered to overcome these limitations. Our model uniquely fuses a Gated TCN (G-TCN) for extracting hierarchical temporal features from network flows with a Graph Convolutional Network (GCN) designed to learn from the underlying graph structure. The core innovation lies in the integration of a residual learning mechanism, implemented via a Graph Attention Network (GAT). This mechanism preserves original feature information through residual connections, which is critical for mitigating the class imbalance problem and enhancing detection sensitivity for rare malicious activities (minority classes). We conducted extensive experiments on two public benchmark datasets, UNSW-NB15 and ToN-IoT, to validate our approach. The empirical results demonstrate that the proposed GTCN-G model achieves state-of-the-art performance, significantly outperforming existing baseline models in both binary and multi-class classification tasks.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-08T17:45:59Z</published>
+    <arxiv:comment>This preprint was submitted to IEEE TrustCom 2025. The accepted version will be published under copyright 2025 IEEE</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Tianxiang Xu</name>
+    </author>
+    <author>
+      <name>Zhichao Wen</name>
+    </author>
+    <author>
+      <name>Xinyu Zhao</name>
+    </author>
+    <author>
+      <name>Qi Hu</name>
+    </author>
+    <author>
+      <name>Yan Li</name>
+    </author>
+    <author>
+      <name>Chang Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.02349v1</id>
+    <title>An Investigation into the Performance of Non-Contrastive Self-Supervised Learning Methods for Network Intrusion Detection</title>
+    <updated>2025-09-27T12:36:17Z</updated>
+    <link href="https://arxiv.org/abs/2510.02349v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.02349v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Network intrusion detection, a well-explored cybersecurity field, has predominantly relied on supervised learning algorithms in the past two decades. However, their limitations in detecting only known anomalies prompt the exploration of alternative approaches. Motivated by the success of self-supervised learning in computer vision, there is a rising interest in adapting this paradigm for network intrusion detection. While prior research mainly delved into contrastive self-supervised methods, the efficacy of non-contrastive methods, in conjunction with encoder architectures serving as the representation learning backbone and augmentation strategies that determine what is learned, remains unclear for effective attack detection. This paper compares the performance of five non-contrastive self-supervised learning methods using three encoder architectures and six augmentation strategies. Ninety experiments are systematically conducted on two network intrusion detection datasets, UNSW-NB15 and 5G-NIDD. For each self-supervised model, the combination of encoder architecture and augmentation method yielding the highest average precision, recall, F1-score, and AUCROC is reported. Furthermore, by comparing the best-performing models to two unsupervised baselines, DeepSVDD, and an Autoencoder, we showcase the competitiveness of the non-contrastive methods for attack detection. Code at: https://github.com/renje4z335jh4/non_contrastive_SSL_NIDS</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-27T12:36:17Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Hamed Fard</name>
+    </author>
+    <author>
+      <name>Tobias Schalau</name>
+    </author>
+    <author>
+      <name>Gerhard Wunder</name>
+    </author>
+    <arxiv:doi>10.1007/978-981-97-8798-2_11</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/978-981-97-8798-2_11" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.15555v1</id>
+    <title>Hybrid Deep Learning-Federated Learning Powered Intrusion Detection System for IoT/5G Advanced Edge Computing Network</title>
+    <updated>2025-09-19T03:23:51Z</updated>
+    <link href="https://arxiv.org/abs/2509.15555v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.15555v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The exponential expansion of IoT and 5G-Advanced applications has enlarged the attack surface for DDoS, malware, and zero-day intrusions. We propose an intrusion detection system that fuses a convolutional neural network (CNN), a bidirectional LSTM (BiLSTM), and an autoencoder (AE) bottleneck within a privacy-preserving federated learning (FL) framework. The CNN-BiLSTM branch captures local and gated cross-feature interactions, while the AE emphasizes reconstruction-based anomaly sensitivity. Training occurs across edge devices without sharing raw data. On UNSW-NB15 (binary), the fused model attains AUC 99.59 percent and F1 97.36 percent; confusion-matrix analysis shows balanced error rates with high precision and recall. Average inference time is approximately 0.0476 ms per sample on our test hardware, which is well within the less than 10 ms URLLC budget, supporting edge deployment. We also discuss explainability, drift tolerance, and FL considerations for compliant, scalable 5G-Advanced IoT security.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-19T03:23:51Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Rasil Baidar</name>
+    </author>
+    <author>
+      <name>Sasa Maric</name>
+    </author>
+    <author>
+      <name>Robert Abbas</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.09619v2</id>
+    <title>Risk-Calibrated Bayesian Streaming Intrusion Detection with SRE-Aligned Decisions</title>
+    <updated>2026-09-14T22:30:00Z</updated>
+    <link href="https://arxiv.org/abs/2510.09619v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.09619v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>[Corrected v2: an audit found that the score, threshold, and latency descriptions below are not what the shared codebase implements, and that the evaluation streams are assembled constructions. See the correction note on the title page and the corrected companion work, arXiv:2605.24696 (corrected v3), artifact doi:10.5281/zenodo.22673735.] We present a risk-calibrated approach to streaming intrusion detection that couples Bayesian Online Changepoint Detection (BOCPD) with decision thresholds aligned to Site Reliability Engineering (SRE) error budgets. BOCPD provides run-length posteriors that adapt to distribution shift and concept drift; we map these posteriors to alert decisions by optimizing expected operational cost under false-positive and false-negative budgets. We detail the hazard model, conjugate updates, and an O(1)-per-event implementation. A concrete SRE example shows how a 99.9% availability SLO (43.2 minutes per month error budget) yields a probability threshold near 0.91 when missed incidents are 10x more costly than false alarms. We evaluate on the full UNSW-NB15 and CIC-IDS2017 benchmarks with chronological splits, comparing against strong unsupervised baselines (ECOD, COPOD, and LOF). Metrics include PR-AUC, ROC-AUC, Brier score, calibration reliability diagrams, and detection latency measured in events. Results indicate improved precision-recall at mid to high recall and better probability calibration relative to baselines. We release implementation details, hyperparameters, and ablations for hazard sensitivity and computational footprint. Code and reproducibility materials will be made available upon publication; datasets and implementation are available from the corresponding author upon reasonable request.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-17T17:36:08Z</published>
+    <arxiv:comment>v2: correction note added (title page and abstract). An audit of the shared codebase found the score, threshold, and latency descriptions unsupported by the implementation, and the evaluation streams to be assembled constructions. No quantitative result tables are affected. See arXiv:2605.24696 (corrected v3) and doi:10.5281/zenodo.22673735</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Michel A. Youssef</name>
+      <arxiv:affiliation>Independent Researcher</arxiv:affiliation>
+    </author>
+  </entry>
+</feed>

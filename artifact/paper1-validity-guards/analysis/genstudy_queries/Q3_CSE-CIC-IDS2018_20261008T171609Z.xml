@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/GLfVaSzlNpjsk4n3g0etpNkudTs</id>
+  <title>arXiv Query: search_query=all:"intrusion detection" AND (all:"CSE-CIC-IDS2018" OR all:"CIC-IDS2018") AND submittedDate:"202501010000 TO 202609302359"&amp;id_list=&amp;start=0&amp;max_results=50</title>
+  <updated>2026-10-08T17:16:10Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22intrusion+detection%22+AND+((all:%22CSE-CIC-IDS2018%22+OR+all:%22CIC-IDS2018%22)+AND+submittedDate:%22202501010000+TO+202609302359%22)&amp;start=0&amp;max_results=50&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>11</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.11275v1</id>
+    <title>Few-Shot Learning for Network Intrusion Detection: Methods, Datasets, and Performance</title>
+    <updated>2026-09-10T09:07:58Z</updated>
+    <link href="https://arxiv.org/abs/2609.11275v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.11275v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Anomaly-based network intrusion detection systems (NIDS) are an important first line of defense. However, training NIDS for new attack types is challenging, because labeled attack data are rarely available. Few-shot learning (FSL) addresses this problem by learning from few samples. However, the approaches and evaluation settings, that have been investigated so far, vary widely. This work systematically reviews FSL approaches for NIDS published from 2022 to 2026. We conduct a systematic literature review with PRISMA 2020-like reporting to search ACM Digital Library, IEEE Xplore, and Scopus. From a set of 1,358 initial records, we retain 21 studies after screening, deduplication, and quality filtering. We classify the applied FSL approaches, datasets, and experimental parameters and compare reported performance. Meta-learning and convolutional neural networks are the most common approaches, with 8 and 10 studies, respectively. Most studies evaluate five or fewer samples per class, although settings vary. CIC-IDS2017 and CSE-CIC-IDS2018 are the most frequently used datasets. Missing parameters and source code limit reproducibility and direct comparison between approaches.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-10T09:07:58Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Arne Roszeitis</name>
+    </author>
+    <author>
+      <name>Victor Jüttner</name>
+    </author>
+    <author>
+      <name>Erik Buchmann</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.11291v1</id>
+    <title>Dueling Deep Q-Learning for Intrusion Detection</title>
+    <updated>2026-08-11T16:55:00Z</updated>
+    <link href="https://arxiv.org/abs/2608.11291v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.11291v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Intrusion detection systems (IDS) and automated systems for detecting and reporting cyber threats, are commonly handled via supervised machine learning methods. Though effective, these models struggle to effectively adapt to new attack types. This study proposes a novel approach by employing a reward-based, dueling Q-learning model for IDS, achieving an average accuracy of 99.68% across multiple attack classes. The proposed model has a dueling network architecture which separates its predictions into value and advantage streams. This has the benefit of improving learning efficiency and stability. The model was trained on the CIC-IDS2018, a benchmark dataset based on real-world intrusion detection scenarios, having multiple attack classes such as DDoS, botnets, and brute-force attacks. Furthermore, Explainable AI (XAI), specifically SHAP (SHapley Additive exPlanations), was also integrated into the training and evaluation process to provide interpretability into the model's predictions.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-11T16:55:00Z</published>
+    <arxiv:comment>6 pages, 5 figures. Published in Proc. IEEE SoutheastCon 2025, pp. 1192-1197</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <arxiv:journal_ref>L. Luna, M. P. Berkowitz, L. Niure Kandel, and S. Jansen-Sánchez, "Dueling Deep Q-Learning for Intrusion Detection," in Proc. IEEE SoutheastCon 2025, pp. 1192-1197, 2025</arxiv:journal_ref>
+    <author>
+      <name>Logan Luna</name>
+      <arxiv:affiliation>Georgia Institute of Technology</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Matthew P. Berkowitz</name>
+      <arxiv:affiliation>Embry-Riddle Aeronautical University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Laxima Niure Kandel</name>
+      <arxiv:affiliation>Embry-Riddle Aeronautical University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sirio Jansen-S'anchez</name>
+      <arxiv:affiliation>Embry-Riddle Aeronautical University</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1109/SOUTHEASTCON56624.2025.10971436</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/SOUTHEASTCON56624.2025.10971436" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.16276v1</id>
+    <title>Intelligence-Guided Adaptive Purification for DDoS-Resilient Quantum Networks: A CUDA-Q based Study</title>
+    <updated>2026-07-08T18:56:51Z</updated>
+    <link href="https://arxiv.org/abs/2607.16276v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.16276v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Quantum-repeater networks require adaptive control policies that balance entanglement generation rate, end-to-end fidelity, purification overhead, and memory-induced latency. This tradeoff becomes more complex when the classical control plane is degraded by cyber anomalies or denial-of-service traffic. We develop a CUDA-Q/SeQUeNCe co-simulation workflow for studying adaptive entanglement purification in heterogeneous linear repeater chains. CUDA-Q noisy quantum kernels are used to estimate primitive entanglement purification and swapping behavior, while SeQUeNCe provides an event-layer model for stochastic link generation, waiting-time-dependent memory decay, purification failure, and end-to-end swapping. Under stationary conditions, we compare no purification, local threshold purification, mean-field predictive purification, fixed purification, and a resource-penalized risk-aware predictive policy. In an 8-node chain, the resource-penalized risk-aware controller increases above-target delivery probability relative to fixed purification while reducing latency and purification overhead. We then couple the quantum-network controller to anomaly scores derived from the CSE-CIC-IDS2018 benign-to-SSDP intrusion-detection trace. During the attack period, the attack-unaware controller maintains high raw delivery, but its above-target entanglement delivery falls to 0.098+/-0.007; the IDS-aware resource-adaptive controller switches to more purification-heavy masks and increases above-target delivery to 0.344+/-0.011, closely matching the oracle-aware value of approximately 0.335. These results demonstrate that cyber-state awareness can improve useful quantum-network outcomes by trading raw throughput for fidelity-qualified entanglement delivery.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-08T18:56:51Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Santanu Ganguly</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.05714v1</id>
+    <title>Hybrid CNN-LSTM Framework for Intelligent Cyber Attack Detection and Prevention in U.S. Critical Digital Infrastructure: A Comparative Machine Learning Evaluation on CSE-CIC-IDS2018</title>
+    <updated>2026-06-04T05:14:01Z</updated>
+    <link href="https://arxiv.org/abs/2606.05714v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.05714v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Digital infrastructure is growing at a rapid pace in the United States, and as a result, exposure to advanced cyber threats to critical sectors including healthcare, finance, transportation, energy and government systems is growing. The traditional cybersecurity approaches, including signature-based intrusion detection systems, have become less effective against today's cyber attacks, as they are unable to detect unknown and changing attacks in real time. To overcome these constraints, this research suggests a smart cyber-defense system, which utilizes Artificial Intelligence (AI) and Machine Learning (ML) algorithms in the detection and prevention of cyber attacks in the U.S. digital infrastructure. This study uses the CSE-CIC-IDS2018 dataset, which is a realistic network traffic dataset, along with various cyber attack scenarios, including Distributed Denial of Service (DDoS), brute force attacks, botnets, infiltration attacks, and web-based attacks. A number of machine learning and deep learning models such as Random Forest, XGBoost, Convolutional Neural Networks (CNN) and Long Short-Term Memory (LSTM) networks are implemented and evaluated to be used in identifying malicious network behavior and boosting the accuracy of intrusion detection. The framework proposed combines data preprocessing, feature engineering, real-time traffic monitoring, intelligent threat classification with automated prevention mechanisms to build cybersecurity resilience. E</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-04T05:14:01Z</published>
+    <arxiv:comment>25 pages, 9 figures, CSE CIC IDS2018 dataset, Hybrid CNN LSTM, cyber attack detection</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <arxiv:journal_ref>Journal of Ai ML DL, 1(1), 2025</arxiv:journal_ref>
+    <author>
+      <name>Md. Iqbal Hossan</name>
+    </author>
+    <author>
+      <name>Md. Serajul Kabir Chowdhury Rubel</name>
+    </author>
+    <author>
+      <name>Md. Arifur Rahman</name>
+    </author>
+    <author>
+      <name>B. M. Taslimul Haque</name>
+    </author>
+    <arxiv:doi>10.25163/ai.1110763</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.25163/ai.1110763" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.12655v1</id>
+    <title>Robust Semi-Supervised Temporal Intrusion Detection for Adversarial Cloud Networks</title>
+    <updated>2026-04-14T12:23:52Z</updated>
+    <link href="https://arxiv.org/abs/2604.12655v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.12655v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cloud networks increasingly rely on machine learning based Network Intrusion Detection Systems to defend against evolving cyber threats. However, real-world deployments are challenged by limited labeled data, non-stationary traffic, and adaptive adversaries. While semi-supervised learning can alleviate label scarcity, most existing approaches implicitly assume benign and stationary unlabeled traffic, leading to degraded performance in adversarial cloud environments. This paper proposes a robust semi-supervised temporal learning framework for cloud intrusion detection that explicitly addresses adversarial contamination and temporal drift in unlabeled network traffic. Operating on flow-level data, this framework combines supervised learning with consistency regularization, confidence-aware pseudo-labeling, and selective temporal invariance to conservatively exploit unlabeled traffic while suppressing unreliable samples. By leveraging the temporal structure of network flows, the proposed method improves robustness and generalization across heterogeneous cloud environments. Extensive evaluations on publicly available datasets (CIC-IDS2017, CSE-CIC-IDS2018, and UNSW-NB15) under limited-label conditions demonstrate that the proposed framework consistently outperforms state-of-the-art supervised and semi-supervised network intrusion detection systems in detection performance, label efficiency, and resilience to adversarial and non-stationary traffic.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-14T12:23:52Z</published>
+    <arxiv:comment>This work has been accepted for publication in IEEE 2026 EuCNC &amp; 6G Summit. This is a preprint version. The final published version will be available via IEEE Xplore</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Anasuya Chattopadhyay</name>
+    </author>
+    <author>
+      <name>Daniel Reti</name>
+    </author>
+    <author>
+      <name>Hans D. Schotten</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.17973v2</id>
+    <title>PenTiDef: Decentralized Federated Intrusion Detection System with Differential Privacy and Latent-Space Defense via Blockchain Coordination in IIoT</title>
+    <updated>2026-05-21T09:39:37Z</updated>
+    <link href="https://arxiv.org/abs/2602.17973v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.17973v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper proposes PenTiDef, a fully decentralized, privacy-preserving, and poisoning-resilient framework for decentralized federated IDS (DFL-IDS). PenTiDef synergistically integrates three key components: (i) client-side Distributed Differential Privacy (DDP) with stochastic Gaussian noise to protect gradient leakage, (ii) a lightweight latent-space defense module that extracts and compresses penultimate-layer representations (PLRs) into stable Latent Semantic Representations (LSRs) via AutoEncoder, followed by Centered Kernel Alignment (CKA) and K-Means clustering for robust malicious update detection without auxiliary datasets, and (iii) a permissioned blockchain layer with smart contracts that orchestrates on-chain validation, secure FedAvg aggregation, and immutable auditability, eliminating any central server. Extensive experiments on CIC-IDS2018 and Edge-IIoTSet under both IID and realistic non-IID settings, with adversary ratios up to 40\%, demonstrate that PenTiDef consistently outperforms state-of-the-art baselines (FLARE and FedCC) in detection accuracy and F1-score while maintaining lower training overhead. By jointly addressing privacy, robustness, and decentralization in a unified secure aggregation protocol, PenTiDef provides a practical and scalable solution for trustworthy collaborative intrusion detection in heterogeneous, adversarial IIoT environments.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-20T03:58:48Z</published>
+    <arxiv:comment>version 2, change title of the paper</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Phan The Duy</name>
+    </author>
+    <author>
+      <name>Nghi Hoang Khoa</name>
+    </author>
+    <author>
+      <name>Nguyen Tran Anh Quan</name>
+    </author>
+    <author>
+      <name>Luong Ha Tien</name>
+    </author>
+    <author>
+      <name>Ngo Duc Hoang Son</name>
+    </author>
+    <author>
+      <name>Van-Hau Pham</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.01134v1</id>
+    <title>AI-Powered Hybrid Intrusion Detection Framework for Cloud Security Using Novel Metaheuristic Optimization</title>
+    <updated>2026-01-03T09:42:28Z</updated>
+    <link href="https://arxiv.org/abs/2601.01134v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.01134v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cybersecurity poses considerable problems to Cloud Computing (CC), especially regarding Intrusion Detection Systems (IDSs), facing difficulties with skewed datasets and suboptimal classification model performance. This study presents the Hybrid Intrusion Detection System (HyIDS), an innovative IDS that employs the Energy Valley Optimizer (EVO) for Feature Selection (FS). Additionally, it introduces a novel technique for enhancing the cybersecurity of cloud computing through the integration of machine learning methodologies with the EVO Algorithm. The Energy Valley Optimizer (EVO) effectively diminished features in the CIC-DDoS2019 dataset from 88 to 38 and in the CSE-CIC-IDS2018 data from 80 to 43, significantly enhancing computing efficiency. HyIDS incorporates four Machine Learning (ML) models: Support Vector Machine (SVM), Random Forest (RF), Decision Tree (D_Tree), and K-Nearest Neighbors (KNN). The proposed HyIDS was assessed utilizing two real-world intrusion datasets, CIC-DDoS2019 and CSE-CIC-IDS2018, both distinguished by considerable class imbalances. The CIC-DDoS2019 dataset has a significant imbalance between DDoS assault samples and legal traffic, while the CSE-CIC-IDS2018 dataset primarily comprises benign traffic with insufficient representation of attack types, complicating the detection of minority attacks. A downsampling technique was employed to balance the datasets, hence improving detection efficacy for both benign and malicious traffic. Twenty-four trials were done, revealing substantial enhancements in categorization accuracy, precision, and recall. Our suggested D_TreeEVO model attained an accuracy rate of 99.13% and an F1 score of 98.94% on the CIC-DDoS2019 dataset, and an accuracy rate of 99.78% and an F1 score of 99.70% on the CSE-CIC-IDS2018 data. These data demonstrate that EVO significantly improves cybersecurity in Cloud Computing (CC).</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-03T09:42:28Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Maryam Mahdi Alhusseini</name>
+    </author>
+    <author>
+      <name>Alireza Rouhi</name>
+    </author>
+    <author>
+      <name>Mohammad-Reza Feizi-Derakhshi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.11633v1</id>
+    <title>Adaptive-GraphSketch: Real-Time Edge Anomaly Detection via Multi-Layer Tensor Sketching and Temporal Decay</title>
+    <updated>2025-09-15T06:57:35Z</updated>
+    <link href="https://arxiv.org/abs/2509.11633v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.11633v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Anomaly detection in dynamic graphs is essential for identifying malicious activities, fraud, and unexpected behaviors in real-world systems such as cybersecurity and power grids. However, existing approaches struggle with scalability, probabilistic interpretability, and adaptability to evolving traffic patterns. In this paper, we propose ADAPTIVE-GRAPHSKETCH, a lightweight and scalable framework for real-time anomaly detection in streaming edge data. Our method integrates temporal multi-tensor sketching with Count-Min Sketch using Conservative Update (CMS-CU) to compactly track edge frequency patterns with bounded memory, while mitigating hash collision issues. We incorporate Bayesian inference for probabilistic anomaly scoring and apply Exponentially Weighted Moving Average (EWMA) for adaptive thresholding tuned to burst intensity. Extensive experiments on four real-world intrusion detection datasets demonstrate that ADAPTIVE-GRAPHSKETCH outperforms state-of-the-art baselines such as ANOEDGE-G/L, MIDAS-R, and F-FADE, achieving up to 6.5% AUC gain on CIC-IDS2018 and up to 15.6% on CIC-DDoS2019, while processing 20 million edges in under 3.4 seconds using only 10 hash functions. Our results show that ADAPTIVE-GRAPHSKETCH is practical and effective for fast, accurate anomaly detection in large-scale streaming graphs.
+  Keywords: Anomaly Detection, Streaming, Real-time, Dynamic Graphs, Edge Streams, Tensor Sketching</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-15T06:57:35Z</published>
+    <arxiv:comment>10 pages, 6 figures. Accepted for presentation at the IEEE International Conference on Knowledge Graphs (ICKG 2025). This is the authors accepted version; the final published paper will be available via IEEE Xplore</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Ocheme Anthony Ekle</name>
+    </author>
+    <author>
+      <name>William Eberle</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.02438v1</id>
+    <title>A Review of Various Datasets for Machine Learning Algorithm-Based Intrusion Detection System: Advances and Challenges</title>
+    <updated>2025-06-03T04:47:21Z</updated>
+    <link href="https://arxiv.org/abs/2506.02438v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.02438v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>IDS aims to protect computer networks from security threats by detecting, notifying, and taking appropriate action to prevent illegal access and protect confidential information. As the globe becomes increasingly dependent on technology and automated processes, ensuring secured systems, applications, and networks has become one of the most significant problems of this era. The global web and digital technology have significantly accelerated the evolution of the modern world, necessitating the use of telecommunications and data transfer platforms. Researchers are enhancing the effectiveness of IDS by incorporating popular datasets into machine learning algorithms. IDS, equipped with machine learning classifiers, enhances security attack detection accuracy by identifying normal or abnormal network traffic. This paper explores the methods of capturing and reviewing intrusion detection systems (IDS) and evaluates the challenges existing datasets face. A deluge of research on machine learning (ML) and deep learning (DL) architecture-based intrusion detection techniques has been conducted in the past ten years on various cybersecurity datasets, including KDDCUP'99, NSL-KDD, UNSW-NB15, CICIDS-2017, and CSE-CIC-IDS2018. We conducted a literature review and presented an in-depth analysis of various intrusion detection methods that use SVM, KNN, DT, LR, NB, RF, XGBOOST, Adaboost, and ANN. We provide an overview of each technique, explaining the role of the classifiers and algorithms used. A detailed tabular analysis highlights the datasets used, classifiers employed, attacks detected, evaluation metrics, and conclusions drawn. This article offers a thorough review for future IDS research.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-03T04:47:21Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Sudhanshu Sekhar Tripathy</name>
+    </author>
+    <author>
+      <name>Bichitrananda Behera</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.04367v2</id>
+    <title>WeiDetect: Weibull Distribution-Based Defense against Poisoning Attacks in Federated Learning for Network Intrusion Detection Systems</title>
+    <updated>2025-04-19T15:07:05Z</updated>
+    <link href="https://arxiv.org/abs/2504.04367v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.04367v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In the era of data expansion, ensuring data privacy has become increasingly critical, posing significant challenges to traditional AI-based applications. In addition, the increasing adoption of IoT devices has introduced significant cybersecurity challenges, making traditional Network Intrusion Detection Systems (NIDS) less effective against evolving threats, and privacy concerns and regulatory restrictions limit their deployment. Federated Learning (FL) has emerged as a promising solution, allowing decentralized model training while maintaining data privacy to solve these issues. However, despite implementing privacy-preserving technologies, FL systems remain vulnerable to adversarial attacks. Furthermore, data distribution among clients is not heterogeneous in the FL scenario. We propose WeiDetect, a two-phase, server-side defense mechanism for FL-based NIDS that detects malicious participants to address these challenges. In the first phase, local models are evaluated using a validation dataset to generate validation scores. These scores are then analyzed using a Weibull distribution, identifying and removing malicious models. We conducted experiments to evaluate the effectiveness of our approach in diverse attack settings. Our evaluation included two popular datasets, CIC-Darknet2020 and CSE-CIC-IDS2018, tested under non-IID data distributions. Our findings highlight that WeiDetect outperforms state-of-the-art defense approaches, improving higher target class recall up to 70% and enhancing the global model's F1 score by 1% to 14%.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-06T05:31:24Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Sameera K. M.</name>
+    </author>
+    <author>
+      <name>Vinod P.</name>
+    </author>
+    <author>
+      <name>Anderson Rocha</name>
+    </author>
+    <author>
+      <name>Rafidha Rehiman K. A.</name>
+    </author>
+    <author>
+      <name>Mauro Conti</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.06031v1</id>
+    <title>A Conditional Tabular GAN-Enhanced Intrusion Detection System for Rare Attacks in IoT Networks</title>
+    <updated>2025-02-09T21:13:11Z</updated>
+    <link href="https://arxiv.org/abs/2502.06031v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.06031v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Internet of things (IoT) networks, boosted by 6G technology, are transforming various industries. However, their widespread adoption introduces significant security risks, particularly in detecting rare but potentially damaging cyber-attacks. This makes the development of robust IDS crucial for monitoring network traffic and ensuring their safety. Traditional IDS often struggle with detecting rare attacks due to severe class imbalances in IoT data. In this paper, we propose a novel two-stage system called conditional tabular generative synthetic minority data generation with deep neural network (CTGSM-DNN). In the first stage, a conditional tabular generative adversarial network (CTGAN) is employed to generate synthetic data for rare attack classes. In the second stage, the SMOTEENN method is applied to improve dataset quality. The full study was conducted using the CSE-CIC-IDS2018 dataset, and we assessed the performance of the proposed IDS using different evaluation metrics. The experimental results demonstrated the effectiveness of the proposed multiclass classifier, achieving an overall accuracy of 99.90% and 80% accuracy in detecting rare attacks.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-09T21:13:11Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <arxiv:journal_ref>2025 IEEE International Conference on Communications Workshops (ICC Workshops), pp. 1918-1923, 2025</arxiv:journal_ref>
+    <author>
+      <name>Safaa Menssouri</name>
+    </author>
+    <author>
+      <name>El Mehdi Amhoud</name>
+    </author>
+    <arxiv:doi>10.1109/ICCWorkshops67674.2025.11162182</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/ICCWorkshops67674.2025.11162182" title="doi"/>
+  </entry>
+</feed>

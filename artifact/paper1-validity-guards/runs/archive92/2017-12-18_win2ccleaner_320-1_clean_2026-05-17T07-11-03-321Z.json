@@ -1,0 +1,195 @@
+{
+  "runId": "2026-05-17T07-11-03-321Z",
+  "capturedAt": "2026-05-17T07:13:13.325Z",
+  "injectionStart": "2026-05-17T07:11:13.345Z",
+  "injectionEnd": "2026-05-17T07:11:30.390Z",
+  "attackStartEffective": "2026-05-17T07:11:13.345Z",
+  "truthMode": "replay_start",
+  "baselineSeconds": 10,
+  "preCooldownSeconds": 0,
+  "cooldownSeconds": 10,
+  "pollIntervalMs": 10000,
+  "windowsEvaluated": [
+    1
+  ],
+  "totalEvaluations": 1,
+  "results": [
+    {
+      "timestamp": "2026-05-17T07:12:03.701Z",
+      "phase": "cooldown",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Residual",
+      "truth": "Residual",
+      "riskScore": 82,
+      "startState": "high",
+      "endState": "high",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 57.22630826201426,
+        "scan": 49.837438373266,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "web_probe",
+        "score": 70
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 136,
+        "attacksLast5Min": 191,
+        "attacksLast15Min": 4040,
+        "attacksLastHour": 29610,
+        "burstRatio5mOverHour": 0.0064505234718000674,
+        "burstRatio15mOverHour": 0.1364403917595407
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 8080,
+            "count": 10207
+          },
+          {
+            "port": 443,
+            "count": 7747
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 8080,
+            "count": 10207
+          },
+          {
+            "port": 443,
+            "count": 7747
+          },
+          {
+            "port": 54008,
+            "count": 2
+          },
+          {
+            "port": 54013,
+            "count": 2
+          },
+          {
+            "port": 54016,
+            "count": 2
+          },
+          {
+            "port": 54017,
+            "count": 2
+          },
+          {
+            "port": 54022,
+            "count": 2
+          },
+          {
+            "port": 54027,
+            "count": 2
+          },
+          {
+            "port": 54030,
+            "count": 2
+          },
+          {
+            "port": 54031,
+            "count": 2
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.120",
+          "count": 14303
+        },
+        "topExternalPeerIp": {
+          "ip": "82.165.142.107",
+          "count": 1024
+        },
+        "sourceEntropy": 4.597,
+        "portEntropy": 2.48,
+        "authPortPressure": 0,
+        "webPortPressure": 17954,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 10,
+        "windowedMissingPortCount": 2,
+        "usingWindowedPorts": true,
+        "portDiversity": 4
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 9.318181818181818,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": true,
+      "truth_simple": "Normal",
+      "attack_start_effective": "2026-05-17T07:11:13.345Z"
+    }
+  ],
+  "metrics_global_all_windows": {
+    "TP": 0,
+    "FP": 0,
+    "TN": 0,
+    "FN": 0,
+    "total_samples": 0,
+    "precision": 0,
+    "recall": 0,
+    "specificity": 0,
+    "fpr": 0,
+    "fnr": 0,
+    "accuracy": 0,
+    "balanced_accuracy": 0,
+    "f1": 0
+  },
+  "metrics_per_window": {
+    "1": {
+      "TP": 0,
+      "FP": 0,
+      "TN": 0,
+      "FN": 0,
+      "total_samples": 0,
+      "precision": 0,
+      "recall": 0,
+      "specificity": 0,
+      "fpr": 0,
+      "fnr": 0,
+      "accuracy": 0,
+      "balanced_accuracy": 0,
+      "f1": 0
+    }
+  },
+  "latency_seconds": {
+    "global": null,
+    "perWindow": {
+      "1": null
+    }
+  },
+  "stability": {
+    "1": {
+      "samples": 1,
+      "flips": 0,
+      "flip_rate": 0
+    }
+  },
+  "risk_separation": {
+    "normal_n": 1,
+    "attack_n": 0,
+    "normal_mean": 82,
+    "attack_mean": null,
+    "separation_margin": null
+  },
+  "replay": {
+    "python": "python3",
+    "script": "/home/ubuntu/research/scripts/replay_pcap_events.py",
+    "exitCode": 0
+  },
+  "infectionBoundary": null,
+  "pcap": "2017-12-18_win2ccleaner_320-1",
+  "mode": "clean"
+}

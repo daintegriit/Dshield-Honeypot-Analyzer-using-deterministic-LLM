@@ -1,0 +1,206 @@
+// backend/controllers/copilotController.js
+//
+// DESIGN: the deterministic core is the product. The LLM is an optional
+// explanation layer on top. Neither the behavior summary nor the LLM may take
+// down the deterministic analysis — if they fail, we still return coreSummary
+// and report their status explicitly.
+
+const { buildBehaviorSummary } = require("../services/behaviorSummary");
+const { buildCopilotCore } = require("../services/copilotCore");
+const { generateCopilotInsight } = require("../services/copilotReasoner");
+const { checkStateSupportsNarration } = require("../services/stateDegeneracy");
+const { checkCoreConsistency } = require("../services/coreConsistency");
+const { validateInsight } = require("../services/insightValidator");
+
+const insightCache = require('../services/insightCache');
+
+async function getCopilotInsight(req, res) {
+  // Serve the last completed generation immediately. Generation runs on a
+  // timer with single-flight; requests never trigger one. Staleness is
+  // reported via ageMs rather than hidden behind a blocking call.
+  // The cache holds ONE generation, scored with no sourceFilter and a fixed
+  // window. Any request that asks for a specific scope or window must bypass it
+  // and score live -- otherwise the caller silently receives an unscoped result.
+  // This was a real regression: the replay harness requests ?source=replay and
+  // was served cached scores computed over live honeypot traffic.
+  const wantsScope = !!req.query.source;
+  const wantsWindow = req.query.minutes !== undefined;
+
+  const c = insightCache.get();
+  if (!wantsScope && !wantsWindow && c.generatedAt) {
+    return res.json({
+      ok: true,
+      sourceFilter: 'all',
+      cached: true,
+      generatedAt: c.generatedAt,
+      ageMs: c.ageMs,
+      refreshing: c.refreshing,
+      durationMs: c.durationMs,
+      validation: c.validation,
+      consistency: c.consistency,
+      narration: c.narration,
+      llmStatus: c.llmStatus,
+      behaviorStatus: c.behaviorStatus,
+      behaviorSummary: c.behaviorSummary,
+      coreSummary: c.coreSummary,
+      copilot: c.copilot,
+    });
+  }
+  return getCopilotInsightLive(req, res);
+}
+
+async function getCopilotInsightLive(req, res) {
+  try {
+    const minutes = Number(req.query.minutes || 60);
+    const limit = Number(req.query.limit || 5000);
+
+    // Experiment isolation: when ?source=replay (or honeypot) is passed, scope the
+    // deterministic core to that traffic source only. Absent => score everything.
+    const rawSource = (req.query.source || "").toString().toLowerCase();
+    // An unrecognised scope previously became null, which means UNSCOPED: the
+    // caller asked for one population and received every source, with HTTP 200
+    // and no error. This is the same failure as the cache regression that
+    // served the replay harness scores computed over live honeypot traffic.
+    // Reject rather than widen.
+    if (rawSource && rawSource !== "replay" && rawSource !== "honeypot") {
+      return res.status(400).json({
+        ok: false,
+        error: `unrecognised source "${rawSource}"; expected "replay" or "honeypot"`,
+      });
+    }
+    const sourceFilter = rawSource || null;
+
+    const safeMinutes = Number.isFinite(minutes) ? minutes : 60;
+    const safeLimit = Number.isFinite(limit) ? limit : 5000;
+
+    // ---------------------------------------------
+    // 1. Deterministic Copilot Core (REAL STATE)
+    //    Scoped by sourceFilter when provided.
+    //    THIS IS THE PRODUCT — if it throws, the request genuinely failed.
+    // ---------------------------------------------
+    const coreSummary = await buildCopilotCore({
+      minutes: safeMinutes,
+      sourceFilter,
+    });
+
+    // ---------------------------------------------
+    // 2. Historical / statistical behavior summary (OPTIONAL)
+    //    Feature extraction for the LLM. Must not take down the core.
+    // ---------------------------------------------
+    let behaviorSummary = null;
+    let behaviorStatus = "ok";
+
+    try {
+      behaviorSummary = await buildBehaviorSummary({
+        minutes: safeMinutes,
+        limit: safeLimit,
+        sourceFilter,
+      });
+    } catch (err) {
+      console.warn("⚠️ Behavior summary unavailable:", err.message);
+      behaviorStatus = "unavailable";
+      behaviorSummary = { available: false, reason: err.message };
+    }
+
+    // ---------------------------------------------
+    // 3. Merge into single situation report
+    //    (this is what the LLM reasons over)
+    // ---------------------------------------------
+    const situationReport = {
+      behavior: behaviorSummary,
+      core: coreSummary,
+    };
+
+    // ---------------------------------------------
+    // 4. LLM reasoning (OPTIONAL)
+    //    If no model is reachable (e.g. Ollama down), we still return the
+    //    deterministic analysis and flag the LLM as unavailable.
+    // ---------------------------------------------
+    let copilotInsight = null;
+    let llmStatus = "ok";
+
+    try {
+      // Same gate as the cached path. Adding it to one path only left this
+      // one open: a scoped request for a window with zero events still
+      // returned "Potential Scanning Activity Detected". A guard placed on one
+      // route is silently absent from every other route to the same operation,
+      // and neither route reports an error.
+      const narration = checkStateSupportsNarration(coreSummary);
+      if (narration.narratable === false) {
+        copilotInsight = { ok: true, refused: true, insight: narration.refusal };
+        console.log(
+          "narration refused (live): " +
+            narration.conditions.map((c) => c.condition).join(", ")
+        );
+      } else {
+        copilotInsight = await generateCopilotInsight(situationReport);
+      }
+      // generateCopilotInsight catches transport errors internally and RETURNS
+      // { available:false, reason }. Without this check llmStatus reports "ok"
+      // for a request that timed out.
+      if (copilotInsight && copilotInsight.available === false) {
+        llmStatus = "unavailable";
+        console.warn("⚠️ LLM insight unavailable:", copilotInsight.reason);
+      }
+    } catch (err) {
+      console.warn("⚠️ LLM insight unavailable:", err.message);
+      llmStatus = "unavailable";
+      copilotInsight = { available: false, reason: err.message };
+    }
+
+    // The cached path runs consistency and validation; this one did not.
+    // Found by check_path_coverage.js, which was written to detect exactly
+    // this and found it in code added an hour earlier.
+    let consistency = null;
+    let validation = null;
+    try {
+      consistency = checkCoreConsistency(coreSummary);
+    } catch (e) {
+      consistency = { error: e.message };
+    }
+    try {
+      const ins =
+        copilotInsight && copilotInsight.insight
+          ? copilotInsight.insight
+          : copilotInsight;
+      validation = validateInsight(ins, {
+        core: coreSummary,
+        behavior: behaviorSummary,
+      });
+    } catch (e) {
+      validation = { error: e.message };
+    }
+
+    return res.json({
+      ok: true,
+
+      // Echo the applied scope for experiment auditing
+      sourceFilter: sourceFilter || "all",
+
+      // Explicit component health — lets the experiment record whether the LLM
+      // actually contributed to a given evaluation cycle.
+      llmStatus,
+      behaviorStatus,
+      consistency,
+      validation,
+
+      // Expose layers explicitly (UI + audit-friendly)
+      behaviorSummary,
+      coreSummary,
+
+      // LLM output (strict JSON) — may be { available: false } when offline
+      copilot: copilotInsight,
+    });
+  } catch (err) {
+    // Only reached if the DETERMINISTIC core itself failed.
+    console.error("Copilot insight error (core failure):", err);
+    return res.status(500).json({
+      ok: false,
+      error: err.message || "Copilot failed",
+    });
+  }
+}
+
+module.exports = {
+  getCopilotInsight,
+};

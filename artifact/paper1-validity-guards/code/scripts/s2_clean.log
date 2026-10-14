@@ -1,0 +1,109 @@
+nohup: ignoring input
+========================================================================
+           CTU-13 LABELED NETFLOW REPLAY
+========================================================================
+  Scenario:            2
+  File:                /home/ubuntu/research/scripts/../ctu13/CTU-13-Dataset/2/capture20110811.binetflow
+  Ingest:              http://localhost:5002/api/ingest/log
+  Include background:  False
+  Limit:               none
+  Dry run:             False
+========================================================================
+PCAP_NAME=ctu13-s2
+
+📂 Loading and classifying flows...
+
+📊 Load statistics
+------------------------------------------------------------------------
+  rows read:           1,808,122
+  botnet flows:        20,941   (of which C&C: 673)
+  normal flows:        9,120
+  background kept:     0
+  background skipped:  1,778,061
+  unparseable:         0
+  TO REPLAY:           30,061
+  load time:           5.2s
+------------------------------------------------------------------------
+
+⏱  Estimated replay time: 10.0 min at 50 events/sec
+
+🚀 Replaying 30,061 flows...
+
+→       1/30,061 (  0.0%) | sent=1 failed=0 |  74.4 eps |   0.0 min
+→     501/30,061 (  1.7%) | sent=501 failed=0 |  35.9 eps |   0.2 min
+→   1,001/30,061 (  3.3%) | sent=1,001 failed=0 |  36.0 eps |   0.5 min
+→   1,501/30,061 (  5.0%) | sent=1,501 failed=0 |  35.6 eps |   0.7 min
+→   2,001/30,061 (  6.7%) | sent=2,001 failed=0 |  35.6 eps |   0.9 min
+→   2,501/30,061 (  8.3%) | sent=2,501 failed=0 |  35.7 eps |   1.2 min
+→   3,001/30,061 ( 10.0%) | sent=3,001 failed=0 |  35.7 eps |   1.4 min
+→   3,501/30,061 ( 11.6%) | sent=3,501 failed=0 |  35.6 eps |   1.6 min
+→   4,001/30,061 ( 13.3%) | sent=4,001 failed=0 |  35.7 eps |   1.9 min
+→   4,501/30,061 ( 15.0%) | sent=4,501 failed=0 |  35.7 eps |   2.1 min
+→   5,001/30,061 ( 16.6%) | sent=5,001 failed=0 |  35.7 eps |   2.3 min
+→   5,501/30,061 ( 18.3%) | sent=5,501 failed=0 |  35.7 eps |   2.6 min
+→   6,001/30,061 ( 20.0%) | sent=6,001 failed=0 |  35.7 eps |   2.8 min
+→   6,501/30,061 ( 21.6%) | sent=6,501 failed=0 |  35.7 eps |   3.0 min
+→   7,001/30,061 ( 23.3%) | sent=7,001 failed=0 |  35.8 eps |   3.3 min
+→   7,501/30,061 ( 25.0%) | sent=7,501 failed=0 |  35.8 eps |   3.5 min
+→   8,001/30,061 ( 26.6%) | sent=8,001 failed=0 |  35.8 eps |   3.7 min
+→   8,501/30,061 ( 28.3%) | sent=8,501 failed=0 |  35.8 eps |   4.0 min
+→   9,001/30,061 ( 29.9%) | sent=9,001 failed=0 |  35.8 eps |   4.2 min
+→   9,501/30,061 ( 31.6%) | sent=9,501 failed=0 |  35.8 eps |   4.4 min
+→  10,001/30,061 ( 33.3%) | sent=10,001 failed=0 |  35.7 eps |   4.7 min
+→  10,501/30,061 ( 34.9%) | sent=10,501 failed=0 |  35.7 eps |   4.9 min
+→  11,001/30,061 ( 36.6%) | sent=11,001 failed=0 |  35.8 eps |   5.1 min
+→  11,501/30,061 ( 38.3%) | sent=11,501 failed=0 |  35.8 eps |   5.4 min
+→  12,001/30,061 ( 39.9%) | sent=12,001 failed=0 |  35.7 eps |   5.6 min
+→  12,501/30,061 ( 41.6%) | sent=12,501 failed=0 |  35.7 eps |   5.8 min
+→  13,001/30,061 ( 43.2%) | sent=13,001 failed=0 |  35.7 eps |   6.1 min
+→  13,501/30,061 ( 44.9%) | sent=13,501 failed=0 |  35.8 eps |   6.3 min
+→  14,001/30,061 ( 46.6%) | sent=14,001 failed=0 |  35.8 eps |   6.5 min
+→  14,501/30,061 ( 48.2%) | sent=14,501 failed=0 |  35.7 eps |   6.8 min
+→  15,001/30,061 ( 49.9%) | sent=15,001 failed=0 |  35.8 eps |   7.0 min
+→  15,501/30,061 ( 51.6%) | sent=15,501 failed=0 |  35.8 eps |   7.2 min
+→  16,001/30,061 ( 53.2%) | sent=16,001 failed=0 |  35.8 eps |   7.5 min
+→  16,501/30,061 ( 54.9%) | sent=16,501 failed=0 |  35.8 eps |   7.7 min
+→  17,001/30,061 ( 56.6%) | sent=17,001 failed=0 |  35.8 eps |   7.9 min
+→  17,501/30,061 ( 58.2%) | sent=17,501 failed=0 |  35.8 eps |   8.2 min
+→  18,001/30,061 ( 59.9%) | sent=18,001 failed=0 |  35.8 eps |   8.4 min
+→  18,501/30,061 ( 61.5%) | sent=18,501 failed=0 |  35.8 eps |   8.6 min
+→  19,001/30,061 ( 63.2%) | sent=19,001 failed=0 |  35.8 eps |   8.9 min
+→  19,501/30,061 ( 64.9%) | sent=19,501 failed=0 |  35.8 eps |   9.1 min
+→  20,001/30,061 ( 66.5%) | sent=20,001 failed=0 |  35.8 eps |   9.3 min
+→  20,501/30,061 ( 68.2%) | sent=20,501 failed=0 |  35.8 eps |   9.6 min
+→  21,001/30,061 ( 69.9%) | sent=21,001 failed=0 |  35.7 eps |   9.8 min
+→  21,501/30,061 ( 71.5%) | sent=21,501 failed=0 |  35.7 eps |  10.0 min
+→  22,001/30,061 ( 73.2%) | sent=22,001 failed=0 |  35.8 eps |  10.3 min
+→  22,501/30,061 ( 74.9%) | sent=22,501 failed=0 |  35.8 eps |  10.5 min
+→  23,001/30,061 ( 76.5%) | sent=23,001 failed=0 |  35.8 eps |  10.7 min
+→  23,501/30,061 ( 78.2%) | sent=23,501 failed=0 |  35.8 eps |  11.0 min
+→  24,001/30,061 ( 79.8%) | sent=24,001 failed=0 |  35.8 eps |  11.2 min
+→  24,501/30,061 ( 81.5%) | sent=24,501 failed=0 |  35.8 eps |  11.4 min
+→  25,001/30,061 ( 83.2%) | sent=25,001 failed=0 |  35.8 eps |  11.7 min
+→  25,501/30,061 ( 84.8%) | sent=25,501 failed=0 |  35.8 eps |  11.9 min
+→  26,001/30,061 ( 86.5%) | sent=26,001 failed=0 |  35.8 eps |  12.1 min
+→  26,501/30,061 ( 88.2%) | sent=26,501 failed=0 |  35.8 eps |  12.3 min
+→  27,001/30,061 ( 89.8%) | sent=27,001 failed=0 |  35.8 eps |  12.6 min
+→  27,501/30,061 ( 91.5%) | sent=27,501 failed=0 |  35.8 eps |  12.8 min
+→  28,001/30,061 ( 93.1%) | sent=28,001 failed=0 |  35.8 eps |  13.0 min
+→  28,501/30,061 ( 94.8%) | sent=28,501 failed=0 |  35.8 eps |  13.3 min
+→  29,001/30,061 ( 96.5%) | sent=29,001 failed=0 |  35.8 eps |  13.5 min
+→  29,501/30,061 ( 98.1%) | sent=29,501 failed=0 |  35.8 eps |  13.7 min
+→  30,001/30,061 ( 99.8%) | sent=30,001 failed=0 |  35.8 eps |  14.0 min
+→  30,061/30,061 (100.0%) | sent=30,061 failed=0 |  35.8 eps |  14.0 min
+
+========================================================================
+✅ REPLAY COMPLETE
+========================================================================
+  scenario:        2 (ctu13-s2)
+  sent:            30,061
+  failed:          0
+  duration:        14.0 min
+  effective eps:   35.77
+========================================================================
+
+Ground truth is stored per-document as ctu_class / ctu_subclass.
+Query examples:
+  db.attacks.countDocuments({ replay_pcap: "ctu13-s2", ctu_class: "botnet" })
+  db.attacks.countDocuments({ replay_pcap: "ctu13-s2", ctu_class: "normal" })
+  db.attacks.countDocuments({ replay_pcap: "ctu13-s2", ctu_subclass: "c2" })

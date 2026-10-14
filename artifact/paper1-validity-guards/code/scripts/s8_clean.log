@@ -1,0 +1,206 @@
+nohup: ignoring input
+========================================================================
+           CTU-13 LABELED NETFLOW REPLAY
+========================================================================
+  Scenario:            8
+  File:                /home/ubuntu/research/scripts/../ctu13/CTU-13-Dataset/8/capture20110816-3.binetflow
+  Ingest:              http://localhost:5002/api/ingest/log
+  Include background:  False
+  Limit:               none
+  Dry run:             False
+========================================================================
+PCAP_NAME=ctu13-s8
+
+📂 Loading and classifying flows...
+
+📊 Load statistics
+------------------------------------------------------------------------
+  rows read:           2,954,230
+  botnet flows:        6,127   (of which C&C: 1,074)
+  normal flows:        72,822
+  background kept:     0
+  background skipped:  2,875,281
+  unparseable:         0
+  TO REPLAY:           78,949
+  load time:           9.4s
+------------------------------------------------------------------------
+
+⏱  Estimated replay time: 26.3 min at 50 events/sec
+
+🚀 Replaying 78,949 flows...
+
+→       1/78,949 (  0.0%) | sent=1 failed=0 |  74.7 eps |   0.0 min
+→     501/78,949 (  0.6%) | sent=501 failed=0 |  36.1 eps |   0.2 min
+→   1,001/78,949 (  1.3%) | sent=1,001 failed=0 |  36.0 eps |   0.5 min
+→   1,501/78,949 (  1.9%) | sent=1,501 failed=0 |  36.0 eps |   0.7 min
+→   2,001/78,949 (  2.5%) | sent=2,001 failed=0 |  36.0 eps |   0.9 min
+→   2,501/78,949 (  3.2%) | sent=2,501 failed=0 |  36.0 eps |   1.2 min
+→   3,001/78,949 (  3.8%) | sent=3,001 failed=0 |  36.0 eps |   1.4 min
+→   3,501/78,949 (  4.4%) | sent=3,501 failed=0 |  36.0 eps |   1.6 min
+→   4,001/78,949 (  5.1%) | sent=4,001 failed=0 |  36.0 eps |   1.9 min
+→   4,501/78,949 (  5.7%) | sent=4,501 failed=0 |  36.0 eps |   2.1 min
+→   5,001/78,949 (  6.3%) | sent=5,001 failed=0 |  36.0 eps |   2.3 min
+→   5,501/78,949 (  7.0%) | sent=5,501 failed=0 |  36.0 eps |   2.5 min
+→   6,001/78,949 (  7.6%) | sent=6,001 failed=0 |  36.0 eps |   2.8 min
+→   6,501/78,949 (  8.2%) | sent=6,501 failed=0 |  36.0 eps |   3.0 min
+→   7,001/78,949 (  8.9%) | sent=7,001 failed=0 |  36.0 eps |   3.2 min
+→   7,501/78,949 (  9.5%) | sent=7,501 failed=0 |  36.0 eps |   3.5 min
+→   8,001/78,949 ( 10.1%) | sent=8,001 failed=0 |  36.0 eps |   3.7 min
+→   8,501/78,949 ( 10.8%) | sent=8,501 failed=0 |  36.0 eps |   3.9 min
+→   9,001/78,949 ( 11.4%) | sent=9,001 failed=0 |  36.0 eps |   4.2 min
+→   9,501/78,949 ( 12.0%) | sent=9,501 failed=0 |  36.0 eps |   4.4 min
+→  10,001/78,949 ( 12.7%) | sent=10,001 failed=0 |  36.0 eps |   4.6 min
+→  10,501/78,949 ( 13.3%) | sent=10,501 failed=0 |  36.0 eps |   4.9 min
+→  11,001/78,949 ( 13.9%) | sent=11,001 failed=0 |  36.0 eps |   5.1 min
+→  11,501/78,949 ( 14.6%) | sent=11,501 failed=0 |  36.0 eps |   5.3 min
+→  12,001/78,949 ( 15.2%) | sent=12,001 failed=0 |  36.0 eps |   5.6 min
+→  12,501/78,949 ( 15.8%) | sent=12,501 failed=0 |  36.0 eps |   5.8 min
+→  13,001/78,949 ( 16.5%) | sent=13,001 failed=0 |  36.0 eps |   6.0 min
+→  13,501/78,949 ( 17.1%) | sent=13,501 failed=0 |  36.0 eps |   6.3 min
+→  14,001/78,949 ( 17.7%) | sent=14,001 failed=0 |  35.9 eps |   6.5 min
+→  14,501/78,949 ( 18.4%) | sent=14,501 failed=0 |  35.9 eps |   6.7 min
+→  15,001/78,949 ( 19.0%) | sent=15,001 failed=0 |  35.9 eps |   7.0 min
+→  15,501/78,949 ( 19.6%) | sent=15,501 failed=0 |  35.9 eps |   7.2 min
+→  16,001/78,949 ( 20.3%) | sent=16,001 failed=0 |  35.9 eps |   7.4 min
+→  16,501/78,949 ( 20.9%) | sent=16,501 failed=0 |  35.9 eps |   7.7 min
+→  17,001/78,949 ( 21.5%) | sent=17,001 failed=0 |  35.9 eps |   7.9 min
+→  17,501/78,949 ( 22.2%) | sent=17,501 failed=0 |  35.9 eps |   8.1 min
+→  18,001/78,949 ( 22.8%) | sent=18,001 failed=0 |  35.9 eps |   8.4 min
+→  18,501/78,949 ( 23.4%) | sent=18,501 failed=0 |  35.9 eps |   8.6 min
+→  19,001/78,949 ( 24.1%) | sent=19,001 failed=0 |  35.9 eps |   8.8 min
+→  19,501/78,949 ( 24.7%) | sent=19,501 failed=0 |  35.9 eps |   9.1 min
+→  20,001/78,949 ( 25.3%) | sent=20,001 failed=0 |  35.9 eps |   9.3 min
+→  20,501/78,949 ( 26.0%) | sent=20,501 failed=0 |  35.8 eps |   9.5 min
+→  21,001/78,949 ( 26.6%) | sent=21,001 failed=0 |  35.9 eps |   9.8 min
+→  21,501/78,949 ( 27.2%) | sent=21,501 failed=0 |  35.9 eps |  10.0 min
+→  22,001/78,949 ( 27.9%) | sent=22,001 failed=0 |  35.9 eps |  10.2 min
+→  22,501/78,949 ( 28.5%) | sent=22,501 failed=0 |  35.9 eps |  10.5 min
+→  23,001/78,949 ( 29.1%) | sent=23,001 failed=0 |  35.8 eps |  10.7 min
+→  23,501/78,949 ( 29.8%) | sent=23,501 failed=0 |  35.8 eps |  10.9 min
+→  24,001/78,949 ( 30.4%) | sent=24,001 failed=0 |  35.8 eps |  11.2 min
+→  24,501/78,949 ( 31.0%) | sent=24,501 failed=0 |  35.9 eps |  11.4 min
+→  25,001/78,949 ( 31.7%) | sent=25,001 failed=0 |  35.8 eps |  11.6 min
+→  25,501/78,949 ( 32.3%) | sent=25,501 failed=0 |  35.8 eps |  11.9 min
+→  26,001/78,949 ( 32.9%) | sent=26,001 failed=0 |  35.8 eps |  12.1 min
+→  26,501/78,949 ( 33.6%) | sent=26,501 failed=0 |  35.8 eps |  12.3 min
+→  27,001/78,949 ( 34.2%) | sent=27,001 failed=0 |  35.8 eps |  12.6 min
+→  27,501/78,949 ( 34.8%) | sent=27,501 failed=0 |  35.8 eps |  12.8 min
+→  28,001/78,949 ( 35.5%) | sent=28,001 failed=0 |  35.8 eps |  13.0 min
+→  28,501/78,949 ( 36.1%) | sent=28,501 failed=0 |  35.8 eps |  13.3 min
+→  29,001/78,949 ( 36.7%) | sent=29,001 failed=0 |  35.8 eps |  13.5 min
+→  29,501/78,949 ( 37.4%) | sent=29,501 failed=0 |  35.8 eps |  13.7 min
+→  30,001/78,949 ( 38.0%) | sent=30,001 failed=0 |  35.8 eps |  14.0 min
+→  30,501/78,949 ( 38.6%) | sent=30,501 failed=0 |  35.8 eps |  14.2 min
+→  31,001/78,949 ( 39.3%) | sent=31,001 failed=0 |  35.8 eps |  14.4 min
+→  31,501/78,949 ( 39.9%) | sent=31,501 failed=0 |  35.8 eps |  14.7 min
+→  32,001/78,949 ( 40.5%) | sent=32,001 failed=0 |  35.8 eps |  14.9 min
+→  32,501/78,949 ( 41.2%) | sent=32,501 failed=0 |  35.8 eps |  15.1 min
+→  33,001/78,949 ( 41.8%) | sent=33,001 failed=0 |  35.8 eps |  15.4 min
+→  33,501/78,949 ( 42.4%) | sent=33,501 failed=0 |  35.8 eps |  15.6 min
+→  34,001/78,949 ( 43.1%) | sent=34,001 failed=0 |  35.8 eps |  15.8 min
+→  34,501/78,949 ( 43.7%) | sent=34,501 failed=0 |  35.8 eps |  16.1 min
+→  35,001/78,949 ( 44.3%) | sent=35,001 failed=0 |  35.8 eps |  16.3 min
+→  35,501/78,949 ( 45.0%) | sent=35,501 failed=0 |  35.8 eps |  16.5 min
+→  36,001/78,949 ( 45.6%) | sent=36,001 failed=0 |  35.8 eps |  16.8 min
+→  36,501/78,949 ( 46.2%) | sent=36,501 failed=0 |  35.8 eps |  17.0 min
+→  37,001/78,949 ( 46.9%) | sent=37,001 failed=0 |  35.8 eps |  17.2 min
+→  37,501/78,949 ( 47.5%) | sent=37,501 failed=0 |  35.8 eps |  17.5 min
+→  38,001/78,949 ( 48.1%) | sent=38,001 failed=0 |  35.8 eps |  17.7 min
+→  38,501/78,949 ( 48.8%) | sent=38,501 failed=0 |  35.8 eps |  17.9 min
+→  39,001/78,949 ( 49.4%) | sent=39,001 failed=0 |  35.8 eps |  18.2 min
+→  39,501/78,949 ( 50.0%) | sent=39,501 failed=0 |  35.8 eps |  18.4 min
+→  40,001/78,949 ( 50.7%) | sent=40,001 failed=0 |  35.8 eps |  18.6 min
+→  40,501/78,949 ( 51.3%) | sent=40,501 failed=0 |  35.8 eps |  18.9 min
+→  41,001/78,949 ( 51.9%) | sent=41,001 failed=0 |  35.8 eps |  19.1 min
+→  41,501/78,949 ( 52.6%) | sent=41,501 failed=0 |  35.8 eps |  19.3 min
+→  42,001/78,949 ( 53.2%) | sent=42,001 failed=0 |  35.8 eps |  19.6 min
+→  42,501/78,949 ( 53.8%) | sent=42,501 failed=0 |  35.8 eps |  19.8 min
+→  43,001/78,949 ( 54.5%) | sent=43,001 failed=0 |  35.8 eps |  20.0 min
+→  43,501/78,949 ( 55.1%) | sent=43,501 failed=0 |  35.8 eps |  20.2 min
+→  44,001/78,949 ( 55.7%) | sent=44,001 failed=0 |  35.8 eps |  20.5 min
+→  44,501/78,949 ( 56.4%) | sent=44,501 failed=0 |  35.8 eps |  20.7 min
+→  45,001/78,949 ( 57.0%) | sent=45,001 failed=0 |  35.8 eps |  20.9 min
+→  45,501/78,949 ( 57.6%) | sent=45,501 failed=0 |  35.8 eps |  21.2 min
+→  46,001/78,949 ( 58.3%) | sent=46,001 failed=0 |  35.8 eps |  21.4 min
+→  46,501/78,949 ( 58.9%) | sent=46,501 failed=0 |  35.8 eps |  21.6 min
+→  47,001/78,949 ( 59.5%) | sent=47,001 failed=0 |  35.8 eps |  21.9 min
+→  47,501/78,949 ( 60.2%) | sent=47,501 failed=0 |  35.8 eps |  22.1 min
+→  48,001/78,949 ( 60.8%) | sent=48,001 failed=0 |  35.8 eps |  22.3 min
+→  48,501/78,949 ( 61.4%) | sent=48,501 failed=0 |  35.8 eps |  22.6 min
+→  49,001/78,949 ( 62.1%) | sent=49,001 failed=0 |  35.8 eps |  22.8 min
+→  49,501/78,949 ( 62.7%) | sent=49,501 failed=0 |  35.8 eps |  23.0 min
+→  50,001/78,949 ( 63.3%) | sent=50,001 failed=0 |  35.8 eps |  23.3 min
+→  50,501/78,949 ( 64.0%) | sent=50,501 failed=0 |  35.8 eps |  23.5 min
+→  51,001/78,949 ( 64.6%) | sent=51,001 failed=0 |  35.8 eps |  23.7 min
+→  51,501/78,949 ( 65.2%) | sent=51,501 failed=0 |  35.8 eps |  24.0 min
+→  52,001/78,949 ( 65.9%) | sent=52,001 failed=0 |  35.8 eps |  24.2 min
+→  52,501/78,949 ( 66.5%) | sent=52,501 failed=0 |  35.8 eps |  24.4 min
+→  53,001/78,949 ( 67.1%) | sent=53,001 failed=0 |  35.8 eps |  24.7 min
+→  53,501/78,949 ( 67.8%) | sent=53,501 failed=0 |  35.8 eps |  24.9 min
+→  54,001/78,949 ( 68.4%) | sent=54,001 failed=0 |  35.8 eps |  25.1 min
+→  54,501/78,949 ( 69.0%) | sent=54,501 failed=0 |  35.8 eps |  25.4 min
+→  55,001/78,949 ( 69.7%) | sent=55,001 failed=0 |  35.8 eps |  25.6 min
+→  55,501/78,949 ( 70.3%) | sent=55,501 failed=0 |  35.8 eps |  25.8 min
+→  56,001/78,949 ( 70.9%) | sent=56,001 failed=0 |  35.8 eps |  26.1 min
+→  56,501/78,949 ( 71.6%) | sent=56,501 failed=0 |  35.8 eps |  26.3 min
+→  57,001/78,949 ( 72.2%) | sent=57,001 failed=0 |  35.8 eps |  26.5 min
+→  57,501/78,949 ( 72.8%) | sent=57,501 failed=0 |  35.8 eps |  26.8 min
+→  58,001/78,949 ( 73.5%) | sent=58,001 failed=0 |  35.8 eps |  27.0 min
+→  58,501/78,949 ( 74.1%) | sent=58,501 failed=0 |  35.8 eps |  27.2 min
+→  59,001/78,949 ( 74.7%) | sent=59,001 failed=0 |  35.8 eps |  27.5 min
+→  59,501/78,949 ( 75.4%) | sent=59,501 failed=0 |  35.8 eps |  27.7 min
+→  60,001/78,949 ( 76.0%) | sent=60,001 failed=0 |  35.8 eps |  27.9 min
+→  60,501/78,949 ( 76.6%) | sent=60,501 failed=0 |  35.8 eps |  28.2 min
+→  61,001/78,949 ( 77.3%) | sent=61,001 failed=0 |  35.8 eps |  28.4 min
+→  61,501/78,949 ( 77.9%) | sent=61,501 failed=0 |  35.8 eps |  28.6 min
+→  62,001/78,949 ( 78.5%) | sent=62,001 failed=0 |  35.8 eps |  28.9 min
+→  62,501/78,949 ( 79.2%) | sent=62,501 failed=0 |  35.8 eps |  29.1 min
+→  63,001/78,949 ( 79.8%) | sent=63,001 failed=0 |  35.8 eps |  29.3 min
+→  63,501/78,949 ( 80.4%) | sent=63,501 failed=0 |  35.8 eps |  29.6 min
+→  64,001/78,949 ( 81.1%) | sent=64,001 failed=0 |  35.8 eps |  29.8 min
+→  64,501/78,949 ( 81.7%) | sent=64,501 failed=0 |  35.8 eps |  30.0 min
+→  65,001/78,949 ( 82.3%) | sent=65,001 failed=0 |  35.8 eps |  30.3 min
+→  65,501/78,949 ( 83.0%) | sent=65,501 failed=0 |  35.8 eps |  30.5 min
+→  66,001/78,949 ( 83.6%) | sent=66,001 failed=0 |  35.8 eps |  30.7 min
+→  66,501/78,949 ( 84.2%) | sent=66,501 failed=0 |  35.8 eps |  31.0 min
+→  67,001/78,949 ( 84.9%) | sent=67,001 failed=0 |  35.8 eps |  31.2 min
+→  67,501/78,949 ( 85.5%) | sent=67,501 failed=0 |  35.8 eps |  31.4 min
+→  68,001/78,949 ( 86.1%) | sent=68,001 failed=0 |  35.8 eps |  31.7 min
+→  68,501/78,949 ( 86.8%) | sent=68,501 failed=0 |  35.8 eps |  31.9 min
+→  69,001/78,949 ( 87.4%) | sent=69,001 failed=0 |  35.8 eps |  32.1 min
+→  69,501/78,949 ( 88.0%) | sent=69,501 failed=0 |  35.8 eps |  32.4 min
+→  70,001/78,949 ( 88.7%) | sent=70,001 failed=0 |  35.8 eps |  32.6 min
+→  70,501/78,949 ( 89.3%) | sent=70,501 failed=0 |  35.8 eps |  32.9 min
+→  71,001/78,949 ( 89.9%) | sent=71,001 failed=0 |  35.8 eps |  33.1 min
+→  71,501/78,949 ( 90.6%) | sent=71,501 failed=0 |  35.8 eps |  33.3 min
+→  72,001/78,949 ( 91.2%) | sent=72,001 failed=0 |  35.8 eps |  33.5 min
+→  72,501/78,949 ( 91.8%) | sent=72,501 failed=0 |  35.8 eps |  33.8 min
+→  73,001/78,949 ( 92.5%) | sent=73,001 failed=0 |  35.8 eps |  34.0 min
+→  73,501/78,949 ( 93.1%) | sent=73,501 failed=0 |  35.8 eps |  34.2 min
+→  74,001/78,949 ( 93.7%) | sent=74,001 failed=0 |  35.8 eps |  34.5 min
+→  74,501/78,949 ( 94.4%) | sent=74,501 failed=0 |  35.8 eps |  34.7 min
+→  75,001/78,949 ( 95.0%) | sent=75,001 failed=0 |  35.8 eps |  34.9 min
+→  75,501/78,949 ( 95.6%) | sent=75,501 failed=0 |  35.8 eps |  35.2 min
+→  76,001/78,949 ( 96.3%) | sent=76,001 failed=0 |  35.8 eps |  35.4 min
+→  76,501/78,949 ( 96.9%) | sent=76,501 failed=0 |  35.8 eps |  35.6 min
+→  77,001/78,949 ( 97.5%) | sent=77,001 failed=0 |  35.8 eps |  35.9 min
+→  77,501/78,949 ( 98.2%) | sent=77,501 failed=0 |  35.8 eps |  36.1 min
+→  78,001/78,949 ( 98.8%) | sent=78,001 failed=0 |  35.8 eps |  36.3 min
+→  78,501/78,949 ( 99.4%) | sent=78,501 failed=0 |  35.8 eps |  36.6 min
+→  78,949/78,949 (100.0%) | sent=78,949 failed=0 |  35.8 eps |  36.8 min
+
+========================================================================
+✅ REPLAY COMPLETE
+========================================================================
+  scenario:        8 (ctu13-s8)
+  sent:            78,949
+  failed:          0
+  duration:        36.8 min
+  effective eps:   35.78
+========================================================================
+
+Ground truth is stored per-document as ctu_class / ctu_subclass.
+Query examples:
+  db.attacks.countDocuments({ replay_pcap: "ctu13-s8", ctu_class: "botnet" })
+  db.attacks.countDocuments({ replay_pcap: "ctu13-s8", ctu_class: "normal" })
+  db.attacks.countDocuments({ replay_pcap: "ctu13-s8", ctu_subclass: "c2" })

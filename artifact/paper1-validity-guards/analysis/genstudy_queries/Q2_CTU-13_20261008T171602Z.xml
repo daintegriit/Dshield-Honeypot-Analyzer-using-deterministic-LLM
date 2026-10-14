@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Raxi19ReTTQacZbZEqpFxVYYnxU</id>
+  <title>arXiv Query: search_query=all:"CTU-13" AND (all:"botnet" OR all:"intrusion detection") AND submittedDate:"202501010000 TO 202609302359"&amp;id_list=&amp;start=0&amp;max_results=50</title>
+  <updated>2026-10-08T17:16:05Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22CTU-13%22+AND+((all:%22botnet%22+OR+all:%22intrusion+detection%22)+AND+submittedDate:%22202501010000+TO+202609302359%22)&amp;start=0&amp;max_results=50&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>7</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2608.24454v1</id>
+    <title>Defending Network Intrusion Detection Systems Based on Graph Neural Networks Against Structural Adversarial Attacks</title>
+    <updated>2026-08-25T12:06:12Z</updated>
+    <link href="https://arxiv.org/abs/2608.24454v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.24454v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Graph Neural Networks (GNNs) represent a promising solution for Machine Learning (ML) based Network Intrusion Detection Systems (NIDS), thanks to their ability to leverage both network flow features and topological patterns. While GNN classifiers demonstrate superior robustness against feature-based adversarial attacks compared to other ML detectors, they remain vulnerable to structural adversarial attacks, where an attacker perturbs the underlying network graph topology by injecting edges or inserting nodes. Such attacks pose a realistic and severe threat, undermining the reliability of GNN-based NIDS in practical deployments. While countermeasures have been proposed in the literature, they often rely on assumptions that are unrealistic in real-world cybersecurity scenarios. In this paper, we propose a defense framework based on adversarial training to strengthen GNN-based NIDS against structural attacks. We generate adversarial samples by strategically replacing the source and destination nodes in benign network flows, thereby efficiently mimicking edge injection attacks. We evaluate our approach on two widely used datasets (CTU-13 and TON-IoT) using E-GraphSAGE as the base GNN classifier. Experimental results show that our approach produces hardened detectors with superior detection performance on clean graphs and enhanced robustness against structural adversarial attacks.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-25T12:06:12Z</published>
+    <arxiv:comment>In Proceedings of 2025 23rd International Symposium on Network Computing and Applications (NCA), Lisbon, Portugal, 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Dimitri Galli</name>
+    </author>
+    <author>
+      <name>Andrea Venturi</name>
+    </author>
+    <author>
+      <name>Dario Stabili</name>
+    </author>
+    <author>
+      <name>Mauro Andreolini</name>
+    </author>
+    <author>
+      <name>Mirco Marchetti</name>
+    </author>
+    <arxiv:doi>10.1109/NCA67271.2025.00043</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/NCA67271.2025.00043" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.23004v2</id>
+    <title>Botnet Detection on CTU-13 Using Lightweight Machine Learning Models</title>
+    <updated>2026-06-20T00:36:23Z</updated>
+    <link href="https://arxiv.org/abs/2605.23004v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.23004v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Botnets are among the most persistent cyber threats, enabling large-scale attacks such as spam, credential theft, and distributed denial-of-service (DDoS). While deep learning approaches have recently been applied to botnet detection, they are computationally intensive and often lack interpretability. We present a comparative study of lightweight machine learning models including Logistic Regression, Decision Tree, and Random Forest on the CTU-13 dataset, a benchmark for botnet traffic analysis. We extract interpretable flow-based features and evaluate each model on detection accuracy, precision, recall, F1 score, and feature importance. Results demonstrate that lightweight models can achieve competitive detection performance with minimal computational cost, while also offering interpretability critical for forensic investigation. On CTU-13, our Random Forest achieves a PR-AUC of approximately 0.54 and ROC-AUC of 0.97 while training over 90% faster than published CNN baselines. These results demonstrate that lightweight models can match or exceed deep-learning performance under natural class imbalance while maintaining interpretability and low computational cost.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T20:16:14Z</published>
+    <arxiv:comment>1. Accepted and Presented at 4th International Conference on Information Security, Privacy and Digital Forensics (ICISPD), 2025. 2. Added citation to the CTU-13 dataset paper (Garcia et al., 2014)</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Subhash Gurappa</name>
+    </author>
+    <author>
+      <name>Yashas Hariprasad</name>
+    </author>
+    <author>
+      <name>Sundararaj Sitharama Iyengar</name>
+    </author>
+    <author>
+      <name>Naveen Kumar Chaudhary</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.07536v1</id>
+    <title>GESR: Graph-Based Edge Semantic Reconstruction for Stealthy Communication Detection with Benign-Only Training</title>
+    <updated>2026-05-08T10:11:15Z</updated>
+    <link href="https://arxiv.org/abs/2605.07536v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.07536v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Detecting stealthy malicious communications from flow logs under benign-only training remains a critical challenge in network security. Malicious communications often camouflage as normal traffic like standard HTTPS flows. Conventional intrusion detectors rely strictly on known labeled attacks. Alternatively, they score flows completely independently. These approaches fail against sparse and context-dependent suspicious activity. To capture this essential context, graph anomaly detectors have been introduced to add valuable relational information to the analysis. However, existing methods fail to test the structural consistency of specific communication edges. To overcome these fundamental limitations, we present GESR, a novel graph-based framework for detecting suspicious communications and anomalous hosts under a benign-only training setting. GESR models complex network activity as attributed communication graphs. It cleverly reconstructs edge semantics entirely from local structural context rather than isolated features. This non-intuitive design forces the framework to predict expected communication patterns from neighborhood topologies. Attackers cannot easily manipulate this deep structural dependency. The model then converts the resulting structural inconsistencies into host-level anomaly scores. It utilizes robust Median Absolute Deviation (MAD) calibration for this final step. We evaluate GESR extensively on CTU-13 and CICIDS2017 datasets. These evaluations strictly impose tight false-positive operating constraints. On CICIDS2017, GESR achieves an outstanding ROC-AUC of 0.9753. It also yields a high TPR of 0.8569 at a strict 5% FPR threshold. GESR consistently outperforms existing methods across both evaluated benchmarks. The results prove that structure-conditioned edge reconstruction is a credible direction for practical intrusion detection.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-08T10:11:15Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Henghui Xu</name>
+    </author>
+    <author>
+      <name>Yuchen Zhang</name>
+    </author>
+    <author>
+      <name>Xiaobo Ma</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.04952v7</id>
+    <title>ML Defender (aRGus NDR): An Open-Source Embedded ML NIDS for Botnet and Anomalous Traffic Detection in Resource-Constrained Organizations</title>
+    <updated>2026-08-06T03:06:24Z</updated>
+    <link href="https://arxiv.org/abs/2604.04952v7" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.04952v7" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Ransomware and DDoS disproportionately hit hospitals, schools, and small organizations that cannot afford enterprise security. We present ML Defender (aRGus NDR), an open-source C++20 NIDS with embedded ML inference, deployable on commodity hardware at 150-200 USD, over an eBPF/XDP + ZeroMQ pipeline with a dual-score Fast Detector + Random Forest.
+  On the curated CTU-13 Neris behavioral subset (646 flows) it attains F1=0.9985, Recall=1.0000. In a three-paradigm comparison under identical conditions, Suricata (50,010 ET Open rules) generates zero alerts, Zeek observes the full botnet profile yet alerts on 14 flows (F1=0.042), and aRGus classifies the behavioral footprint (Recall=1.000).
+  Joining each sensor to the labeled ground truth by 5-tuple, we measure per-lens bias over 14,188 botnet flows: Zeek 99.9% visibility, Suricata 1.5% (protocol anomalies, not C2 signatures), aRGus a coarse 0.2% in which the ML score averages 0.07 while the heuristic carries detection -- a ground-truth-anchored instance of the Sommer-Paxson distribution-transfer failure. Against a true denominator from the offline pcap (14,255 flows), the 67-flow (0.47%) blind spot is bounded to replay fidelity, not detection loss. Every figure is regenerated by a Makefile target.
+  Results are under controlled replay on a single 2011 scenario, not universal detection. MIT license.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-03T05:20:13Z</published>
+    <arxiv:comment>54 pages, 2 figures, 16 tables. Code: https://github.com/alonsoir/argus (MIT)</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Alonso Isidoro Román</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.03864v1</id>
+    <title>Near-Term Quantum-Computing-Inspired Sampling for Community Detection in Low-Modularity Graphs</title>
+    <updated>2025-09-04T03:49:39Z</updated>
+    <link href="https://arxiv.org/abs/2509.03864v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.03864v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Low modularity networks (Q &lt; 0.2) challenge classical community detection algorithms, which get trapped in local optima. We introduce quantum inspired community detection algorithms leveraging non classical sampling techniques to escape modularity optimization plateaus. Using distributions inspired by quantum phenomena including Porter Thomas distributions, Haar random states, and hyperuniform point processes, our approach generates diverse high quality partitions that improve modularity on difficult low Q graphs. We demonstrate 15 to 25% gains in modularity Q over classical methods (Louvain, Leiden). We define a "Modularity Recovery Gap" (MRG), the increase in Q achieved by quantum inspired refinement, and show this serves as a powerful anomaly detection signal. In experiments on high modularity networks (CTU 13 botnet traffic), MRG is near zero, confirming our method doesn't inflate modularity when no hidden structure exists. Results suggest quantum inspired sampling substantially enhances community detection in low modularity regimes, with applications in cybersecurity (stealthy APT/botnet detection), financial contagion modeling, disrupted supply chains, diseased brain connectomes, and crisis era social media analysis. Our refinements expand the search space of algorithms like Leiden without altering the graph, revealing partitions classical heuristics miss. While such partitions need not represent ground truth communities, they illustrate how near term quantum sampling can reshape optimization landscapes and enhance sensitivity to weak structure.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-04T03:49:39Z</published>
+    <arxiv:comment>10 pages, 1 image, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Joseph Geraci</name>
+    </author>
+    <author>
+      <name>Luca Pani</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.10904v2</id>
+    <title>Class-Proportional Coreset Selection for Difficulty-Separable Data</title>
+    <updated>2025-08-13T19:01:03Z</updated>
+    <link href="https://arxiv.org/abs/2507.10904v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.10904v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>High-quality training data is essential for building reliable and efficient machine learning systems. One-shot coreset selection addresses this by pruning the dataset while maintaining or even improving model performance, often relying on training-dynamics-based data difficulty scores. However, most existing methods implicitly assume class-wise homogeneity in data difficulty, overlooking variation in data difficulty across different classes. In this work, we challenge this assumption by showing that, in domains such as network intrusion detection and medical imaging, data difficulty often clusters by class. We formalize this as class-difficulty separability and introduce the Class Difficulty Separability Coefficient (CDSC) as a quantitative measure. We demonstrate that high CDSC values correlate with performance degradation in class-agnostic coreset methods, which tend to overrepresent easy majority classes while neglecting rare but informative ones. To address this, we introduce class-proportional variants of multiple sampling strategies. Evaluated on five diverse datasets spanning security and medical domains, our methods consistently achieve state-of-the-art performance. For instance, on CTU-13, at an extreme 99% pruning rate, a class-proportional variant of Coverage-centric Coreset Selection (CCS-CP) shows remarkable stability, with accuracy dropping only 2.58%, precision 0.49%, and recall 0.19%. In contrast, the class-agnostic CCS baseline, the next best method, suffers sharper declines of 7.59% in accuracy, 4.57% in precision, and 4.11% in recall. We further show that aggressive pruning enhances generalization in noisy, imbalanced, and large-scale datasets. Our results underscore that explicitly modeling class-difficulty separability leads to more effective, robust, and generalizable data pruning, particularly in high-stakes scenarios.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-07-15T01:43:32Z</published>
+    <arxiv:comment>This paper has been accepted to the ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Elisa Tsai</name>
+    </author>
+    <author>
+      <name>Haizhong Zheng</name>
+    </author>
+    <author>
+      <name>Atul Prakash</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2501.00790v2</id>
+    <title>LENS-XAI: Redefining Lightweight and Explainable Network Security through Knowledge Distillation and Variational Autoencoders for Scalable Intrusion Detection in Cybersecurity</title>
+    <updated>2025-01-07T23:43:09Z</updated>
+    <link href="https://arxiv.org/abs/2501.00790v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2501.00790v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rapid proliferation of Industrial Internet of Things (IIoT) systems necessitates advanced, interpretable, and scalable intrusion detection systems (IDS) to combat emerging cyber threats. Traditional IDS face challenges such as high computational demands, limited explainability, and inflexibility against evolving attack patterns. To address these limitations, this study introduces the Lightweight Explainable Network Security framework (LENS-XAI), which combines robust intrusion detection with enhanced interpretability and scalability. LENS-XAI integrates knowledge distillation, variational autoencoder models, and attribution-based explainability techniques to achieve high detection accuracy and transparency in decision-making. By leveraging a training set comprising 10% of the available data, the framework optimizes computational efficiency without sacrificing performance. Experimental evaluation on four benchmark datasets: Edge-IIoTset, UKM-IDS20, CTU-13, and NSL-KDD, demonstrates the framework's superior performance, achieving detection accuracies of 95.34%, 99.92%, 98.42%, and 99.34%, respectively. Additionally, the framework excels in reducing false positives and adapting to complex attack scenarios, outperforming existing state-of-the-art methods. Key strengths of LENS-XAI include its lightweight design, suitable for resource-constrained environments, and its scalability across diverse IIoT and cybersecurity contexts. Moreover, the explainability module enhances trust and transparency, critical for practical deployment in dynamic and sensitive applications. This research contributes significantly to advancing IDS by addressing computational efficiency, feature interpretability, and real-world applicability. Future work could focus on extending the framework to ensemble AI systems for distributed environments, further enhancing its robustness and adaptability.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-01-01T10:00:49Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Muhammet Anil Yagiz</name>
+    </author>
+    <author>
+      <name>Polat Goktas</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,25 @@
+# Node
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Large data files
+csv/*.csv
+*.csv
+*.jsonl
+*.zip
+
+# Research artifacts
+outputs/
+pcaps/
+runsforpaper/
+
+# OS
+.DS_Store

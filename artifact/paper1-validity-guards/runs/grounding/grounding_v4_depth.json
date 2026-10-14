@@ -1,0 +1,1325 @@
+{
+  "config": {
+    "n": 20,
+    "window": 5,
+    "windowEnd": "2026-07-15T09:00:00Z",
+    "source": "replay"
+  },
+  "coreVersion": "copilotCore-v4.3-dos-burst-only",
+  "groundTruth": {
+    "risk": 37,
+    "state": "stable",
+    "riskComponents": {
+      "volumeComponent": 0,
+      "severityComponent": 0,
+      "behaviorComponent": 0,
+      "entropyComponent": 9.912123000434118,
+      "concentrationComponent": 0,
+      "signalAmplifier": 10.975720701161729,
+      "c2Bonus": 16.25,
+      "impactBonus": 0,
+      "couplingBonus": 0
+    },
+    "attackTypeScores": {
+      "dos": 0.07269023103482902,
+      "scan": 73.17094395004852,
+      "brute_force": 0,
+      "web_probe": 14.65,
+      "c2": 65,
+      "impact": 0
+    }
+  },
+  "totals": {
+    "cited": 95,
+    "nonzero": 95,
+    "zero": 0,
+    "unresolved": 0,
+    "prose": 0,
+    "malformedButReal": 5,
+    "failed": 0
+  },
+  "failures": [],
+  "groundingRate": 1,
+  "fabricationRate": 0,
+  "schemaCompliance": 0.9473684210526315,
+  "byField": {
+    "attackMetrics.attacksLast5Min": {
+      "n": 40,
+      "nonzero": 40,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "scanningIndicators.scanCandidates.port:53.count": {
+      "n": 4,
+      "nonzero": 4,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "scanningIndicators.portEntropy": {
+      "n": 39,
+      "nonzero": 39,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "scanningIndicators.scanCandidates": {
+      "n": 7,
+      "nonzero": 7,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "scanningIndicators.topPorts": {
+      "n": 4,
+      "nonzero": 4,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "scanningIndicators.topPorts.port:53.count": {
+      "n": 1,
+      "nonzero": 1,
+      "zero": 0,
+      "unresolved": 0
+    }
+  },
+  "runs": [
+    {
+      "i": 0,
+      "ok": true,
+      "headline": "Reconnaissance activity detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.scanCandidates.port:53.count",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.scanCandidates.port",
+          "malformed": true,
+          "malformedReason": "inlined-value",
+          "verdict": "RESOLVED_NONZERO",
+          "via": "search",
+          "value": "53"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 1,
+      "ok": true,
+      "headline": "Reconnaissance activity detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.scanCandidates",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.scanCandidates",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "[{\"port\":53,\"count\":6838},{\"port\":25,\"count\":2194},{\"port\":80,\"count\":623},{\"port\":443,\"count\":549},{\"port\":6667,\"count\""
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates broad service enumeration behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "scanningIndicators.topPorts",
+          "claim": "Elevated port entropy indicates broad service enumeration behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.topPorts",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "[{\"port\":53,\"count\":6838},{\"port\":25,\"count\":2194},{\"port\":80,\"count\":623},{\"port\":443,\"count\":549},{\"port\":6667,\"count\""
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 2,
+      "ok": true,
+      "headline": "Reconnaissance Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.scanCandidates",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.scanCandidates",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "[{\"port\":53,\"count\":6838},{\"port\":25,\"count\":2194},{\"port\":80,\"count\":623},{\"port\":443,\"count\":549},{\"port\":6667,\"count\""
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 3,
+      "ok": true,
+      "headline": "Reconnaissance activity detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.scanCandidates",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.scanCandidates",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "[{\"port\":53,\"count\":6838},{\"port\":25,\"count\":2194},{\"port\":80,\"count\":623},{\"port\":443,\"count\":549},{\"port\":6667,\"count\""
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 4,
+      "ok": true,
+      "headline": "Reconnaissance activity detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High volume of connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 5,
+      "ok": true,
+      "headline": "Reconnaissance Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.scanCandidates",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.scanCandidates",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "[{\"port\":53,\"count\":6838},{\"port\":25,\"count\":2194},{\"port\":80,\"count\":623},{\"port\":443,\"count\":549},{\"port\":6667,\"count\""
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates broad service enumeration behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 6,
+      "ok": true,
+      "headline": "Scanning Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.scanCandidates",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.scanCandidates",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "[{\"port\":53,\"count\":6838},{\"port\":25,\"count\":2194},{\"port\":80,\"count\":623},{\"port\":443,\"count\":549},{\"port\":6667,\"count\""
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 7,
+      "ok": true,
+      "headline": "Scanning Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Scanning activity detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Scanning activity detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 8,
+      "ok": true,
+      "headline": "Reconnaissance Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High-volume scanning activity detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.scanCandidates",
+          "claim": "High-volume scanning activity detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.scanCandidates",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "[{\"port\":53,\"count\":6838},{\"port\":25,\"count\":2194},{\"port\":80,\"count\":623},{\"port\":443,\"count\":549},{\"port\":6667,\"count\""
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates broad service enumeration behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 9,
+      "ok": true,
+      "headline": "Reconnaissance activity detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High volume of connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning activity",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 10,
+      "ok": true,
+      "headline": "Reconnaissance activity detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High-volume connection attempts detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.scanCandidates.port:53.count",
+          "claim": "High-volume connection attempts detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.scanCandidates.port",
+          "malformed": true,
+          "malformedReason": "inlined-value",
+          "verdict": "RESOLVED_NONZERO",
+          "via": "search",
+          "value": "53"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.topPorts",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.topPorts",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "[{\"port\":53,\"count\":6838},{\"port\":25,\"count\":2194},{\"port\":80,\"count\":623},{\"port\":443,\"count\":549},{\"port\":6667,\"count\""
+        }
+      ]
+    },
+    {
+      "i": 11,
+      "ok": true,
+      "headline": "Reconnaissance activity detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.scanCandidates.port:53.count",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.scanCandidates.port",
+          "malformed": true,
+          "malformedReason": "inlined-value",
+          "verdict": "RESOLVED_NONZERO",
+          "via": "search",
+          "value": "53"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates broad service enumeration behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 12,
+      "ok": true,
+      "headline": "Reconnaissance activity detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High-volume connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 13,
+      "ok": true,
+      "headline": "Potential Scanning Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High Volume of Network Traffic",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated Port Entropy",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 14,
+      "ok": true,
+      "headline": "Reconnaissance Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.scanCandidates.port:53.count",
+          "claim": "Multiple destination ports are receiving repeated connection attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.scanCandidates.port",
+          "malformed": true,
+          "malformedReason": "inlined-value",
+          "verdict": "RESOLVED_NONZERO",
+          "via": "search",
+          "value": "53"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates broad service enumeration behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "scanningIndicators.topPorts.port:53.count",
+          "claim": "Elevated port entropy indicates broad service enumeration behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.topPorts.port",
+          "malformed": true,
+          "malformedReason": "inlined-value",
+          "verdict": "RESOLVED_NONZERO",
+          "via": "search",
+          "value": "53"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.topPorts",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.topPorts",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "[{\"port\":53,\"count\":6838},{\"port\":25,\"count\":2194},{\"port\":80,\"count\":623},{\"port\":443,\"count\":549},{\"port\":6667,\"count\""
+        }
+      ]
+    },
+    {
+      "i": 15,
+      "ok": true,
+      "headline": "Scanning Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High Volume of Connection Attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated Port Entropy",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 16,
+      "ok": true,
+      "headline": "Potential Scanning Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High-volume scanning activity detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.topPorts",
+          "claim": "High-volume scanning activity detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.topPorts",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "[{\"port\":53,\"count\":6838},{\"port\":25,\"count\":2194},{\"port\":80,\"count\":623},{\"port\":443,\"count\":549},{\"port\":6667,\"count\""
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates broad service enumeration behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 17,
+      "ok": true,
+      "headline": "Reconnaissance Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High Volume of Connection Attempts",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated Port Entropy",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 18,
+      "ok": true,
+      "headline": "Reconnaissance activity detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High-volume connection attempts detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning activity",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    },
+    {
+      "i": 19,
+      "ok": true,
+      "headline": "Scanning Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Scanning activity detected on multiple destination ports",
+          "confidence": 0.85,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.scanCandidates",
+          "claim": "Scanning activity detected on multiple destination ports",
+          "confidence": 0.85,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.scanCandidates",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "[{\"port\":53,\"count\":6838},{\"port\":25,\"count\":2194},{\"port\":80,\"count\":623},{\"port\":443,\"count\":549},{\"port\":6667,\"count\""
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "10808"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1.646"
+        }
+      ]
+    }
+  ]
+}

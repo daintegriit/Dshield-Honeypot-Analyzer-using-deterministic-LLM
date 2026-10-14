@@ -1,0 +1,38 @@
+nohup: ignoring input
+========================================================================
+           CTU-13 LABELED NETFLOW REPLAY
+========================================================================
+  Scenario:            9
+  File:                /home/ubuntu/research/scripts/../ctu13/CTU-13-Dataset/9/capture20110817.binetflow
+  Ingest:              http://localhost:5002/api/ingest/log
+  Include background:  False
+  Limit:               none
+  Dry run:             False
+========================================================================
+PCAP_NAME=ctu13-s9
+
+📂 Loading and classifying flows...
+
+📊 Load statistics
+------------------------------------------------------------------------
+  rows read:           2,087,508
+  botnet flows:        184,987   (of which C&C: 2,973)
+  normal flows:        29,967
+  background kept:     0
+  background skipped:  1,872,554
+  unparseable:         0
+  TO REPLAY:           214,954
+  load time:           11.3s
+------------------------------------------------------------------------
+
+⏱  Estimated replay time: 71.7 min at 50 events/sec
+
+🚀 Replaying 214,954 flows...
+
+→       1/214,954 (  0.0%) | sent=1 failed=0 |  60.7 eps |   0.0 min
+→     501/214,954 (  0.2%) | sent=501 failed=0 |  35.4 eps |   0.2 min
+→   1,001/214,954 (  0.5%) | sent=1,001 failed=0 |  35.6 eps |   0.5 min
+→   1,501/214,954 (  0.7%) | sent=1,501 failed=0 |  35.4 eps |   0.7 min
+→   2,001/214,954 (  0.9%) | sent=2,001 failed=0 |  35.5 eps |   0.9 min
+→   2,501/214,954 (  1.2%) | sent=2,501 failed=0 |  35.7 eps |   1.2 min
+→   3,001/214,954 (  1.4%) | sent=3,001 failed=0 |  35.7 eps |   1.4 min

@@ -1,0 +1,1214 @@
+{
+  "config": {
+    "n": 20,
+    "window": 5,
+    "windowEnd": null,
+    "source": "honeypot"
+  },
+  "coreVersion": "copilotCore-v4.3-dos-burst-only",
+  "groundTruth": {
+    "risk": 24,
+    "state": "stable",
+    "riskComponents": {
+      "volumeComponent": 0,
+      "severityComponent": 0,
+      "behaviorComponent": 2.631578947368421,
+      "entropyComponent": 20,
+      "concentrationComponent": 0,
+      "signalAmplifier": 1.7128827131417794,
+      "c2Bonus": 0,
+      "impactBonus": 0.016666666666666666,
+      "couplingBonus": 0
+    },
+    "attackTypeScores": {
+      "dos": 51.280569948186525,
+      "scan": 25,
+      "brute_force": 0.2,
+      "web_probe": 0,
+      "c2": 0,
+      "impact": 0.1
+    }
+  },
+  "totals": {
+    "cited": 82,
+    "nonzero": 77,
+    "zero": 4,
+    "unresolved": 1,
+    "prose": 0,
+    "malformedButReal": 0,
+    "failed": 2
+  },
+  "failures": [
+    {
+      "i": 12,
+      "message": "Ollama request timed out after 120000ms",
+      "kind": "other",
+      "parseError": null,
+      "rawPreview": null
+    },
+    {
+      "i": 18,
+      "message": "Ollama request timed out after 120000ms",
+      "kind": "other",
+      "parseError": null,
+      "rawPreview": null
+    }
+  ],
+  "groundingRate": 0.9390243902439024,
+  "fabricationRate": 0.012195121951219513,
+  "schemaCompliance": 1,
+  "byField": {
+    "attackClassification.dominantAttack.type": {
+      "n": 3,
+      "nonzero": 3,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "attackClassification.dominantAttack.score": {
+      "n": 3,
+      "nonzero": 3,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "scanningIndicators.portEntropy": {
+      "n": 36,
+      "nonzero": 36,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "attackMetrics.attacksLast5Min": {
+      "n": 28,
+      "nonzero": 28,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "attackClassification.dominantAttackScore": {
+      "n": 4,
+      "nonzero": 0,
+      "zero": 4,
+      "unresolved": 0
+    },
+    "attackClassification.dominantAttackType": {
+      "n": 2,
+      "nonzero": 2,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "attackMetrics.burstRatio15mOverHour": {
+      "n": 2,
+      "nonzero": 2,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "attackClassification.attackTypeProbabilities.dos": {
+      "n": 2,
+      "nonzero": 2,
+      "zero": 0,
+      "unresolved": 0
+    },
+    "attackClassification.domiantAttackType": {
+      "n": 1,
+      "nonzero": 0,
+      "zero": 0,
+      "unresolved": 1
+    },
+    "scanningIndicators.sourceEntropy": {
+      "n": 1,
+      "nonzero": 1,
+      "zero": 0,
+      "unresolved": 0
+    }
+  },
+  "runs": [
+    {
+      "i": 0,
+      "ok": true,
+      "headline": "Potential DOS Attack Detected",
+      "citations": [
+        {
+          "field": "attackClassification.dominantAttack.type",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttack.type",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "\"dos\""
+        },
+        {
+          "field": "attackClassification.dominantAttack.score",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttack.score",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "51.280569948186525"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "High port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 1,
+      "ok": true,
+      "headline": "Potential Denial of Service (DoS) Attack Detected",
+      "citations": [
+        {
+          "field": "attackClassification.dominantAttackScore",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttackScore",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_ZERO",
+          "via": "search",
+          "value": "0"
+        },
+        {
+          "field": "attackClassification.dominantAttackType",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttackType",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "search",
+          "value": "\"dos\""
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Port entropy is high, indicating scanning activity",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 2,
+      "ok": true,
+      "headline": "Potential DDoS Attack Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High volume of attacks detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 3,
+      "ok": true,
+      "headline": "Potential DOS Attack Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High attack volume",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 4,
+      "ok": true,
+      "headline": "Potential DOS Attack In Progress",
+      "citations": [
+        {
+          "field": "attackClassification.dominantAttackType",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttackType",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "search",
+          "value": "\"dos\""
+        },
+        {
+          "field": "attackClassification.dominantAttackScore",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttackScore",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_ZERO",
+          "via": "search",
+          "value": "0"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Port entropy is elevated, indicating scanning activity",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 5,
+      "ok": true,
+      "headline": "Potential Scanning Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Elevated attack metrics indicate potential scanning activity.",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "attackMetrics.burstRatio15mOverHour",
+          "claim": "Elevated attack metrics indicate potential scanning activity.",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.burstRatio15mOverHour",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "High port entropy suggests enumeration or scanning behavior.",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 6,
+      "ok": true,
+      "headline": "Potential DOS Attack Detected",
+      "citations": [
+        {
+          "field": "attackClassification.dominantAttackScore",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttackScore",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_ZERO",
+          "via": "search",
+          "value": "0"
+        },
+        {
+          "field": "attackClassification.attackTypeProbabilities.dos",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.attackTypeProbabilities.dos",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "0.6696289931360179"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Port entropy is elevated, indicating scanning activity",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 7,
+      "ok": true,
+      "headline": "Potential DOS Attack Detected",
+      "citations": [
+        {
+          "field": "attackClassification.dominantAttack.score",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttack.score",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "51.280569948186525"
+        },
+        {
+          "field": "attackClassification.dominantAttack.type",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttack.type",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "\"dos\""
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 8,
+      "ok": true,
+      "headline": "Potential Denial of Service (DoS) Attack Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High Attack Volume",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated Port Entropy",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 9,
+      "ok": true,
+      "headline": "Potential Denial of Service (DoS) Attack",
+      "citations": [
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High volume of traffic in the last 5 minutes",
+          "confidence": 0.9,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 10,
+      "ok": true,
+      "headline": "Potential Scanning Activity Detected",
+      "citations": [
+        {
+          "field": "attackClassification.dominantAttack.score",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttack.score",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "51.280569948186525"
+        },
+        {
+          "field": "attackClassification.dominantAttack.type",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttack.type",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "\"dos\""
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Port entropy is elevated, indicating scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 11,
+      "ok": true,
+      "headline": "Potential DDoS Attack Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Elevated attack metrics indicate a DDoS attack",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "attackMetrics.burstRatio15mOverHour",
+          "claim": "Elevated attack metrics indicate a DDoS attack",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.burstRatio15mOverHour",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "1"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Port entropy is elevated, indicating scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 12,
+      "ok": false,
+      "message": "Ollama request timed out after 120000ms",
+      "kind": "other",
+      "parseError": null,
+      "rawPreview": null
+    },
+    {
+      "i": 13,
+      "ok": true,
+      "headline": "Potential DOS Attack Detected",
+      "citations": [
+        {
+          "field": "attackClassification.attackTypeProbabilities.dos",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.attackTypeProbabilities.dos",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "0.6696289931360179"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Port entropy is elevated, indicating scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 14,
+      "ok": true,
+      "headline": "Potential DOS Attack",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "Elevated traffic volume and port entropy indicate potential scanning or DOS activity",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated traffic volume and port entropy indicate potential scanning or DOS activity",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 15,
+      "ok": true,
+      "headline": "Potential DOS Attack Detected",
+      "citations": [
+        {
+          "field": "attackClassification.dominantAttackScore",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.dominantAttackScore",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_ZERO",
+          "via": "search",
+          "value": "0"
+        },
+        {
+          "field": "attackClassification.domiantAttackType",
+          "claim": "Traffic burst ratio exceeded normal baseline behavior",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackClassification.domiantAttackType",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "UNRESOLVED",
+          "via": null,
+          "value": null
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "High port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "scanningIndicators.sourceEntropy",
+          "claim": "High port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.sourceEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.903"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 16,
+      "ok": true,
+      "headline": "Potential DDoS Attack Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High attack volume detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 17,
+      "ok": true,
+      "headline": "Potential Scanning Activity Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High attack frequency within the last 5 minutes",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicating scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    },
+    {
+      "i": 18,
+      "ok": false,
+      "message": "Ollama request timed out after 120000ms",
+      "kind": "other",
+      "parseError": null,
+      "rawPreview": null
+    },
+    {
+      "i": 19,
+      "ok": true,
+      "headline": "Potential DDoS Attack Detected",
+      "citations": [
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "High volume of attacks detected",
+          "confidence": 0.8,
+          "section": "top_findings",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "Elevated port entropy indicates scanning behavior",
+          "confidence": 0.7,
+          "section": "top_findings",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        },
+        {
+          "field": "attackMetrics.attacksLast5Min",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "attackMetrics.attacksLast5Min",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "82"
+        },
+        {
+          "field": "scanningIndicators.portEntropy",
+          "claim": "(what_changed)",
+          "section": "what_changed",
+          "normalisedPath": "scanningIndicators.portEntropy",
+          "malformed": false,
+          "malformedReason": null,
+          "verdict": "RESOLVED_NONZERO",
+          "via": "literal",
+          "value": "5.684"
+        }
+      ]
+    }
+  ]
+}

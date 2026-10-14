@@ -1,0 +1,1869 @@
+{
+  "runId": "2026-05-17T10-25-11-422Z",
+  "capturedAt": "2026-05-17T10:45:31.427Z",
+  "injectionStart": "2026-05-17T10:25:21.446Z",
+  "injectionEnd": "2026-05-17T10:45:06.784Z",
+  "attackStartEffective": "2026-05-17T10:25:21.446Z",
+  "truthMode": "replay_start",
+  "baselineSeconds": 10,
+  "preCooldownSeconds": 0,
+  "cooldownSeconds": 10,
+  "pollIntervalMs": 10000,
+  "windowsEvaluated": [
+    1
+  ],
+  "totalEvaluations": 19,
+  "results": [
+    {
+      "timestamp": "2026-05-17T10:25:42.200Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 87,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 79.04235317401415,
+        "scan": 38.73574122243872,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 79.04235317401415
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 0,
+        "attacksLast5Min": 1634,
+        "attacksLast15Min": 8828,
+        "attacksLastHour": 40422,
+        "burstRatio5mOverHour": 0.04042353174014151,
+        "burstRatio15mOverHour": 0.21839592301222108
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 15980
+          },
+          {
+            "port": 8080,
+            "count": 3466
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 15980
+          },
+          {
+            "port": 8080,
+            "count": 3466
+          },
+          {
+            "port": 63945,
+            "count": 5
+          },
+          {
+            "port": 80,
+            "count": 2
+          },
+          {
+            "port": 63026,
+            "count": 1
+          },
+          {
+            "port": 63031,
+            "count": 1
+          },
+          {
+            "port": 63034,
+            "count": 1
+          },
+          {
+            "port": 63035,
+            "count": 1
+          },
+          {
+            "port": 63040,
+            "count": 1
+          },
+          {
+            "port": 63045,
+            "count": 1
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 14592
+        },
+        "topExternalPeerIp": {
+          "ip": "200.116.206.58",
+          "count": 860
+        },
+        "sourceEntropy": 4.829,
+        "portEntropy": 1.092,
+        "authPortPressure": 0,
+        "webPortPressure": 19448,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 10,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 3
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 14.044866431871034,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": true,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:26:49.785Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 86,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 78.78594288833204,
+        "scan": 37.6694333309748,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 78.78594288833204
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 745,
+        "attacksLast5Min": 1526,
+        "attacksLast15Min": 8712,
+        "attacksLastHour": 40307,
+        "burstRatio5mOverHour": 0.037859428883320514,
+        "burstRatio15mOverHour": 0.2161411169275808
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 16623
+          },
+          {
+            "port": 8080,
+            "count": 2911
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 16623
+          },
+          {
+            "port": 8080,
+            "count": 2911
+          },
+          {
+            "port": 63945,
+            "count": 5
+          },
+          {
+            "port": 80,
+            "count": 2
+          },
+          {
+            "port": 63418,
+            "count": 1
+          },
+          {
+            "port": 63423,
+            "count": 1
+          },
+          {
+            "port": 63427,
+            "count": 1
+          },
+          {
+            "port": 63432,
+            "count": 1
+          },
+          {
+            "port": 63437,
+            "count": 1
+          },
+          {
+            "port": 63441,
+            "count": 1
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 15457
+        },
+        "topExternalPeerIp": {
+          "ip": "200.116.206.58",
+          "count": 912
+        },
+        "sourceEntropy": 4.769,
+        "portEntropy": 0.959,
+        "authPortPressure": 0,
+        "webPortPressure": 19536,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 10,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 3
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 13.910833782537205,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:27:49.010Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 86,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 78.80713807386095,
+        "scan": 36.72387509104372,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 78.80713807386095
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 751,
+        "attacksLast5Min": 1535,
+        "attacksLast15Min": 8723,
+        "attacksLastHour": 40319,
+        "burstRatio5mOverHour": 0.038071380738609585,
+        "burstRatio15mOverHour": 0.2163496118455319
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 17169
+          },
+          {
+            "port": 8080,
+            "count": 2436
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 17169
+          },
+          {
+            "port": 8080,
+            "count": 2436
+          },
+          {
+            "port": 63945,
+            "count": 5
+          },
+          {
+            "port": 80,
+            "count": 2
+          },
+          {
+            "port": 63749,
+            "count": 1
+          },
+          {
+            "port": 63754,
+            "count": 1
+          },
+          {
+            "port": 63759,
+            "count": 1
+          },
+          {
+            "port": 63763,
+            "count": 1
+          },
+          {
+            "port": 63768,
+            "count": 1
+          },
+          {
+            "port": 63773,
+            "count": 1
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 16195
+        },
+        "topExternalPeerIp": {
+          "ip": "200.116.206.58",
+          "count": 956
+        },
+        "sourceEntropy": 4.707,
+        "portEntropy": 0.84,
+        "authPortPressure": 0,
+        "webPortPressure": 19607,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 10,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 3
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 13.921913084063682,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:28:49.897Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 87,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 80.57553510751755,
+        "scan": 35.682950357402284,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 80.57553510751755
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 746,
+        "attacksLast5Min": 2248,
+        "attacksLast15Min": 8728,
+        "attacksLastHour": 40319,
+        "burstRatio5mOverHour": 0.05575535107517548,
+        "burstRatio15mOverHour": 0.21647362285770977
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 17724
+          },
+          {
+            "port": 8080,
+            "count": 1957
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 17724
+          },
+          {
+            "port": 8080,
+            "count": 1957
+          },
+          {
+            "port": 80,
+            "count": 2
+          },
+          {
+            "port": 64085,
+            "count": 1
+          },
+          {
+            "port": 64090,
+            "count": 1
+          },
+          {
+            "port": 64095,
+            "count": 1
+          },
+          {
+            "port": 64099,
+            "count": 1
+          },
+          {
+            "port": 64104,
+            "count": 1
+          },
+          {
+            "port": 64109,
+            "count": 1
+          },
+          {
+            "port": 64113,
+            "count": 1
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 16942
+        },
+        "topExternalPeerIp": {
+          "ip": "200.116.206.58",
+          "count": 1000
+        },
+        "sourceEntropy": 4.632,
+        "portEntropy": 0.71,
+        "authPortPressure": 0,
+        "webPortPressure": 19683,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 10,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 3
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 14.846302442565992,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:29:48.691Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 88,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 82.40961166493081,
+        "scan": 34.5960038603182,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 82.40961166493081
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 748,
+        "attacksLast5Min": 2988,
+        "attacksLast15Min": 8733,
+        "attacksLastHour": 40326,
+        "burstRatio5mOverHour": 0.07409611664930814,
+        "burstRatio15mOverHour": 0.2165600357089719
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 18270
+          },
+          {
+            "port": 8080,
+            "count": 1482
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 18270
+          },
+          {
+            "port": 8080,
+            "count": 1482
+          },
+          {
+            "port": 80,
+            "count": 2
+          },
+          {
+            "port": 64417,
+            "count": 1
+          },
+          {
+            "port": 64421,
+            "count": 1
+          },
+          {
+            "port": 64426,
+            "count": 1
+          },
+          {
+            "port": 64431,
+            "count": 1
+          },
+          {
+            "port": 64435,
+            "count": 1
+          },
+          {
+            "port": 64440,
+            "count": 1
+          },
+          {
+            "port": 64445,
+            "count": 1
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 17680
+        },
+        "topExternalPeerIp": {
+          "ip": "200.116.206.58",
+          "count": 1040
+        },
+        "sourceEntropy": 4.544,
+        "portEntropy": 0.575,
+        "authPortPressure": 0,
+        "webPortPressure": 19754,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 10,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 3
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 15.80502427939565,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:30:52.145Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 84.22962595987119,
+        "scan": 33.48063684446742,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 84.22962595987119
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 736,
+        "attacksLast5Min": 3726,
+        "attacksLast15Min": 8732,
+        "attacksLastHour": 40370,
+        "burstRatio5mOverHour": 0.09229625959871192,
+        "burstRatio15mOverHour": 0.21629923210304683
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 18785
+          },
+          {
+            "port": 8080,
+            "count": 1034
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 18785
+          },
+          {
+            "port": 8080,
+            "count": 1034
+          },
+          {
+            "port": 80,
+            "count": 2
+          },
+          {
+            "port": 64729,
+            "count": 1
+          },
+          {
+            "port": 64734,
+            "count": 1
+          },
+          {
+            "port": 64739,
+            "count": 1
+          },
+          {
+            "port": 64743,
+            "count": 1
+          },
+          {
+            "port": 64748,
+            "count": 1
+          },
+          {
+            "port": 64753,
+            "count": 1
+          },
+          {
+            "port": 64757,
+            "count": 1
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 18371
+        },
+        "topExternalPeerIp": {
+          "ip": "200.116.206.58",
+          "count": 1084
+        },
+        "sourceEntropy": 4.446,
+        "portEntropy": 0.435,
+        "authPortPressure": 0,
+        "webPortPressure": 19821,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 10,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 3
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.756395388114484,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:31:56.109Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 84.0457600316268,
+        "scan": 32.21887246528779,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 84.0457600316268
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 682,
+        "attacksLast5Min": 3661,
+        "attacksLast15Min": 8741,
+        "attacksLastHour": 40472,
+        "burstRatio5mOverHour": 0.09045760031626804,
+        "burstRatio15mOverHour": 0.21597647756473612
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 19309
+          },
+          {
+            "port": 8080,
+            "count": 578
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 19309
+          },
+          {
+            "port": 8080,
+            "count": 578
+          },
+          {
+            "port": 80,
+            "count": 2
+          },
+          {
+            "port": 65051,
+            "count": 1
+          },
+          {
+            "port": 65056,
+            "count": 1
+          },
+          {
+            "port": 65061,
+            "count": 1
+          },
+          {
+            "port": 65065,
+            "count": 1
+          },
+          {
+            "port": 65070,
+            "count": 1
+          },
+          {
+            "port": 65075,
+            "count": 1
+          },
+          {
+            "port": 65079,
+            "count": 1
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 19079
+        },
+        "topExternalPeerIp": {
+          "ip": "200.116.206.58",
+          "count": 1124
+        },
+        "sourceEntropy": 4.323,
+        "portEntropy": 0.277,
+        "authPortPressure": 0,
+        "webPortPressure": 19889,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 10,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 3
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.660283652895828,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:33:03.671Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.7832991169705,
+        "scan": 30.701058048614566,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.7832991169705
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 635,
+        "attacksLast5Min": 3551,
+        "attacksLast15Min": 8755,
+        "attacksLastHour": 40429,
+        "burstRatio5mOverHour": 0.08783299116970492,
+        "burstRatio15mOverHour": 0.21655247470874867
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 19820
+          },
+          {
+            "port": 8080,
+            "count": 149
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 19820
+          },
+          {
+            "port": 8080,
+            "count": 149
+          },
+          {
+            "port": 80,
+            "count": 2
+          },
+          {
+            "port": 65350,
+            "count": 1
+          },
+          {
+            "port": 65355,
+            "count": 1
+          },
+          {
+            "port": 65358,
+            "count": 1
+          },
+          {
+            "port": 65359,
+            "count": 1
+          },
+          {
+            "port": 65364,
+            "count": 1
+          },
+          {
+            "port": 65369,
+            "count": 1
+          },
+          {
+            "port": 65372,
+            "count": 1
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 19758
+        },
+        "topExternalPeerIp": {
+          "ip": "200.116.206.58",
+          "count": 1164
+        },
+        "sourceEntropy": 4.171,
+        "portEntropy": 0.088,
+        "authPortPressure": 0,
+        "webPortPressure": 19971,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 10,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 3
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.523088174780032,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:34:10.883Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.50062199673147,
+        "scan": 15.011784268226625,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.50062199673147
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 707,
+        "attacksLast5Min": 3485,
+        "attacksLast15Min": 8727,
+        "attacksLastHour": 40997,
+        "burstRatio5mOverHour": 0.08500621996731468,
+        "burstRatio15mOverHour": 0.2128692343342196
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 19998
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 19998
+          },
+          {
+            "port": 80,
+            "count": 2
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 20000
+        },
+        "topExternalPeerIp": {
+          "ip": "200.116.206.58",
+          "count": 1180
+        },
+        "sourceEntropy": 4.089,
+        "portEntropy": 0.001,
+        "authPortPressure": 0,
+        "webPortPressure": 20000,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 2,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 2
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.375325134655085,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:35:18.563Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.41573386843314,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.41573386843314
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 744,
+        "attacksLast5Min": 3481,
+        "attacksLast15Min": 8719,
+        "attacksLastHour": 41363,
+        "burstRatio5mOverHour": 0.08415733868433141,
+        "burstRatio15mOverHour": 0.210792253946764
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 20000
+        },
+        "topExternalPeerIp": {
+          "ip": "115.186.139.104",
+          "count": 1180
+        },
+        "sourceEntropy": 4.087,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 20000,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.330951794862777,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:36:17.186Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.46646525679758,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.46646525679758
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 748,
+        "attacksLast5Min": 3503,
+        "attacksLast15Min": 8736,
+        "attacksLastHour": 41375,
+        "burstRatio5mOverHour": 0.08466465256797583,
+        "burstRatio15mOverHour": 0.21114199395770392
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 20000
+        },
+        "topExternalPeerIp": {
+          "ip": "36.66.107.162",
+          "count": 1180
+        },
+        "sourceEntropy": 4.087,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 20000,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.357470475144186,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:37:21.813Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.62377338425098,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.62377338425098
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 736,
+        "attacksLast5Min": 3568,
+        "attacksLast15Min": 8736,
+        "attacksLastHour": 41374,
+        "burstRatio5mOverHour": 0.0862377338425098,
+        "burstRatio15mOverHour": 0.2111470972108087
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 20000
+        },
+        "topExternalPeerIp": {
+          "ip": "177.231.253.158",
+          "count": 1180
+        },
+        "sourceEntropy": 4.087,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 20000,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.43969972358574,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:38:20.240Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.92390989074737,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.92390989074737
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 741,
+        "attacksLast5Min": 3692,
+        "attacksLast15Min": 9071,
+        "attacksLastHour": 41372,
+        "burstRatio5mOverHour": 0.08923909890747365,
+        "burstRatio15mOverHour": 0.21925456830706758
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 20000
+        },
+        "topExternalPeerIp": {
+          "ip": "186.208.111.188",
+          "count": 1180
+        },
+        "sourceEntropy": 4.087,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 20000,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.596589261072488,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:39:34.595Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.9395733165817,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.9395733165817
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 733,
+        "attacksLast5Min": 3700,
+        "attacksLast15Min": 9929,
+        "attacksLastHour": 41389,
+        "burstRatio5mOverHour": 0.089395733165817,
+        "burstRatio15mOverHour": 0.2398946580009181
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 20000
+        },
+        "topExternalPeerIp": {
+          "ip": "217.31.110.43",
+          "count": 1180
+        },
+        "sourceEntropy": 4.087,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 20000,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.604776960940434,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:40:37.832Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.9243855875885,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.9243855875885
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 742,
+        "attacksLast5Min": 3693,
+        "attacksLast15Min": 10786,
+        "attacksLastHour": 41381,
+        "burstRatio5mOverHour": 0.08924385587588507,
+        "burstRatio15mOverHour": 0.26065102341654384
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 20000
+        },
+        "topExternalPeerIp": {
+          "ip": "200.116.206.58",
+          "count": 1180
+        },
+        "sourceEntropy": 4.087,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 20000,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.5968379207849,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:41:41.811Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.93206699050242,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.93206699050242
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 740,
+        "attacksLast5Min": 3696,
+        "attacksLast15Min": 10906,
+        "attacksLastHour": 41379,
+        "burstRatio5mOverHour": 0.08932066990502428,
+        "burstRatio15mOverHour": 0.26356364339399213
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 20000
+        },
+        "topExternalPeerIp": {
+          "ip": "177.104.69.130",
+          "count": 1180
+        },
+        "sourceEntropy": 4.087,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 20000,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.60085319958081,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:42:46.545Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.9384529879419,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.9384529879419
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 751,
+        "attacksLast5Min": 3699,
+        "attacksLast15Min": 10906,
+        "attacksLastHour": 41383,
+        "burstRatio5mOverHour": 0.08938452987941908,
+        "burstRatio15mOverHour": 0.2635381678467003
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 20000
+        },
+        "topExternalPeerIp": {
+          "ip": "186.208.111.188",
+          "count": 1180
+        },
+        "sourceEntropy": 4.087,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 20000,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.604191334605993,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:43:51.189Z",
+      "phase": "injection",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Attack",
+      "truth": "Attack",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.99536097419542,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.99536097419542
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 749,
+        "attacksLast5Min": 3723,
+        "attacksLast15Min": 10908,
+        "attacksLastHour": 41388,
+        "burstRatio5mOverHour": 0.0899536097419542,
+        "burstRatio15mOverHour": 0.2635546535227602
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 20000
+        },
+        "topExternalPeerIp": {
+          "ip": "185.158.175.95",
+          "count": 1180
+        },
+        "sourceEntropy": 4.087,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 20000,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.6339386910567,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Attack",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    },
+    {
+      "timestamp": "2026-05-17T10:44:53.191Z",
+      "phase": "cooldown",
+      "window_minutes": 1,
+      "rawPredicted": "Attack",
+      "experimentPredicted": "Residual",
+      "truth": "Residual",
+      "riskScore": 89,
+      "startState": "critical",
+      "endState": "critical",
+      "isTransition": false,
+      "attackScores": {
+        "dos": 83.98591345108368,
+        "scan": 15,
+        "brute_force": 0,
+        "web_probe": 70,
+        "c2": 50,
+        "impact": 0
+      },
+      "dominantAttack": {
+        "type": "dos",
+        "score": 83.98591345108368
+      },
+      "attackMetrics": {
+        "attacksLast1Min": 739,
+        "attacksLast5Min": 3719,
+        "attacksLast15Min": 10900,
+        "attacksLastHour": 41387,
+        "burstRatio5mOverHour": 0.08985913451083674,
+        "burstRatio15mOverHour": 0.26336772416459275
+      },
+      "scanningIndicators": {
+        "scanCandidates": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topPorts": [
+          {
+            "port": 443,
+            "count": 20000
+          }
+        ],
+        "topSourceIp": {
+          "ip": "192.168.1.116",
+          "count": 20000
+        },
+        "topExternalPeerIp": {
+          "ip": "186.208.106.234",
+          "count": 1180
+        },
+        "sourceEntropy": 4.087,
+        "portEntropy": 0,
+        "authPortPressure": 0,
+        "webPortPressure": 20000,
+        "dbPortPressure": 0,
+        "windowedEventCount": 20000,
+        "windowedTopPortsCount": 1,
+        "windowedMissingPortCount": 0,
+        "usingWindowedPorts": true,
+        "portDiversity": 1
+      },
+      "riskComponents": {
+        "volumeComponent": 60,
+        "severityComponent": 0,
+        "behaviorComponent": 0,
+        "signalAmplifier": 16.62900021306647,
+        "c2Bonus": 12.5,
+        "impactBonus": 0,
+        "couplingBonus": 0
+      },
+      "residual_level": "High",
+      "phase_transition": false,
+      "truth_simple": "Normal",
+      "attack_start_effective": "2026-05-17T10:25:21.446Z"
+    }
+  ],
+  "metrics_global_all_windows": {
+    "TP": 18,
+    "FP": 0,
+    "TN": 0,
+    "FN": 0,
+    "total_samples": 18,
+    "precision": 1,
+    "recall": 1,
+    "specificity": 0,
+    "fpr": 0,
+    "fnr": 0,
+    "accuracy": 1,
+    "balanced_accuracy": 0.5,
+    "f1": 1
+  },
+  "metrics_per_window": {
+    "1": {
+      "TP": 18,
+      "FP": 0,
+      "TN": 0,
+      "FN": 0,
+      "total_samples": 18,
+      "precision": 1,
+      "recall": 1,
+      "specificity": 0,
+      "fpr": 0,
+      "fnr": 0,
+      "accuracy": 1,
+      "balanced_accuracy": 0.5,
+      "f1": 1
+    }
+  },
+  "latency_seconds": {
+    "global": {
+      "min": 0,
+      "max": 0,
+      "mean": 0
+    },
+    "perWindow": {
+      "1": 0
+    }
+  },
+  "stability": {
+    "1": {
+      "samples": 19,
+      "flips": 1,
+      "flip_rate": 0.05555555555555555
+    }
+  },
+  "risk_separation": {
+    "normal_n": 1,
+    "attack_n": 18,
+    "normal_mean": 89,
+    "attack_mean": 88.38888888888889,
+    "separation_margin": -0.6111111111111143
+  },
+  "replay": {
+    "python": "python3",
+    "script": "/home/ubuntu/research/scripts/replay_pcap_events.py",
+    "exitCode": 0
+  },
+  "infectionBoundary": null,
+  "pcap": "2017-07-11_capture-win2wannacryfailed_283-1",
+  "mode": "clean"
+}

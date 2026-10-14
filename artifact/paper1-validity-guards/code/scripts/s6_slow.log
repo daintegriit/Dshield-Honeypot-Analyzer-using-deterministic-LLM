@@ -1,0 +1,78 @@
+nohup: ignoring input
+========================================================================
+           CTU-13 LABELED NETFLOW REPLAY
+========================================================================
+  Scenario:            6
+  File:                /home/ubuntu/research/scripts/../ctu13/CTU-13-Dataset/6/capture20110816.binetflow
+  Ingest:              http://localhost:5002/api/ingest/log
+  Include background:  False
+  Limit:               none
+  Dry run:             False
+========================================================================
+PCAP_NAME=ctu13-s6
+
+📂 Loading and classifying flows...
+
+📊 Load statistics
+------------------------------------------------------------------------
+  rows read:           558,919
+  botnet flows:        4,630   (of which C&C: 199)
+  normal flows:        7,494
+  background kept:     0
+  background skipped:  546,795
+  unparseable:         0
+  TO REPLAY:           12,124
+  load time:           1.7s
+------------------------------------------------------------------------
+
+⏱  Estimated replay time: 40.4 min at 5 events/sec
+
+🚀 Replaying 12,124 flows...
+
+→       1/12,124 (  0.0%) | sent=1 failed=0 |   3.5 eps |   0.0 min
+→     501/12,124 (  4.1%) | sent=501 failed=0 |   4.8 eps |   1.7 min
+→   1,001/12,124 (  8.3%) | sent=1,001 failed=0 |   4.8 eps |   3.5 min
+→   1,501/12,124 ( 12.4%) | sent=1,501 failed=0 |   4.8 eps |   5.2 min
+→   2,001/12,124 ( 16.5%) | sent=2,001 failed=0 |   4.8 eps |   6.9 min
+→   2,501/12,124 ( 20.6%) | sent=2,501 failed=0 |   4.8 eps |   8.7 min
+→   3,001/12,124 ( 24.8%) | sent=3,001 failed=0 |   4.8 eps |  10.4 min
+→   3,501/12,124 ( 28.9%) | sent=3,501 failed=0 |   4.8 eps |  12.2 min
+→   4,001/12,124 ( 33.0%) | sent=4,001 failed=0 |   4.8 eps |  13.9 min
+→   4,501/12,124 ( 37.1%) | sent=4,501 failed=0 |   4.8 eps |  15.6 min
+→   5,001/12,124 ( 41.2%) | sent=5,001 failed=0 |   4.8 eps |  17.4 min
+→   5,501/12,124 ( 45.4%) | sent=5,501 failed=0 |   4.8 eps |  19.1 min
+→   6,001/12,124 ( 49.5%) | sent=6,001 failed=0 |   4.8 eps |  20.8 min
+→   6,501/12,124 ( 53.6%) | sent=6,501 failed=0 |   4.8 eps |  22.6 min
+→   7,001/12,124 ( 57.7%) | sent=7,001 failed=0 |   4.8 eps |  24.3 min
+→   7,501/12,124 ( 61.9%) | sent=7,501 failed=0 |   4.8 eps |  26.0 min
+→   8,001/12,124 ( 66.0%) | sent=8,001 failed=0 |   4.8 eps |  27.8 min
+→   8,501/12,124 ( 70.1%) | sent=8,501 failed=0 |   4.8 eps |  29.5 min
+→   9,001/12,124 ( 74.2%) | sent=9,001 failed=0 |   4.8 eps |  31.2 min
+→   9,501/12,124 ( 78.4%) | sent=9,501 failed=0 |   4.8 eps |  33.0 min
+→  10,001/12,124 ( 82.5%) | sent=10,001 failed=0 |   4.8 eps |  34.7 min
+→  10,501/12,124 ( 86.6%) | sent=10,501 failed=0 |   4.8 eps |  36.4 min
+❌ Ingest error (skipping): HTTPConnectionPool(host='localhost', port=5002): Max retries exceeded with url: /api/ingest/log (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7a28a209e9b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+❌ Ingest error (skipping): HTTPConnectionPool(host='localhost', port=5002): Max retries exceeded with url: /api/ingest/log (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7a28a19484c0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+❌ Ingest error (skipping): HTTPConnectionPool(host='localhost', port=5002): Max retries exceeded with url: /api/ingest/log (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7a28a1948820>: Failed to establish a new connection: [Errno 111] Connection refused'))
+→  11,001/12,124 ( 90.7%) | sent=10,998 failed=3 |   4.8 eps |  38.2 min
+→  11,501/12,124 ( 94.9%) | sent=11,498 failed=3 |   4.8 eps |  39.9 min
+❌ Ingest error (skipping): HTTPConnectionPool(host='localhost', port=5002): Max retries exceeded with url: /api/ingest/log (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7a28a1948b80>: Failed to establish a new connection: [Errno 111] Connection refused'))
+❌ Ingest error (skipping): HTTPConnectionPool(host='localhost', port=5002): Max retries exceeded with url: /api/ingest/log (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7a28a1948e20>: Failed to establish a new connection: [Errno 111] Connection refused'))
+→  12,001/12,124 ( 99.0%) | sent=11,994 failed=7 |   4.8 eps |  41.7 min
+→  12,124/12,124 (100.0%) | sent=12,117 failed=7 |   4.8 eps |  42.1 min
+
+========================================================================
+✅ REPLAY COMPLETE
+========================================================================
+  scenario:        6 (ctu13-s6)
+  sent:            12,117
+  failed:          7
+  duration:        42.1 min
+  effective eps:   4.79
+========================================================================
+
+Ground truth is stored per-document as ctu_class / ctu_subclass.
+Query examples:
+  db.attacks.countDocuments({ replay_pcap: "ctu13-s6", ctu_class: "botnet" })
+  db.attacks.countDocuments({ replay_pcap: "ctu13-s6", ctu_class: "normal" })
+  db.attacks.countDocuments({ replay_pcap: "ctu13-s6", ctu_subclass: "c2" })

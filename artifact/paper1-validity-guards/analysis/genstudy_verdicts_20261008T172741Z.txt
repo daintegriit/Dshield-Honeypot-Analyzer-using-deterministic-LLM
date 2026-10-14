@@ -1,0 +1,147 @@
+========================================================================
+UNSW-NB15 | 2609.24393 | RF-41 hold-out, binary (Table II, Sec III)
+========================================================================
+
+No withholding condition met.
+
+Checked and passed: UNDERPOWERED_CLASS, EMPTY_CLASS, NEAR_CHANCE_SEPARATION (bal 0.985, bar 0.502)
+
+Not assessable from what the paper reports:
+  TRIVIAL_NEGATIVE_CLASS: per-unit event counts for the negative class not reported
+  INVERTED_SEPARATION: per-class score means not reported
+  DEGENERATE_SWEEP: no threshold sweep reported
+  WINDOW_SPAN: capture span or window width not reported
+
+========================================================================
+UNSW-NB15 | 2605.26166 | XGBoost-BalSamp, binary (Fig. 4 caption, Sec 8.2)
+========================================================================
+
+No withholding condition met.
+
+Checked and passed: UNDERPOWERED_CLASS, EMPTY_CLASS, NEAR_CHANCE_SEPARATION (bal 0.952, bar 0.504)
+
+Not assessable from what the paper reports:
+  TRIVIAL_NEGATIVE_CLASS: per-unit event counts for the negative class not reported
+  INVERTED_SEPARATION: per-class score means not reported
+  DEGENERATE_SWEEP: no threshold sweep reported
+  WINDOW_SPAN: capture span or window width not reported
+
+========================================================================
+UNSW-NB15 | 2605.26166 | PseudoFilter+MixupAug+LiteAE best run (Fig. 5 caption)
+========================================================================
+
+No withholding condition met.
+
+Not assessable from what the paper reports:
+  UNDERPOWERED_CLASS: no per-class counts reported
+  EMPTY_CLASS: no class counts or matrix reported
+  TRIVIAL_NEGATIVE_CLASS: per-unit event counts for the negative class not reported
+  NEAR_CHANCE_SEPARATION: confusion matrix not reported
+  INVERTED_SEPARATION: per-class score means not reported
+  DEGENERATE_SWEEP: no threshold sweep reported
+  WINDOW_SPAN: capture span or window width not reported
+
+========================================================================
+UNSW-NB15 | 2605.05275 | per-class F1, test set (Table I)
+========================================================================
+
+No withholding condition met.
+
+Checked and passed: UNDERPOWERED_CLASS, EMPTY_CLASS
+
+Not assessable from what the paper reports:
+  TRIVIAL_NEGATIVE_CLASS: per-unit event counts for the negative class not reported
+  NEAR_CHANCE_SEPARATION: confusion matrix not reported
+  INVERTED_SEPARATION: per-class score means not reported
+  DEGENERATE_SWEEP: no threshold sweep reported
+  WINDOW_SPAN: capture span or window width not reported
+
+========================================================================
+UNSW-NB15 | 2603.28838 | per-class F1, test set (Table I)
+========================================================================
+
+No withholding condition met.
+
+Checked and passed: UNDERPOWERED_CLASS, EMPTY_CLASS
+
+Not assessable from what the paper reports:
+  TRIVIAL_NEGATIVE_CLASS: per-unit event counts for the negative class not reported
+  NEAR_CHANCE_SEPARATION: confusion matrix not reported
+  INVERTED_SEPARATION: per-class score means not reported
+  DEGENERATE_SWEEP: no threshold sweep reported
+  WINDOW_SPAN: capture span or window width not reported
+
+========================================================================
+CTU-13 | 2604.04952 | ML Defender, Neris held-out (Table 3, Sec 8.13)
+========================================================================
+
+No withholding condition met.
+
+Checked and passed: UNDERPOWERED_CLASS, EMPTY_CLASS, NEAR_CHANCE_SEPARATION (bal 1.000, bar 0.520)
+
+Not assessable from what the paper reports:
+  TRIVIAL_NEGATIVE_CLASS: per-unit event counts for the negative class not reported
+  INVERTED_SEPARATION: per-class score means not reported
+  DEGENERATE_SWEEP: no threshold sweep reported
+  WINDOW_SPAN: capture span or window width not reported
+
+========================================================================
+CTU-13 | 2604.04952 | Suricata ET Open, Neris (Table 12)
+========================================================================
+
+No withholding condition met.
+
+Checked and passed: UNDERPOWERED_CLASS, EMPTY_CLASS
+
+Not assessable from what the paper reports:
+  TRIVIAL_NEGATIVE_CLASS: per-unit event counts for the negative class not reported
+  NEAR_CHANCE_SEPARATION: confusion matrix not reported
+  INVERTED_SEPARATION: per-class score means not reported
+  DEGENERATE_SWEEP: no threshold sweep reported
+  WINDOW_SPAN: capture span or window width not reported
+
+========================================================================
+CTU-13 | 2604.04952 | Zeek default scripts, Neris (Sec 8.14)
+========================================================================
+
+No withholding condition met.
+
+Checked and passed: UNDERPOWERED_CLASS, EMPTY_CLASS
+
+Not assessable from what the paper reports:
+  TRIVIAL_NEGATIVE_CLASS: per-unit event counts for the negative class not reported
+  NEAR_CHANCE_SEPARATION: confusion matrix not reported
+  INVERTED_SEPARATION: per-class score means not reported
+  DEGENERATE_SWEEP: no threshold sweep reported
+  WINDOW_SPAN: capture span or window width not reported
+
+========================================================================
+CSE-CIC-IDS2018 | 2608.11291 | DQN, per-class, split unstated (Table V)
+========================================================================
+
+No withholding condition met.
+
+Checked and passed: UNDERPOWERED_CLASS, EMPTY_CLASS
+
+Not assessable from what the paper reports:
+  TRIVIAL_NEGATIVE_CLASS: per-unit event counts for the negative class not reported
+  NEAR_CHANCE_SEPARATION: confusion matrix not reported
+  INVERTED_SEPARATION: per-class score means not reported
+  DEGENERATE_SWEEP: no threshold sweep reported
+  WINDOW_SPAN: capture span or window width not reported
+
+========================================================================
+CSE-CIC-IDS2018 | 2606.05714 | 'representative sample', binary (Fig. 9 caption)
+========================================================================
+
+No withholding condition met.
+
+Checked and passed: EMPTY_CLASS, NEAR_CHANCE_SEPARATION (bal 0.875, bar 0.846)
+
+Not assessable from what the paper reports:
+  UNDERPOWERED_CLASS: no per-class counts reported
+  TRIVIAL_NEGATIVE_CLASS: per-unit event counts for the negative class not reported
+  INVERTED_SEPARATION: per-class score means not reported
+  DEGENERATE_SWEEP: no threshold sweep reported
+  WINDOW_SPAN: capture span or window width not reported
+
