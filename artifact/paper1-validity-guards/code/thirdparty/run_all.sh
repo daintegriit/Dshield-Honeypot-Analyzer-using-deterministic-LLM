@@ -9,14 +9,14 @@
 #   bash run_all.sh slips       D1 on the registered inputs (long)
 #   bash run_all.sh kitsune     D2 (set PCAP, BOUNDARY, INFECTED, C2 below first)
 #   bash run_all.sh audit       guards + statistics + predictions
-set -eu
+set -euo pipefail
 KIT="$(cd "$(dirname "$0")" && pwd)"
 OUT=~/research/results/thirdparty_20261015
 POS=~/research/results/poscontrol_20261014        # Chiron TRUE-time runs + backend copy
 BK=$POS/backend                                     # has .env, node_modules, models/
-REPLAY_DIR=${REPLAY_DIR:-$(dirname "$(find ~ -name replay_ctu13.py -not -path '*/thirdparty*' 2>/dev/null | head -1)")}
+REPLAY_DIR=${REPLAY_DIR:-$(cd "$KIT/../scripts" && pwd)}   # the repo's replay_ctu13.py
 CTU=${CTU:-$(dirname "$(find ~ -type d -name CTU-13-Dataset 2>/dev/null | head -1)")/CTU-13-Dataset}
-GUARD=${GUARD:-$HOME/research/scripts/guard_audit.py}
+GUARD=${GUARD:-$(cd "$KIT/../scripts" && pwd)/guard_audit.py}   # the repo's 12-condition audit
 SC="1 2 6 8 9"
 # D2 inputs (from the Paper 2 boundary derivation); fill these in before `kitsune`
 PCAP=${PCAP:-}
@@ -30,7 +30,7 @@ case "$step" in
 setup)
   sudo apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq tshark docker.io python3-venv >/dev/null
   python3 -m venv "$OUT/venv"
-  "$OUT/venv/bin/pip" install -q "numpy<2" scipy scikit-learn cython scapy
+  "$OUT/venv/bin/pip" install -q "numpy<2" scipy scikit-learn cython scapy requests
   [ -d "$OUT/Kitsune-py" ] || git clone -q https://github.com/ymirsky/Kitsune-py.git "$OUT/Kitsune-py"
   {
     echo "kitsune commit $(git -C "$OUT/Kitsune-py" rev-parse HEAD)"
@@ -43,8 +43,16 @@ setup)
 inputs)
   cp "$KIT/export_flows.js" "$BK/export_flows.js"
   (cd "$BK" && node export_flows.js "$OUT/export" $SC) | tee -a "$LOG"
-  "$OUT/venv/bin/python" -I "$KIT/build_inputs.py" "$REPLAY_DIR" "$CTU" "$OUT/export" "$OUT/inputs" $SC | tee -a "$LOG"
-  grep -q WARNING "$LOG" && { say "STOP: the join is not exact."; exit 1; } || say "join exact on every scenario"
+  "$OUT/venv/bin/python" -I "$KIT/build_inputs.py" "$REPLAY_DIR" "$CTU" "$OUT/export" "$OUT/inputs" $SC | tee "$OUT/join.log"
+  cat "$OUT/join.log" >> "$LOG"
+  for s in $SC; do
+    [ -s "$OUT/inputs/flows_s$s.tsv" ] && [ -s "$OUT/inputs/s${s}_TRUE.binetflow" ] && [ -s "$OUT/inputs/s${s}_ARRIVAL.binetflow" ] \
+      || { say "STOP: inputs for s$s were not built"; exit 1; }
+  done
+  if grep -q WARNING "$OUT/join.log"; then say "STOP: the join is not exact."; exit 1; fi
+  [ "$(grep -c 'rows unmatched 0  docs unmatched 0' "$OUT/join.log")" = "$(echo $SC | wc -w)" ] \
+    || { say "STOP: the join did not report exact on every scenario"; exit 1; }
+  say "join exact on every scenario"
   ;;
 windows)
   "$OUT/venv/bin/python" -I "$KIT/rf.py" "$OUT/inputs" "$OUT/rf" $SC >/dev/null
