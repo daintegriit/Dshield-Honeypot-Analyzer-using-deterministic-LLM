@@ -1,0 +1,16 @@
+n	arxiv	question	coded	verified	note
+1	2508.14192v1	Q3	YES	UNSTATED	"initial segments contain only normal traffic, with attacks reserved for testing" describes the train/test boundary, not the arrangement inside the test set; outcome -> UNASSESSABLE
+2	2510.09619v1	all	-	AGREE	
+3	2602.16098v1	all	-	AGREE	confirmed "3 agree all"
+4	2602.17973v2	all	-	AGREE	
+5	2603.17717v4	all	-	AGREE	
+6	2604.14663v1	all	-	AGREE	
+7	2605.06629v1	Q1	UNSTATED	NO	Sec 2.1.2/3.1 name the full input (synack, ct_state_ttl, sbytes, smean), each described per-connection in Table 1; within-flow stats excluded by protocol; outcome -> NOT_EXPOSED
+8	2605.07536v1	Q3	UNSTATED	YES	Sec 4.1 "Benign graph snapshots are ordered chronologically. The earliest 80% form the benign training pool, while the remaining 20% together with all malicious windows constitute the test set": benign test windows drawn only from the final segment, attacks from the whole capture
+8	2605.07536v1	Q4	NOT_STATED	HANDLED	Sec 5 "GESR currently processes static time windows sequentially. This reset of state between windows...": lookback = the 30 s window, state reset per window; outcome -> MITIGATED
+9	2605.23004v2	Q2	UNSTATED	NO	Sec 3.4 "We adopt a stratified 70/30 split, preserving the ~2.48% botnet ratio in both sets"; outcome unchanged NOT_EXPOSED
+10	2605.27299v1	all	-	AGREE	
+11	2606.29797v2	Q1	NO	UNSTATED	quote covers MDE features only; evaluated Combined condition concatenates 41 unnamed conventional UNSW-NB15 features (standard set includes ct_* last-100-connection counts); outcome unchanged NOT_EXPOSED via Q2
+12	2608.24454v1	Q2	UNSTATED	NO	Sec V-A/V-C: benign flows merged across scenarios, resampled 10:1, 80:20 split preserving class ratio; test scored as one static graph; outcome -> NOT_EXPOSED
+13	2609.16363v1	all	-	AGREE	
+14	2609.39584v1	Q1	YES	UNSTATED	sliding-window CNN-BiLSTM evaluated only on CICIDS2017/Edge-IIoTset; UNSW-NB15 (Sec V-D) used only for RF/DT/Linear-SVM baselines on 2D tabular data with 49 unnamed features; Q4 -> NA; outcome unchanged UNASSESSABLE
