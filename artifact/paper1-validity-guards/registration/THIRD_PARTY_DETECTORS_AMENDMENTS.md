@@ -1,0 +1,3 @@
+# Amendments to THIRD_PARTY_DETECTORS_REGISTRATION.md
+
+(none)
