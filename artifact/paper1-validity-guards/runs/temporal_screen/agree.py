@@ -1,7 +1,7 @@
 import csv,glob,collections,os
 def load(d):
     R={}
-    for f in sorted(glob.glob(f'{d}/batch*.tsv')):
+    for f in sorted(glob.glob(f'{d}/batch*.tsv'), key=lambda p: (2 if 'pdf' in p else 1 if 'retry' in p else 0, p)):
         for r in csv.DictReader(open(f),delimiter='\t'):
             R[r['arxiv_id'].split('v')[0]]=r
     return R

@@ -1,6 +1,6 @@
-# Verification checklist (protocol section 6)
+# Verification checklist (protocol section 6; sample drawn over the final codes, amendment A4)
 
-For each paper: open the link, check each code against the definitions in TEMPORAL_SCREEN_PROTOCOL.md section 4, and mark AGREE or CHANGE (with the new code and a one-line reason). Paper 1 is the only EXPOSED paper; papers 2-14 are the seeded random 20% (seed 20261014) of the rest.
+For each paper: open the link, check each code against the definitions in TEMPORAL_SCREEN_PROTOCOL.md section 4, and mark AGREE or CHANGE (with the new code and a one-line reason). Paper 1 is the only EXPOSED paper; papers 2-14 are the seeded random 20% (seed 20261014) of the remaining 67 coded papers.
 
 ## 1. 2508.14192v1  (CIC-IDS2017)  outcome: EXPOSED
 https://arxiv.org/abs/2508.14192v1
@@ -18,18 +18,18 @@ Primary evaluation: Bayesian online changepoint streaming detector on streams fr
 - Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q4 = NOT_STATED | - | "-"   -> AGREE / CHANGE: ____
 
-## 3. 2602.17973v2  (CSE-CIC-IDS2018)  outcome: UNASSESSABLE
-https://arxiv.org/abs/2602.17973v2
-Primary evaluation: Federated IDS (PenTiDef) accuracy/F1 vs FLARE and FedCC on Edge-IIoTSet and CIC-IDS2018
-- Q1 = UNSTATED | Sec. 6.4 | "71 features and a label column after preprocessing" (adjudicated: Paper gives only a feature count; it does not name the features, say they are per-flow statistics, or describe any temporal aggregation. Per-flow nature would be inferred from the dataset, not stated.)   -> AGREE / CHANGE: ____
+## 3. 2602.16098v1  (UNSW-NB15)  outcome: UNASSESSABLE
+https://arxiv.org/abs/2602.16098v1
+Primary evaluation: ZAID zone-adaptive zero-day detection; cross-domain evaluation on UNSW-NB15 with rare attack categories withheld (Sec IV-G); abstract reports up to 83.16% accuracy on unseen attacks
+- Q1 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q2 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q4 = NA | - | "-"   -> AGREE / CHANGE: ____
 
-## 4. 2603.10413v1  (UNSW-NB15)  outcome: UNASSESSABLE
-https://arxiv.org/abs/2603.10413v1
-Primary evaluation: Multi-layer ensemble (autoencoder + classifiers) adversarial-robust NIDS on UNSW-NB15 (abstract names UNSW-NB15 first; no numeric result in abstract)
-- Q1 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
+## 4. 2602.17973v2  (CSE-CIC-IDS2018)  outcome: UNASSESSABLE
+https://arxiv.org/abs/2602.17973v2
+Primary evaluation: Federated IDS (PenTiDef) accuracy/F1 vs FLARE and FedCC on Edge-IIoTSet and CIC-IDS2018
+- Q1 = UNSTATED | Sec. 6.4 | "71 features and a label column after preprocessing" (adjudicated: Paper gives only a feature count; it does not name the features, say they are per-flow statistics, or describe any temporal aggregation. Per-flow nature would be inferred from the dataset, not stated.)   -> AGREE / CHANGE: ____
 - Q2 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q4 = NA | - | "-"   -> AGREE / CHANGE: ____
@@ -42,23 +42,15 @@ Primary evaluation: Attack classification on under-sampled UMNIDS unified datase
 - Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q4 = NOT_STATED | - | "-"   -> AGREE / CHANGE: ____
 
-## 6. 2605.04407v1  (UNSW-NB15)  outcome: UNASSESSABLE
-https://arxiv.org/abs/2605.04407v1
-Primary evaluation: Same-dataset 70/30 evaluation of ML models on UNSW-NB15 (RF 95.08% accuracy), plus cross-dataset to TON_IoT
-- Q1 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
-- Q2 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
+## 6. 2604.14663v1  (CIC-IDS2017)  outcome: NOT_EXPOSED
+https://arxiv.org/abs/2604.14663v1
+Primary evaluation: EdgeDetect federated MLP on CIC-IDS2017; 98.0% multi-class accuracy, 97.9% macro F1
+- Q1 = UNSTATED | Sec. IV.B | "Flow inter-arrival time statistics were computed as" (adjudicated: Eq. 7 gives IAT mean/std over n timestamps but never states whether these span packets within one flow or multiple flows; no windows described. Scope not stated, so neither YES nor NO.)   -> AGREE / CHANGE: ____
+- Q2 = NO | Sec. V.A | "An 80:20 stratified split (seed 42) was applied." (adjudicated: A seeded stratified 80:20 split samples records per class at random, i.e. independently shuffled records; no streaming, replay or contiguous windows are described.)   -> AGREE / CHANGE: ____
 - Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q4 = NA | - | "-"   -> AGREE / CHANGE: ____
 
-## 7. 2605.05644v1  (CIC-IDS2017)  outcome: NOT_EXPOSED
-https://arxiv.org/abs/2605.05644v1
-Primary evaluation: AoI-guided client selection for federated IDS; AoI reduced ~39-41%, Macro-F1/AUC usually preserved (CIC-IDS2017 Friday DDoS+PortScan subset among datasets)
-- Q1 = NO | Experimental Setup (model description) | "lightweight softmax classifier"   -> AGREE / CHANGE: ____
-- Q2 = UNSTATED | Experimental Setup | "Training data are partitioned non-IID using a Dirichlet split (alpha=0.3)"   -> AGREE / CHANGE: ____
-- Q3 = UNSTATED | Experimental Setup, Datasets | "We evaluate on CIC-IDS2017 flows (Friday DDoS + PortScan mini subset)"   -> AGREE / CHANGE: ____
-- Q4 = NA | - | "-"   -> AGREE / CHANGE: ____
-
-## 8. 2605.06629v1  (UNSW-NB15)  outcome: UNASSESSABLE
+## 7. 2605.06629v1  (UNSW-NB15)  outcome: UNASSESSABLE
 https://arxiv.org/abs/2605.06629v1
 Primary evaluation: IDS evasion test: RF/XGBoost/CNN1D on generated attack flows paired with real benign flows (abstract gives no numeric result)
 - Q1 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
@@ -66,42 +58,50 @@ Primary evaluation: IDS evasion test: RF/XGBoost/CNN1D on generated attack flows
 - Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q4 = NA | - | "-"   -> AGREE / CHANGE: ____
 
-## 9. 2605.18647v1  (CIC-IDS2017+UNSW-NB15)  outcome: NOT_EXPOSED
-https://arxiv.org/abs/2605.18647v1
-Primary evaluation: Federated Naive Bayes with ICC regularization; F1-macro on NSL-KDD, CIC-IDS2017 (0.7556 vs 0.6771), UNSW-NB15
-- Q1 = NO | Sec. III.C | "Numerical flow statistics are handled by GaussianNB after StandardScaler normalization."   -> AGREE / CHANGE: ____
-- Q2 = UNSTATED | Table III | "Train / Val / Test | 60% / 20% / 20%"   -> AGREE / CHANGE: ____
-- Q3 = UNSTATED | Sec. IV.A | "Eight Parquet files, binarized (BENIGN=0, any attack=1), proportionally subsampled."   -> AGREE / CHANGE: ____
+## 8. 2605.07536v1  (CTU-13)  outcome: UNASSESSABLE
+https://arxiv.org/abs/2605.07536v1
+Primary evaluation: GESR benign-only graph anomaly detection over 30 s window snapshots on CTU-13 (Table 2 ROC-AUC 0.9804; abstract reports CICIDS2017 ROC-AUC 0.9753)
+- Q1 = YES | Sec 3.2 Graph Construction | "traffic is partitioned into fixed time windows to construct a sequence of communication graphs. The window size is set to 30 seconds for CTU-13"   -> AGREE / CHANGE: ____
+- Q2 = YES | Sec 4.1 Experimental Setup | "Benign graph snapshots are ordered chronologically. ... All baselines use the same chronological split"   -> AGREE / CHANGE: ____
+- Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
+- Q4 = NOT_STATED | - | "-"   -> AGREE / CHANGE: ____
+
+## 9. 2605.23004v2  (CTU-13)  outcome: NOT_EXPOSED
+https://arxiv.org/abs/2605.23004v2
+Primary evaluation: Lightweight ML (Random Forest) botnet flow classification on CTU-13 (abstract: PR-AUC ~0.54, ROC-AUC 0.97)
+- Q1 = NO | Sec 3.2 | "we use: total bytes and packets (log-transformed), bytes-per-packet ratio, flow duration, and protocol and port indicators"   -> AGREE / CHANGE: ____
+- Q2 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
+- Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q4 = NA | - | "-"   -> AGREE / CHANGE: ____
 
-## 10. 2605.26166v1  (UNSW-NB15)  outcome: UNASSESSABLE
-https://arxiv.org/abs/2605.26166v1
-Primary evaluation: XGBoost-BalSamp / online pseudo-labelling classification on UNSW-NB15; 95.45% accuracy
+## 10. 2605.27299v1  (CIC-IDS2017)  outcome: NOT_EXPOSED
+https://arxiv.org/abs/2605.27299v1
+Primary evaluation: Risk-averse alert prioritization on CIC-IDS2017 detector outputs; NDCG_rel@100 0.9963 vs 0.8215 baseline under detector degradation
+- Q1 = NO | Sec. 4.1 | "covers 78 network flow features (source/destination IP, ports, protocol, packet statistics, etc.)"   -> AGREE / CHANGE: ____
+- Q2 = UNSTATED | Sec. 4.1 | "Sort day files by weekday. If the day-based train split (Mon/Tue) has at least 5% attacks, use Mon/Tue for training, Wed for validation, Thu/Fri for test."   -> AGREE / CHANGE: ____
+- Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
+- Q4 = NA | - | "-"   -> AGREE / CHANGE: ____
+
+## 11. 2606.29797v2  (UNSW-NB15)  outcome: NOT_EXPOSED
+https://arxiv.org/abs/2606.29797v2
+Primary evaluation: Multi-level distributional entropy features from flow summaries; abstract: CICIDS-2018 F1 0.73 hides DR 0.44; coded on UNSW-NB15 200K stratified sample
+- Q1 = NO | Sec 4 | "computes entropy analytically from the statistical summaries already present in pre-aggregated flow records"   -> AGREE / CHANGE: ____
+- Q2 = NO | Sec 5.2 | "Both are trained under stratified 5-fold crossvalidation"   -> AGREE / CHANGE: ____
+- Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
+- Q4 = NA | - | "-"   -> AGREE / CHANGE: ____
+
+## 12. 2608.24454v1  (CTU-13)  outcome: UNASSESSABLE
+https://arxiv.org/abs/2608.24454v1
+Primary evaluation: Hardened GNN flow-graph NIDS under structural adversarial attacks, CTU-13 by botnet family (abstract: superior clean detection and robustness)
 - Q1 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q2 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q4 = NA | - | "-"   -> AGREE / CHANGE: ____
 
-## 11. 2606.05714v1  (CSE-CIC-IDS2018)  outcome: NOT_EXPOSED
-https://arxiv.org/abs/2606.05714v1
-Primary evaluation: Hybrid CNN-LSTM on CSE-CIC-IDS2018 (Kaggle mirror): 99.1% accuracy, ~99.0% precision and recall, FPR ~2.0%
-- Q1 = NO | Sec 3.5 (LSTM) | "Individual network flows were treated as sequences of 10 timesteps, with each timestep corresponding to a subset of engineered features."   -> AGREE / CHANGE: ____
-- Q2 = NO | Sec 3.3 | "partitioned into 80% training and 20% testing subsets using stratified random sampling."   -> AGREE / CHANGE: ____
-- Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
-- Q4 = NA | - | "-"   -> AGREE / CHANGE: ____
-
-## 12. 2607.00763v1  (UNSW-NB15)  outcome: UNASSESSABLE
-https://arxiv.org/abs/2607.00763v1
-Primary evaluation: Train-on-synthetic test-on-real detection; abstract reports CICIDS2017 F1-macro 0.96; UNSW-NB15 used as cross-dataset validation
-- Q1 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
-- Q2 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
-- Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
-- Q4 = NA | - | "-"   -> AGREE / CHANGE: ____
-
-## 13. 2607.13203v2  (UNSW-NB15)  outcome: UNASSESSABLE
-https://arxiv.org/abs/2607.13203v2
-Primary evaluation: BARS feature selection for false-alarm reduction; UNSW-NB15 FPR reduced 15.4% vs CMD at k=20 (abstract: up to 32% fewer false alarms)
-- Q1 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
+## 13. 2609.16363v1  (UNSW-NB15)  outcome: NOT_EXPOSED
+https://arxiv.org/abs/2609.16363v1
+Primary evaluation: Flow-based FPGA IDS on reconstructed UNSW-NB15 packet traces (accuracy 86.92% to 97.68%)
+- Q1 = NO | Sec. II.C | "The aggregated feature vectors corresponding to the latest eight packets from the flow are forwarded to the intrusion detection engine."   -> AGREE / CHANGE: ____
 - Q2 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q3 = UNSTATED | - | "-"   -> AGREE / CHANGE: ____
 - Q4 = NA | - | "-"   -> AGREE / CHANGE: ____

@@ -1,0 +1,3 @@
+arxiv_id	question	resolved_code	reason	location	quote
+2607.02687v1	Q1	UNSTATED	Method says only that per-sample tabular flow features feed an MLP encoder; the feature set is never listed, and UNSW-NB15 tabular features can include interval connection counts, so absence of temporal aggregation is not stated.	Section 3.1	preprocessed features enter the MLP encoder, embeddings feed the router and expert heads
+2607.02687v1	outcome	UNASSESSABLE	Q1 UNSTATED (resolved); Q2 UNSTATED and Q3 UNSTATED (agreed by both coders); none of Q1-Q3 is NO, so UNASSESSABLE.	-	-
