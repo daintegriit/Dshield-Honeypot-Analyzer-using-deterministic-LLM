@@ -1,0 +1,84 @@
+dataset	arxiv_id	published	title
+CIC-IDS2017	2608.16160v1	2026-08-17	A Calibrated and Explainable Bimodal Machine Learning Framework for Hybrid Intrusion Detection
+CIC-IDS2017	2606.18771v1	2026-06-17	A Predictive Neural Network Architecture for Early Detection of Low-Rate Cyberattacks
+CIC-IDS2017	2606.11098v2	2026-06-09	Do Transformers Actually Help Intrusion Detection? A Temporal Sequence Evaluation on CIC-IDS2017
+CIC-IDS2017	2606.05701v1	2026-06-04	Cognitive Threat Intelligence and Explainable Federated Security Analytics for distributed Infrastructure Systems
+CIC-IDS2017	2605.27299v1	2026-05-26	Risk Averse Alert Prioritization for IDS Using Subnormal Gaussian Fuzzy Models
+CIC-IDS2017	2605.18647v1	2026-05-18	Federated Naive Bayes with Real Mixture of Gaussians and Institutional Governance Regularization for Network Intrusion Detection
+CIC-IDS2017	2605.05644v1	2026-05-07	AoI-Guided Client Selection for Robust and Timely Federated Intrusion Detection in Cloud-Edge Security Analytics
+CIC-IDS2017	2604.14663v1	2026-04-16	EdgeDetect: Importance-Aware Gradient Compression with Homomorphic Aggregation for Federated Intrusion Detection
+CIC-IDS2017	2604.12655v1	2026-04-14	Robust Semi-Supervised Temporal Intrusion Detection for Adversarial Cloud Networks
+CIC-IDS2017	2601.13197v2	2026-01-19	Diffusion-Driven Synthetic Tabular Data Generation for Enhanced DoS/DDoS Attack Classification
+CIC-IDS2017	2512.23809v1	2025-12-29	Zero-Trust Agentic Federated Learning for Secure IIoT Defense Systems
+CIC-IDS2017	2511.00360v1	2025-11-01	Mind the Gap: Missing Cyber Threat Coverage in NIDS Datasets for the Energy Sector
+CIC-IDS2017	2510.09619v1	2025-09-17	Risk-Calibrated Bayesian Streaming Intrusion Detection with SRE-Aligned Decisions
+CIC-IDS2017	2508.14192v1	2025-08-19	Noise Robust One-Class Intrusion Detection on Dynamic Graphs
+CIC-IDS2017	2501.06264v1	2025-01-09	HPAC-IDS: A Hierarchical Packet Attention Convolution for Intrusion Detection System
+UNSW-NB15	2609.39584v1	2026-09-30	Cybersecurity in Edge Computing: A Trust-Aware Federated Hybrid Intrusion Detection Framework
+UNSW-NB15	2609.24393v1	2026-09-21	Passive Hybrid Network-Based Intrusion Detection System (Hybrid-NIDS) Combining Suricata and Random Forest
+UNSW-NB15	2609.16363v1	2026-09-14	FSNIC: A Low-Latency Flow-Based Intrusion Detection Architecture for FPGA SmartNICs
+UNSW-NB15	2609.04388v1	2026-09-03	Candidate Comparability Before Promotion: Conditional Validation in Adaptive Network Intrusion Detection
+UNSW-NB15	2609.03420v1	2026-09-03	Privacy, Robustness, and Fairness Trade-offs in Federated Intrusion Detection: Geometric Indistinguishability at the Aggregation Interface
+UNSW-NB15	2608.18155v1	2026-08-13	How Quantum Is the Advantage? A Fair, Calibration- and Noise-Aware Benchmark and Attribution Audit of Quantum Machine Learning for Network Intrusion Detection
+UNSW-NB15	2608.12190v1	2026-08-12	Machine Learning-Based Cyber Defense for Cloud Infrastructure: An Adaptive Deep Q-Network Architecture for Intelligent Intrusion Detection and Automated Threat Mitigation
+UNSW-NB15	2608.08100v1	2026-08-08	Defending Retrieval-Augmented Intrusion Detection Against Knowledge Poisoning and Prompt Injection
+UNSW-NB15	2608.00895v1	2026-08-01	Multi-LLM Consensus Framework for Evaluating Banking-Sector NIDS Dataset Coverage of MITRE ATT&amp;CK Techniques
+UNSW-NB15	2607.19899v1	2026-07-22	Harnessing Disagreement: Detecting Correlated Agreement Blindness in Multi-Agent Triage
+UNSW-NB15	2607.13203v2	2026-07-14	BARS: Benign-Anchored Ranking and Selection for False Alarm Reduction in Network Intrusion Detection
+UNSW-NB15	2607.07739v1	2026-07-08	Controllability-Aware Adversarial Examples Against LLM-Based Network Traffic Classifiers
+UNSW-NB15	2607.02687v1	2026-07-02	RES-DARE: Failure-Aware Expert Adaptation and Rollback-Safe Self-Repair for Intrusion Detection
+UNSW-NB15	2607.00763v1	2026-07-01	Forensic-Oriented Intrusion Detection Using Synthetic Network Traffic Data and Explainable Artificial Intelligence
+UNSW-NB15	2606.29797v2	2026-06-29	Multi-Level Distributional Entropy from Flow Summary Statistics for Explainable Network Intrusion Detection
+UNSW-NB15	2606.28439v1	2026-06-26	PLAA: Packet-level Adversarial Attacks in Network Traffic Detection
+UNSW-NB15	2606.11565v1	2026-06-10	A Deterministic Forensic Preprocessing Framework for Heterogeneous Network Datasets: Formal Foundations, Implementation, and Empirical Validation
+UNSW-NB15	2606.09934v2	2026-06-07	nCMD: Benign-Anchored Feature Selection for Imbalanced Network Intrusion Detection
+UNSW-NB15	2606.05844v1	2026-06-04	GenTI: Benchmarking LLMs for Autonomous IDPS Rule Generation for Unseen Attacks
+UNSW-NB15	2605.26166v1	2026-05-24	Enhancing Autonomous Online Intrusion Detection for IoT with Balanced Learning, Reliable Pseudo-Labels, and Lightweight Architectures
+UNSW-NB15	2605.22529v1	2026-05-21	Stabilising Explainability Fragility in Cybersecurity AI: The Impact and Mitigation of Multicollinearity in Public Benchmark Datasets
+UNSW-NB15	2605.19864v1	2026-05-19	Multi-population Diversity-guided Genetic Algorithm for Feature Selection in Network Intrusion Detection
+UNSW-NB15	2605.18647v1	2026-05-18	Federated Naive Bayes with Real Mixture of Gaussians and Institutional Governance Regularization for Network Intrusion Detection
+UNSW-NB15	2605.17960v1	2026-05-18	From Detection to Response: A Deep Learning and Retrieval-Augmented Generation Framework for Network Intrusion Mitigation
+UNSW-NB15	2605.08910v1	2026-05-09	Enhancing Adversarial Robustness in Network Intrusion Detection: A Layer-wise Adaptive Regularization Approach
+UNSW-NB15	2605.06629v1	2026-05-07	Hybrid Quantum-Classical GANs for the Generation of Adversarial Network Flows
+UNSW-NB15	2605.05275v1	2026-05-06	A Novel Byte-Level Flow-to-Image Encoding Method for Network Intrusion Detection Systems
+UNSW-NB15	2605.04407v1	2026-05-06	Assessing Generalisation Capability of Machine Learning Models for Intrusion Detection
+UNSW-NB15	2605.02987v1	2026-05-04	LiteShield: Hybrid Feature Selection-Driven Lightweight Intrusion Detection for Resource-Constrained IoT Networks
+UNSW-NB15	2605.01962v1	2026-05-03	FIRCE: A Framework for Intrusion Response and Conformal Evaluation
+UNSW-NB15	2604.12655v1	2026-04-14	Robust Semi-Supervised Temporal Intrusion Detection for Adversarial Cloud Networks
+UNSW-NB15	2604.03104v1	2026-04-03	AlertStar: Path-Aware Alert Prediction on Hyper-Relational Knowledge Graphs
+UNSW-NB15	2604.02299v1	2026-04-02	PARD-SSM: Probabilistic Cyber-Attack Regime Detection via Variational Switching State-Space Models
+UNSW-NB15	2603.28838v1	2026-03-30	GMA-SAWGAN-GP: A Novel Data Generative Framework to Enhance IDS Detection Performance
+UNSW-NB15	2603.17717v4	2026-03-18	Machine Learning for Network Attacks Classification and Statistical Evaluation of Adversarial Learning Methodologies for Synthetic Data Generation
+UNSW-NB15	2603.10413v1	2026-03-11	Enhancing Network Intrusion Detection Systems: A Multi-Layer Ensemble Approach to Mitigate Adversarial Attacks
+UNSW-NB15	2602.16098v1	2026-02-18	Collaborative Zone-Adaptive Zero-Day Intrusion Detection for IoBT
+UNSW-NB15	2602.06395v1	2026-02-06	Empirical Analysis of Adversarial Robustness and Explainability Drift in Cybersecurity Classifiers
+UNSW-NB15	2601.21318v2	2026-01-29	QCL-IDS: Quantum Continual Learning for Intrusion Detection with Fidelity-Anchored Stability and Generative Replay
+UNSW-NB15	2601.04486v1	2026-01-08	Decision-Aware Trust Signal Alignment for SOC Alert Triage
+UNSW-NB15	2601.02237v1	2026-01-05	Quantum AI for Cybersecurity: A hybrid Quantum-Classical models for attack path analysis
+UNSW-NB15	2512.23809v1	2025-12-29	Zero-Trust Agentic Federated Learning for Secure IIoT Defense Systems
+UNSW-NB15	2511.12743v1	2025-11-16	An Evaluation Framework for Network IDS/IPS Datasets: Leveraging MITRE ATT&amp;CK and Industry Relevance Metrics
+UNSW-NB15	2511.07793v1	2025-11-11	HybridGuard: Enhancing Minority-Class Intrusion Detection in Dew-Enabled Edge-of-Things Networks
+UNSW-NB15	2510.25802v1	2025-10-29	Attention Augmented GNN RNN-Attention Models for Advanced Cybersecurity Intrusion Detection
+UNSW-NB15	2510.17883v2	2025-10-18	From Flows to Words: Can Zero-/Few-Shot LLMs Detect Network Intrusions? A Grammar-Constrained, Calibrated Evaluation on UNSW-NB15
+UNSW-NB15	2510.07285v3	2025-10-08	GTCN-G: A Residual Graph-Temporal Fusion Network for Imbalanced Intrusion Detection
+UNSW-NB15	2510.02349v1	2025-09-27	An Investigation into the Performance of Non-Contrastive Self-Supervised Learning Methods for Network Intrusion Detection
+UNSW-NB15	2509.15555v1	2025-09-19	Hybrid Deep Learning-Federated Learning Powered Intrusion Detection System for IoT/5G Advanced Edge Computing Network
+UNSW-NB15	2510.09619v2	2025-09-17	Risk-Calibrated Bayesian Streaming Intrusion Detection with SRE-Aligned Decisions
+CTU-13	2608.24454v1	2026-08-25	Defending Network Intrusion Detection Systems Based on Graph Neural Networks Against Structural Adversarial Attacks
+CTU-13	2605.23004v2	2026-05-21	Botnet Detection on CTU-13 Using Lightweight Machine Learning Models
+CTU-13	2605.07536v1	2026-05-08	GESR: Graph-Based Edge Semantic Reconstruction for Stealthy Communication Detection with Benign-Only Training
+CTU-13	2604.04952v7	2026-04-03	ML Defender (aRGus NDR): An Open-Source Embedded ML NIDS for Botnet and Anomalous Traffic Detection in Resource-Constrained Organizations
+CTU-13	2509.03864v1	2025-09-04	Near-Term Quantum-Computing-Inspired Sampling for Community Detection in Low-Modularity Graphs
+CTU-13	2507.10904v2	2025-07-15	Class-Proportional Coreset Selection for Difficulty-Separable Data
+CTU-13	2501.00790v2	2025-01-01	LENS-XAI: Redefining Lightweight and Explainable Network Security through Knowledge Distillation and Variational Autoencoders for Scalable Intrusion Detection in Cybersecurity
+CSE-CIC-IDS2018	2609.11275v1	2026-09-10	Few-Shot Learning for Network Intrusion Detection: Methods, Datasets, and Performance
+CSE-CIC-IDS2018	2608.11291v1	2026-08-11	Dueling Deep Q-Learning for Intrusion Detection
+CSE-CIC-IDS2018	2607.16276v1	2026-07-08	Intelligence-Guided Adaptive Purification for DDoS-Resilient Quantum Networks: A CUDA-Q based Study
+CSE-CIC-IDS2018	2606.05714v1	2026-06-04	Hybrid CNN-LSTM Framework for Intelligent Cyber Attack Detection and Prevention in U.S. Critical Digital Infrastructure: A Comparative Machine Learning Evaluation on CSE-CIC-IDS2018
+CSE-CIC-IDS2018	2604.12655v1	2026-04-14	Robust Semi-Supervised Temporal Intrusion Detection for Adversarial Cloud Networks
+CSE-CIC-IDS2018	2602.17973v2	2026-02-20	PenTiDef: Decentralized Federated Intrusion Detection System with Differential Privacy and Latent-Space Defense via Blockchain Coordination in IIoT
+CSE-CIC-IDS2018	2601.01134v1	2026-01-03	AI-Powered Hybrid Intrusion Detection Framework for Cloud Security Using Novel Metaheuristic Optimization
+CSE-CIC-IDS2018	2509.11633v1	2025-09-15	Adaptive-GraphSketch: Real-Time Edge Anomaly Detection via Multi-Layer Tensor Sketching and Temporal Decay
+CSE-CIC-IDS2018	2506.02438v1	2025-06-03	A Review of Various Datasets for Machine Learning Algorithm-Based Intrusion Detection System: Advances and Challenges
+CSE-CIC-IDS2018	2504.04367v2	2025-04-06	WeiDetect: Weibull Distribution-Based Defense against Poisoning Attacks in Federated Learning for Network Intrusion Detection Systems
+CSE-CIC-IDS2018	2502.06031v1	2025-02-09	A Conditional Tabular GAN-Enhanced Intrusion Detection System for Rare Attacks in IoT Networks
