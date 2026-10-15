@@ -1,0 +1,152 @@
+🌐 copilotCore: extra local networks = 147.32.0.0/16
+============================================================================
+        CTU-13 GROUND-TRUTH EVALUATION OF THE CHIRON DETECTOR
+============================================================================
+  replay_pcap:   ctu13-s2
+  window:        5 min   step: 1 min
+  ingest span:   2011-08-11T09:49:36.116Z → 2011-08-11T14:01:02.994Z
+                 251.4 minutes
+
+  ground truth census:
+    normal       9,120
+    botnet       20,941
+  subclass census:
+    other        11,660
+    normal       9,120
+    spam         5,510
+    ad           2,299
+    dns          788
+    c2           673
+    download     11
+----------------------------------------------------------------------------
+
+🔬 Scoring windows with buildCopilotCore(windowEnd=...)
+
+  [09:54:36] flows=  156 bot%=  0 c2=  0 | risk= 40 state=stable   dom=dos         c2score=35
+  [09:59:36] flows=  155 bot%=  0 c2=  0 | risk= 18 state=stable   dom=dos         c2score=10
+  [10:04:36] flows=  152 bot%=  0 c2=  0 | risk= 29 state=stable   dom=c2          c2score=50
+  [10:09:36] flows=  151 bot%=  0 c2=  0 | risk= 29 state=stable   dom=c2          c2score=50
+  [10:14:36] flows=  153 bot%=  0 c2=  0 | risk= 29 state=stable   dom=c2          c2score=50
+  [10:19:36] flows=  380 bot%=  0 c2=  0 | risk= 25 state=stable   dom=c2          c2score=50
+  [10:24:36] flows=  249 bot%=  0 c2=  0 | risk= 28 state=stable   dom=c2          c2score=50
+  [10:29:36] flows=  146 bot%=  2 c2=  0 | risk= 27 state=stable   dom=c2          c2score=50
+  [10:34:36] flows=  167 bot%=  2 c2=  0 | risk= 34 state=stable   dom=c2          c2score=50
+  [10:39:36] flows=  453 bot%= 41 c2= 12 | risk= 24 state=stable   dom=scan        c2score=40
+  [10:44:36] flows= 7535 bot%= 98 c2= 52 | risk= 38 state=stable   dom=dos         c2score=25
+  [10:49:36] flows= 1436 bot%= 83 c2= 23 | risk= 36 state=stable   dom=scan        c2score=40
+  [10:54:36] flows=  713 bot%= 65 c2= 21 | risk= 43 state=stable   dom=scan        c2score=65
+  [10:59:36] flows=  638 bot%= 77 c2= 25 | risk= 43 state=stable   dom=scan        c2score=65
+  [11:04:36] flows=  867 bot%= 51 c2= 20 | risk= 41 state=stable   dom=scan        c2score=65
+  [11:09:36] flows=  588 bot%= 76 c2= 28 | risk= 43 state=stable   dom=scan        c2score=65
+  [11:14:36] flows=  580 bot%= 74 c2= 24 | risk= 44 state=stable   dom=scan        c2score=65
+  [11:19:36] flows=  669 bot%= 67 c2= 24 | risk= 36 state=stable   dom=scan        c2score=40
+  [11:24:36] flows=  565 bot%= 59 c2= 19 | risk= 36 state=stable   dom=scan        c2score=40
+  [11:29:36] flows=  755 bot%= 44 c2= 16 | risk= 41 state=stable   dom=scan        c2score=65
+  [11:34:36] flows=  677 bot%= 55 c2= 17 | risk= 35 state=stable   dom=scan        c2score=40
+  [11:39:36] flows=  563 bot%= 75 c2= 19 | risk= 36 state=stable   dom=scan        c2score=40
+  [11:44:36] flows=  611 bot%= 77 c2= 26 | risk= 42 state=stable   dom=scan        c2score=65
+  [11:49:36] flows=  543 bot%= 68 c2= 27 | risk= 43 state=stable   dom=scan        c2score=65
+  [11:54:36] flows=  520 bot%= 72 c2= 30 | risk= 44 state=stable   dom=scan        c2score=65
+  [11:59:36] flows=  530 bot%= 72 c2= 29 | risk= 44 state=stable   dom=scan        c2score=65
+  [12:04:36] flows=  502 bot%= 71 c2= 24 | risk= 44 state=stable   dom=scan        c2score=65
+  [12:09:36] flows=  420 bot%= 57 c2=  9 | risk= 43 state=stable   dom=scan        c2score=65
+  [12:14:36] flows=  415 bot%= 66 c2= 16 | risk= 42 state=stable   dom=scan        c2score=65
+  [12:19:36] flows=  448 bot%= 61 c2=  9 | risk= 36 state=stable   dom=scan        c2score=40
+  [12:24:36] flows=  442 bot%= 65 c2=  9 | risk= 36 state=stable   dom=scan        c2score=40
+  [12:29:36] flows=  396 bot%= 63 c2=  7 | risk= 41 state=stable   dom=scan        c2score=65
+  [12:34:36] flows=  393 bot%= 62 c2=  7 | risk= 42 state=stable   dom=scan        c2score=65
+  [12:39:36] flows=  362 bot%= 59 c2=  4 | risk= 42 state=stable   dom=scan        c2score=65
+  [12:44:36] flows=  373 bot%= 61 c2=  6 | risk= 41 state=stable   dom=scan        c2score=65
+  [12:49:36] flows=  363 bot%= 58 c2=  3 | risk= 40 state=stable   dom=scan        c2score=65
+  [12:54:36] flows=  368 bot%= 58 c2=  3 | risk= 42 state=stable   dom=scan        c2score=65
+  [12:59:36] flows=  419 bot%= 64 c2=  8 | risk= 41 state=stable   dom=scan        c2score=65
+  [13:04:36] flows=  408 bot%= 62 c2=  8 | risk= 36 state=stable   dom=scan        c2score=40
+  [13:09:36] flows=  411 bot%= 64 c2=  9 | risk= 40 state=stable   dom=scan        c2score=65
+  [13:14:36] flows=  389 bot%= 62 c2=  0 | risk= 41 state=stable   dom=scan        c2score=65
+  [13:19:36] flows=  380 bot%= 61 c2=  1 | risk= 35 state=stable   dom=scan        c2score=40
+  [13:24:36] flows=  481 bot%= 66 c2=  8 | risk= 44 state=stable   dom=scan        c2score=65
+  [13:29:36] flows=  446 bot%= 68 c2= 15 | risk= 42 state=stable   dom=scan        c2score=65
+  [13:34:36] flows=  543 bot%= 71 c2= 28 | risk= 37 state=stable   dom=scan        c2score=40
+  [13:39:36] flows=  482 bot%= 69 c2= 17 | risk= 36 state=stable   dom=scan        c2score=40
+  [13:44:36] flows=  460 bot%= 66 c2= 25 | risk= 35 state=stable   dom=scan        c2score=40
+  [13:49:36] flows=  472 bot%= 67 c2= 19 | risk= 36 state=stable   dom=scan        c2score=40
+  [13:54:36] flows=  455 bot%= 69 c2= 22 | risk= 42 state=stable   dom=scan        c2score=65
+  [13:59:36] flows=  236 bot%= 30 c2=  4 | risk= 16 state=stable   dom=scan        c2score=25
+
+✅ Scored 248 non-empty windows
+
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  ⚠️  VALIDITY GUARD — confusion matrix withheld
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     [UNREACHABLE_THRESHOLD]
+     the deployed operating point predicts attack at risk >= 60, but the highest attainable score over 248 scored windows is 44. No window could be predicted attack, so TP and FP are structurally zero and the matrix describes the evaluation rather than the detector.
+     never exercised: severityComponent, behaviorComponent, impactBonus, couplingBonus
+
+     Correlation and risk separation are still reported where both
+     classes are populated. The binary metrics are not.
+
+
+============================================================================
+  RESULTS
+============================================================================
+
+📊 RISK SEPARATION (truth: botnet_fraction >= 0.5)
+{
+  "malicious_n": 193,
+  "benign_n": 55,
+  "malicious_mean_risk": 39.6,
+  "benign_mean_risk": 27.22,
+  "separation_margin": 12.38
+}
+
+📈 CORRELATION
+{
+  "risk_vs_botnet_fraction": 0.6867,
+  "c2score_vs_c2_flows": 0.0659,
+  "c2score_vs_c2_fraction": 0.3131
+}
+
+🎯 DEPLOYED OPERATING POINT (state ∈ {high,critical}; truth thr 0.5)
+{
+  "total_windows": 248,
+  "TP": 0,
+  "FP": 0,
+  "TN": 55,
+  "FN": 193,
+  "precision": 0,
+  "recall": 0,
+  "specificity": 1,
+  "fpr": 0,
+  "accuracy": 0.2218,
+  "balanced_accuracy": 0.5,
+  "f1": 0
+}
+
+🛰  C2 EVALUATION
+{
+  "windows_with_c2": 200,
+  "windows_without_c2": 48,
+  "mean_c2score_when_c2_present": 54.17,
+  "mean_c2score_when_absent": 43.96,
+  "c2_dominant_when_present": 0,
+  "c2_dominant_when_absent": 33
+}
+
+🔀 ATTACK-TYPE TABLE  (rows = dominant CTU-13 truth, cols = detector dominantAttack)
+┌─────────┬─────┬────┬──────┐
+│ (index) │ dos │ c2 │ scan │
+├─────────┼─────┼────┼──────┤
+│ normal  │ 8   │ 33 │ 100  │
+│ other   │ 5   │    │ 29   │
+│ spam    │     │    │ 73   │
+└─────────┴─────┴────┴──────┘
+
+📉 THRESHOLD SWEEP (best F1 per truth threshold)
+  truth>=0.01  best risk>=30 | P=0.980 R=0.939 F1=0.959 FPR=0.114 (n=248)
+  truth>=0.05  best risk>=30 | P=0.961 R=0.970 F1=0.966 FPR=0.174 (n=248)
+  truth>=0.1   best risk>=30 | P=0.961 R=0.970 F1=0.966 FPR=0.174 (n=248)
+  truth>=0.25  best risk>=30 | P=0.961 R=0.970 F1=0.966 FPR=0.174 (n=248)
+  truth>=0.5   best risk>=30 | P=0.931 R=0.985 F1=0.957 FPR=0.255 (n=248)
+  truth>=0.75  best risk>=30 | P=0.108 R=0.880 F1=0.192 FPR=0.816 (n=248)
+
+✅ Full results written → /home/ubuntu/research/results/poscontrol_20261014/runs/s2_evt_dep_w5s1.json

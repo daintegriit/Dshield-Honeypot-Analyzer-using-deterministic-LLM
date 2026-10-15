@@ -1,0 +1,51 @@
+--- copilotCore.orig.js	2026-10-14 20:08:51.800483289 -0400
++++ copilotCore.js	2026-10-14 20:09:23.231830793 -0400
+@@ -667,13 +667,24 @@
+   // behaviour is byte-for-byte identical to before).
+   const upperBound = isHistorical ? { $lte: anchor } : {};
+ 
+-  // Time-scoping helper: builds a { timestamp: { $gte, [$lte] } } clause.
+-  const tsRange = (from) => ({ timestamp: { $gte: from, ...upperBound } });
++  // POSITIVE-CONTROL OPTIONS (default off; defaults reproduce v4.3 exactly).
++  //   SCORE_TIME_FIELD=event_time  scope windows on the true event time parsed
++  //                                from TS=, instead of ingest arrival time.
++  //   CORE_SCOPE_PCAP=<name>       scope every Attack query to one replay, so no
++  //                                other run's traffic can enter the lookback.
++  const TIME_FIELD = process.env.SCORE_TIME_FIELD === "event_time" ? "event_time" : "timestamp";
++  const SCOPE_PCAP = process.env.CORE_SCOPE_PCAP || null;
++
++  // Time-scoping helper: builds a { <TIME_FIELD>: { $gte, [$lte] } } clause.
++  const tsRange = (from) => ({ [TIME_FIELD]: { $gte: from, ...upperBound } });
+ 
+   // Source-scoping helper: merge a { source } clause into any Attack filter when
+   // sourceFilter is set. No-op when sourceFilter is null.
+-  const withSource = (filter) =>
+-    sourceFilter ? { ...filter, source: sourceFilter } : filter;
++  const withSource = (filter) => {
++    let f = sourceFilter ? { ...filter, source: sourceFilter } : filter;
++    if (SCOPE_PCAP) f = { ...f, replay_pcap: SCOPE_PCAP };
++    return f;
++  };
+ 
+ 
+   // ==================================================
+@@ -763,7 +774,7 @@
+       resp_bytes: 1,
+     }
+   )
+-    .sort({ timestamp: 1 })
++    .sort({ [TIME_FIELD]: 1 })
+     .limit(CFG.recentLimit)
+     .lean();
+ 
+@@ -1959,6 +1970,10 @@
+       },
+       c2BonusMinScore: Number(process.env.C2_BONUS_MIN_SCORE ?? 40),
+     },
++    scoring: {
++      timeField: TIME_FIELD,
++      scopePcap: SCOPE_PCAP,
++    },
+     riskBudget: {
+       profile: RISK_PROFILE,
+       normalised: RISK_NORMALISE,

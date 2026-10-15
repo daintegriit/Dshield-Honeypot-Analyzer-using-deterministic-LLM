@@ -1,0 +1,324 @@
+🌐 copilotCore: extra local networks = 147.32.0.0/16
+============================================================================
+        CTU-13 GROUND-TRUTH EVALUATION OF THE CHIRON DETECTOR
+============================================================================
+  replay_pcap:   ctu13-s8
+  window:        1 min   step: 1 min
+  ingest span:   2011-08-16T14:18:56.645Z → 2011-08-17T09:47:09.563Z
+                 1168.2 minutes
+
+  ground truth census:
+    normal       72,822
+    botnet       6,127
+  subclass census:
+    normal       72,822
+    other        4,977
+    c2           1,074
+    dns          69
+    ad           4
+    download     2
+    icmp         1
+----------------------------------------------------------------------------
+
+🔬 Scoring windows with buildCopilotCore(windowEnd=...)
+
+  [14:19:56] flows=  240 bot%=  1 c2=  0 | risk= 66 state=high     dom=dos         c2score=35
+  [14:24:56] flows=   50 bot%= 24 c2=  0 | risk= 55 state=elevated dom=dos         c2score=35
+  [14:29:56] flows=  207 bot%=  2 c2=  1 | risk= 29 state=stable   dom=dos         c2score=35
+  [14:34:56] flows=   58 bot%=  2 c2=  1 | risk= 45 state=elevated dom=c2          c2score=50
+  [14:39:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [14:44:56] flows=  182 bot%=  4 c2=  1 | risk= 40 state=stable   dom=c2          c2score=50
+  [14:49:56] flows=   60 bot%= 60 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [14:54:56] flows=   44 bot%= 32 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [14:59:56] flows=   40 bot%= 18 c2=  1 | risk= 58 state=elevated dom=c2          c2score=50
+  [15:04:56] flows=   40 bot%= 18 c2=  0 | risk= 45 state=elevated dom=c2          c2score=50
+  [15:09:56] flows=   31 bot%= 23 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [15:14:56] flows=   39 bot%= 23 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [15:19:56] flows=   45 bot%= 20 c2=  1 | risk= 43 state=stable   dom=c2          c2score=40
+  [15:24:56] flows=   54 bot%= 19 c2=  1 | risk= 42 state=stable   dom=c2          c2score=40
+  [15:29:56] flows=   52 bot%= 52 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [15:34:56] flows=   48 bot%=  2 c2=  1 | risk= 71 state=high     dom=c2          c2score=75
+  [15:39:56] flows=   27 bot%= 11 c2=  2 | risk= 97 state=critical dom=c2          c2score=100
+  [15:44:56] flows=  182 bot%=  1 c2=  1 | risk= 40 state=stable   dom=c2          c2score=50
+  [15:49:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [15:54:56] flows=   27 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [15:59:56] flows=   36 bot%=  3 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [16:04:56] flows=  286 bot%=  0 c2=  1 | risk= 37 state=stable   dom=c2          c2score=50
+  [16:09:56] flows=  212 bot%= 15 c2=  1 | risk= 45 state=elevated dom=scan        c2score=50
+  [16:14:56] flows=  319 bot%=  0 c2=  1 | risk= 69 state=high     dom=c2          c2score=75
+  [16:19:56] flows=   39 bot%=  3 c2=  1 | risk= 43 state=stable   dom=c2          c2score=40
+  [16:24:56] flows=  347 bot%=  0 c2=  1 | risk= 34 state=stable   dom=c2          c2score=50
+  [16:29:56] flows=  226 bot%=  0 c2=  1 | risk= 40 state=stable   dom=c2          c2score=50
+  [16:34:56] flows=  138 bot%=  1 c2=  1 | risk= 38 state=stable   dom=c2          c2score=50
+  [16:39:56] flows=  162 bot%=  2 c2=  2 | risk= 40 state=stable   dom=c2          c2score=50
+  [16:44:56] flows=  276 bot%=  0 c2=  1 | risk= 35 state=stable   dom=c2          c2score=50
+  [16:49:56] flows=  215 bot%= 19 c2=  1 | risk= 48 state=elevated dom=scan        c2score=50
+  [16:54:56] flows=   81 bot%=  1 c2=  1 | risk= 40 state=stable   dom=c2          c2score=50
+  [16:59:56] flows=   27 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [17:04:56] flows=   36 bot%=  3 c2=  1 | risk= 77 state=high     dom=c2          c2score=75
+  [17:09:56] flows=   36 bot%=  3 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [17:14:56] flows=   68 bot%=  1 c2=  1 | risk= 40 state=stable   dom=c2          c2score=50
+  [17:19:56] flows=   34 bot%=  3 c2=  1 | risk= 43 state=stable   dom=c2          c2score=40
+  [17:24:56] flows=  435 bot%=  0 c2=  1 | risk= 34 state=stable   dom=c2          c2score=50
+  [17:29:56] flows=  526 bot%= 10 c2=  1 | risk= 37 state=stable   dom=scan        c2score=50
+  [17:34:56] flows=  149 bot%=  1 c2=  1 | risk= 65 state=high     dom=c2          c2score=75
+  [17:39:56] flows=  167 bot%=  2 c2=  2 | risk= 63 state=high     dom=c2          c2score=75
+  [17:44:56] flows=   55 bot%=  2 c2=  1 | risk= 71 state=high     dom=c2          c2score=75
+  [17:49:56] flows=  204 bot%=  0 c2=  1 | risk= 66 state=high     dom=c2          c2score=75
+  [17:54:56] flows=  388 bot%=  0 c2=  1 | risk= 31 state=stable   dom=scan        c2score=40
+  [17:59:56] flows= 2827 bot%=  0 c2=  1 | risk= 72 state=high     dom=scan        c2score=40
+  [18:04:56] flows=  262 bot%=  0 c2=  1 | risk= 40 state=stable   dom=c2          c2score=50
+  [18:09:56] flows=  117 bot%= 26 c2=  1 | risk= 72 state=high     dom=c2          c2score=75
+  [18:14:56] flows=  232 bot%=  0 c2=  0 | risk= 63 state=high     dom=c2          c2score=75
+  [18:19:56] flows=  175 bot%=  1 c2=  1 | risk= 65 state=high     dom=c2          c2score=75
+  [18:24:56] flows=  244 bot%=  0 c2=  1 | risk=100 state=critical dom=c2          c2score=90
+  [18:29:56] flows=  427 bot%=  0 c2=  0 | risk= 34 state=stable   dom=c2          c2score=50
+  [18:34:56] flows=  122 bot%=  0 c2=  0 | risk= 43 state=stable   dom=c2          c2score=50
+  [18:39:56] flows=  407 bot%=  0 c2=  1 | risk= 37 state=stable   dom=c2          c2score=50
+  [18:44:56] flows=  586 bot%=  3 c2=  0 | risk= 37 state=stable   dom=c2          c2score=50
+  [18:49:56] flows=  474 bot%=  0 c2=  0 | risk= 32 state=stable   dom=c2          c2score=50
+  [18:54:56] flows=   79 bot%=  0 c2=  0 | risk= 40 state=stable   dom=c2          c2score=50
+  [18:59:56] flows=   24 bot%=  0 c2=  0 | risk= 43 state=stable   dom=c2          c2score=50
+  [19:04:56] flows=   31 bot%=  0 c2=  0 | risk= 43 state=stable   dom=c2          c2score=50
+  [19:09:56] flows=  115 bot%=  0 c2=  0 | risk= 42 state=stable   dom=c2          c2score=50
+  [19:14:56] flows=   23 bot%=  0 c2=  0 | risk= 69 state=high     dom=c2          c2score=75
+  [19:19:56] flows=   24 bot%=  0 c2=  0 | risk= 94 state=critical dom=c2          c2score=100
+  [19:24:56] flows=   57 bot%= 58 c2=  1 | risk= 43 state=stable   dom=c2          c2score=50
+  [19:29:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [19:34:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [19:39:56] flows=   27 bot%= 11 c2=  2 | risk= 48 state=elevated dom=c2          c2score=50
+  [19:44:56] flows=   27 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [19:49:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [19:54:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [19:59:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [20:04:56] flows=   60 bot%= 60 c2=  0 | risk= 42 state=stable   dom=c2          c2score=50
+  [20:09:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [20:14:56] flows=   25 bot%=  4 c2=  1 | risk= 97 state=critical dom=c2          c2score=100
+  [20:19:56] flows=   22 bot%=  5 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [20:24:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [20:29:56] flows=   26 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [20:34:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [20:39:56] flows=   27 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [20:44:56] flows=   59 bot%= 59 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [20:49:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [20:54:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [20:59:56] flows=   25 bot%=  4 c2=  0 | risk= 48 state=elevated dom=c2          c2score=50
+  [21:04:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [21:09:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [21:14:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [21:19:56] flows=   26 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [21:24:56] flows=   56 bot%= 57 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [21:29:56] flows=   28 bot%= 14 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [21:34:56] flows=   25 bot%=  4 c2=  1 | risk= 75 state=high     dom=c2          c2score=75
+  [21:39:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [21:44:56] flows=   27 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [21:49:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [21:54:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [21:59:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [22:04:56] flows=   52 bot%= 52 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [22:09:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [22:14:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [22:19:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [22:24:56] flows=   22 bot%=  5 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [22:29:56] flows=   24 bot%=  0 c2=  0 | risk= 72 state=high     dom=c2          c2score=75
+  [22:34:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [22:39:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [22:44:56] flows=   58 bot%= 53 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [22:49:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [22:54:56] flows=   27 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [22:59:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [23:04:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [23:09:56] flows=   33 bot%=  3 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [23:14:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [23:19:56] flows=   27 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [23:24:56] flows=   65 bot%= 63 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [23:29:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [23:34:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [23:39:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [23:44:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [23:49:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [23:54:56] flows=   27 bot%= 11 c2=  2 | risk= 48 state=elevated dom=c2          c2score=50
+  [23:59:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [00:04:56] flows=   74 bot%= 62 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [00:09:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [00:14:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [00:19:56] flows=   26 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [00:24:56] flows=   31 bot%=  3 c2=  1 | risk= 45 state=elevated dom=c2          c2score=50
+  [00:29:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [00:34:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [00:39:56] flows=   27 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [00:44:56] flows=   65 bot%= 63 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [00:49:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [00:54:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [00:59:56] flows=   22 bot%=  5 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [01:04:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [01:09:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [01:14:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [01:19:56] flows=   35 bot%= 31 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [01:24:56] flows=   34 bot%= 29 c2=  1 | risk= 52 state=elevated dom=c2          c2score=50
+  [01:29:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [01:34:56] flows=   24 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [01:39:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [01:44:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [01:49:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [01:54:56] flows=   31 bot%=  3 c2=  1 | risk= 45 state=elevated dom=c2          c2score=50
+  [01:59:56] flows=   50 bot%= 52 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [02:04:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [02:09:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [02:14:56] flows=   28 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [02:19:56] flows=   25 bot%=  4 c2=  1 | risk= 97 state=critical dom=c2          c2score=100
+  [02:24:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [02:29:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [02:34:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [02:39:56] flows=   63 bot%= 60 c2=  1 | risk= 43 state=stable   dom=c2          c2score=50
+  [02:44:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [02:49:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [02:54:56] flows=   25 bot%=  4 c2=  1 | risk= 97 state=critical dom=c2          c2score=100
+  [02:59:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [03:04:56] flows=   22 bot%=  5 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [03:09:56] flows=   25 bot%=  4 c2=  1 | risk= 97 state=critical dom=c2          c2score=100
+  [03:14:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [03:19:56] flows=   59 bot%= 59 c2=  0 | risk= 71 state=high     dom=c2          c2score=75
+  [03:24:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [03:29:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [03:34:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [03:39:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [03:44:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [03:49:56] flows=   27 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [03:54:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [03:59:56] flows=   56 bot%= 57 c2=  1 | risk= 51 state=elevated dom=c2          c2score=50
+  [04:04:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [04:09:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [04:14:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [04:19:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [04:24:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [04:29:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [04:34:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [04:39:56] flows=   50 bot%= 50 c2=  1 | risk= 51 state=elevated dom=c2          c2score=50
+  [04:44:56] flows=   26 bot%=  8 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [04:49:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [04:54:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [04:59:56] flows=   22 bot%=  5 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [05:04:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [05:09:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [05:14:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [05:19:56] flows=   55 bot%= 56 c2=  1 | risk= 51 state=elevated dom=c2          c2score=50
+  [05:24:56] flows=   25 bot%=  4 c2=  1 | risk= 98 state=critical dom=c2          c2score=100
+  [05:29:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [05:34:56] flows=   26 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [05:39:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [05:44:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [05:49:56] flows=   24 bot%=  0 c2=  0 | risk= 43 state=stable   dom=c2          c2score=50
+  [05:54:56] flows=   22 bot%=  5 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [05:59:56] flows=   65 bot%= 63 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [06:04:56] flows=   28 bot%=  4 c2=  1 | risk= 97 state=critical dom=c2          c2score=100
+  [06:09:56] flows=   29 bot%=  3 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [06:14:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [06:19:56] flows=   31 bot%=  3 c2=  1 | risk= 45 state=elevated dom=c2          c2score=50
+  [06:24:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [06:29:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [06:34:56] flows=   27 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [06:39:56] flows=   70 bot%= 66 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [06:44:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [06:49:56] flows=   26 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [06:54:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [06:59:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [07:04:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [07:09:56] flows=   22 bot%=  5 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [07:14:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [07:19:56] flows=   55 bot%= 56 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [07:24:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [07:29:56] flows=   25 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [07:34:56] flows=   27 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [07:39:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [07:44:56] flows=   25 bot%=  4 c2=  1 | risk= 97 state=critical dom=c2          c2score=100
+  [07:49:56] flows=   26 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [07:54:56] flows=   35 bot%= 31 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [07:59:56] flows=   35 bot%= 31 c2=  1 | risk= 52 state=elevated dom=c2          c2score=50
+  [08:04:56] flows=   65 bot%=  2 c2=  1 | risk= 40 state=stable   dom=c2          c2score=50
+  [08:09:56] flows=   50 bot%=  2 c2=  1 | risk= 71 state=high     dom=c2          c2score=75
+  [08:14:56] flows=  265 bot%=  0 c2=  1 | risk= 35 state=stable   dom=c2          c2score=50
+  [08:19:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [08:24:56] flows=   31 bot%=  3 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [08:29:56] flows=   28 bot%=  4 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [08:34:56] flows=   73 bot%= 47 c2=  1 | risk= 43 state=stable   dom=c2          c2score=50
+  [08:39:56] flows=   46 bot%=  2 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [08:44:56] flows=   28 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [08:49:56] flows=  200 bot%=  1 c2=  1 | risk= 43 state=stable   dom=scan        c2score=50
+  [08:54:56] flows=  119 bot%=  1 c2=  1 | risk= 34 state=stable   dom=c2          c2score=40
+  [08:59:56] flows=   25 bot%=  4 c2=  1 | risk= 48 state=elevated dom=c2          c2score=50
+  [09:04:56] flows=   41 bot%=  2 c2=  1 | risk= 43 state=stable   dom=c2          c2score=50
+  [09:09:56] flows=   22 bot%=  5 c2=  1 | risk= 49 state=elevated dom=c2          c2score=50
+  [09:14:56] flows=   62 bot%= 61 c2=  1 | risk= 43 state=stable   dom=c2          c2score=50
+  [09:19:56] flows=  112 bot%=  1 c2=  1 | risk= 38 state=stable   dom=c2          c2score=50
+  [09:24:56] flows=  171 bot%=  1 c2=  1 | risk= 31 state=stable   dom=c2          c2score=40
+  [09:29:56] flows=   25 bot%=  4 c2=  1 | risk= 46 state=elevated dom=c2          c2score=50
+  [09:34:56] flows=  170 bot%=  1 c2=  1 | risk= 38 state=stable   dom=c2          c2score=50
+  [09:39:56] flows=   37 bot%=  3 c2=  1 | risk= 43 state=stable   dom=c2          c2score=50
+  [09:44:56] flows=   31 bot%=  3 c2=  1 | risk= 97 state=critical dom=c2          c2score=100
+
+✅ Scored 1169 non-empty windows
+
+============================================================================
+  RESULTS
+============================================================================
+
+📊 RISK SEPARATION (truth: botnet_fraction >= 0.5)
+{
+  "malicious_n": 94,
+  "benign_n": 1075,
+  "malicious_mean_risk": 50.02,
+  "benign_mean_risk": 50.44,
+  "separation_margin": -0.42
+}
+
+📈 CORRELATION
+{
+  "risk_vs_botnet_fraction": 0.0228,
+  "c2score_vs_c2_flows": -0.0218,
+  "c2score_vs_c2_fraction": -0.0882
+}
+
+🎯 DEPLOYED OPERATING POINT (state ∈ {high,critical}; truth thr 0.5)
+{
+  "total_windows": 1169,
+  "TP": 7,
+  "FP": 135,
+  "TN": 940,
+  "FN": 87,
+  "precision": 0.0493,
+  "recall": 0.0745,
+  "specificity": 0.8744,
+  "fpr": 0.1256,
+  "accuracy": 0.8101,
+  "balanced_accuracy": 0.4744,
+  "f1": 0.0593
+}
+
+🛰  C2 EVALUATION
+{
+  "windows_with_c2": 1059,
+  "windows_without_c2": 110,
+  "mean_c2score_when_c2_present": 52.83,
+  "mean_c2score_when_absent": 53.32,
+  "c2_dominant_when_present": 1031,
+  "c2_dominant_when_absent": 96
+}
+
+🔀 ATTACK-TYPE TABLE  (rows = dominant CTU-13 truth, cols = detector dominantAttack)
+┌─────────┬─────┬──────┬──────┐
+│ (index) │ dos │ c2   │ scan │
+├─────────┼─────┼──────┼──────┤
+│ normal  │ 8   │ 1041 │ 32   │
+│ other   │     │ 86   │ 2    │
+└─────────┴─────┴──────┴──────┘
+
+📉 THRESHOLD SWEEP (best F1 per truth threshold)
+  truth>=0.01  best risk>=40 | P=0.890 R=0.989 F1=0.937 FPR=0.680 (n=1169)
+  truth>=0.05  best risk>=40 | P=0.191 R=0.981 F1=0.319 FPR=0.933 (n=1169)
+  truth>=0.1   best risk>=40 | P=0.166 R=0.995 F1=0.285 FPR=0.932 (n=1169)
+  truth>=0.25  best risk>=40 | P=0.125 R=0.993 F1=0.223 FPR=0.935 (n=1169)
+  truth>=0.5   best risk>=40 | P=0.085 R=0.989 F1=0.156 FPR=0.938 (n=1169)
+  truth>=0.75  best risk>=10 | P=0.000 R=0.000 F1=0.000 FPR=1.000 (n=1169)
+
+✅ Full results written → /home/ubuntu/research/results/poscontrol_20261014/runs/s8_evt_abl_w1s1.json

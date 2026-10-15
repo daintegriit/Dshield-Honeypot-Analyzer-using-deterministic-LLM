@@ -1,0 +1,74 @@
+== 267-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-267-1/
+   flow_files: 2017-06-24_win6.binetflow
+   used: 2017-06-24_win6.binetflow
+   infection_local: 2017-06-13T20:13:07+02:00
+   first_flow: 1970-01-01T01:00:15.339088
+   other:               pre   17940
+== 271-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-271-1/
+   flow_files: 2017-06-24_win10.binetflow
+   used: 2017-06-24_win10.binetflow
+   infection_local: 2017-06-08T20:53:24+02:00
+   first_flow: 1970-01-01T01:00:13.266817
+   other:               pre   44025
+== 283-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-283-1/
+   flow_files: 2017-07-11_capture-win2.binetflow
+   used: 2017-07-11_capture-win2.binetflow
+   infection_local: 2017-07-11T09:06:05+02:00
+   first_flow: 1970-01-01T01:00:07.035091
+   other:               pre   14470
+== 284-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-284-1/
+   flow_files: 2017-07-11_capture-win2.binetflow
+   used: 2017-07-11_capture-win2.binetflow
+   infection_local: 2017-07-11T15:37:16+02:00
+   first_flow: 1970-01-01T01:00:06.823847
+   other:               pre   14333
+== 319-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-319-1/
+   flow_files: 2017-11-23_win16.binetflow
+   used: 2017-11-23_win16.binetflow
+   infection_local: 2017-08-17T11:54:53+02:00
+   first_flow: 1970-01-01T01:00:00
+   other:               pre   7871526
+== 320-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-320-1/
+   flow_files: 2017-12-18_win2.binetflow
+   used: 2017-12-18_win2.binetflow
+   infection_local: 2017-09-22T17:48:26+02:00
+   first_flow: 1970-01-01T01:00:00
+   other:               pre   218771
+== 343-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-343-1/
+   flow_files: 2018-04-03_win6.binetflow
+   used: 2018-04-03_win6.binetflow
+   infection_local: 2018-02-20T22:32:55+01:00
+   first_flow: 1970-01-01T01:00:00
+   other:               pre   2166
+== 345-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-345-1/
+   flow_files: 2018-04-03_win11-copy.binetflow, 2018-04-03_win11.binetflow
+   used: 2018-04-03_win11-copy.binetflow
+   infection_local: 2018-03-01T18:29:12+01:00
+   first_flow: 1970-01-01T01:00:00
+   other:               pre   60493
+== 346-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-346-1/
+   flow_files: 2018-04-03_win12.binetflow
+   used: 2018-04-03_win12.binetflow
+   infection_local: 2018-03-01T18:55:08+01:00
+   first_flow: 1970-01-01T01:00:00
+   other:               pre   78099
+== 347-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-347-1/
+   flow_files: 2018-04-04_win16.binetflow
+   used: 2018-04-04_win16.binetflow
+   infection_local: 2018-02-21T01:11:56+01:00
+   first_flow: 1970-01-01T01:00:00
+   other:               pre   93622
+== 281-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-281-1/
+   flow_files: 2017-07-03_capture-win13.binetflow
+   used: 2017-07-03_capture-win13.binetflow
+   infection_local: 2017-07-03T18:31:28+02:00
+   first_flow: 1970-01-01T01:00:09.022808
+   other:               pre   13
+== 298-1  https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-298-1/
+   flow_files: 2017-07-13_capture-win2.binetflow
+   used: 2017-07-13_capture-win2.binetflow
+   infection_local: 2017-07-13T17:37:09+02:00
+   first_flow: 1970-01-01T01:00:00
+   other:               pre   966
+
+summary written to stratolabels_summary.tsv

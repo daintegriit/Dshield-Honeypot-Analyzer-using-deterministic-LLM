@@ -1,0 +1,13 @@
+capture	flow_file	infection	benign_pre	benign_post	mal_pre	mal_post	background	benign_post_reach_min	error
+267-1	2017-06-24_win6.binetflow	2017-06-13T20:13:07+02:00	0	0	0	0	0		
+271-1	2017-06-24_win10.binetflow	2017-06-08T20:53:24+02:00	0	0	0	0	0		
+283-1	2017-07-11_capture-win2.binetflow	2017-07-11T09:06:05+02:00	0	0	0	0	0		
+284-1	2017-07-11_capture-win2.binetflow	2017-07-11T15:37:16+02:00	0	0	0	0	0		
+319-1	2017-11-23_win16.binetflow	2017-08-17T11:54:53+02:00	0	0	0	0	0		
+320-1	2017-12-18_win2.binetflow	2017-09-22T17:48:26+02:00	0	0	0	0	0		
+343-1	2018-04-03_win6.binetflow	2018-02-20T22:32:55+01:00	0	0	0	0	0		
+345-1	2018-04-03_win11-copy.binetflow	2018-03-01T18:29:12+01:00	0	0	0	0	0		
+346-1	2018-04-03_win12.binetflow	2018-03-01T18:55:08+01:00	0	0	0	0	0		
+347-1	2018-04-04_win16.binetflow	2018-02-21T01:11:56+01:00	0	0	0	0	0		
+281-1	2017-07-03_capture-win13.binetflow	2017-07-03T18:31:28+02:00	0	0	0	0	0		
+298-1	2017-07-13_capture-win2.binetflow	2017-07-13T17:37:09+02:00	0	0	0	0	0		
