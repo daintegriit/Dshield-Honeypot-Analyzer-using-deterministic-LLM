@@ -1,0 +1,5 @@
+arxiv_id	status	dataset_coded	primary_evaluation	Q1	Q1_lookback	Q1_location	Q1_quote	Q2	Q2_location	Q2_quote	Q3	Q3_location	Q3_quote	Q4	Q4_location	Q4_quote	Q5	outcome	notes
+2606.18771v1	NOT_RETRIEVED	CIC-IDS2017	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-		arxiv html HTTP 429; waited ~65s; arxiv pdf HTTP 429; proxy instructed not to refetch
+2601.13197v2	NOT_RETRIEVED	CIC-IDS2017	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-		arxiv html HTTP 429; proxy instructed not to refetch; pdf/abs not attempted after pdf of another paper also returned 429 post-wait
+2607.02687v1	NOT_RETRIEVED	UNSW-NB15	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-		arxiv html HTTP 429; proxy instructed not to refetch; pdf/abs not attempted after pdf of another paper also returned 429 post-wait
+2605.22529v1	NOT_RETRIEVED	UNSW-NB15	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-		arxiv html HTTP 429; proxy instructed not to refetch; pdf/abs not attempted after pdf of another paper also returned 429 post-wait

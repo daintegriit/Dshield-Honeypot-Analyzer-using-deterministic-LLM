@@ -1,0 +1,27 @@
+A 78 B 78 missing set()
+status agree 77 of 78
+Q1 n 65 agree 0.846 kappa 0.745
+Q2 n 65 agree 0.923 kappa 0.845
+Q3 n 65 agree 0.969 kappa 0.655
+Q4 n 65 agree 0.969 kappa 0.893
+outcome n 65 agree 0.846 kappa 0.699
+papers with any disagreement 17
+  ('2608.16160', ['Q2'], 'NOT_EXPOSED', 'NOT_EXPOSED')
+  ('2604.14663', ['Q1', 'Q2'], 'NOT_EXPOSED', 'NOT_EXPOSED')
+  ('2609.39584', ['Q1', 'Q4'], 'UNASSESSABLE', 'UNASSESSABLE')
+  ('2609.04388', ['Q1'], 'NOT_EXPOSED', 'NOT_EXPOSED')
+  ('2607.07739', ['Q1', 'Q4'], 'NOT_EXPOSED', 'NOT_EXPOSED')
+  ('2606.28439', ['Q3'], 'UNASSESSABLE', 'NOT_EXPOSED')
+  ('2605.17960', ['Q2'], 'NOT_EXPOSED', 'UNASSESSABLE')
+  ('2605.08910', ['Q2'], 'NOT_EXPOSED', 'UNASSESSABLE')
+  ('2605.06629', ['Q2'], 'NOT_EXPOSED', 'UNASSESSABLE')
+  ('2605.01962', ['Q1'], 'UNASSESSABLE', 'NOT_EXPOSED')
+  ('2510.17883', ['Q1'], 'UNASSESSABLE', 'NOT_EXPOSED')
+  ('2510.02349', ['Q1'], 'UNASSESSABLE', 'NOT_EXPOSED')
+  ('2507.10904', ['Q1'], 'UNASSESSABLE', 'NOT_EXPOSED')
+  ('2607.16276', ['status', 'Q1', 'Q2', 'Q3', 'Q4'], '-', 'EXPOSED')
+  ('2602.17973', ['Q1'], 'NOT_EXPOSED', 'UNASSESSABLE')
+  ('2601.01134', ['Q1'], 'NOT_EXPOSED', 'UNASSESSABLE')
+  ('2502.06031', ['Q3'], 'NOT_EXPOSED', 'NOT_EXPOSED')
+outcomes A Counter({'UNASSESSABLE': 35, 'NOT_EXPOSED': 29, '-': 8, 'NOT_RETRIEVED': 4, 'EXPOSED': 1, 'NOT_DETECTION_EVAL': 1})
+outcomes B Counter({'UNASSESSABLE': 35, 'NOT_EXPOSED': 29, '-': 8, 'NOT_RETRIEVED': 4, 'EXPOSED': 2})

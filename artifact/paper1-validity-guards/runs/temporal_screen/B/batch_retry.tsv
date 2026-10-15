@@ -1,0 +1,5 @@
+arxiv_id	status	dataset_coded	primary_evaluation	Q1	Q1_lookback	Q1_location	Q1_quote	Q2	Q2_location	Q2_quote	Q3	Q3_location	Q3_quote	Q4	Q4_location	Q4_quote	Q5	outcome	notes
+2606.18771v1	NOT_RETRIEVED	CIC-IDS2017	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-		arxiv HTML and PDF both returned HTTP 429 (also after waiting ~60s); abs not attempted, proxy said to stop fetching
+2601.13197v2	NOT_RETRIEVED	CIC-IDS2017	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-		arxiv HTML and PDF both returned HTTP 429 (also after waiting ~120s); abs not attempted, proxy said to stop fetching
+2607.02687v1	NOT_RETRIEVED	UNSW-NB15	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-		arxiv HTML returned HTTP 429; PDF/abs not attempted because the proxy kept refusing every request and said to stop fetching
+2605.22529v1	NOT_RETRIEVED	UNSW-NB15	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-		arxiv HTML returned HTTP 429; PDF/abs not attempted because the proxy kept refusing every request and said to stop fetching

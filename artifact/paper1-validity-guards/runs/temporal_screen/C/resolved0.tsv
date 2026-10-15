@@ -1,0 +1,13 @@
+arxiv_id	question	resolved_code	reason	location	quote
+2608.16160v1	Q2	UNSTATED	Text states only a stratified split; it does not state shuffling, random order, or time order of evaluation records. Ordering is therefore not stated.	Sec. II.A	A stratified 70–20–10 split for training, testing, and validation preserves the original class distribution
+2608.16160v1	outcome	NOT EXPOSED	Q1=NO (agreed), Q2=UNSTATED, Q3=UNSTATED (agreed); Q4=NA, Q5=NA. Any of Q1-Q3 NO gives NOT EXPOSED.	-	-
+2609.04388v1	Q1	NO	Windows of 128 flows are class-balanced samples drawn from per-class pools, not time-ordered records; the paper states its batches are not time-ordered slices, so no aggregation over time-ordered records.	Sec. 3.3	Window t is a class-balanced sample in which each class is a mixture of empirical reference and current regime pools
+2609.04388v1	outcome	NOT EXPOSED	Q1=NO (resolved), Q2=NO and Q3=NO (agreed); Q4=NA, Q5=NA.	-	-
+2605.17960v1	Q2	UNSTATED	Text states a stratified 70/15/15 split but never states shuffling, random order, streaming or time ordering of evaluation records. Ordering is not stated.	Sec. III-B	Stratified 70/15/15 train/validation/test splits are used across both datasets
+2605.17960v1	outcome	UNASSESSABLE	Q1=UNSTATED (agreed), Q2=UNSTATED (resolved), Q3=UNSTATED (agreed); none is NO.	-	-
+2605.01962v1	Q1	NO	Classifier input is stated as CICFlowMeter per-flow features fed to a two-layer FNN; method describes no window, sequence or interval features. Chunks and buffers drive retraining and calibration, not input features.	Sec. IV-A	Following raw PCAP collection, flows were extracted using CICFlowMeter, and were labeled based on attack logs.
+2605.01962v1	outcome	NOT EXPOSED	Q1=NO (resolved), Q2=YES (agreed), Q3=UNSTATED (agreed); Q4=NA, Q5=NA.	-	-
+2507.10904v2	Q1	NO	For CTU-13 the stated input is CICFlowMeter flow-level features (each flow an instance); the 50-flow sliding-window sequences are stated only for UNSW-NB15. Per-flow statistics do not count.	Sec. 4.1	For CTU-13, we use the preprocessed dataset from Hussain et al. [13], which applies CICFlowMeter [8, 4] to extract flow-level features.
+2507.10904v2	outcome	NOT EXPOSED	Q1=NO (resolved), Q2=UNSTATED, Q3=UNSTATED (agreed); Q4=NA, Q5=NA.	-	-
+2601.01134v1	Q1	UNSTATED	Paper never states how CSE-CIC-IDS2018 features are computed (CICFlowMeter is stated only for CIC-DDoS2019); a feature count does not establish per-flow or temporal features. Cited quote is from Introduction, not Sec. 5.3(a).	Sec. 5.1(b)	The UNB IDS dataset contains 16.2 million records with 80 features (79 numerical, 1 timestamp)
+2601.01134v1	outcome	UNASSESSABLE	Q1=UNSTATED (resolved), Q2=UNSTATED, Q3=UNSTATED (agreed); none is NO.	-	-

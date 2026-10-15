@@ -1,0 +1,18 @@
+arxiv_id	question	resolved_code	reason	location	quote
+2604.14663v1	Q1	UNSTATED	Eq. 7 gives IAT mean/std over n timestamps but never states whether these span packets within one flow or multiple flows; no windows described. Scope not stated, so neither YES nor NO.	Sec. IV.B	Flow inter-arrival time statistics were computed as
+2604.14663v1	Q2	NO	A seeded stratified 80:20 split samples records per class at random, i.e. independently shuffled records; no streaming, replay or contiguous windows are described.	Sec. V.A	An 80:20 stratified split (seed 42) was applied.
+2604.14663v1	outcome	NOT EXPOSED	Q2 is NO (Q1 UNSTATED, Q3 UNSTATED agreed); any NO gives NOT EXPOSED.	-	-
+2607.07739v1	Q1	YES	Paper defines IC features as aggregated statistics over multiple flows and assigns 11 UNSW-NB15 features to IC; they remain in the frozen input vector. Lookback not stated.	Sec. III-A, Definition 1; Table II	Aggregated statistics over multiple flows that the attacker can influence through sustained behavioral changes (e.g., connection rates, service ratios).
+2607.07739v1	Q4	NOT_STATED	Q1 is YES, so Q4 applies; the paper says nothing about warm-up, first records or window population.	-	-
+2607.07739v1	outcome	NOT EXPOSED	Q2 is NO (agreed by both coders); any NO gives NOT EXPOSED regardless of Q1 YES and Q4 NOT_STATED.	-	-
+2605.08910v1	Q2	NO	A stratified 70-30 train-test split is class-proportional random sampling of records, i.e. independently shuffled; no time-ordered presentation is described.	Sec. 6.1	normalized using StandardScaler with a stratified 70-30 train-test split.
+2605.08910v1	outcome	NOT EXPOSED	Q2 is NO (Q1 and Q3 UNSTATED agreed); any NO gives NOT EXPOSED.	-	-
+2510.17883v2	Q1	UNSTATED	Each row is rendered independently, but UNSW-NB15 rows carry ct_* multi-connection counts and the feature list is given only by example; whether such features enter the record is not stated.	Sec. 3.3; Sec. 4.2	we render each row to text and rely on instruction following
+2510.17883v2	outcome	UNASSESSABLE	Q1, Q2, Q3 all UNSTATED (Q2, Q3 agreed); none is NO.	-	-
+2607.16276v1	status	NOT_DETECTION_EVAL	No detection metrics are reported; the IDS score is only an input signal and the abstract's result is quantum-network delivery. Recorded, not coded, per protocol Sec. 2.	Sec. III.B; Abstract	fitting an anomaly-detection model to benign traffic and then applying it to the benign-to-SSDP trace
+2607.16276v1	Q1	NOT_CODED	Paper resolved as not a detection evaluation; questions not coded.	-	-
+2607.16276v1	Q2	NOT_CODED	Paper resolved as not a detection evaluation; questions not coded.	-	-
+2607.16276v1	Q3	NOT_CODED	Paper resolved as not a detection evaluation; questions not coded.	-	-
+2607.16276v1	Q4	NOT_CODED	Paper resolved as not a detection evaluation; questions not coded.	-	-
+2502.06031v1	Q3	YES	Table I states class types per file: Benign only from Friday-16-02; XSS, SQL Injection, Infiltration, Bot each from separate other days. Classes come from disjoint captures, kept as labelled in the merged data.	Sec. III.A, Table I	The chosen files and their corresponding class types are detailed in Table I.
+2502.06031v1	outcome	NOT EXPOSED	Q1 is NO (agreed by both coders); any NO gives NOT EXPOSED regardless of Q3 YES.	-	-

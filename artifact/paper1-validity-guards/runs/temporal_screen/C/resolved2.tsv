@@ -1,0 +1,12 @@
+arxiv_id	question	resolved_code	reason	location	quote
+2609.39584v1	Q1	YES	Method states records are reshaped into Samples x Timesteps x Features tensors via overlapping sliding windows for a BiLSTM: a sequence model over consecutive records. Lookback length not stated.	Sec. III.A; Sec. IV.B	static 2D tabular data is reshaped into 3D sequential tensors (Samples × Timesteps × Features) using overlapping sliding windows
+2609.39584v1	Q4	NOT_STATED	Q1 is YES; the paper does not describe handling of windows at the start of a stream (no discarding, padding or pre-fill stated).	-	-
+2609.39584v1	outcome	UNASSESSABLE	Q1 YES; agreed Q2 UNSTATED and Q3 UNSTATED; Q4 NOT_STATED; no NO among Q1-Q3, at least one UNSTATED.	-	-
+2606.28439v1	Q3	NO	Primary evaluation (evasion success rate in abstract) uses only malicious traffic as test samples, so the evaluation data contain one class; no class precedes another or occupies a separate time segment.	Sec. V.B.2	we use only malicious traffic as test samples, resulting in a positive sample count of zero
+2606.28439v1	outcome	NOT EXPOSED	Q3 resolved NO; agreed Q1 UNSTATED, Q2 UNSTATED, Q4 NA, Q5 NA.	-	-
+2605.06629v1	Q2	UNSTATED	Pairing generated attack flows with real benign flows says nothing about presentation order; the paper does not state shuffling, random sampling or time order for the evaluation records.	Sec. 3.4	Then each classifier was evaluated on 8,000 generated attack flows paired with 8,000 real benign flows
+2605.06629v1	outcome	UNASSESSABLE	Q2 resolved UNSTATED; agreed Q1 UNSTATED, Q3 UNSTATED, Q4 NA, Q5 NA; no NO among Q1-Q3.	-	-
+2510.02349v1	Q1	UNSTATED	Text defines each input as one sample's feature vector but does not state which features are kept or whether any are multi-record aggregates; per-sample input does not by itself exclude temporally aggregated features.	Sec. 3	Given a traffic network sample $i \sim D$ from dataset D
+2510.02349v1	outcome	UNASSESSABLE	Q1 resolved UNSTATED; agreed Q2 UNSTATED, Q3 UNSTATED, Q4 NA, Q5 NA; no NO among Q1-Q3.	-	-
+2602.17973v2	Q1	UNSTATED	Paper gives only a feature count; it does not name the features, say they are per-flow statistics, or describe any temporal aggregation. Per-flow nature would be inferred from the dataset, not stated.	Sec. 6.4	71 features and a label column after preprocessing
+2602.17973v2	outcome	UNASSESSABLE	Q1 resolved UNSTATED; agreed Q2 UNSTATED, Q3 UNSTATED, Q4 NA, Q5 NA; no NO among Q1-Q3.	-	-
