@@ -8,7 +8,9 @@ Writes, per scenario:
   flows_sN.tsv           every matched flow: index, arrival, event, class, subclass, binetflow fields
   sN_TRUE.binetflow      labeled flows, StartTime = recorded time
   sN_ARRIVAL.binetflow   labeled flows, StartTime = Chiron arrival time
-Labels in the two .binetflow files are replaced by 'flow=Unknown' so no detector
+Rows the replay sent that Chiron never stored are listed and excluded, so every
+detector sees exactly the flows Chiron scored; a stored document with no row stops
+the run. Labels in the two .binetflow files are replaced by 'flow=Unknown' so no detector
 can read ground truth. Usage:
   python3 -I build_inputs.py <replay_ctu13.py dir> <CTU-13-Dataset dir> <export dir> <outdir> 1 2 6 8 9
 """
@@ -49,17 +51,24 @@ for s in scen:
                 continue
             rows.append((row[R.COL_START].strip(), raw, row, cls, sub))
     rows.sort(key=lambda t: t[0])  # the replay's send order
-    matched, miss = [], 0
-    for _, raw, row, cls, sub in rows:
+    matched, miss, missed = [], 0, []
+    for st, raw, row, cls, sub in rows:
         q = docs.get(raw)
         if not q:
-            miss += 1; continue
+            miss += 1; missed.append(f"  row not ingested: {st} {cls} {row[R.COL_LABEL].strip()} {raw}"); continue
         d = q.popleft()
         matched.append((pt(d["timestamp"]), pt(d["event_time"]) if d.get("event_time") else None, row, cls, sub))
     left = sum(len(q) for q in docs.values())
     print(f"s{s}: binetflow labeled {len(rows)}  mongo {nd}  matched {len(matched)}  rows unmatched {miss}  docs unmatched {left}")
-    if miss or left:
-        print(f"  WARNING s{s}: the join is not exact; inspect before running any detector")
+    for m in missed:
+        print(m)
+    if left:
+        # A flow Chiron scored that no detector would see: the comparison would not be like for like.
+        print(f"  WARNING s{s}: {left} replayed documents have no .binetflow row; stop")
+    elif miss:
+        # Rows the replay sent but Chiron never stored are excluded from every detector's input,
+        # so all detectors still see exactly the flows Chiron scored.
+        print(f"  NOTE s{s}: {miss} .binetflow rows were never ingested by Chiron and are excluded from every input")
     with open(os.path.join(out, f"flows_s{s}.tsv"), "w") as f:
         f.write("i\tarrival\tevent\tclass\tsubclass\t" + "\t".join(header) + "\n")
         for i, (a, e, row, cls, sub) in enumerate(matched):

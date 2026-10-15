@@ -44,3 +44,14 @@ predictions stand as registered. Two exploratory statistics (§8) are added to
 separate the causes: r(score, T) over benign windows that contain no botnet
 flow, and the partial correlation r(score, T | botnet fraction). If P4 or P5
 fails, both are reported next to it.
+
+## A3 (2026-10-15, before any detector was run): input identity rule
+
+The join of .binetflow rows to replayed documents found, on s6, 7 labeled rows
+that Chiron never stored (12,124 rows, 12,117 documents; every document matched
+a row). The two visible in the first inspection are Normal DNS flows from one
+host in the same second, consistent with loss at ingest. The rule applied to
+every scenario: a stored document with no row stops the run; rows never ingested
+are listed in `join.log` and excluded from every detector's input, so all three
+detectors see exactly the flows Chiron scored (§3). On s1, s2, s8 and s9 every
+row and every document matched.

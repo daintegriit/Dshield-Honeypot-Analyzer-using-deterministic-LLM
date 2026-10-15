@@ -50,9 +50,9 @@ inputs)
       || { say "STOP: inputs for s$s were not built"; exit 1; }
   done
   if grep -q WARNING "$OUT/join.log"; then say "STOP: the join is not exact."; exit 1; fi
-  [ "$(grep -c 'rows unmatched 0  docs unmatched 0' "$OUT/join.log")" = "$(echo $SC | wc -w)" ] \
-    || { say "STOP: the join did not report exact on every scenario"; exit 1; }
-  say "join exact on every scenario"
+  [ "$(grep -c 'docs unmatched 0$' "$OUT/join.log")" = "$(echo $SC | wc -w)" ] \
+    || { say "STOP: some replayed documents have no .binetflow row"; exit 1; }
+  say "every flow Chiron scored is in the inputs; rows Chiron never ingested (if any) are listed in $OUT/join.log"
   ;;
 windows)
   "$OUT/venv/bin/python" -I "$KIT/rf.py" "$OUT/inputs" "$OUT/rf" $SC >/dev/null
